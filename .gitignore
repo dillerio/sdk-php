@@ -1,0 +1,5 @@
+test/
+git_push.sh
+phpunit.xml.dist
+.travis.yml
+.php_cs
