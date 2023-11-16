@@ -79,7 +79,7 @@ class MembersApi
     /**
      * Operation deleteMember
      *
-     * This endpoint deletes a member.   Note that while the member may not be immediately removed from the system,   they will be marked for deletion and permanently removed after a period of 10 days.
+     * This endpoint deletes a member.  Note that while the member may not be immediately removed from the system,  they will be marked for deletion and permanently removed after a period of 10 days.
      *
      * @param  string $storeId The store id (required)
      * @param  string $memberId The member id (required)
@@ -97,7 +97,7 @@ class MembersApi
     /**
      * Operation deleteMemberWithHttpInfo
      *
-     * This endpoint deletes a member.   Note that while the member may not be immediately removed from the system,   they will be marked for deletion and permanently removed after a period of 10 days.
+     * This endpoint deletes a member.  Note that while the member may not be immediately removed from the system,  they will be marked for deletion and permanently removed after a period of 10 days.
      *
      * @param  string $storeId The store id (required)
      * @param  string $memberId The member id (required)
@@ -181,7 +181,7 @@ class MembersApi
     /**
      * Operation deleteMemberAsync
      *
-     * This endpoint deletes a member.   Note that while the member may not be immediately removed from the system,   they will be marked for deletion and permanently removed after a period of 10 days.
+     * This endpoint deletes a member.  Note that while the member may not be immediately removed from the system,  they will be marked for deletion and permanently removed after a period of 10 days.
      *
      * @param  string $storeId The store id (required)
      * @param  string $memberId The member id (required)
@@ -202,7 +202,7 @@ class MembersApi
     /**
      * Operation deleteMemberAsyncWithHttpInfo
      *
-     * This endpoint deletes a member.   Note that while the member may not be immediately removed from the system,   they will be marked for deletion and permanently removed after a period of 10 days.
+     * This endpoint deletes a member.  Note that while the member may not be immediately removed from the system,  they will be marked for deletion and permanently removed after a period of 10 days.
      *
      * @param  string $storeId The store id (required)
      * @param  string $memberId The member id (required)
@@ -972,7 +972,7 @@ class MembersApi
      *
      * @param  string $storeId The member&#x27;s store id (required)
      * @param  string $email Email Address of the member (optional)
-     * @param  string $phone The phone number can be entered in international format, starting with either \&quot;00\&quot; or \&quot;+\&quot;.              If the phone number is entered in national format, it will be assumed that the number belongs               to the same country as the store (optional)
+     * @param  string $phone The phone number can be entered in international format, starting with either \&quot;00\&quot; or \&quot;+\&quot;.              If the phone number is entered in national format, it will be assumed that the number belongs              to the same country as the store (optional)
      * @param  string $identifierValue The extra identifier of a member defined at the store level. (optional)
      * @param  string $activationToken The token value for when a member signed up via POS or any other source, that requires an activation step. (optional)
      *
@@ -993,7 +993,7 @@ class MembersApi
      *
      * @param  string $storeId The member&#x27;s store id (required)
      * @param  string $email Email Address of the member (optional)
-     * @param  string $phone The phone number can be entered in international format, starting with either \&quot;00\&quot; or \&quot;+\&quot;.              If the phone number is entered in national format, it will be assumed that the number belongs               to the same country as the store (optional)
+     * @param  string $phone The phone number can be entered in international format, starting with either \&quot;00\&quot; or \&quot;+\&quot;.              If the phone number is entered in national format, it will be assumed that the number belongs              to the same country as the store (optional)
      * @param  string $identifierValue The extra identifier of a member defined at the store level. (optional)
      * @param  string $activationToken The token value for when a member signed up via POS or any other source, that requires an activation step. (optional)
      *
@@ -1080,7 +1080,7 @@ class MembersApi
      *
      * @param  string $storeId The member&#x27;s store id (required)
      * @param  string $email Email Address of the member (optional)
-     * @param  string $phone The phone number can be entered in international format, starting with either \&quot;00\&quot; or \&quot;+\&quot;.              If the phone number is entered in national format, it will be assumed that the number belongs               to the same country as the store (optional)
+     * @param  string $phone The phone number can be entered in international format, starting with either \&quot;00\&quot; or \&quot;+\&quot;.              If the phone number is entered in national format, it will be assumed that the number belongs              to the same country as the store (optional)
      * @param  string $identifierValue The extra identifier of a member defined at the store level. (optional)
      * @param  string $activationToken The token value for when a member signed up via POS or any other source, that requires an activation step. (optional)
      *
@@ -1104,7 +1104,7 @@ class MembersApi
      *
      * @param  string $storeId The member&#x27;s store id (required)
      * @param  string $email Email Address of the member (optional)
-     * @param  string $phone The phone number can be entered in international format, starting with either \&quot;00\&quot; or \&quot;+\&quot;.              If the phone number is entered in national format, it will be assumed that the number belongs               to the same country as the store (optional)
+     * @param  string $phone The phone number can be entered in international format, starting with either \&quot;00\&quot; or \&quot;+\&quot;.              If the phone number is entered in national format, it will be assumed that the number belongs              to the same country as the store (optional)
      * @param  string $identifierValue The extra identifier of a member defined at the store level. (optional)
      * @param  string $activationToken The token value for when a member signed up via POS or any other source, that requires an activation step. (optional)
      *
@@ -1158,7 +1158,7 @@ class MembersApi
      *
      * @param  string $storeId The member&#x27;s store id (required)
      * @param  string $email Email Address of the member (optional)
-     * @param  string $phone The phone number can be entered in international format, starting with either \&quot;00\&quot; or \&quot;+\&quot;.              If the phone number is entered in national format, it will be assumed that the number belongs               to the same country as the store (optional)
+     * @param  string $phone The phone number can be entered in international format, starting with either \&quot;00\&quot; or \&quot;+\&quot;.              If the phone number is entered in national format, it will be assumed that the number belongs              to the same country as the store (optional)
      * @param  string $identifierValue The extra identifier of a member defined at the store level. (optional)
      * @param  string $activationToken The token value for when a member signed up via POS or any other source, that requires an activation step. (optional)
      *

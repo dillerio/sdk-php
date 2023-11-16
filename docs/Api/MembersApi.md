@@ -4,7 +4,7 @@ All URIs are relative to */*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteMember**](MembersApi.md#deletemember) | **DELETE** /api/v2.0/stores/{storeId}/members/{memberId} | This endpoint deletes a member.   Note that while the member may not be immediately removed from the system,   they will be marked for deletion and permanently removed after a period of 10 days.
+[**deleteMember**](MembersApi.md#deletemember) | **DELETE** /api/v2.0/stores/{storeId}/members/{memberId} | This endpoint deletes a member.  Note that while the member may not be immediately removed from the system,  they will be marked for deletion and permanently removed after a period of 10 days.
 [**enrollMember**](MembersApi.md#enrollmember) | **POST** /api/v2.0/stores/{storeId}/members/enroll | Enrolls a member into the Loyalty Program.  This will create a new member in the system and send an activation link via SMS to the member.  If the member already exists, and GDPR is not accepted yet then a new activation link will be sent.  If the store does not have SMS enabled, the activation link will be sent by email.
 [**getDependents**](MembersApi.md#getdependents) | **GET** /api/v2.0/stores/{storeId}/members/{memberId}/dependents | Retrieves a member&#x27;s dependents
 [**getMemberByFilter**](MembersApi.md#getmemberbyfilter) | **GET** /api/v2.0/stores/{storeId}/members/search | Searchs members by email, phone number, activation token or any other identifier (country dependant - eg. SSN, licence plate, National ID)
@@ -21,7 +21,7 @@ Method | HTTP request | Description
 # **deleteMember**
 > \DillerAPI\Model\ActionResponse deleteMember($storeId, $memberId)
 
-This endpoint deletes a member.   Note that while the member may not be immediately removed from the system,   they will be marked for deletion and permanently removed after a period of 10 days.
+This endpoint deletes a member.  Note that while the member may not be immediately removed from the system,  they will be marked for deletion and permanently removed after a period of 10 days.
 
 ### Example
 ```php
@@ -198,7 +198,7 @@ $apiInstance = new DillerAPI\Api\MembersApi(
 );
 $storeId = "storeId_example"; // string | The member's store id
 $email = "email_example"; // string | Email Address of the member
-$phone = "phone_example"; // string | The phone number can be entered in international format, starting with either \"00\" or \"+\".              If the phone number is entered in national format, it will be assumed that the number belongs               to the same country as the store
+$phone = "phone_example"; // string | The phone number can be entered in international format, starting with either \"00\" or \"+\".              If the phone number is entered in national format, it will be assumed that the number belongs              to the same country as the store
 $identifierValue = "identifierValue_example"; // string | The extra identifier of a member defined at the store level.
 $activationToken = "activationToken_example"; // string | The token value for when a member signed up via POS or any other source, that requires an activation step.
 
@@ -217,7 +217,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **storeId** | **string**| The member&#x27;s store id |
  **email** | **string**| Email Address of the member | [optional]
- **phone** | **string**| The phone number can be entered in international format, starting with either \&quot;00\&quot; or \&quot;+\&quot;.              If the phone number is entered in national format, it will be assumed that the number belongs               to the same country as the store | [optional]
+ **phone** | **string**| The phone number can be entered in international format, starting with either \&quot;00\&quot; or \&quot;+\&quot;.              If the phone number is entered in national format, it will be assumed that the number belongs              to the same country as the store | [optional]
  **identifierValue** | **string**| The extra identifier of a member defined at the store level. | [optional]
  **activationToken** | **string**| The token value for when a member signed up via POS or any other source, that requires an activation step. | [optional]
 

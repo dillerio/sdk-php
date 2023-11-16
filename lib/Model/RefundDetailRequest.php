@@ -1,6 +1,6 @@
 <?php
 /**
- * EnrollMemberRequest
+ * RefundDetailRequest
  *
  * PHP version 7.4
  *
@@ -22,14 +22,14 @@ use \ArrayAccess;
 use \DillerAPI\ObjectSerializer;
 
 /**
- * EnrollMemberRequest Class Doc Comment
+ * RefundDetailRequest Class Doc Comment
  *
  * @category Class
  * @package  DillerAPI
  * @author   DILLER AS
  * @link     https://diller.io
  */
-class EnrollMemberRequest implements ModelInterface, ArrayAccess
+class RefundDetailRequest implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -38,7 +38,7 @@ class EnrollMemberRequest implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'EnrollMemberRequest';
+    protected static $swaggerModelName = 'RefundDetailRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -46,10 +46,13 @@ class EnrollMemberRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'phone' => '\DillerAPI\Model\Phone',
-'departmentId' => 'string',
-'origin' => '\DillerAPI\Model\Origin',
-'additionalInfo' => '\DillerAPI\Model\MemberAdditionalInfo'    ];
+        'product' => '\DillerAPI\Model\ProductDetail',
+'quantity' => 'double',
+'unitPrice' => 'double',
+'unitMeasure' => 'string',
+'taxPercentage' => 'double',
+'discount' => 'double',
+'totalPrice' => 'double'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -57,10 +60,13 @@ class EnrollMemberRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'phone' => null,
-'departmentId' => null,
-'origin' => null,
-'additionalInfo' => null    ];
+        'product' => null,
+'quantity' => 'double',
+'unitPrice' => 'double',
+'unitMeasure' => null,
+'taxPercentage' => 'double',
+'discount' => 'double',
+'totalPrice' => 'double'    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -89,10 +95,13 @@ class EnrollMemberRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'phone' => 'phone',
-'departmentId' => 'department_id',
-'origin' => 'origin',
-'additionalInfo' => 'additional_info'    ];
+        'product' => 'product',
+'quantity' => 'quantity',
+'unitPrice' => 'unit_price',
+'unitMeasure' => 'unit_measure',
+'taxPercentage' => 'tax_percentage',
+'discount' => 'discount',
+'totalPrice' => 'total_price'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -100,10 +109,13 @@ class EnrollMemberRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'phone' => 'setPhone',
-'departmentId' => 'setDepartmentId',
-'origin' => 'setOrigin',
-'additionalInfo' => 'setAdditionalInfo'    ];
+        'product' => 'setProduct',
+'quantity' => 'setQuantity',
+'unitPrice' => 'setUnitPrice',
+'unitMeasure' => 'setUnitMeasure',
+'taxPercentage' => 'setTaxPercentage',
+'discount' => 'setDiscount',
+'totalPrice' => 'setTotalPrice'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -111,10 +123,13 @@ class EnrollMemberRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'phone' => 'getPhone',
-'departmentId' => 'getDepartmentId',
-'origin' => 'getOrigin',
-'additionalInfo' => 'getAdditionalInfo'    ];
+        'product' => 'getProduct',
+'quantity' => 'getQuantity',
+'unitPrice' => 'getUnitPrice',
+'unitMeasure' => 'getUnitMeasure',
+'taxPercentage' => 'getTaxPercentage',
+'discount' => 'getDiscount',
+'totalPrice' => 'getTotalPrice'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -174,10 +189,13 @@ class EnrollMemberRequest implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['phone'] = isset($data['phone']) ? $data['phone'] : null;
-        $this->container['departmentId'] = isset($data['departmentId']) ? $data['departmentId'] : null;
-        $this->container['origin'] = isset($data['origin']) ? $data['origin'] : null;
-        $this->container['additionalInfo'] = isset($data['additionalInfo']) ? $data['additionalInfo'] : null;
+        $this->container['product'] = isset($data['product']) ? $data['product'] : null;
+        $this->container['quantity'] = isset($data['quantity']) ? $data['quantity'] : null;
+        $this->container['unitPrice'] = isset($data['unitPrice']) ? $data['unitPrice'] : null;
+        $this->container['unitMeasure'] = isset($data['unitMeasure']) ? $data['unitMeasure'] : null;
+        $this->container['taxPercentage'] = isset($data['taxPercentage']) ? $data['taxPercentage'] : null;
+        $this->container['discount'] = isset($data['discount']) ? $data['discount'] : null;
+        $this->container['totalPrice'] = isset($data['totalPrice']) ? $data['totalPrice'] : null;
     }
 
     /**
@@ -189,9 +207,6 @@ class EnrollMemberRequest implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['phone'] === null) {
-            $invalidProperties[] = "'phone' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -208,97 +223,169 @@ class EnrollMemberRequest implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets phone
+     * Gets product
      *
-     * @return \DillerAPI\Model\Phone
+     * @return \DillerAPI\Model\ProductDetail
      */
-    public function getPhone()
+    public function getProduct()
     {
-        return $this->container['phone'];
+        return $this->container['product'];
     }
 
     /**
-     * Sets phone
+     * Sets product
      *
-     * @param \DillerAPI\Model\Phone $phone phone
+     * @param \DillerAPI\Model\ProductDetail $product product
      *
      * @return $this
      */
-    public function setPhone($phone)
+    public function setProduct($product)
     {
-        $this->container['phone'] = $phone;
+        $this->container['product'] = $product;
 
         return $this;
     }
 
     /**
-     * Gets departmentId
+     * Gets quantity
+     *
+     * @return double
+     */
+    public function getQuantity()
+    {
+        return $this->container['quantity'];
+    }
+
+    /**
+     * Sets quantity
+     *
+     * @param double $quantity quantity
+     *
+     * @return $this
+     */
+    public function setQuantity($quantity)
+    {
+        $this->container['quantity'] = $quantity;
+
+        return $this;
+    }
+
+    /**
+     * Gets unitPrice
+     *
+     * @return double
+     */
+    public function getUnitPrice()
+    {
+        return $this->container['unitPrice'];
+    }
+
+    /**
+     * Sets unitPrice
+     *
+     * @param double $unitPrice Unit price including taxes
+     *
+     * @return $this
+     */
+    public function setUnitPrice($unitPrice)
+    {
+        $this->container['unitPrice'] = $unitPrice;
+
+        return $this;
+    }
+
+    /**
+     * Gets unitMeasure
      *
      * @return string
      */
-    public function getDepartmentId()
+    public function getUnitMeasure()
     {
-        return $this->container['departmentId'];
+        return $this->container['unitMeasure'];
     }
 
     /**
-     * Sets departmentId
+     * Sets unitMeasure
      *
-     * @param string $departmentId departmentId
+     * @param string $unitMeasure unitMeasure
      *
      * @return $this
      */
-    public function setDepartmentId($departmentId)
+    public function setUnitMeasure($unitMeasure)
     {
-        $this->container['departmentId'] = $departmentId;
+        $this->container['unitMeasure'] = $unitMeasure;
 
         return $this;
     }
 
     /**
-     * Gets origin
+     * Gets taxPercentage
      *
-     * @return \DillerAPI\Model\Origin
+     * @return double
      */
-    public function getOrigin()
+    public function getTaxPercentage()
     {
-        return $this->container['origin'];
+        return $this->container['taxPercentage'];
     }
 
     /**
-     * Sets origin
+     * Sets taxPercentage
      *
-     * @param \DillerAPI\Model\Origin $origin origin
+     * @param double $taxPercentage Value stored from 0.00 to 100.00
      *
      * @return $this
      */
-    public function setOrigin($origin)
+    public function setTaxPercentage($taxPercentage)
     {
-        $this->container['origin'] = $origin;
+        $this->container['taxPercentage'] = $taxPercentage;
 
         return $this;
     }
 
     /**
-     * Gets additionalInfo
+     * Gets discount
      *
-     * @return \DillerAPI\Model\MemberAdditionalInfo
+     * @return double
      */
-    public function getAdditionalInfo()
+    public function getDiscount()
     {
-        return $this->container['additionalInfo'];
+        return $this->container['discount'];
     }
 
     /**
-     * Sets additionalInfo
+     * Sets discount
      *
-     * @param \DillerAPI\Model\MemberAdditionalInfo $additionalInfo additionalInfo
+     * @param double $discount Discount amount applied to this product
      *
      * @return $this
      */
-    public function setAdditionalInfo($additionalInfo)
+    public function setDiscount($discount)
     {
-        $this->container['additionalInfo'] = $additionalInfo;
+        $this->container['discount'] = $discount;
+
+        return $this;
+    }
+
+    /**
+     * Gets totalPrice
+     *
+     * @return double
+     */
+    public function getTotalPrice()
+    {
+        return $this->container['totalPrice'];
+    }
+
+    /**
+     * Sets totalPrice
+     *
+     * @param double $totalPrice Total price after dicount and taxes  Qty x unit price - discount
+     *
+     * @return $this
+     */
+    public function setTotalPrice($totalPrice)
+    {
+        $this->container['totalPrice'] = $totalPrice;
 
         return $this;
     }

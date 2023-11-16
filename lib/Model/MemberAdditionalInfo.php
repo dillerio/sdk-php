@@ -1,6 +1,6 @@
 <?php
 /**
- * EnrollMemberRequest
+ * MemberAdditionalInfo
  *
  * PHP version 7.4
  *
@@ -22,14 +22,14 @@ use \ArrayAccess;
 use \DillerAPI\ObjectSerializer;
 
 /**
- * EnrollMemberRequest Class Doc Comment
+ * MemberAdditionalInfo Class Doc Comment
  *
  * @category Class
  * @package  DillerAPI
  * @author   DILLER AS
  * @link     https://diller.io
  */
-class EnrollMemberRequest implements ModelInterface, ArrayAccess
+class MemberAdditionalInfo implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -38,7 +38,7 @@ class EnrollMemberRequest implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'EnrollMemberRequest';
+    protected static $swaggerModelName = 'MemberAdditionalInfo';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -46,10 +46,10 @@ class EnrollMemberRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'phone' => '\DillerAPI\Model\Phone',
-'departmentId' => 'string',
-'origin' => '\DillerAPI\Model\Origin',
-'additionalInfo' => '\DillerAPI\Model\MemberAdditionalInfo'    ];
+        'firstName' => 'string',
+'lastName' => 'string',
+'email' => 'string',
+'address' => '\DillerAPI\Model\Address'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -57,10 +57,10 @@ class EnrollMemberRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'phone' => null,
-'departmentId' => null,
-'origin' => null,
-'additionalInfo' => null    ];
+        'firstName' => null,
+'lastName' => null,
+'email' => null,
+'address' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -89,10 +89,10 @@ class EnrollMemberRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'phone' => 'phone',
-'departmentId' => 'department_id',
-'origin' => 'origin',
-'additionalInfo' => 'additional_info'    ];
+        'firstName' => 'first_name',
+'lastName' => 'last_name',
+'email' => 'email',
+'address' => 'address'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -100,10 +100,10 @@ class EnrollMemberRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'phone' => 'setPhone',
-'departmentId' => 'setDepartmentId',
-'origin' => 'setOrigin',
-'additionalInfo' => 'setAdditionalInfo'    ];
+        'firstName' => 'setFirstName',
+'lastName' => 'setLastName',
+'email' => 'setEmail',
+'address' => 'setAddress'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -111,10 +111,10 @@ class EnrollMemberRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'phone' => 'getPhone',
-'departmentId' => 'getDepartmentId',
-'origin' => 'getOrigin',
-'additionalInfo' => 'getAdditionalInfo'    ];
+        'firstName' => 'getFirstName',
+'lastName' => 'getLastName',
+'email' => 'getEmail',
+'address' => 'getAddress'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -174,10 +174,10 @@ class EnrollMemberRequest implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['phone'] = isset($data['phone']) ? $data['phone'] : null;
-        $this->container['departmentId'] = isset($data['departmentId']) ? $data['departmentId'] : null;
-        $this->container['origin'] = isset($data['origin']) ? $data['origin'] : null;
-        $this->container['additionalInfo'] = isset($data['additionalInfo']) ? $data['additionalInfo'] : null;
+        $this->container['firstName'] = isset($data['firstName']) ? $data['firstName'] : null;
+        $this->container['lastName'] = isset($data['lastName']) ? $data['lastName'] : null;
+        $this->container['email'] = isset($data['email']) ? $data['email'] : null;
+        $this->container['address'] = isset($data['address']) ? $data['address'] : null;
     }
 
     /**
@@ -189,9 +189,6 @@ class EnrollMemberRequest implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['phone'] === null) {
-            $invalidProperties[] = "'phone' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -208,97 +205,97 @@ class EnrollMemberRequest implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets phone
-     *
-     * @return \DillerAPI\Model\Phone
-     */
-    public function getPhone()
-    {
-        return $this->container['phone'];
-    }
-
-    /**
-     * Sets phone
-     *
-     * @param \DillerAPI\Model\Phone $phone phone
-     *
-     * @return $this
-     */
-    public function setPhone($phone)
-    {
-        $this->container['phone'] = $phone;
-
-        return $this;
-    }
-
-    /**
-     * Gets departmentId
+     * Gets firstName
      *
      * @return string
      */
-    public function getDepartmentId()
+    public function getFirstName()
     {
-        return $this->container['departmentId'];
+        return $this->container['firstName'];
     }
 
     /**
-     * Sets departmentId
+     * Sets firstName
      *
-     * @param string $departmentId departmentId
+     * @param string $firstName firstName
      *
      * @return $this
      */
-    public function setDepartmentId($departmentId)
+    public function setFirstName($firstName)
     {
-        $this->container['departmentId'] = $departmentId;
+        $this->container['firstName'] = $firstName;
 
         return $this;
     }
 
     /**
-     * Gets origin
+     * Gets lastName
      *
-     * @return \DillerAPI\Model\Origin
+     * @return string
      */
-    public function getOrigin()
+    public function getLastName()
     {
-        return $this->container['origin'];
+        return $this->container['lastName'];
     }
 
     /**
-     * Sets origin
+     * Sets lastName
      *
-     * @param \DillerAPI\Model\Origin $origin origin
+     * @param string $lastName lastName
      *
      * @return $this
      */
-    public function setOrigin($origin)
+    public function setLastName($lastName)
     {
-        $this->container['origin'] = $origin;
+        $this->container['lastName'] = $lastName;
 
         return $this;
     }
 
     /**
-     * Gets additionalInfo
+     * Gets email
      *
-     * @return \DillerAPI\Model\MemberAdditionalInfo
+     * @return string
      */
-    public function getAdditionalInfo()
+    public function getEmail()
     {
-        return $this->container['additionalInfo'];
+        return $this->container['email'];
     }
 
     /**
-     * Sets additionalInfo
+     * Sets email
      *
-     * @param \DillerAPI\Model\MemberAdditionalInfo $additionalInfo additionalInfo
+     * @param string $email email
      *
      * @return $this
      */
-    public function setAdditionalInfo($additionalInfo)
+    public function setEmail($email)
     {
-        $this->container['additionalInfo'] = $additionalInfo;
+        $this->container['email'] = $email;
+
+        return $this;
+    }
+
+    /**
+     * Gets address
+     *
+     * @return \DillerAPI\Model\Address
+     */
+    public function getAddress()
+    {
+        return $this->container['address'];
+    }
+
+    /**
+     * Sets address
+     *
+     * @param \DillerAPI\Model\Address $address address
+     *
+     * @return $this
+     */
+    public function setAddress($address)
+    {
+        $this->container['address'] = $address;
 
         return $this;
     }
