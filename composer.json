@@ -1,6 +1,6 @@
 {
     "name": "diller-loyalty/php-sdk",
-    "version": "v00.1.3",
+    "version": "v0.1.3",
     "description": "PHP SDK for Diller API",
     "keywords": [
         "diller",
