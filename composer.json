@@ -34,4 +34,4 @@
     "autoload-dev": {
         "psr-4": { "Swagger\\Client\\" : "test/" }
     }
-}
+,"version":"v0.1.7"}
