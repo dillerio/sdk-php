@@ -16,14 +16,14 @@
  * Do not edit the class manually.
  */
 
-namespace DillerAPI\Model;
+namespace Swagger\Client\Model;
 use \DillerAPI\ObjectSerializer;
 
 /**
  * CouponDiscountType Class Doc Comment
  *
  * @category Class
- * @package  DillerAPI
+ * @package  Swagger\Client
  * @author   DILLER AS
  * @link     https://diller.io
  */
@@ -33,9 +33,9 @@ class CouponDiscountType
      * Possible values of this enum
      */
     const NOT_DEFINED = 'NotDefined';
-const PERCENTAGE = 'Percentage';
-const FIXED = 'Fixed';
-const FREE_SHIPPING = 'FreeShipping';
+    const PERCENTAGE = 'Percentage';
+    const FIXED = 'Fixed';
+    const FREE_SHIPPING = 'FreeShipping';
     /**
      * Gets allowable values of the enum
      * @return string[]
@@ -43,7 +43,10 @@ const FREE_SHIPPING = 'FreeShipping';
     public static function getAllowableEnumValues()
     {
         return [
-            self::NOT_DEFINED,self::PERCENTAGE,self::FIXED,self::FREE_SHIPPING,
+            self::NOT_DEFINED,
+            self::PERCENTAGE,
+            self::FIXED,
+            self::FREE_SHIPPING,
         ];
     }
 }

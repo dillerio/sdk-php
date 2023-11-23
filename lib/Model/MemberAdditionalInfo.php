@@ -16,7 +16,7 @@
  * Do not edit the class manually.
  */
 
-namespace DillerAPI\Model;
+namespace Swagger\Client\Model;
 
 use \ArrayAccess;
 use \DillerAPI\ObjectSerializer;
@@ -25,7 +25,7 @@ use \DillerAPI\ObjectSerializer;
  * MemberAdditionalInfo Class Doc Comment
  *
  * @category Class
- * @package  DillerAPI
+ * @package  Swagger\Client
  * @author   DILLER AS
  * @link     https://diller.io
  */
@@ -46,10 +46,10 @@ class MemberAdditionalInfo implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'firstName' => 'string',
-'lastName' => 'string',
+        'first_name' => 'string',
+'last_name' => 'string',
 'email' => 'string',
-'address' => '\DillerAPI\Model\Address'    ];
+'address' => '\Swagger\Client\Model\Address'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -57,8 +57,8 @@ class MemberAdditionalInfo implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'firstName' => null,
-'lastName' => null,
+        'first_name' => null,
+'last_name' => null,
 'email' => null,
 'address' => null    ];
 
@@ -89,8 +89,8 @@ class MemberAdditionalInfo implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'firstName' => 'first_name',
-'lastName' => 'last_name',
+        'first_name' => 'first_name',
+'last_name' => 'last_name',
 'email' => 'email',
 'address' => 'address'    ];
 
@@ -100,8 +100,8 @@ class MemberAdditionalInfo implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'firstName' => 'setFirstName',
-'lastName' => 'setLastName',
+        'first_name' => 'setFirstName',
+'last_name' => 'setLastName',
 'email' => 'setEmail',
 'address' => 'setAddress'    ];
 
@@ -111,8 +111,8 @@ class MemberAdditionalInfo implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'firstName' => 'getFirstName',
-'lastName' => 'getLastName',
+        'first_name' => 'getFirstName',
+'last_name' => 'getLastName',
 'email' => 'getEmail',
 'address' => 'getAddress'    ];
 
@@ -174,8 +174,8 @@ class MemberAdditionalInfo implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['firstName'] = isset($data['firstName']) ? $data['firstName'] : null;
-        $this->container['lastName'] = isset($data['lastName']) ? $data['lastName'] : null;
+        $this->container['first_name'] = isset($data['first_name']) ? $data['first_name'] : null;
+        $this->container['last_name'] = isset($data['last_name']) ? $data['last_name'] : null;
         $this->container['email'] = isset($data['email']) ? $data['email'] : null;
         $this->container['address'] = isset($data['address']) ? $data['address'] : null;
     }
@@ -205,49 +205,49 @@ class MemberAdditionalInfo implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets firstName
+     * Gets first_name
      *
      * @return string
      */
     public function getFirstName()
     {
-        return $this->container['firstName'];
+        return $this->container['first_name'];
     }
 
     /**
-     * Sets firstName
+     * Sets first_name
      *
-     * @param string $firstName firstName
+     * @param string $first_name first_name
      *
      * @return $this
      */
-    public function setFirstName($firstName)
+    public function setFirstName($first_name)
     {
-        $this->container['firstName'] = $firstName;
+        $this->container['first_name'] = $first_name;
 
         return $this;
     }
 
     /**
-     * Gets lastName
+     * Gets last_name
      *
      * @return string
      */
     public function getLastName()
     {
-        return $this->container['lastName'];
+        return $this->container['last_name'];
     }
 
     /**
-     * Sets lastName
+     * Sets last_name
      *
-     * @param string $lastName lastName
+     * @param string $last_name last_name
      *
      * @return $this
      */
-    public function setLastName($lastName)
+    public function setLastName($last_name)
     {
-        $this->container['lastName'] = $lastName;
+        $this->container['last_name'] = $last_name;
 
         return $this;
     }
@@ -279,7 +279,7 @@ class MemberAdditionalInfo implements ModelInterface, ArrayAccess
     /**
      * Gets address
      *
-     * @return \DillerAPI\Model\Address
+     * @return \Swagger\Client\Model\Address
      */
     public function getAddress()
     {
@@ -289,7 +289,7 @@ class MemberAdditionalInfo implements ModelInterface, ArrayAccess
     /**
      * Sets address
      *
-     * @param \DillerAPI\Model\Address $address address
+     * @param \Swagger\Client\Model\Address $address address
      *
      * @return $this
      */

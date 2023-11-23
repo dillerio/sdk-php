@@ -1,4 +1,4 @@
-# DillerAPI\MembershipLevelApi
+# Swagger\Client\MembershipLevelApi
 
 All URIs are relative to */*
 
@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**getStoreMembershipLevel**](MembershipLevelApi.md#getstoremembershiplevel) | **GET** /api/v2.0/stores/{storeId}/membership-level | Retrieve store membership level information
 
 # **getStoreMembershipLevel**
-> \DillerAPI\Model\StoreMembershipLevelResponse[] getStoreMembershipLevel($storeId)
+> \Swagger\Client\Model\StoreMembershipLevelResponse[] getStoreMembershipLevel($store_id)
 
 Retrieve store membership level information
 
@@ -17,18 +17,18 @@ Retrieve store membership level information
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: OAuth2
-$config = DillerAPI\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$apiInstance = new DillerAPI\Api\MembershipLevelApi(
+$apiInstance = new Swagger\Client\Api\MembershipLevelApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$storeId = "storeId_example"; // string | The store id
+$store_id = "store_id_example"; // string | The store id
 
 try {
-    $result = $apiInstance->getStoreMembershipLevel($storeId);
+    $result = $apiInstance->getStoreMembershipLevel($store_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MembershipLevelApi->getStoreMembershipLevel: ', $e->getMessage(), PHP_EOL;
@@ -40,11 +40,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **storeId** | **string**| The store id |
+ **store_id** | **string**| The store id |
 
 ### Return type
 
-[**\DillerAPI\Model\StoreMembershipLevelResponse[]**](../Model/StoreMembershipLevelResponse.md)
+[**\Swagger\Client\Model\StoreMembershipLevelResponse[]**](../Model/StoreMembershipLevelResponse.md)
 
 ### Authorization
 

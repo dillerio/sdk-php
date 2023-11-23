@@ -16,14 +16,14 @@
  * Do not edit the class manually.
  */
 
-namespace DillerAPI\Model;
+namespace Swagger\Client\Model;
 use \DillerAPI\ObjectSerializer;
 
 /**
  * PlatformType Class Doc Comment
  *
  * @category Class
- * @package  DillerAPI
+ * @package  Swagger\Client
  * @author   DILLER AS
  * @link     https://diller.io
  */
@@ -33,11 +33,11 @@ class PlatformType
      * Possible values of this enum
      */
     const EXTENDA_GO = 'ExtendaGo';
-const WOOCOMERCE = 'Woocomerce';
-const MAGENTO = 'Magento';
-const SHOPIFY = 'Shopify';
-const LINK_POS = 'LinkPos';
-const PCK = 'Pck';
+    const WOOCOMERCE = 'Woocomerce';
+    const MAGENTO = 'Magento';
+    const SHOPIFY = 'Shopify';
+    const LINK_POS = 'LinkPos';
+    const PCK = 'Pck';
     /**
      * Gets allowable values of the enum
      * @return string[]
@@ -45,7 +45,12 @@ const PCK = 'Pck';
     public static function getAllowableEnumValues()
     {
         return [
-            self::EXTENDA_GO,self::WOOCOMERCE,self::MAGENTO,self::SHOPIFY,self::LINK_POS,self::PCK,
+            self::EXTENDA_GO,
+            self::WOOCOMERCE,
+            self::MAGENTO,
+            self::SHOPIFY,
+            self::LINK_POS,
+            self::PCK,
         ];
     }
 }

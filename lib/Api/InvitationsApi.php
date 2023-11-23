@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  DillerAPI
+ * @package  Swagger\Client
  * @author   DILLER AS
  * @link     https://diller.io
  */
@@ -15,7 +15,7 @@
  * Do not edit the class manually.
  */
 
-namespace DillerAPI\Api;
+namespace Swagger\Client\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -23,16 +23,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use DillerAPI\ApiException;
-use DillerAPI\Configuration;
-use DillerAPI\HeaderSelector;
-use DillerAPI\ObjectSerializer;
+use Swagger\Client\ApiException;
+use Swagger\Client\Configuration;
+use Swagger\Client\HeaderSelector;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * InvitationsApi Class Doc Comment
  *
  * @category Class
- * @package  DillerAPI
+ * @package  Swagger\Client
  * @author   DILLER AS
  * @link     https://diller.io
  */
@@ -81,16 +81,16 @@ class InvitationsApi
      *
      * Returns a list of all invited friends
      *
-     * @param  string $storeId The store Id (required)
-     * @param  string $memberId The member Id (required)
+     * @param  string $store_id The store Id (required)
+     * @param  string $member_id The member Id (required)
      *
      * @throws {{invokerPackage}}\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \DillerAPI\Model\InvitedFriendResponse[]
+     * @return \Swagger\Client\Model\InvitedFriendResponse[]
      */
-    public function getInvitedFriends($storeId, $memberId)
+    public function getInvitedFriends($store_id, $member_id)
     {
-        list($response) = $this->getInvitedFriendsWithHttpInfo($storeId, $memberId);
+        list($response) = $this->getInvitedFriendsWithHttpInfo($store_id, $member_id);
         return $response;
     }
 
@@ -99,17 +99,17 @@ class InvitationsApi
      *
      * Returns a list of all invited friends
      *
-     * @param  string $storeId The store Id (required)
-     * @param  string $memberId The member Id (required)
+     * @param  string $store_id The store Id (required)
+     * @param  string $member_id The member Id (required)
      *
      * @throws {{invokerPackage}}\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \DillerAPI\Model\InvitedFriendResponse[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InvitedFriendResponse[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getInvitedFriendsWithHttpInfo($storeId, $memberId)
+    public function getInvitedFriendsWithHttpInfo($store_id, $member_id)
     {
-        $returnType = '\DillerAPI\Model\InvitedFriendResponse[]';
-        $request = $this->getInvitedFriendsRequest($storeId, $memberId);
+        $returnType = '\Swagger\Client\Model\InvitedFriendResponse[]';
+        $request = $this->getInvitedFriendsRequest($store_id, $member_id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -160,7 +160,7 @@ class InvitationsApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\DillerAPI\Model\ApiError',
+                        '\Swagger\Client\Model\ApiError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -168,7 +168,7 @@ class InvitationsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\DillerAPI\Model\InvitedFriendResponse[]',
+                        '\Swagger\Client\Model\InvitedFriendResponse[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -183,15 +183,15 @@ class InvitationsApi
      *
      * Returns a list of all invited friends
      *
-     * @param  string $storeId The store Id (required)
-     * @param  string $memberId The member Id (required)
+     * @param  string $store_id The store Id (required)
+     * @param  string $member_id The member Id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getInvitedFriendsAsync($storeId, $memberId)
+    public function getInvitedFriendsAsync($store_id, $member_id)
     {
-        return $this->getInvitedFriendsAsyncWithHttpInfo($storeId, $memberId)
+        return $this->getInvitedFriendsAsyncWithHttpInfo($store_id, $member_id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -204,16 +204,16 @@ class InvitationsApi
      *
      * Returns a list of all invited friends
      *
-     * @param  string $storeId The store Id (required)
-     * @param  string $memberId The member Id (required)
+     * @param  string $store_id The store Id (required)
+     * @param  string $member_id The member Id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getInvitedFriendsAsyncWithHttpInfo($storeId, $memberId)
+    public function getInvitedFriendsAsyncWithHttpInfo($store_id, $member_id)
     {
-        $returnType = '\DillerAPI\Model\InvitedFriendResponse[]';
-        $request = $this->getInvitedFriendsRequest($storeId, $memberId);
+        $returnType = '\Swagger\Client\Model\InvitedFriendResponse[]';
+        $request = $this->getInvitedFriendsRequest($store_id, $member_id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -255,24 +255,24 @@ class InvitationsApi
     /**
      * Create request for operation 'getInvitedFriends'
      *
-     * @param  string $storeId The store Id (required)
-     * @param  string $memberId The member Id (required)
+     * @param  string $store_id The store Id (required)
+     * @param  string $member_id The member Id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getInvitedFriendsRequest($storeId, $memberId)
+    protected function getInvitedFriendsRequest($store_id, $member_id)
     {
-        // verify the required parameter 'storeId' is set
-        if ($storeId === null || (is_array($storeId) && count($storeId) === 0)) {
+        // verify the required parameter 'store_id' is set
+        if ($store_id === null || (is_array($store_id) && count($store_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $storeId when calling getInvitedFriends'
+                'Missing the required parameter $store_id when calling getInvitedFriends'
             );
         }
-        // verify the required parameter 'memberId' is set
-        if ($memberId === null || (is_array($memberId) && count($memberId) === 0)) {
+        // verify the required parameter 'member_id' is set
+        if ($member_id === null || (is_array($member_id) && count($member_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $memberId when calling getInvitedFriends'
+                'Missing the required parameter $member_id when calling getInvitedFriends'
             );
         }
 
@@ -285,18 +285,18 @@ class InvitationsApi
 
 
         // path params
-        if ($storeId !== null) {
+        if ($store_id !== null) {
             $resourcePath = str_replace(
                 '{' . 'storeId' . '}',
-                ObjectSerializer::toPathValue($storeId),
+                ObjectSerializer::toPathValue($store_id),
                 $resourcePath
             );
         }
         // path params
-        if ($memberId !== null) {
+        if ($member_id !== null) {
             $resourcePath = str_replace(
                 '{' . 'memberId' . '}',
-                ObjectSerializer::toPathValue($memberId),
+                ObjectSerializer::toPathValue($member_id),
                 $resourcePath
             );
         }
@@ -381,17 +381,17 @@ class InvitationsApi
      *
      * Returns an invited friend by invitation token
      *
-     * @param  string $storeId The store Id (required)
-     * @param  string $memberId The member Id (required)
-     * @param  string $invitationToken The invitation token (optional)
+     * @param  string $store_id The store Id (required)
+     * @param  string $member_id The member Id (required)
+     * @param  string $invitation_token The invitation token (optional)
      *
      * @throws {{invokerPackage}}\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \DillerAPI\Model\InvitedFriendResponse[]
+     * @return \Swagger\Client\Model\InvitedFriendResponse[]
      */
-    public function getReferrals($storeId, $memberId, $invitationToken = null)
+    public function getReferrals($store_id, $member_id, $invitation_token = null)
     {
-        list($response) = $this->getReferralsWithHttpInfo($storeId, $memberId, $invitationToken);
+        list($response) = $this->getReferralsWithHttpInfo($store_id, $member_id, $invitation_token);
         return $response;
     }
 
@@ -400,18 +400,18 @@ class InvitationsApi
      *
      * Returns an invited friend by invitation token
      *
-     * @param  string $storeId The store Id (required)
-     * @param  string $memberId The member Id (required)
-     * @param  string $invitationToken The invitation token (optional)
+     * @param  string $store_id The store Id (required)
+     * @param  string $member_id The member Id (required)
+     * @param  string $invitation_token The invitation token (optional)
      *
      * @throws {{invokerPackage}}\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \DillerAPI\Model\InvitedFriendResponse[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InvitedFriendResponse[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getReferralsWithHttpInfo($storeId, $memberId, $invitationToken = null)
+    public function getReferralsWithHttpInfo($store_id, $member_id, $invitation_token = null)
     {
-        $returnType = '\DillerAPI\Model\InvitedFriendResponse[]';
-        $request = $this->getReferralsRequest($storeId, $memberId, $invitationToken);
+        $returnType = '\Swagger\Client\Model\InvitedFriendResponse[]';
+        $request = $this->getReferralsRequest($store_id, $member_id, $invitation_token);
 
         try {
             $options = $this->createHttpClientOption();
@@ -462,7 +462,7 @@ class InvitationsApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\DillerAPI\Model\ApiError',
+                        '\Swagger\Client\Model\ApiError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -470,7 +470,7 @@ class InvitationsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\DillerAPI\Model\InvitedFriendResponse[]',
+                        '\Swagger\Client\Model\InvitedFriendResponse[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -485,16 +485,16 @@ class InvitationsApi
      *
      * Returns an invited friend by invitation token
      *
-     * @param  string $storeId The store Id (required)
-     * @param  string $memberId The member Id (required)
-     * @param  string $invitationToken The invitation token (optional)
+     * @param  string $store_id The store Id (required)
+     * @param  string $member_id The member Id (required)
+     * @param  string $invitation_token The invitation token (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getReferralsAsync($storeId, $memberId, $invitationToken = null)
+    public function getReferralsAsync($store_id, $member_id, $invitation_token = null)
     {
-        return $this->getReferralsAsyncWithHttpInfo($storeId, $memberId, $invitationToken)
+        return $this->getReferralsAsyncWithHttpInfo($store_id, $member_id, $invitation_token)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -507,17 +507,17 @@ class InvitationsApi
      *
      * Returns an invited friend by invitation token
      *
-     * @param  string $storeId The store Id (required)
-     * @param  string $memberId The member Id (required)
-     * @param  string $invitationToken The invitation token (optional)
+     * @param  string $store_id The store Id (required)
+     * @param  string $member_id The member Id (required)
+     * @param  string $invitation_token The invitation token (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getReferralsAsyncWithHttpInfo($storeId, $memberId, $invitationToken = null)
+    public function getReferralsAsyncWithHttpInfo($store_id, $member_id, $invitation_token = null)
     {
-        $returnType = '\DillerAPI\Model\InvitedFriendResponse[]';
-        $request = $this->getReferralsRequest($storeId, $memberId, $invitationToken);
+        $returnType = '\Swagger\Client\Model\InvitedFriendResponse[]';
+        $request = $this->getReferralsRequest($store_id, $member_id, $invitation_token);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -559,25 +559,25 @@ class InvitationsApi
     /**
      * Create request for operation 'getReferrals'
      *
-     * @param  string $storeId The store Id (required)
-     * @param  string $memberId The member Id (required)
-     * @param  string $invitationToken The invitation token (optional)
+     * @param  string $store_id The store Id (required)
+     * @param  string $member_id The member Id (required)
+     * @param  string $invitation_token The invitation token (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getReferralsRequest($storeId, $memberId, $invitationToken = null)
+    protected function getReferralsRequest($store_id, $member_id, $invitation_token = null)
     {
-        // verify the required parameter 'storeId' is set
-        if ($storeId === null || (is_array($storeId) && count($storeId) === 0)) {
+        // verify the required parameter 'store_id' is set
+        if ($store_id === null || (is_array($store_id) && count($store_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $storeId when calling getReferrals'
+                'Missing the required parameter $store_id when calling getReferrals'
             );
         }
-        // verify the required parameter 'memberId' is set
-        if ($memberId === null || (is_array($memberId) && count($memberId) === 0)) {
+        // verify the required parameter 'member_id' is set
+        if ($member_id === null || (is_array($member_id) && count($member_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $memberId when calling getReferrals'
+                'Missing the required parameter $member_id when calling getReferrals'
             );
         }
 
@@ -589,23 +589,23 @@ class InvitationsApi
         $multipart = false;
 
         // query params
-        if ($invitationToken !== null) {
-            $queryParams['invitationToken'] = ObjectSerializer::toQueryValue($invitationToken);
+        if ($invitation_token !== null) {
+            $queryParams['invitationToken'] = ObjectSerializer::toQueryValue($invitation_token);
         }
 
         // path params
-        if ($storeId !== null) {
+        if ($store_id !== null) {
             $resourcePath = str_replace(
                 '{' . 'storeId' . '}',
-                ObjectSerializer::toPathValue($storeId),
+                ObjectSerializer::toPathValue($store_id),
                 $resourcePath
             );
         }
         // path params
-        if ($memberId !== null) {
+        if ($member_id !== null) {
             $resourcePath = str_replace(
                 '{' . 'memberId' . '}',
-                ObjectSerializer::toPathValue($memberId),
+                ObjectSerializer::toPathValue($member_id),
                 $resourcePath
             );
         }

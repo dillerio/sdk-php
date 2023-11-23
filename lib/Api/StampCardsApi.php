@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  DillerAPI
+ * @package  Swagger\Client
  * @author   DILLER AS
  * @link     https://diller.io
  */
@@ -15,7 +15,7 @@
  * Do not edit the class manually.
  */
 
-namespace DillerAPI\Api;
+namespace Swagger\Client\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -23,16 +23,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use DillerAPI\ApiException;
-use DillerAPI\Configuration;
-use DillerAPI\HeaderSelector;
-use DillerAPI\ObjectSerializer;
+use Swagger\Client\ApiException;
+use Swagger\Client\Configuration;
+use Swagger\Client\HeaderSelector;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * StampCardsApi Class Doc Comment
  *
  * @category Class
- * @package  DillerAPI
+ * @package  Swagger\Client
  * @author   DILLER AS
  * @link     https://diller.io
  */
@@ -81,18 +81,18 @@ class StampCardsApi
      *
      * The endpoint /cancel-reservation should be called when a transaction is completed or cancelled to  release the stamp reservation and avoid making it unavailable for other transactions.
      *
-     * @param  string $storeId The store Id (required)
-     * @param  string $memberId The member Id (required)
-     * @param  int $stampId The stamp Id to cancel the reservation (required)
-     * @param  \DillerAPI\Model\CouponCancelReservationRequest $body body (optional)
+     * @param  string $store_id The store Id (required)
+     * @param  string $member_id The member Id (required)
+     * @param  int $stamp_id The stamp Id to cancel the reservation (required)
+     * @param  \Swagger\Client\Model\CouponCancelReservationRequest $body body (optional)
      *
      * @throws {{invokerPackage}}\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \DillerAPI\Model\ActionResponse
+     * @return \Swagger\Client\Model\ActionResponse
      */
-    public function cancelStampReservation($storeId, $memberId, $stampId, $body = null)
+    public function cancelStampReservation($store_id, $member_id, $stamp_id, $body = null)
     {
-        list($response) = $this->cancelStampReservationWithHttpInfo($storeId, $memberId, $stampId, $body);
+        list($response) = $this->cancelStampReservationWithHttpInfo($store_id, $member_id, $stamp_id, $body);
         return $response;
     }
 
@@ -101,19 +101,19 @@ class StampCardsApi
      *
      * The endpoint /cancel-reservation should be called when a transaction is completed or cancelled to  release the stamp reservation and avoid making it unavailable for other transactions.
      *
-     * @param  string $storeId The store Id (required)
-     * @param  string $memberId The member Id (required)
-     * @param  int $stampId The stamp Id to cancel the reservation (required)
-     * @param  \DillerAPI\Model\CouponCancelReservationRequest $body (optional)
+     * @param  string $store_id The store Id (required)
+     * @param  string $member_id The member Id (required)
+     * @param  int $stamp_id The stamp Id to cancel the reservation (required)
+     * @param  \Swagger\Client\Model\CouponCancelReservationRequest $body (optional)
      *
      * @throws {{invokerPackage}}\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \DillerAPI\Model\ActionResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\ActionResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cancelStampReservationWithHttpInfo($storeId, $memberId, $stampId, $body = null)
+    public function cancelStampReservationWithHttpInfo($store_id, $member_id, $stamp_id, $body = null)
     {
-        $returnType = '\DillerAPI\Model\ActionResponse';
-        $request = $this->cancelStampReservationRequest($storeId, $memberId, $stampId, $body);
+        $returnType = '\Swagger\Client\Model\ActionResponse';
+        $request = $this->cancelStampReservationRequest($store_id, $member_id, $stamp_id, $body);
 
         try {
             $options = $this->createHttpClientOption();
@@ -164,7 +164,7 @@ class StampCardsApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\DillerAPI\Model\ApiError',
+                        '\Swagger\Client\Model\ApiError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -172,7 +172,7 @@ class StampCardsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\DillerAPI\Model\ActionResponse',
+                        '\Swagger\Client\Model\ActionResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -187,17 +187,17 @@ class StampCardsApi
      *
      * The endpoint /cancel-reservation should be called when a transaction is completed or cancelled to  release the stamp reservation and avoid making it unavailable for other transactions.
      *
-     * @param  string $storeId The store Id (required)
-     * @param  string $memberId The member Id (required)
-     * @param  int $stampId The stamp Id to cancel the reservation (required)
-     * @param  \DillerAPI\Model\CouponCancelReservationRequest $body (optional)
+     * @param  string $store_id The store Id (required)
+     * @param  string $member_id The member Id (required)
+     * @param  int $stamp_id The stamp Id to cancel the reservation (required)
+     * @param  \Swagger\Client\Model\CouponCancelReservationRequest $body (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cancelStampReservationAsync($storeId, $memberId, $stampId, $body = null)
+    public function cancelStampReservationAsync($store_id, $member_id, $stamp_id, $body = null)
     {
-        return $this->cancelStampReservationAsyncWithHttpInfo($storeId, $memberId, $stampId, $body)
+        return $this->cancelStampReservationAsyncWithHttpInfo($store_id, $member_id, $stamp_id, $body)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -210,18 +210,18 @@ class StampCardsApi
      *
      * The endpoint /cancel-reservation should be called when a transaction is completed or cancelled to  release the stamp reservation and avoid making it unavailable for other transactions.
      *
-     * @param  string $storeId The store Id (required)
-     * @param  string $memberId The member Id (required)
-     * @param  int $stampId The stamp Id to cancel the reservation (required)
-     * @param  \DillerAPI\Model\CouponCancelReservationRequest $body (optional)
+     * @param  string $store_id The store Id (required)
+     * @param  string $member_id The member Id (required)
+     * @param  int $stamp_id The stamp Id to cancel the reservation (required)
+     * @param  \Swagger\Client\Model\CouponCancelReservationRequest $body (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cancelStampReservationAsyncWithHttpInfo($storeId, $memberId, $stampId, $body = null)
+    public function cancelStampReservationAsyncWithHttpInfo($store_id, $member_id, $stamp_id, $body = null)
     {
-        $returnType = '\DillerAPI\Model\ActionResponse';
-        $request = $this->cancelStampReservationRequest($storeId, $memberId, $stampId, $body);
+        $returnType = '\Swagger\Client\Model\ActionResponse';
+        $request = $this->cancelStampReservationRequest($store_id, $member_id, $stamp_id, $body);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -263,32 +263,32 @@ class StampCardsApi
     /**
      * Create request for operation 'cancelStampReservation'
      *
-     * @param  string $storeId The store Id (required)
-     * @param  string $memberId The member Id (required)
-     * @param  int $stampId The stamp Id to cancel the reservation (required)
-     * @param  \DillerAPI\Model\CouponCancelReservationRequest $body (optional)
+     * @param  string $store_id The store Id (required)
+     * @param  string $member_id The member Id (required)
+     * @param  int $stamp_id The stamp Id to cancel the reservation (required)
+     * @param  \Swagger\Client\Model\CouponCancelReservationRequest $body (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cancelStampReservationRequest($storeId, $memberId, $stampId, $body = null)
+    protected function cancelStampReservationRequest($store_id, $member_id, $stamp_id, $body = null)
     {
-        // verify the required parameter 'storeId' is set
-        if ($storeId === null || (is_array($storeId) && count($storeId) === 0)) {
+        // verify the required parameter 'store_id' is set
+        if ($store_id === null || (is_array($store_id) && count($store_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $storeId when calling cancelStampReservation'
+                'Missing the required parameter $store_id when calling cancelStampReservation'
             );
         }
-        // verify the required parameter 'memberId' is set
-        if ($memberId === null || (is_array($memberId) && count($memberId) === 0)) {
+        // verify the required parameter 'member_id' is set
+        if ($member_id === null || (is_array($member_id) && count($member_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $memberId when calling cancelStampReservation'
+                'Missing the required parameter $member_id when calling cancelStampReservation'
             );
         }
-        // verify the required parameter 'stampId' is set
-        if ($stampId === null || (is_array($stampId) && count($stampId) === 0)) {
+        // verify the required parameter 'stamp_id' is set
+        if ($stamp_id === null || (is_array($stamp_id) && count($stamp_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $stampId when calling cancelStampReservation'
+                'Missing the required parameter $stamp_id when calling cancelStampReservation'
             );
         }
 
@@ -301,26 +301,26 @@ class StampCardsApi
 
 
         // path params
-        if ($storeId !== null) {
+        if ($store_id !== null) {
             $resourcePath = str_replace(
                 '{' . 'storeId' . '}',
-                ObjectSerializer::toPathValue($storeId),
+                ObjectSerializer::toPathValue($store_id),
                 $resourcePath
             );
         }
         // path params
-        if ($memberId !== null) {
+        if ($member_id !== null) {
             $resourcePath = str_replace(
                 '{' . 'memberId' . '}',
-                ObjectSerializer::toPathValue($memberId),
+                ObjectSerializer::toPathValue($member_id),
                 $resourcePath
             );
         }
         // path params
-        if ($stampId !== null) {
+        if ($stamp_id !== null) {
             $resourcePath = str_replace(
                 '{' . 'stampId' . '}',
-                ObjectSerializer::toPathValue($stampId),
+                ObjectSerializer::toPathValue($stamp_id),
                 $resourcePath
             );
         }
@@ -408,16 +408,16 @@ class StampCardsApi
      *
      * Get member active stamp cards
      *
-     * @param  string $storeId The store id (required)
-     * @param  string $memberId memberId (required)
+     * @param  string $store_id The store id (required)
+     * @param  string $member_id member_id (required)
      *
      * @throws {{invokerPackage}}\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \DillerAPI\Model\MemberStampCard[]
+     * @return \Swagger\Client\Model\MemberStampCard[]
      */
-    public function getMemberStampCards($storeId, $memberId)
+    public function getMemberStampCards($store_id, $member_id)
     {
-        list($response) = $this->getMemberStampCardsWithHttpInfo($storeId, $memberId);
+        list($response) = $this->getMemberStampCardsWithHttpInfo($store_id, $member_id);
         return $response;
     }
 
@@ -426,17 +426,17 @@ class StampCardsApi
      *
      * Get member active stamp cards
      *
-     * @param  string $storeId The store id (required)
-     * @param  string $memberId (required)
+     * @param  string $store_id The store id (required)
+     * @param  string $member_id (required)
      *
      * @throws {{invokerPackage}}\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \DillerAPI\Model\MemberStampCard[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\MemberStampCard[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getMemberStampCardsWithHttpInfo($storeId, $memberId)
+    public function getMemberStampCardsWithHttpInfo($store_id, $member_id)
     {
-        $returnType = '\DillerAPI\Model\MemberStampCard[]';
-        $request = $this->getMemberStampCardsRequest($storeId, $memberId);
+        $returnType = '\Swagger\Client\Model\MemberStampCard[]';
+        $request = $this->getMemberStampCardsRequest($store_id, $member_id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -487,7 +487,7 @@ class StampCardsApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\DillerAPI\Model\ApiError',
+                        '\Swagger\Client\Model\ApiError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -495,7 +495,7 @@ class StampCardsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\DillerAPI\Model\MemberStampCard[]',
+                        '\Swagger\Client\Model\MemberStampCard[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -510,15 +510,15 @@ class StampCardsApi
      *
      * Get member active stamp cards
      *
-     * @param  string $storeId The store id (required)
-     * @param  string $memberId (required)
+     * @param  string $store_id The store id (required)
+     * @param  string $member_id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getMemberStampCardsAsync($storeId, $memberId)
+    public function getMemberStampCardsAsync($store_id, $member_id)
     {
-        return $this->getMemberStampCardsAsyncWithHttpInfo($storeId, $memberId)
+        return $this->getMemberStampCardsAsyncWithHttpInfo($store_id, $member_id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -531,16 +531,16 @@ class StampCardsApi
      *
      * Get member active stamp cards
      *
-     * @param  string $storeId The store id (required)
-     * @param  string $memberId (required)
+     * @param  string $store_id The store id (required)
+     * @param  string $member_id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getMemberStampCardsAsyncWithHttpInfo($storeId, $memberId)
+    public function getMemberStampCardsAsyncWithHttpInfo($store_id, $member_id)
     {
-        $returnType = '\DillerAPI\Model\MemberStampCard[]';
-        $request = $this->getMemberStampCardsRequest($storeId, $memberId);
+        $returnType = '\Swagger\Client\Model\MemberStampCard[]';
+        $request = $this->getMemberStampCardsRequest($store_id, $member_id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -582,24 +582,24 @@ class StampCardsApi
     /**
      * Create request for operation 'getMemberStampCards'
      *
-     * @param  string $storeId The store id (required)
-     * @param  string $memberId (required)
+     * @param  string $store_id The store id (required)
+     * @param  string $member_id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getMemberStampCardsRequest($storeId, $memberId)
+    protected function getMemberStampCardsRequest($store_id, $member_id)
     {
-        // verify the required parameter 'storeId' is set
-        if ($storeId === null || (is_array($storeId) && count($storeId) === 0)) {
+        // verify the required parameter 'store_id' is set
+        if ($store_id === null || (is_array($store_id) && count($store_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $storeId when calling getMemberStampCards'
+                'Missing the required parameter $store_id when calling getMemberStampCards'
             );
         }
-        // verify the required parameter 'memberId' is set
-        if ($memberId === null || (is_array($memberId) && count($memberId) === 0)) {
+        // verify the required parameter 'member_id' is set
+        if ($member_id === null || (is_array($member_id) && count($member_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $memberId when calling getMemberStampCards'
+                'Missing the required parameter $member_id when calling getMemberStampCards'
             );
         }
 
@@ -612,18 +612,18 @@ class StampCardsApi
 
 
         // path params
-        if ($storeId !== null) {
+        if ($store_id !== null) {
             $resourcePath = str_replace(
                 '{' . 'storeId' . '}',
-                ObjectSerializer::toPathValue($storeId),
+                ObjectSerializer::toPathValue($store_id),
                 $resourcePath
             );
         }
         // path params
-        if ($memberId !== null) {
+        if ($member_id !== null) {
             $resourcePath = str_replace(
                 '{' . 'memberId' . '}',
-                ObjectSerializer::toPathValue($memberId),
+                ObjectSerializer::toPathValue($member_id),
                 $resourcePath
             );
         }
@@ -708,16 +708,16 @@ class StampCardsApi
      *
      * Retrieves store stamp cards. By default it only retrieves active stamp cards.
      *
-     * @param  string $storeId The store id (required)
-     * @param  bool $alsoInactive When true, it also return stamp cards that are not currently valid. (optional)
+     * @param  string $store_id The store id (required)
+     * @param  bool $also_inactive When true, it also return stamp cards that are not currently valid. (optional)
      *
      * @throws {{invokerPackage}}\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \DillerAPI\Model\StoreStampCardResponse[]
+     * @return \Swagger\Client\Model\StoreStampCardResponse[]
      */
-    public function getStoreStamps($storeId, $alsoInactive = null)
+    public function getStoreStamps($store_id, $also_inactive = null)
     {
-        list($response) = $this->getStoreStampsWithHttpInfo($storeId, $alsoInactive);
+        list($response) = $this->getStoreStampsWithHttpInfo($store_id, $also_inactive);
         return $response;
     }
 
@@ -726,17 +726,17 @@ class StampCardsApi
      *
      * Retrieves store stamp cards. By default it only retrieves active stamp cards.
      *
-     * @param  string $storeId The store id (required)
-     * @param  bool $alsoInactive When true, it also return stamp cards that are not currently valid. (optional)
+     * @param  string $store_id The store id (required)
+     * @param  bool $also_inactive When true, it also return stamp cards that are not currently valid. (optional)
      *
      * @throws {{invokerPackage}}\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \DillerAPI\Model\StoreStampCardResponse[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\StoreStampCardResponse[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getStoreStampsWithHttpInfo($storeId, $alsoInactive = null)
+    public function getStoreStampsWithHttpInfo($store_id, $also_inactive = null)
     {
-        $returnType = '\DillerAPI\Model\StoreStampCardResponse[]';
-        $request = $this->getStoreStampsRequest($storeId, $alsoInactive);
+        $returnType = '\Swagger\Client\Model\StoreStampCardResponse[]';
+        $request = $this->getStoreStampsRequest($store_id, $also_inactive);
 
         try {
             $options = $this->createHttpClientOption();
@@ -787,7 +787,7 @@ class StampCardsApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\DillerAPI\Model\ApiError',
+                        '\Swagger\Client\Model\ApiError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -795,7 +795,7 @@ class StampCardsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\DillerAPI\Model\StoreStampCardResponse[]',
+                        '\Swagger\Client\Model\StoreStampCardResponse[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -810,15 +810,15 @@ class StampCardsApi
      *
      * Retrieves store stamp cards. By default it only retrieves active stamp cards.
      *
-     * @param  string $storeId The store id (required)
-     * @param  bool $alsoInactive When true, it also return stamp cards that are not currently valid. (optional)
+     * @param  string $store_id The store id (required)
+     * @param  bool $also_inactive When true, it also return stamp cards that are not currently valid. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStoreStampsAsync($storeId, $alsoInactive = null)
+    public function getStoreStampsAsync($store_id, $also_inactive = null)
     {
-        return $this->getStoreStampsAsyncWithHttpInfo($storeId, $alsoInactive)
+        return $this->getStoreStampsAsyncWithHttpInfo($store_id, $also_inactive)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -831,16 +831,16 @@ class StampCardsApi
      *
      * Retrieves store stamp cards. By default it only retrieves active stamp cards.
      *
-     * @param  string $storeId The store id (required)
-     * @param  bool $alsoInactive When true, it also return stamp cards that are not currently valid. (optional)
+     * @param  string $store_id The store id (required)
+     * @param  bool $also_inactive When true, it also return stamp cards that are not currently valid. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStoreStampsAsyncWithHttpInfo($storeId, $alsoInactive = null)
+    public function getStoreStampsAsyncWithHttpInfo($store_id, $also_inactive = null)
     {
-        $returnType = '\DillerAPI\Model\StoreStampCardResponse[]';
-        $request = $this->getStoreStampsRequest($storeId, $alsoInactive);
+        $returnType = '\Swagger\Client\Model\StoreStampCardResponse[]';
+        $request = $this->getStoreStampsRequest($store_id, $also_inactive);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -882,18 +882,18 @@ class StampCardsApi
     /**
      * Create request for operation 'getStoreStamps'
      *
-     * @param  string $storeId The store id (required)
-     * @param  bool $alsoInactive When true, it also return stamp cards that are not currently valid. (optional)
+     * @param  string $store_id The store id (required)
+     * @param  bool $also_inactive When true, it also return stamp cards that are not currently valid. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getStoreStampsRequest($storeId, $alsoInactive = null)
+    protected function getStoreStampsRequest($store_id, $also_inactive = null)
     {
-        // verify the required parameter 'storeId' is set
-        if ($storeId === null || (is_array($storeId) && count($storeId) === 0)) {
+        // verify the required parameter 'store_id' is set
+        if ($store_id === null || (is_array($store_id) && count($store_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $storeId when calling getStoreStamps'
+                'Missing the required parameter $store_id when calling getStoreStamps'
             );
         }
 
@@ -905,15 +905,15 @@ class StampCardsApi
         $multipart = false;
 
         // query params
-        if ($alsoInactive !== null) {
-            $queryParams['alsoInactive'] = ObjectSerializer::toQueryValue($alsoInactive);
+        if ($also_inactive !== null) {
+            $queryParams['alsoInactive'] = ObjectSerializer::toQueryValue($also_inactive);
         }
 
         // path params
-        if ($storeId !== null) {
+        if ($store_id !== null) {
             $resourcePath = str_replace(
                 '{' . 'storeId' . '}',
-                ObjectSerializer::toPathValue($storeId),
+                ObjectSerializer::toPathValue($store_id),
                 $resourcePath
             );
         }
@@ -998,18 +998,18 @@ class StampCardsApi
      *
      * This endpoint enables users to reserve a stamp for their pending orders,  thereby ensuring that the stamp cannot be used for any other transactions.
      *
-     * @param  string $storeId The storeId (required)
-     * @param  string $memberId The memberId (required)
-     * @param  int $stampId The stam id (required)
-     * @param  \DillerAPI\Model\StampReservationRequest $body Details of the coupon reservation request (optional)
+     * @param  string $store_id The storeId (required)
+     * @param  string $member_id The memberId (required)
+     * @param  int $stamp_id The stam id (required)
+     * @param  \Swagger\Client\Model\StampReservationRequest $body Details of the coupon reservation request (optional)
      *
      * @throws {{invokerPackage}}\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \DillerAPI\Model\ActionResponse
+     * @return \Swagger\Client\Model\ActionResponse
      */
-    public function reserveStamp($storeId, $memberId, $stampId, $body = null)
+    public function reserveStamp($store_id, $member_id, $stamp_id, $body = null)
     {
-        list($response) = $this->reserveStampWithHttpInfo($storeId, $memberId, $stampId, $body);
+        list($response) = $this->reserveStampWithHttpInfo($store_id, $member_id, $stamp_id, $body);
         return $response;
     }
 
@@ -1018,19 +1018,19 @@ class StampCardsApi
      *
      * This endpoint enables users to reserve a stamp for their pending orders,  thereby ensuring that the stamp cannot be used for any other transactions.
      *
-     * @param  string $storeId The storeId (required)
-     * @param  string $memberId The memberId (required)
-     * @param  int $stampId The stam id (required)
-     * @param  \DillerAPI\Model\StampReservationRequest $body Details of the coupon reservation request (optional)
+     * @param  string $store_id The storeId (required)
+     * @param  string $member_id The memberId (required)
+     * @param  int $stamp_id The stam id (required)
+     * @param  \Swagger\Client\Model\StampReservationRequest $body Details of the coupon reservation request (optional)
      *
      * @throws {{invokerPackage}}\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \DillerAPI\Model\ActionResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\ActionResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function reserveStampWithHttpInfo($storeId, $memberId, $stampId, $body = null)
+    public function reserveStampWithHttpInfo($store_id, $member_id, $stamp_id, $body = null)
     {
-        $returnType = '\DillerAPI\Model\ActionResponse';
-        $request = $this->reserveStampRequest($storeId, $memberId, $stampId, $body);
+        $returnType = '\Swagger\Client\Model\ActionResponse';
+        $request = $this->reserveStampRequest($store_id, $member_id, $stamp_id, $body);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1081,7 +1081,7 @@ class StampCardsApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\DillerAPI\Model\ApiError',
+                        '\Swagger\Client\Model\ApiError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1089,7 +1089,7 @@ class StampCardsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\DillerAPI\Model\ActionResponse',
+                        '\Swagger\Client\Model\ActionResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1104,17 +1104,17 @@ class StampCardsApi
      *
      * This endpoint enables users to reserve a stamp for their pending orders,  thereby ensuring that the stamp cannot be used for any other transactions.
      *
-     * @param  string $storeId The storeId (required)
-     * @param  string $memberId The memberId (required)
-     * @param  int $stampId The stam id (required)
-     * @param  \DillerAPI\Model\StampReservationRequest $body Details of the coupon reservation request (optional)
+     * @param  string $store_id The storeId (required)
+     * @param  string $member_id The memberId (required)
+     * @param  int $stamp_id The stam id (required)
+     * @param  \Swagger\Client\Model\StampReservationRequest $body Details of the coupon reservation request (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function reserveStampAsync($storeId, $memberId, $stampId, $body = null)
+    public function reserveStampAsync($store_id, $member_id, $stamp_id, $body = null)
     {
-        return $this->reserveStampAsyncWithHttpInfo($storeId, $memberId, $stampId, $body)
+        return $this->reserveStampAsyncWithHttpInfo($store_id, $member_id, $stamp_id, $body)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1127,18 +1127,18 @@ class StampCardsApi
      *
      * This endpoint enables users to reserve a stamp for their pending orders,  thereby ensuring that the stamp cannot be used for any other transactions.
      *
-     * @param  string $storeId The storeId (required)
-     * @param  string $memberId The memberId (required)
-     * @param  int $stampId The stam id (required)
-     * @param  \DillerAPI\Model\StampReservationRequest $body Details of the coupon reservation request (optional)
+     * @param  string $store_id The storeId (required)
+     * @param  string $member_id The memberId (required)
+     * @param  int $stamp_id The stam id (required)
+     * @param  \Swagger\Client\Model\StampReservationRequest $body Details of the coupon reservation request (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function reserveStampAsyncWithHttpInfo($storeId, $memberId, $stampId, $body = null)
+    public function reserveStampAsyncWithHttpInfo($store_id, $member_id, $stamp_id, $body = null)
     {
-        $returnType = '\DillerAPI\Model\ActionResponse';
-        $request = $this->reserveStampRequest($storeId, $memberId, $stampId, $body);
+        $returnType = '\Swagger\Client\Model\ActionResponse';
+        $request = $this->reserveStampRequest($store_id, $member_id, $stamp_id, $body);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1180,32 +1180,32 @@ class StampCardsApi
     /**
      * Create request for operation 'reserveStamp'
      *
-     * @param  string $storeId The storeId (required)
-     * @param  string $memberId The memberId (required)
-     * @param  int $stampId The stam id (required)
-     * @param  \DillerAPI\Model\StampReservationRequest $body Details of the coupon reservation request (optional)
+     * @param  string $store_id The storeId (required)
+     * @param  string $member_id The memberId (required)
+     * @param  int $stamp_id The stam id (required)
+     * @param  \Swagger\Client\Model\StampReservationRequest $body Details of the coupon reservation request (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function reserveStampRequest($storeId, $memberId, $stampId, $body = null)
+    protected function reserveStampRequest($store_id, $member_id, $stamp_id, $body = null)
     {
-        // verify the required parameter 'storeId' is set
-        if ($storeId === null || (is_array($storeId) && count($storeId) === 0)) {
+        // verify the required parameter 'store_id' is set
+        if ($store_id === null || (is_array($store_id) && count($store_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $storeId when calling reserveStamp'
+                'Missing the required parameter $store_id when calling reserveStamp'
             );
         }
-        // verify the required parameter 'memberId' is set
-        if ($memberId === null || (is_array($memberId) && count($memberId) === 0)) {
+        // verify the required parameter 'member_id' is set
+        if ($member_id === null || (is_array($member_id) && count($member_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $memberId when calling reserveStamp'
+                'Missing the required parameter $member_id when calling reserveStamp'
             );
         }
-        // verify the required parameter 'stampId' is set
-        if ($stampId === null || (is_array($stampId) && count($stampId) === 0)) {
+        // verify the required parameter 'stamp_id' is set
+        if ($stamp_id === null || (is_array($stamp_id) && count($stamp_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $stampId when calling reserveStamp'
+                'Missing the required parameter $stamp_id when calling reserveStamp'
             );
         }
 
@@ -1218,26 +1218,26 @@ class StampCardsApi
 
 
         // path params
-        if ($storeId !== null) {
+        if ($store_id !== null) {
             $resourcePath = str_replace(
                 '{' . 'storeId' . '}',
-                ObjectSerializer::toPathValue($storeId),
+                ObjectSerializer::toPathValue($store_id),
                 $resourcePath
             );
         }
         // path params
-        if ($memberId !== null) {
+        if ($member_id !== null) {
             $resourcePath = str_replace(
                 '{' . 'memberId' . '}',
-                ObjectSerializer::toPathValue($memberId),
+                ObjectSerializer::toPathValue($member_id),
                 $resourcePath
             );
         }
         // path params
-        if ($stampId !== null) {
+        if ($stamp_id !== null) {
             $resourcePath = str_replace(
                 '{' . 'stampId' . '}',
-                ObjectSerializer::toPathValue($stampId),
+                ObjectSerializer::toPathValue($stamp_id),
                 $resourcePath
             );
         }

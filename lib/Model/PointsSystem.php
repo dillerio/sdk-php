@@ -16,7 +16,7 @@
  * Do not edit the class manually.
  */
 
-namespace DillerAPI\Model;
+namespace Swagger\Client\Model;
 
 use \ArrayAccess;
 use \DillerAPI\ObjectSerializer;
@@ -25,7 +25,7 @@ use \DillerAPI\ObjectSerializer;
  * PointsSystem Class Doc Comment
  *
  * @category Class
- * @package  DillerAPI
+ * @package  Swagger\Client
  * @author   DILLER AS
  * @link     https://diller.io
  */
@@ -47,9 +47,9 @@ class PointsSystem implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'enabled' => 'bool',
-'friendReferralPoints' => 'int',
-'followerSignupPoints' => 'int',
-'currencyPointsRatio' => 'float'    ];
+'friend_referral_points' => 'int',
+'follower_signup_points' => 'int',
+'currency_points_ratio' => 'float'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -58,9 +58,9 @@ class PointsSystem implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'enabled' => null,
-'friendReferralPoints' => 'int32',
-'followerSignupPoints' => 'int32',
-'currencyPointsRatio' => 'float'    ];
+'friend_referral_points' => 'int32',
+'follower_signup_points' => 'int32',
+'currency_points_ratio' => 'float'    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -90,9 +90,9 @@ class PointsSystem implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'enabled' => 'enabled',
-'friendReferralPoints' => 'friend_referral_points',
-'followerSignupPoints' => 'follower_signup_points',
-'currencyPointsRatio' => 'currency_points_ratio'    ];
+'friend_referral_points' => 'friend_referral_points',
+'follower_signup_points' => 'follower_signup_points',
+'currency_points_ratio' => 'currency_points_ratio'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -101,9 +101,9 @@ class PointsSystem implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'enabled' => 'setEnabled',
-'friendReferralPoints' => 'setFriendReferralPoints',
-'followerSignupPoints' => 'setFollowerSignupPoints',
-'currencyPointsRatio' => 'setCurrencyPointsRatio'    ];
+'friend_referral_points' => 'setFriendReferralPoints',
+'follower_signup_points' => 'setFollowerSignupPoints',
+'currency_points_ratio' => 'setCurrencyPointsRatio'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -112,9 +112,9 @@ class PointsSystem implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'enabled' => 'getEnabled',
-'friendReferralPoints' => 'getFriendReferralPoints',
-'followerSignupPoints' => 'getFollowerSignupPoints',
-'currencyPointsRatio' => 'getCurrencyPointsRatio'    ];
+'friend_referral_points' => 'getFriendReferralPoints',
+'follower_signup_points' => 'getFollowerSignupPoints',
+'currency_points_ratio' => 'getCurrencyPointsRatio'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -175,9 +175,9 @@ class PointsSystem implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['enabled'] = isset($data['enabled']) ? $data['enabled'] : null;
-        $this->container['friendReferralPoints'] = isset($data['friendReferralPoints']) ? $data['friendReferralPoints'] : null;
-        $this->container['followerSignupPoints'] = isset($data['followerSignupPoints']) ? $data['followerSignupPoints'] : null;
-        $this->container['currencyPointsRatio'] = isset($data['currencyPointsRatio']) ? $data['currencyPointsRatio'] : null;
+        $this->container['friend_referral_points'] = isset($data['friend_referral_points']) ? $data['friend_referral_points'] : null;
+        $this->container['follower_signup_points'] = isset($data['follower_signup_points']) ? $data['follower_signup_points'] : null;
+        $this->container['currency_points_ratio'] = isset($data['currency_points_ratio']) ? $data['currency_points_ratio'] : null;
     }
 
     /**
@@ -229,73 +229,73 @@ class PointsSystem implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets friendReferralPoints
+     * Gets friend_referral_points
      *
      * @return int
      */
     public function getFriendReferralPoints()
     {
-        return $this->container['friendReferralPoints'];
+        return $this->container['friend_referral_points'];
     }
 
     /**
-     * Sets friendReferralPoints
+     * Sets friend_referral_points
      *
-     * @param int $friendReferralPoints friendReferralPoints
+     * @param int $friend_referral_points friend_referral_points
      *
      * @return $this
      */
-    public function setFriendReferralPoints($friendReferralPoints)
+    public function setFriendReferralPoints($friend_referral_points)
     {
-        $this->container['friendReferralPoints'] = $friendReferralPoints;
+        $this->container['friend_referral_points'] = $friend_referral_points;
 
         return $this;
     }
 
     /**
-     * Gets followerSignupPoints
+     * Gets follower_signup_points
      *
      * @return int
      */
     public function getFollowerSignupPoints()
     {
-        return $this->container['followerSignupPoints'];
+        return $this->container['follower_signup_points'];
     }
 
     /**
-     * Sets followerSignupPoints
+     * Sets follower_signup_points
      *
-     * @param int $followerSignupPoints followerSignupPoints
+     * @param int $follower_signup_points follower_signup_points
      *
      * @return $this
      */
-    public function setFollowerSignupPoints($followerSignupPoints)
+    public function setFollowerSignupPoints($follower_signup_points)
     {
-        $this->container['followerSignupPoints'] = $followerSignupPoints;
+        $this->container['follower_signup_points'] = $follower_signup_points;
 
         return $this;
     }
 
     /**
-     * Gets currencyPointsRatio
+     * Gets currency_points_ratio
      *
      * @return float
      */
     public function getCurrencyPointsRatio()
     {
-        return $this->container['currencyPointsRatio'];
+        return $this->container['currency_points_ratio'];
     }
 
     /**
-     * Sets currencyPointsRatio
+     * Sets currency_points_ratio
      *
-     * @param float $currencyPointsRatio currencyPointsRatio
+     * @param float $currency_points_ratio currency_points_ratio
      *
      * @return $this
      */
-    public function setCurrencyPointsRatio($currencyPointsRatio)
+    public function setCurrencyPointsRatio($currency_points_ratio)
     {
-        $this->container['currencyPointsRatio'] = $currencyPointsRatio;
+        $this->container['currency_points_ratio'] = $currency_points_ratio;
 
         return $this;
     }

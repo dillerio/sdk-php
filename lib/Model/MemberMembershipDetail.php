@@ -16,7 +16,7 @@
  * Do not edit the class manually.
  */
 
-namespace DillerAPI\Model;
+namespace Swagger\Client\Model;
 
 use \ArrayAccess;
 use \DillerAPI\ObjectSerializer;
@@ -25,7 +25,7 @@ use \DillerAPI\ObjectSerializer;
  * MemberMembershipDetail Class Doc Comment
  *
  * @category Class
- * @package  DillerAPI
+ * @package  Swagger\Client
  * @author   DILLER AS
  * @link     https://diller.io
  */
@@ -47,11 +47,11 @@ class MemberMembershipDetail implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'points' => 'double',
-'remainingPoints' => 'double',
-'levelTitle' => 'string',
-'nextLevelTitle' => 'string',
-'nextLevelPoints' => 'double',
-'levelExpireDate' => '\DateTime'    ];
+'remaining_points' => 'double',
+'level_title' => 'string',
+'next_level_title' => 'string',
+'next_level_points' => 'double',
+'level_expire_date' => '\DateTime'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -60,11 +60,11 @@ class MemberMembershipDetail implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'points' => 'double',
-'remainingPoints' => 'double',
-'levelTitle' => null,
-'nextLevelTitle' => null,
-'nextLevelPoints' => 'double',
-'levelExpireDate' => 'date-time'    ];
+'remaining_points' => 'double',
+'level_title' => null,
+'next_level_title' => null,
+'next_level_points' => 'double',
+'level_expire_date' => 'date-time'    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -94,11 +94,11 @@ class MemberMembershipDetail implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'points' => 'points',
-'remainingPoints' => 'remaining_points',
-'levelTitle' => 'level_title',
-'nextLevelTitle' => 'next_level_title',
-'nextLevelPoints' => 'next_level_points',
-'levelExpireDate' => 'level_expire_date'    ];
+'remaining_points' => 'remaining_points',
+'level_title' => 'level_title',
+'next_level_title' => 'next_level_title',
+'next_level_points' => 'next_level_points',
+'level_expire_date' => 'level_expire_date'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -107,11 +107,11 @@ class MemberMembershipDetail implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'points' => 'setPoints',
-'remainingPoints' => 'setRemainingPoints',
-'levelTitle' => 'setLevelTitle',
-'nextLevelTitle' => 'setNextLevelTitle',
-'nextLevelPoints' => 'setNextLevelPoints',
-'levelExpireDate' => 'setLevelExpireDate'    ];
+'remaining_points' => 'setRemainingPoints',
+'level_title' => 'setLevelTitle',
+'next_level_title' => 'setNextLevelTitle',
+'next_level_points' => 'setNextLevelPoints',
+'level_expire_date' => 'setLevelExpireDate'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -120,11 +120,11 @@ class MemberMembershipDetail implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'points' => 'getPoints',
-'remainingPoints' => 'getRemainingPoints',
-'levelTitle' => 'getLevelTitle',
-'nextLevelTitle' => 'getNextLevelTitle',
-'nextLevelPoints' => 'getNextLevelPoints',
-'levelExpireDate' => 'getLevelExpireDate'    ];
+'remaining_points' => 'getRemainingPoints',
+'level_title' => 'getLevelTitle',
+'next_level_title' => 'getNextLevelTitle',
+'next_level_points' => 'getNextLevelPoints',
+'level_expire_date' => 'getLevelExpireDate'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -185,11 +185,11 @@ class MemberMembershipDetail implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['points'] = isset($data['points']) ? $data['points'] : null;
-        $this->container['remainingPoints'] = isset($data['remainingPoints']) ? $data['remainingPoints'] : null;
-        $this->container['levelTitle'] = isset($data['levelTitle']) ? $data['levelTitle'] : null;
-        $this->container['nextLevelTitle'] = isset($data['nextLevelTitle']) ? $data['nextLevelTitle'] : null;
-        $this->container['nextLevelPoints'] = isset($data['nextLevelPoints']) ? $data['nextLevelPoints'] : null;
-        $this->container['levelExpireDate'] = isset($data['levelExpireDate']) ? $data['levelExpireDate'] : null;
+        $this->container['remaining_points'] = isset($data['remaining_points']) ? $data['remaining_points'] : null;
+        $this->container['level_title'] = isset($data['level_title']) ? $data['level_title'] : null;
+        $this->container['next_level_title'] = isset($data['next_level_title']) ? $data['next_level_title'] : null;
+        $this->container['next_level_points'] = isset($data['next_level_points']) ? $data['next_level_points'] : null;
+        $this->container['level_expire_date'] = isset($data['level_expire_date']) ? $data['level_expire_date'] : null;
     }
 
     /**
@@ -241,121 +241,121 @@ class MemberMembershipDetail implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets remainingPoints
+     * Gets remaining_points
      *
      * @return double
      */
     public function getRemainingPoints()
     {
-        return $this->container['remainingPoints'];
+        return $this->container['remaining_points'];
     }
 
     /**
-     * Sets remainingPoints
+     * Sets remaining_points
      *
-     * @param double $remainingPoints remainingPoints
+     * @param double $remaining_points remaining_points
      *
      * @return $this
      */
-    public function setRemainingPoints($remainingPoints)
+    public function setRemainingPoints($remaining_points)
     {
-        $this->container['remainingPoints'] = $remainingPoints;
+        $this->container['remaining_points'] = $remaining_points;
 
         return $this;
     }
 
     /**
-     * Gets levelTitle
+     * Gets level_title
      *
      * @return string
      */
     public function getLevelTitle()
     {
-        return $this->container['levelTitle'];
+        return $this->container['level_title'];
     }
 
     /**
-     * Sets levelTitle
+     * Sets level_title
      *
-     * @param string $levelTitle levelTitle
+     * @param string $level_title level_title
      *
      * @return $this
      */
-    public function setLevelTitle($levelTitle)
+    public function setLevelTitle($level_title)
     {
-        $this->container['levelTitle'] = $levelTitle;
+        $this->container['level_title'] = $level_title;
 
         return $this;
     }
 
     /**
-     * Gets nextLevelTitle
+     * Gets next_level_title
      *
      * @return string
      */
     public function getNextLevelTitle()
     {
-        return $this->container['nextLevelTitle'];
+        return $this->container['next_level_title'];
     }
 
     /**
-     * Sets nextLevelTitle
+     * Sets next_level_title
      *
-     * @param string $nextLevelTitle nextLevelTitle
+     * @param string $next_level_title next_level_title
      *
      * @return $this
      */
-    public function setNextLevelTitle($nextLevelTitle)
+    public function setNextLevelTitle($next_level_title)
     {
-        $this->container['nextLevelTitle'] = $nextLevelTitle;
+        $this->container['next_level_title'] = $next_level_title;
 
         return $this;
     }
 
     /**
-     * Gets nextLevelPoints
+     * Gets next_level_points
      *
      * @return double
      */
     public function getNextLevelPoints()
     {
-        return $this->container['nextLevelPoints'];
+        return $this->container['next_level_points'];
     }
 
     /**
-     * Sets nextLevelPoints
+     * Sets next_level_points
      *
-     * @param double $nextLevelPoints nextLevelPoints
+     * @param double $next_level_points next_level_points
      *
      * @return $this
      */
-    public function setNextLevelPoints($nextLevelPoints)
+    public function setNextLevelPoints($next_level_points)
     {
-        $this->container['nextLevelPoints'] = $nextLevelPoints;
+        $this->container['next_level_points'] = $next_level_points;
 
         return $this;
     }
 
     /**
-     * Gets levelExpireDate
+     * Gets level_expire_date
      *
      * @return \DateTime
      */
     public function getLevelExpireDate()
     {
-        return $this->container['levelExpireDate'];
+        return $this->container['level_expire_date'];
     }
 
     /**
-     * Sets levelExpireDate
+     * Sets level_expire_date
      *
-     * @param \DateTime $levelExpireDate levelExpireDate
+     * @param \DateTime $level_expire_date level_expire_date
      *
      * @return $this
      */
-    public function setLevelExpireDate($levelExpireDate)
+    public function setLevelExpireDate($level_expire_date)
     {
-        $this->container['levelExpireDate'] = $levelExpireDate;
+        $this->container['level_expire_date'] = $level_expire_date;
 
         return $this;
     }

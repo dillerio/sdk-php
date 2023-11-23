@@ -16,7 +16,7 @@
  * Do not edit the class manually.
  */
 
-namespace DillerAPI\Model;
+namespace Swagger\Client\Model;
 
 use \ArrayAccess;
 use \DillerAPI\ObjectSerializer;
@@ -25,7 +25,7 @@ use \DillerAPI\ObjectSerializer;
  * InvitedFriendResponse Class Doc Comment
  *
  * @category Class
- * @package  DillerAPI
+ * @package  Swagger\Client
  * @author   DILLER AS
  * @link     https://diller.io
  */
@@ -46,11 +46,11 @@ class InvitedFriendResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'firstName' => 'string',
-'lastName' => 'string',
+        'first_name' => 'string',
+'last_name' => 'string',
 'email' => 'string',
-'createdAt' => '\DateTime',
-'isAccepted' => 'bool',
+'created_at' => '\DateTime',
+'is_accepted' => 'bool',
 'points' => 'int'    ];
 
     /**
@@ -59,11 +59,11 @@ class InvitedFriendResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'firstName' => null,
-'lastName' => null,
+        'first_name' => null,
+'last_name' => null,
 'email' => null,
-'createdAt' => 'date-time',
-'isAccepted' => null,
+'created_at' => 'date-time',
+'is_accepted' => null,
 'points' => 'int32'    ];
 
     /**
@@ -93,11 +93,11 @@ class InvitedFriendResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'firstName' => 'first_name',
-'lastName' => 'last_name',
+        'first_name' => 'first_name',
+'last_name' => 'last_name',
 'email' => 'email',
-'createdAt' => 'created_at',
-'isAccepted' => 'is_accepted',
+'created_at' => 'created_at',
+'is_accepted' => 'is_accepted',
 'points' => 'points'    ];
 
     /**
@@ -106,11 +106,11 @@ class InvitedFriendResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'firstName' => 'setFirstName',
-'lastName' => 'setLastName',
+        'first_name' => 'setFirstName',
+'last_name' => 'setLastName',
 'email' => 'setEmail',
-'createdAt' => 'setCreatedAt',
-'isAccepted' => 'setIsAccepted',
+'created_at' => 'setCreatedAt',
+'is_accepted' => 'setIsAccepted',
 'points' => 'setPoints'    ];
 
     /**
@@ -119,11 +119,11 @@ class InvitedFriendResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'firstName' => 'getFirstName',
-'lastName' => 'getLastName',
+        'first_name' => 'getFirstName',
+'last_name' => 'getLastName',
 'email' => 'getEmail',
-'createdAt' => 'getCreatedAt',
-'isAccepted' => 'getIsAccepted',
+'created_at' => 'getCreatedAt',
+'is_accepted' => 'getIsAccepted',
 'points' => 'getPoints'    ];
 
     /**
@@ -184,11 +184,11 @@ class InvitedFriendResponse implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['firstName'] = isset($data['firstName']) ? $data['firstName'] : null;
-        $this->container['lastName'] = isset($data['lastName']) ? $data['lastName'] : null;
+        $this->container['first_name'] = isset($data['first_name']) ? $data['first_name'] : null;
+        $this->container['last_name'] = isset($data['last_name']) ? $data['last_name'] : null;
         $this->container['email'] = isset($data['email']) ? $data['email'] : null;
-        $this->container['createdAt'] = isset($data['createdAt']) ? $data['createdAt'] : null;
-        $this->container['isAccepted'] = isset($data['isAccepted']) ? $data['isAccepted'] : null;
+        $this->container['created_at'] = isset($data['created_at']) ? $data['created_at'] : null;
+        $this->container['is_accepted'] = isset($data['is_accepted']) ? $data['is_accepted'] : null;
         $this->container['points'] = isset($data['points']) ? $data['points'] : null;
     }
 
@@ -217,49 +217,49 @@ class InvitedFriendResponse implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets firstName
+     * Gets first_name
      *
      * @return string
      */
     public function getFirstName()
     {
-        return $this->container['firstName'];
+        return $this->container['first_name'];
     }
 
     /**
-     * Sets firstName
+     * Sets first_name
      *
-     * @param string $firstName firstName
+     * @param string $first_name first_name
      *
      * @return $this
      */
-    public function setFirstName($firstName)
+    public function setFirstName($first_name)
     {
-        $this->container['firstName'] = $firstName;
+        $this->container['first_name'] = $first_name;
 
         return $this;
     }
 
     /**
-     * Gets lastName
+     * Gets last_name
      *
      * @return string
      */
     public function getLastName()
     {
-        return $this->container['lastName'];
+        return $this->container['last_name'];
     }
 
     /**
-     * Sets lastName
+     * Sets last_name
      *
-     * @param string $lastName lastName
+     * @param string $last_name last_name
      *
      * @return $this
      */
-    public function setLastName($lastName)
+    public function setLastName($last_name)
     {
-        $this->container['lastName'] = $lastName;
+        $this->container['last_name'] = $last_name;
 
         return $this;
     }
@@ -289,49 +289,49 @@ class InvitedFriendResponse implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets createdAt
+     * Gets created_at
      *
      * @return \DateTime
      */
     public function getCreatedAt()
     {
-        return $this->container['createdAt'];
+        return $this->container['created_at'];
     }
 
     /**
-     * Sets createdAt
+     * Sets created_at
      *
-     * @param \DateTime $createdAt createdAt
+     * @param \DateTime $created_at created_at
      *
      * @return $this
      */
-    public function setCreatedAt($createdAt)
+    public function setCreatedAt($created_at)
     {
-        $this->container['createdAt'] = $createdAt;
+        $this->container['created_at'] = $created_at;
 
         return $this;
     }
 
     /**
-     * Gets isAccepted
+     * Gets is_accepted
      *
      * @return bool
      */
     public function getIsAccepted()
     {
-        return $this->container['isAccepted'];
+        return $this->container['is_accepted'];
     }
 
     /**
-     * Sets isAccepted
+     * Sets is_accepted
      *
-     * @param bool $isAccepted isAccepted
+     * @param bool $is_accepted is_accepted
      *
      * @return $this
      */
-    public function setIsAccepted($isAccepted)
+    public function setIsAccepted($is_accepted)
     {
-        $this->container['isAccepted'] = $isAccepted;
+        $this->container['is_accepted'] = $is_accepted;
 
         return $this;
     }

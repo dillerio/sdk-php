@@ -16,14 +16,14 @@
  * Do not edit the class manually.
  */
 
-namespace DillerAPI\Model;
+namespace Swagger\Client\Model;
 use \DillerAPI\ObjectSerializer;
 
 /**
  * CouponType Class Doc Comment
  *
  * @category Class
- * @package  DillerAPI
+ * @package  Swagger\Client
  * @author   DILLER AS
  * @link     https://diller.io
  */
@@ -33,12 +33,12 @@ class CouponType
      * Possible values of this enum
      */
     const STANDARD = 'Standard';
-const WELCOME = 'Welcome';
-const CAMPAIGN = 'Campaign';
-const _PUBLIC = 'Public';
-const RECURRING = 'Recurring';
-const BIRTHDAY = 'Birthday';
-const CHILD_BIRTHDAY = 'ChildBirthday';
+    const WELCOME = 'Welcome';
+    const CAMPAIGN = 'Campaign';
+    const _PUBLIC = 'Public';
+    const RECURRING = 'Recurring';
+    const BIRTHDAY = 'Birthday';
+    const CHILD_BIRTHDAY = 'ChildBirthday';
     /**
      * Gets allowable values of the enum
      * @return string[]
@@ -46,7 +46,13 @@ const CHILD_BIRTHDAY = 'ChildBirthday';
     public static function getAllowableEnumValues()
     {
         return [
-            self::STANDARD,self::WELCOME,self::CAMPAIGN,self::_PUBLIC,self::RECURRING,self::BIRTHDAY,self::CHILD_BIRTHDAY,
+            self::STANDARD,
+            self::WELCOME,
+            self::CAMPAIGN,
+            self::_PUBLIC,
+            self::RECURRING,
+            self::BIRTHDAY,
+            self::CHILD_BIRTHDAY,
         ];
     }
 }

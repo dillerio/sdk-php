@@ -16,7 +16,7 @@
  * Do not edit the class manually.
  */
 
-namespace DillerAPI\Model;
+namespace Swagger\Client\Model;
 
 use \ArrayAccess;
 use \DillerAPI\ObjectSerializer;
@@ -25,7 +25,7 @@ use \DillerAPI\ObjectSerializer;
  * StoreResponse Class Doc Comment
  *
  * @category Class
- * @package  DillerAPI
+ * @package  Swagger\Client
  * @author   DILLER AS
  * @link     https://diller.io
  */
@@ -47,20 +47,20 @@ class StoreResponse implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'id' => 'string',
-'taxNumber' => 'string',
-'externalId' => 'string',
-'storeName' => 'string',
-'phone' => '\DillerAPI\Model\Phone',
+'tax_number' => 'string',
+'external_id' => 'string',
+'store_name' => 'string',
+'phone' => '\Swagger\Client\Model\Phone',
 'email' => 'string',
-'address' => '\DillerAPI\Model\Address',
+'address' => '\Swagger\Client\Model\Address',
 'currency' => 'string',
-'timeZone' => 'string',
+'time_zone' => 'string',
 'culture' => 'string',
-'stampsEnabled' => 'bool',
-'friendReferralEnabled' => 'bool',
-'pointsSystem' => '\DillerAPI\Model\PointsSystem',
-'memberIdentifier' => '\DillerAPI\Model\MemberIdentifier',
-'privacyPolicyUrl' => 'string'    ];
+'stamps_enabled' => 'bool',
+'friend_referral_enabled' => 'bool',
+'points_system' => '\Swagger\Client\Model\PointsSystem',
+'member_identifier' => '\Swagger\Client\Model\MemberIdentifier',
+'privacy_policy_url' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -69,20 +69,20 @@ class StoreResponse implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'id' => null,
-'taxNumber' => null,
-'externalId' => null,
-'storeName' => null,
+'tax_number' => null,
+'external_id' => null,
+'store_name' => null,
 'phone' => null,
 'email' => null,
 'address' => null,
 'currency' => null,
-'timeZone' => null,
+'time_zone' => null,
 'culture' => null,
-'stampsEnabled' => null,
-'friendReferralEnabled' => null,
-'pointsSystem' => null,
-'memberIdentifier' => null,
-'privacyPolicyUrl' => null    ];
+'stamps_enabled' => null,
+'friend_referral_enabled' => null,
+'points_system' => null,
+'member_identifier' => null,
+'privacy_policy_url' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -112,20 +112,20 @@ class StoreResponse implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'id' => 'id',
-'taxNumber' => 'tax_number',
-'externalId' => 'external_id',
-'storeName' => 'store_name',
+'tax_number' => 'tax_number',
+'external_id' => 'external_id',
+'store_name' => 'store_name',
 'phone' => 'phone',
 'email' => 'email',
 'address' => 'address',
 'currency' => 'currency',
-'timeZone' => 'time_zone',
+'time_zone' => 'time_zone',
 'culture' => 'culture',
-'stampsEnabled' => 'stamps_enabled',
-'friendReferralEnabled' => 'friend_referral_enabled',
-'pointsSystem' => 'points_system',
-'memberIdentifier' => 'member_identifier',
-'privacyPolicyUrl' => 'privacy_policy_url'    ];
+'stamps_enabled' => 'stamps_enabled',
+'friend_referral_enabled' => 'friend_referral_enabled',
+'points_system' => 'points_system',
+'member_identifier' => 'member_identifier',
+'privacy_policy_url' => 'privacy_policy_url'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -134,20 +134,20 @@ class StoreResponse implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'id' => 'setId',
-'taxNumber' => 'setTaxNumber',
-'externalId' => 'setExternalId',
-'storeName' => 'setStoreName',
+'tax_number' => 'setTaxNumber',
+'external_id' => 'setExternalId',
+'store_name' => 'setStoreName',
 'phone' => 'setPhone',
 'email' => 'setEmail',
 'address' => 'setAddress',
 'currency' => 'setCurrency',
-'timeZone' => 'setTimeZone',
+'time_zone' => 'setTimeZone',
 'culture' => 'setCulture',
-'stampsEnabled' => 'setStampsEnabled',
-'friendReferralEnabled' => 'setFriendReferralEnabled',
-'pointsSystem' => 'setPointsSystem',
-'memberIdentifier' => 'setMemberIdentifier',
-'privacyPolicyUrl' => 'setPrivacyPolicyUrl'    ];
+'stamps_enabled' => 'setStampsEnabled',
+'friend_referral_enabled' => 'setFriendReferralEnabled',
+'points_system' => 'setPointsSystem',
+'member_identifier' => 'setMemberIdentifier',
+'privacy_policy_url' => 'setPrivacyPolicyUrl'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -156,20 +156,20 @@ class StoreResponse implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'id' => 'getId',
-'taxNumber' => 'getTaxNumber',
-'externalId' => 'getExternalId',
-'storeName' => 'getStoreName',
+'tax_number' => 'getTaxNumber',
+'external_id' => 'getExternalId',
+'store_name' => 'getStoreName',
 'phone' => 'getPhone',
 'email' => 'getEmail',
 'address' => 'getAddress',
 'currency' => 'getCurrency',
-'timeZone' => 'getTimeZone',
+'time_zone' => 'getTimeZone',
 'culture' => 'getCulture',
-'stampsEnabled' => 'getStampsEnabled',
-'friendReferralEnabled' => 'getFriendReferralEnabled',
-'pointsSystem' => 'getPointsSystem',
-'memberIdentifier' => 'getMemberIdentifier',
-'privacyPolicyUrl' => 'getPrivacyPolicyUrl'    ];
+'stamps_enabled' => 'getStampsEnabled',
+'friend_referral_enabled' => 'getFriendReferralEnabled',
+'points_system' => 'getPointsSystem',
+'member_identifier' => 'getMemberIdentifier',
+'privacy_policy_url' => 'getPrivacyPolicyUrl'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -230,20 +230,20 @@ class StoreResponse implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['taxNumber'] = isset($data['taxNumber']) ? $data['taxNumber'] : null;
-        $this->container['externalId'] = isset($data['externalId']) ? $data['externalId'] : null;
-        $this->container['storeName'] = isset($data['storeName']) ? $data['storeName'] : null;
+        $this->container['tax_number'] = isset($data['tax_number']) ? $data['tax_number'] : null;
+        $this->container['external_id'] = isset($data['external_id']) ? $data['external_id'] : null;
+        $this->container['store_name'] = isset($data['store_name']) ? $data['store_name'] : null;
         $this->container['phone'] = isset($data['phone']) ? $data['phone'] : null;
         $this->container['email'] = isset($data['email']) ? $data['email'] : null;
         $this->container['address'] = isset($data['address']) ? $data['address'] : null;
         $this->container['currency'] = isset($data['currency']) ? $data['currency'] : null;
-        $this->container['timeZone'] = isset($data['timeZone']) ? $data['timeZone'] : null;
+        $this->container['time_zone'] = isset($data['time_zone']) ? $data['time_zone'] : null;
         $this->container['culture'] = isset($data['culture']) ? $data['culture'] : null;
-        $this->container['stampsEnabled'] = isset($data['stampsEnabled']) ? $data['stampsEnabled'] : null;
-        $this->container['friendReferralEnabled'] = isset($data['friendReferralEnabled']) ? $data['friendReferralEnabled'] : null;
-        $this->container['pointsSystem'] = isset($data['pointsSystem']) ? $data['pointsSystem'] : null;
-        $this->container['memberIdentifier'] = isset($data['memberIdentifier']) ? $data['memberIdentifier'] : null;
-        $this->container['privacyPolicyUrl'] = isset($data['privacyPolicyUrl']) ? $data['privacyPolicyUrl'] : null;
+        $this->container['stamps_enabled'] = isset($data['stamps_enabled']) ? $data['stamps_enabled'] : null;
+        $this->container['friend_referral_enabled'] = isset($data['friend_referral_enabled']) ? $data['friend_referral_enabled'] : null;
+        $this->container['points_system'] = isset($data['points_system']) ? $data['points_system'] : null;
+        $this->container['member_identifier'] = isset($data['member_identifier']) ? $data['member_identifier'] : null;
+        $this->container['privacy_policy_url'] = isset($data['privacy_policy_url']) ? $data['privacy_policy_url'] : null;
     }
 
     /**
@@ -295,73 +295,73 @@ class StoreResponse implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets taxNumber
+     * Gets tax_number
      *
      * @return string
      */
     public function getTaxNumber()
     {
-        return $this->container['taxNumber'];
+        return $this->container['tax_number'];
     }
 
     /**
-     * Sets taxNumber
+     * Sets tax_number
      *
-     * @param string $taxNumber taxNumber
+     * @param string $tax_number tax_number
      *
      * @return $this
      */
-    public function setTaxNumber($taxNumber)
+    public function setTaxNumber($tax_number)
     {
-        $this->container['taxNumber'] = $taxNumber;
+        $this->container['tax_number'] = $tax_number;
 
         return $this;
     }
 
     /**
-     * Gets externalId
+     * Gets external_id
      *
      * @return string
      */
     public function getExternalId()
     {
-        return $this->container['externalId'];
+        return $this->container['external_id'];
     }
 
     /**
-     * Sets externalId
+     * Sets external_id
      *
-     * @param string $externalId externalId
+     * @param string $external_id external_id
      *
      * @return $this
      */
-    public function setExternalId($externalId)
+    public function setExternalId($external_id)
     {
-        $this->container['externalId'] = $externalId;
+        $this->container['external_id'] = $external_id;
 
         return $this;
     }
 
     /**
-     * Gets storeName
+     * Gets store_name
      *
      * @return string
      */
     public function getStoreName()
     {
-        return $this->container['storeName'];
+        return $this->container['store_name'];
     }
 
     /**
-     * Sets storeName
+     * Sets store_name
      *
-     * @param string $storeName storeName
+     * @param string $store_name store_name
      *
      * @return $this
      */
-    public function setStoreName($storeName)
+    public function setStoreName($store_name)
     {
-        $this->container['storeName'] = $storeName;
+        $this->container['store_name'] = $store_name;
 
         return $this;
     }
@@ -369,7 +369,7 @@ class StoreResponse implements ModelInterface, ArrayAccess
     /**
      * Gets phone
      *
-     * @return \DillerAPI\Model\Phone
+     * @return \Swagger\Client\Model\Phone
      */
     public function getPhone()
     {
@@ -379,7 +379,7 @@ class StoreResponse implements ModelInterface, ArrayAccess
     /**
      * Sets phone
      *
-     * @param \DillerAPI\Model\Phone $phone phone
+     * @param \Swagger\Client\Model\Phone $phone phone
      *
      * @return $this
      */
@@ -417,7 +417,7 @@ class StoreResponse implements ModelInterface, ArrayAccess
     /**
      * Gets address
      *
-     * @return \DillerAPI\Model\Address
+     * @return \Swagger\Client\Model\Address
      */
     public function getAddress()
     {
@@ -427,7 +427,7 @@ class StoreResponse implements ModelInterface, ArrayAccess
     /**
      * Sets address
      *
-     * @param \DillerAPI\Model\Address $address address
+     * @param \Swagger\Client\Model\Address $address address
      *
      * @return $this
      */
@@ -463,25 +463,25 @@ class StoreResponse implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets timeZone
+     * Gets time_zone
      *
      * @return string
      */
     public function getTimeZone()
     {
-        return $this->container['timeZone'];
+        return $this->container['time_zone'];
     }
 
     /**
-     * Sets timeZone
+     * Sets time_zone
      *
-     * @param string $timeZone timeZone
+     * @param string $time_zone time_zone
      *
      * @return $this
      */
-    public function setTimeZone($timeZone)
+    public function setTimeZone($time_zone)
     {
-        $this->container['timeZone'] = $timeZone;
+        $this->container['time_zone'] = $time_zone;
 
         return $this;
     }
@@ -511,121 +511,121 @@ class StoreResponse implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets stampsEnabled
+     * Gets stamps_enabled
      *
      * @return bool
      */
     public function getStampsEnabled()
     {
-        return $this->container['stampsEnabled'];
+        return $this->container['stamps_enabled'];
     }
 
     /**
-     * Sets stampsEnabled
+     * Sets stamps_enabled
      *
-     * @param bool $stampsEnabled stampsEnabled
+     * @param bool $stamps_enabled stamps_enabled
      *
      * @return $this
      */
-    public function setStampsEnabled($stampsEnabled)
+    public function setStampsEnabled($stamps_enabled)
     {
-        $this->container['stampsEnabled'] = $stampsEnabled;
+        $this->container['stamps_enabled'] = $stamps_enabled;
 
         return $this;
     }
 
     /**
-     * Gets friendReferralEnabled
+     * Gets friend_referral_enabled
      *
      * @return bool
      */
     public function getFriendReferralEnabled()
     {
-        return $this->container['friendReferralEnabled'];
+        return $this->container['friend_referral_enabled'];
     }
 
     /**
-     * Sets friendReferralEnabled
+     * Sets friend_referral_enabled
      *
-     * @param bool $friendReferralEnabled friendReferralEnabled
+     * @param bool $friend_referral_enabled friend_referral_enabled
      *
      * @return $this
      */
-    public function setFriendReferralEnabled($friendReferralEnabled)
+    public function setFriendReferralEnabled($friend_referral_enabled)
     {
-        $this->container['friendReferralEnabled'] = $friendReferralEnabled;
+        $this->container['friend_referral_enabled'] = $friend_referral_enabled;
 
         return $this;
     }
 
     /**
-     * Gets pointsSystem
+     * Gets points_system
      *
-     * @return \DillerAPI\Model\PointsSystem
+     * @return \Swagger\Client\Model\PointsSystem
      */
     public function getPointsSystem()
     {
-        return $this->container['pointsSystem'];
+        return $this->container['points_system'];
     }
 
     /**
-     * Sets pointsSystem
+     * Sets points_system
      *
-     * @param \DillerAPI\Model\PointsSystem $pointsSystem pointsSystem
+     * @param \Swagger\Client\Model\PointsSystem $points_system points_system
      *
      * @return $this
      */
-    public function setPointsSystem($pointsSystem)
+    public function setPointsSystem($points_system)
     {
-        $this->container['pointsSystem'] = $pointsSystem;
+        $this->container['points_system'] = $points_system;
 
         return $this;
     }
 
     /**
-     * Gets memberIdentifier
+     * Gets member_identifier
      *
-     * @return \DillerAPI\Model\MemberIdentifier
+     * @return \Swagger\Client\Model\MemberIdentifier
      */
     public function getMemberIdentifier()
     {
-        return $this->container['memberIdentifier'];
+        return $this->container['member_identifier'];
     }
 
     /**
-     * Sets memberIdentifier
+     * Sets member_identifier
      *
-     * @param \DillerAPI\Model\MemberIdentifier $memberIdentifier memberIdentifier
+     * @param \Swagger\Client\Model\MemberIdentifier $member_identifier member_identifier
      *
      * @return $this
      */
-    public function setMemberIdentifier($memberIdentifier)
+    public function setMemberIdentifier($member_identifier)
     {
-        $this->container['memberIdentifier'] = $memberIdentifier;
+        $this->container['member_identifier'] = $member_identifier;
 
         return $this;
     }
 
     /**
-     * Gets privacyPolicyUrl
+     * Gets privacy_policy_url
      *
      * @return string
      */
     public function getPrivacyPolicyUrl()
     {
-        return $this->container['privacyPolicyUrl'];
+        return $this->container['privacy_policy_url'];
     }
 
     /**
-     * Sets privacyPolicyUrl
+     * Sets privacy_policy_url
      *
-     * @param string $privacyPolicyUrl privacyPolicyUrl
+     * @param string $privacy_policy_url privacy_policy_url
      *
      * @return $this
      */
-    public function setPrivacyPolicyUrl($privacyPolicyUrl)
+    public function setPrivacyPolicyUrl($privacy_policy_url)
     {
-        $this->container['privacyPolicyUrl'] = $privacyPolicyUrl;
+        $this->container['privacy_policy_url'] = $privacy_policy_url;
 
         return $this;
     }

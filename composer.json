@@ -1,5 +1,5 @@
 {
-    "name": "diller-loyalty/php-sdk",
+    "name": "git_user_id/git_repo_id",
     "version": "0.1.1",
     "description": "PHP SDK for Diller API",
     "keywords": [
@@ -32,7 +32,7 @@
     },
     "autoload": {
         "psr-4": {
-            "DillerAPI\\" : "lib/"
+            "Swagger\\Client\\" : "lib/"
         }
     }
 }

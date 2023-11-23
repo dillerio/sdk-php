@@ -16,7 +16,7 @@
  * Do not edit the class manually.
  */
 
-namespace DillerAPI\Model;
+namespace Swagger\Client\Model;
 
 use \ArrayAccess;
 use \DillerAPI\ObjectSerializer;
@@ -25,7 +25,7 @@ use \DillerAPI\ObjectSerializer;
  * PaymentDetails Class Doc Comment
  *
  * @category Class
- * @package  DillerAPI
+ * @package  Swagger\Client
  * @author   DILLER AS
  * @link     https://diller.io
  */
@@ -46,8 +46,8 @@ class PaymentDetails implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'paymentMethod' => 'string',
-'subTotal' => 'double'    ];
+        'payment_method' => 'string',
+'sub_total' => 'double'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -55,8 +55,8 @@ class PaymentDetails implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'paymentMethod' => null,
-'subTotal' => 'double'    ];
+        'payment_method' => null,
+'sub_total' => 'double'    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -85,8 +85,8 @@ class PaymentDetails implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'paymentMethod' => 'payment_method',
-'subTotal' => 'sub_total'    ];
+        'payment_method' => 'payment_method',
+'sub_total' => 'sub_total'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -94,8 +94,8 @@ class PaymentDetails implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'paymentMethod' => 'setPaymentMethod',
-'subTotal' => 'setSubTotal'    ];
+        'payment_method' => 'setPaymentMethod',
+'sub_total' => 'setSubTotal'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -103,8 +103,8 @@ class PaymentDetails implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'paymentMethod' => 'getPaymentMethod',
-'subTotal' => 'getSubTotal'    ];
+        'payment_method' => 'getPaymentMethod',
+'sub_total' => 'getSubTotal'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -164,8 +164,8 @@ class PaymentDetails implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['paymentMethod'] = isset($data['paymentMethod']) ? $data['paymentMethod'] : null;
-        $this->container['subTotal'] = isset($data['subTotal']) ? $data['subTotal'] : null;
+        $this->container['payment_method'] = isset($data['payment_method']) ? $data['payment_method'] : null;
+        $this->container['sub_total'] = isset($data['sub_total']) ? $data['sub_total'] : null;
     }
 
     /**
@@ -193,49 +193,49 @@ class PaymentDetails implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets paymentMethod
+     * Gets payment_method
      *
      * @return string
      */
     public function getPaymentMethod()
     {
-        return $this->container['paymentMethod'];
+        return $this->container['payment_method'];
     }
 
     /**
-     * Sets paymentMethod
+     * Sets payment_method
      *
-     * @param string $paymentMethod paymentMethod
+     * @param string $payment_method payment_method
      *
      * @return $this
      */
-    public function setPaymentMethod($paymentMethod)
+    public function setPaymentMethod($payment_method)
     {
-        $this->container['paymentMethod'] = $paymentMethod;
+        $this->container['payment_method'] = $payment_method;
 
         return $this;
     }
 
     /**
-     * Gets subTotal
+     * Gets sub_total
      *
      * @return double
      */
     public function getSubTotal()
     {
-        return $this->container['subTotal'];
+        return $this->container['sub_total'];
     }
 
     /**
-     * Sets subTotal
+     * Sets sub_total
      *
-     * @param double $subTotal subTotal
+     * @param double $sub_total sub_total
      *
      * @return $this
      */
-    public function setSubTotal($subTotal)
+    public function setSubTotal($sub_total)
     {
-        $this->container['subTotal'] = $subTotal;
+        $this->container['sub_total'] = $sub_total;
 
         return $this;
     }

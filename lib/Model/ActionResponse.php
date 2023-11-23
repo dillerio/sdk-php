@@ -16,7 +16,7 @@
  * Do not edit the class manually.
  */
 
-namespace DillerAPI\Model;
+namespace Swagger\Client\Model;
 
 use \ArrayAccess;
 use \DillerAPI\ObjectSerializer;
@@ -25,7 +25,7 @@ use \DillerAPI\ObjectSerializer;
  * ActionResponse Class Doc Comment
  *
  * @category Class
- * @package  DillerAPI
+ * @package  Swagger\Client
  * @author   DILLER AS
  * @link     https://diller.io
  */
@@ -46,7 +46,7 @@ class ActionResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'isOk' => 'bool',
+        'is_ok' => 'bool',
 'details' => 'string'    ];
 
     /**
@@ -55,7 +55,7 @@ class ActionResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'isOk' => null,
+        'is_ok' => null,
 'details' => null    ];
 
     /**
@@ -85,7 +85,7 @@ class ActionResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'isOk' => 'is_ok',
+        'is_ok' => 'is_ok',
 'details' => 'details'    ];
 
     /**
@@ -94,7 +94,7 @@ class ActionResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'isOk' => 'setIsOk',
+        'is_ok' => 'setIsOk',
 'details' => 'setDetails'    ];
 
     /**
@@ -103,7 +103,7 @@ class ActionResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'isOk' => 'getIsOk',
+        'is_ok' => 'getIsOk',
 'details' => 'getDetails'    ];
 
     /**
@@ -164,7 +164,7 @@ class ActionResponse implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['isOk'] = isset($data['isOk']) ? $data['isOk'] : null;
+        $this->container['is_ok'] = isset($data['is_ok']) ? $data['is_ok'] : null;
         $this->container['details'] = isset($data['details']) ? $data['details'] : null;
     }
 
@@ -193,25 +193,25 @@ class ActionResponse implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets isOk
+     * Gets is_ok
      *
      * @return bool
      */
     public function getIsOk()
     {
-        return $this->container['isOk'];
+        return $this->container['is_ok'];
     }
 
     /**
-     * Sets isOk
+     * Sets is_ok
      *
-     * @param bool $isOk isOk
+     * @param bool $is_ok is_ok
      *
      * @return $this
      */
-    public function setIsOk($isOk)
+    public function setIsOk($is_ok)
     {
-        $this->container['isOk'] = $isOk;
+        $this->container['is_ok'] = $is_ok;
 
         return $this;
     }

@@ -16,7 +16,7 @@
  * Do not edit the class manually.
  */
 
-namespace DillerAPI\Model;
+namespace Swagger\Client\Model;
 
 use \ArrayAccess;
 use \DillerAPI\ObjectSerializer;
@@ -26,7 +26,7 @@ use \DillerAPI\ObjectSerializer;
  *
  * @category Class
  * @description Payload to update a member
- * @package  DillerAPI
+ * @package  Swagger\Client
  * @author   DILLER AS
  * @link     https://diller.io
  */
@@ -47,17 +47,17 @@ class UpdateMemberRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'firstName' => 'string',
-'lastName' => 'string',
+        'first_name' => 'string',
+'last_name' => 'string',
 'email' => 'string',
-'birthDate' => '\DateTime',
-'additionalIdentifiers' => 'string[]',
-'gender' => '\DillerAPI\Model\Gender',
-'address' => '\DillerAPI\Model\Address',
-'consent' => '\DillerAPI\Model\MemberConsent',
-'departmentIds' => 'string[]',
-'origin' => '\DillerAPI\Model\Origin',
-'segments' => '\DillerAPI\Model\SegmentValue[]'    ];
+'birth_date' => '\DateTime',
+'additional_identifiers' => 'string[]',
+'gender' => '\Swagger\Client\Model\Gender',
+'address' => '\Swagger\Client\Model\Address',
+'consent' => '\Swagger\Client\Model\MemberConsent',
+'department_ids' => 'string[]',
+'origin' => '\Swagger\Client\Model\Origin',
+'segments' => '\Swagger\Client\Model\SegmentValue[]'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -65,15 +65,15 @@ class UpdateMemberRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'firstName' => null,
-'lastName' => null,
+        'first_name' => null,
+'last_name' => null,
 'email' => null,
-'birthDate' => 'date-time',
-'additionalIdentifiers' => null,
+'birth_date' => 'date-time',
+'additional_identifiers' => null,
 'gender' => null,
 'address' => null,
 'consent' => null,
-'departmentIds' => null,
+'department_ids' => null,
 'origin' => null,
 'segments' => null    ];
 
@@ -104,15 +104,15 @@ class UpdateMemberRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'firstName' => 'first_name',
-'lastName' => 'last_name',
+        'first_name' => 'first_name',
+'last_name' => 'last_name',
 'email' => 'email',
-'birthDate' => 'birth_date',
-'additionalIdentifiers' => 'additional_identifiers',
+'birth_date' => 'birth_date',
+'additional_identifiers' => 'additional_identifiers',
 'gender' => 'gender',
 'address' => 'address',
 'consent' => 'consent',
-'departmentIds' => 'department_ids',
+'department_ids' => 'department_ids',
 'origin' => 'origin',
 'segments' => 'segments'    ];
 
@@ -122,15 +122,15 @@ class UpdateMemberRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'firstName' => 'setFirstName',
-'lastName' => 'setLastName',
+        'first_name' => 'setFirstName',
+'last_name' => 'setLastName',
 'email' => 'setEmail',
-'birthDate' => 'setBirthDate',
-'additionalIdentifiers' => 'setAdditionalIdentifiers',
+'birth_date' => 'setBirthDate',
+'additional_identifiers' => 'setAdditionalIdentifiers',
 'gender' => 'setGender',
 'address' => 'setAddress',
 'consent' => 'setConsent',
-'departmentIds' => 'setDepartmentIds',
+'department_ids' => 'setDepartmentIds',
 'origin' => 'setOrigin',
 'segments' => 'setSegments'    ];
 
@@ -140,15 +140,15 @@ class UpdateMemberRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'firstName' => 'getFirstName',
-'lastName' => 'getLastName',
+        'first_name' => 'getFirstName',
+'last_name' => 'getLastName',
 'email' => 'getEmail',
-'birthDate' => 'getBirthDate',
-'additionalIdentifiers' => 'getAdditionalIdentifiers',
+'birth_date' => 'getBirthDate',
+'additional_identifiers' => 'getAdditionalIdentifiers',
 'gender' => 'getGender',
 'address' => 'getAddress',
 'consent' => 'getConsent',
-'departmentIds' => 'getDepartmentIds',
+'department_ids' => 'getDepartmentIds',
 'origin' => 'getOrigin',
 'segments' => 'getSegments'    ];
 
@@ -210,15 +210,15 @@ class UpdateMemberRequest implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['firstName'] = isset($data['firstName']) ? $data['firstName'] : null;
-        $this->container['lastName'] = isset($data['lastName']) ? $data['lastName'] : null;
+        $this->container['first_name'] = isset($data['first_name']) ? $data['first_name'] : null;
+        $this->container['last_name'] = isset($data['last_name']) ? $data['last_name'] : null;
         $this->container['email'] = isset($data['email']) ? $data['email'] : null;
-        $this->container['birthDate'] = isset($data['birthDate']) ? $data['birthDate'] : null;
-        $this->container['additionalIdentifiers'] = isset($data['additionalIdentifiers']) ? $data['additionalIdentifiers'] : null;
+        $this->container['birth_date'] = isset($data['birth_date']) ? $data['birth_date'] : null;
+        $this->container['additional_identifiers'] = isset($data['additional_identifiers']) ? $data['additional_identifiers'] : null;
         $this->container['gender'] = isset($data['gender']) ? $data['gender'] : null;
         $this->container['address'] = isset($data['address']) ? $data['address'] : null;
         $this->container['consent'] = isset($data['consent']) ? $data['consent'] : null;
-        $this->container['departmentIds'] = isset($data['departmentIds']) ? $data['departmentIds'] : null;
+        $this->container['department_ids'] = isset($data['department_ids']) ? $data['department_ids'] : null;
         $this->container['origin'] = isset($data['origin']) ? $data['origin'] : null;
         $this->container['segments'] = isset($data['segments']) ? $data['segments'] : null;
     }
@@ -248,49 +248,49 @@ class UpdateMemberRequest implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets firstName
+     * Gets first_name
      *
      * @return string
      */
     public function getFirstName()
     {
-        return $this->container['firstName'];
+        return $this->container['first_name'];
     }
 
     /**
-     * Sets firstName
+     * Sets first_name
      *
-     * @param string $firstName firstName
+     * @param string $first_name first_name
      *
      * @return $this
      */
-    public function setFirstName($firstName)
+    public function setFirstName($first_name)
     {
-        $this->container['firstName'] = $firstName;
+        $this->container['first_name'] = $first_name;
 
         return $this;
     }
 
     /**
-     * Gets lastName
+     * Gets last_name
      *
      * @return string
      */
     public function getLastName()
     {
-        return $this->container['lastName'];
+        return $this->container['last_name'];
     }
 
     /**
-     * Sets lastName
+     * Sets last_name
      *
-     * @param string $lastName lastName
+     * @param string $last_name last_name
      *
      * @return $this
      */
-    public function setLastName($lastName)
+    public function setLastName($last_name)
     {
-        $this->container['lastName'] = $lastName;
+        $this->container['last_name'] = $last_name;
 
         return $this;
     }
@@ -320,49 +320,49 @@ class UpdateMemberRequest implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets birthDate
+     * Gets birth_date
      *
      * @return \DateTime
      */
     public function getBirthDate()
     {
-        return $this->container['birthDate'];
+        return $this->container['birth_date'];
     }
 
     /**
-     * Sets birthDate
+     * Sets birth_date
      *
-     * @param \DateTime $birthDate birthDate
+     * @param \DateTime $birth_date birth_date
      *
      * @return $this
      */
-    public function setBirthDate($birthDate)
+    public function setBirthDate($birth_date)
     {
-        $this->container['birthDate'] = $birthDate;
+        $this->container['birth_date'] = $birth_date;
 
         return $this;
     }
 
     /**
-     * Gets additionalIdentifiers
+     * Gets additional_identifiers
      *
      * @return string[]
      */
     public function getAdditionalIdentifiers()
     {
-        return $this->container['additionalIdentifiers'];
+        return $this->container['additional_identifiers'];
     }
 
     /**
-     * Sets additionalIdentifiers
+     * Sets additional_identifiers
      *
-     * @param string[] $additionalIdentifiers Specifies an additional identifier value for the member identifier type that is defined at the store level.
+     * @param string[] $additional_identifiers Specifies an additional identifier value for the member identifier type that is defined at the store level.
      *
      * @return $this
      */
-    public function setAdditionalIdentifiers($additionalIdentifiers)
+    public function setAdditionalIdentifiers($additional_identifiers)
     {
-        $this->container['additionalIdentifiers'] = $additionalIdentifiers;
+        $this->container['additional_identifiers'] = $additional_identifiers;
 
         return $this;
     }
@@ -370,7 +370,7 @@ class UpdateMemberRequest implements ModelInterface, ArrayAccess
     /**
      * Gets gender
      *
-     * @return \DillerAPI\Model\Gender
+     * @return \Swagger\Client\Model\Gender
      */
     public function getGender()
     {
@@ -380,7 +380,7 @@ class UpdateMemberRequest implements ModelInterface, ArrayAccess
     /**
      * Sets gender
      *
-     * @param \DillerAPI\Model\Gender $gender gender
+     * @param \Swagger\Client\Model\Gender $gender gender
      *
      * @return $this
      */
@@ -394,7 +394,7 @@ class UpdateMemberRequest implements ModelInterface, ArrayAccess
     /**
      * Gets address
      *
-     * @return \DillerAPI\Model\Address
+     * @return \Swagger\Client\Model\Address
      */
     public function getAddress()
     {
@@ -404,7 +404,7 @@ class UpdateMemberRequest implements ModelInterface, ArrayAccess
     /**
      * Sets address
      *
-     * @param \DillerAPI\Model\Address $address address
+     * @param \Swagger\Client\Model\Address $address address
      *
      * @return $this
      */
@@ -418,7 +418,7 @@ class UpdateMemberRequest implements ModelInterface, ArrayAccess
     /**
      * Gets consent
      *
-     * @return \DillerAPI\Model\MemberConsent
+     * @return \Swagger\Client\Model\MemberConsent
      */
     public function getConsent()
     {
@@ -428,7 +428,7 @@ class UpdateMemberRequest implements ModelInterface, ArrayAccess
     /**
      * Sets consent
      *
-     * @param \DillerAPI\Model\MemberConsent $consent consent
+     * @param \Swagger\Client\Model\MemberConsent $consent consent
      *
      * @return $this
      */
@@ -440,25 +440,25 @@ class UpdateMemberRequest implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets departmentIds
+     * Gets department_ids
      *
      * @return string[]
      */
     public function getDepartmentIds()
     {
-        return $this->container['departmentIds'];
+        return $this->container['department_ids'];
     }
 
     /**
-     * Sets departmentIds
+     * Sets department_ids
      *
-     * @param string[] $departmentIds departmentIds
+     * @param string[] $department_ids department_ids
      *
      * @return $this
      */
-    public function setDepartmentIds($departmentIds)
+    public function setDepartmentIds($department_ids)
     {
-        $this->container['departmentIds'] = $departmentIds;
+        $this->container['department_ids'] = $department_ids;
 
         return $this;
     }
@@ -466,7 +466,7 @@ class UpdateMemberRequest implements ModelInterface, ArrayAccess
     /**
      * Gets origin
      *
-     * @return \DillerAPI\Model\Origin
+     * @return \Swagger\Client\Model\Origin
      */
     public function getOrigin()
     {
@@ -476,7 +476,7 @@ class UpdateMemberRequest implements ModelInterface, ArrayAccess
     /**
      * Sets origin
      *
-     * @param \DillerAPI\Model\Origin $origin origin
+     * @param \Swagger\Client\Model\Origin $origin origin
      *
      * @return $this
      */
@@ -490,7 +490,7 @@ class UpdateMemberRequest implements ModelInterface, ArrayAccess
     /**
      * Gets segments
      *
-     * @return \DillerAPI\Model\SegmentValue[]
+     * @return \Swagger\Client\Model\SegmentValue[]
      */
     public function getSegments()
     {
@@ -500,7 +500,7 @@ class UpdateMemberRequest implements ModelInterface, ArrayAccess
     /**
      * Sets segments
      *
-     * @param \DillerAPI\Model\SegmentValue[] $segments segments
+     * @param \Swagger\Client\Model\SegmentValue[] $segments segments
      *
      * @return $this
      */

@@ -16,7 +16,7 @@
  * Do not edit the class manually.
  */
 
-namespace DillerAPI\Model;
+namespace Swagger\Client\Model;
 
 use \ArrayAccess;
 use \DillerAPI\ObjectSerializer;
@@ -25,7 +25,7 @@ use \DillerAPI\ObjectSerializer;
  * MemberCouponResponse Class Doc Comment
  *
  * @category Class
- * @package  DillerAPI
+ * @package  Swagger\Client
  * @author   DILLER AS
  * @link     https://diller.io
  */
@@ -47,20 +47,20 @@ class MemberCouponResponse implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'id' => 'int',
-'externalIds' => '\DillerAPI\Model\ExternalCouponIdentifier[]',
+'external_ids' => '\Swagger\Client\Model\ExternalCouponIdentifier[]',
 'code' => 'string',
 'title' => 'string',
 'description' => 'string',
-'articleNumber' => 'string',
-'validFrom' => '\DateTime',
-'validTo' => '\DateTime',
-'type' => '\DillerAPI\Model\CouponType',
-'discountType' => '\DillerAPI\Model\CouponDiscountType',
-'discountValue' => 'double',
-'maxRedemptions' => 'int',
-'imageUrl' => 'string',
-'productIds' => 'string[]',
-'timesRedeemed' => 'int'    ];
+'article_number' => 'string',
+'valid_from' => '\DateTime',
+'valid_to' => '\DateTime',
+'type' => '\Swagger\Client\Model\CouponType',
+'discount_type' => '\Swagger\Client\Model\CouponDiscountType',
+'discount_value' => 'double',
+'max_redemptions' => 'int',
+'image_url' => 'string',
+'product_ids' => 'string[]',
+'times_redeemed' => 'int'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -69,20 +69,20 @@ class MemberCouponResponse implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'id' => 'int32',
-'externalIds' => null,
+'external_ids' => null,
 'code' => null,
 'title' => null,
 'description' => null,
-'articleNumber' => null,
-'validFrom' => 'date-time',
-'validTo' => 'date-time',
+'article_number' => null,
+'valid_from' => 'date-time',
+'valid_to' => 'date-time',
 'type' => null,
-'discountType' => null,
-'discountValue' => 'double',
-'maxRedemptions' => 'int32',
-'imageUrl' => null,
-'productIds' => null,
-'timesRedeemed' => 'int32'    ];
+'discount_type' => null,
+'discount_value' => 'double',
+'max_redemptions' => 'int32',
+'image_url' => null,
+'product_ids' => null,
+'times_redeemed' => 'int32'    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -112,20 +112,20 @@ class MemberCouponResponse implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'id' => 'id',
-'externalIds' => 'external_ids',
+'external_ids' => 'external_ids',
 'code' => 'code',
 'title' => 'title',
 'description' => 'description',
-'articleNumber' => 'article_number',
-'validFrom' => 'valid_from',
-'validTo' => 'valid_to',
+'article_number' => 'article_number',
+'valid_from' => 'valid_from',
+'valid_to' => 'valid_to',
 'type' => 'type',
-'discountType' => 'discount_type',
-'discountValue' => 'discount_value',
-'maxRedemptions' => 'max_redemptions',
-'imageUrl' => 'image_url',
-'productIds' => 'product_ids',
-'timesRedeemed' => 'times_redeemed'    ];
+'discount_type' => 'discount_type',
+'discount_value' => 'discount_value',
+'max_redemptions' => 'max_redemptions',
+'image_url' => 'image_url',
+'product_ids' => 'product_ids',
+'times_redeemed' => 'times_redeemed'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -134,20 +134,20 @@ class MemberCouponResponse implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'id' => 'setId',
-'externalIds' => 'setExternalIds',
+'external_ids' => 'setExternalIds',
 'code' => 'setCode',
 'title' => 'setTitle',
 'description' => 'setDescription',
-'articleNumber' => 'setArticleNumber',
-'validFrom' => 'setValidFrom',
-'validTo' => 'setValidTo',
+'article_number' => 'setArticleNumber',
+'valid_from' => 'setValidFrom',
+'valid_to' => 'setValidTo',
 'type' => 'setType',
-'discountType' => 'setDiscountType',
-'discountValue' => 'setDiscountValue',
-'maxRedemptions' => 'setMaxRedemptions',
-'imageUrl' => 'setImageUrl',
-'productIds' => 'setProductIds',
-'timesRedeemed' => 'setTimesRedeemed'    ];
+'discount_type' => 'setDiscountType',
+'discount_value' => 'setDiscountValue',
+'max_redemptions' => 'setMaxRedemptions',
+'image_url' => 'setImageUrl',
+'product_ids' => 'setProductIds',
+'times_redeemed' => 'setTimesRedeemed'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -156,20 +156,20 @@ class MemberCouponResponse implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'id' => 'getId',
-'externalIds' => 'getExternalIds',
+'external_ids' => 'getExternalIds',
 'code' => 'getCode',
 'title' => 'getTitle',
 'description' => 'getDescription',
-'articleNumber' => 'getArticleNumber',
-'validFrom' => 'getValidFrom',
-'validTo' => 'getValidTo',
+'article_number' => 'getArticleNumber',
+'valid_from' => 'getValidFrom',
+'valid_to' => 'getValidTo',
 'type' => 'getType',
-'discountType' => 'getDiscountType',
-'discountValue' => 'getDiscountValue',
-'maxRedemptions' => 'getMaxRedemptions',
-'imageUrl' => 'getImageUrl',
-'productIds' => 'getProductIds',
-'timesRedeemed' => 'getTimesRedeemed'    ];
+'discount_type' => 'getDiscountType',
+'discount_value' => 'getDiscountValue',
+'max_redemptions' => 'getMaxRedemptions',
+'image_url' => 'getImageUrl',
+'product_ids' => 'getProductIds',
+'times_redeemed' => 'getTimesRedeemed'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -230,20 +230,20 @@ class MemberCouponResponse implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['externalIds'] = isset($data['externalIds']) ? $data['externalIds'] : null;
+        $this->container['external_ids'] = isset($data['external_ids']) ? $data['external_ids'] : null;
         $this->container['code'] = isset($data['code']) ? $data['code'] : null;
         $this->container['title'] = isset($data['title']) ? $data['title'] : null;
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
-        $this->container['articleNumber'] = isset($data['articleNumber']) ? $data['articleNumber'] : null;
-        $this->container['validFrom'] = isset($data['validFrom']) ? $data['validFrom'] : null;
-        $this->container['validTo'] = isset($data['validTo']) ? $data['validTo'] : null;
+        $this->container['article_number'] = isset($data['article_number']) ? $data['article_number'] : null;
+        $this->container['valid_from'] = isset($data['valid_from']) ? $data['valid_from'] : null;
+        $this->container['valid_to'] = isset($data['valid_to']) ? $data['valid_to'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
-        $this->container['discountType'] = isset($data['discountType']) ? $data['discountType'] : null;
-        $this->container['discountValue'] = isset($data['discountValue']) ? $data['discountValue'] : null;
-        $this->container['maxRedemptions'] = isset($data['maxRedemptions']) ? $data['maxRedemptions'] : null;
-        $this->container['imageUrl'] = isset($data['imageUrl']) ? $data['imageUrl'] : null;
-        $this->container['productIds'] = isset($data['productIds']) ? $data['productIds'] : null;
-        $this->container['timesRedeemed'] = isset($data['timesRedeemed']) ? $data['timesRedeemed'] : null;
+        $this->container['discount_type'] = isset($data['discount_type']) ? $data['discount_type'] : null;
+        $this->container['discount_value'] = isset($data['discount_value']) ? $data['discount_value'] : null;
+        $this->container['max_redemptions'] = isset($data['max_redemptions']) ? $data['max_redemptions'] : null;
+        $this->container['image_url'] = isset($data['image_url']) ? $data['image_url'] : null;
+        $this->container['product_ids'] = isset($data['product_ids']) ? $data['product_ids'] : null;
+        $this->container['times_redeemed'] = isset($data['times_redeemed']) ? $data['times_redeemed'] : null;
     }
 
     /**
@@ -261,11 +261,11 @@ class MemberCouponResponse implements ModelInterface, ArrayAccess
         if ($this->container['title'] === null) {
             $invalidProperties[] = "'title' can't be null";
         }
-        if ($this->container['validFrom'] === null) {
-            $invalidProperties[] = "'validFrom' can't be null";
+        if ($this->container['valid_from'] === null) {
+            $invalidProperties[] = "'valid_from' can't be null";
         }
-        if ($this->container['validTo'] === null) {
-            $invalidProperties[] = "'validTo' can't be null";
+        if ($this->container['valid_to'] === null) {
+            $invalidProperties[] = "'valid_to' can't be null";
         }
         if ($this->container['type'] === null) {
             $invalidProperties[] = "'type' can't be null";
@@ -310,25 +310,25 @@ class MemberCouponResponse implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets externalIds
+     * Gets external_ids
      *
-     * @return \DillerAPI\Model\ExternalCouponIdentifier[]
+     * @return \Swagger\Client\Model\ExternalCouponIdentifier[]
      */
     public function getExternalIds()
     {
-        return $this->container['externalIds'];
+        return $this->container['external_ids'];
     }
 
     /**
-     * Sets externalIds
+     * Sets external_ids
      *
-     * @param \DillerAPI\Model\ExternalCouponIdentifier[] $externalIds externalIds
+     * @param \Swagger\Client\Model\ExternalCouponIdentifier[] $external_ids external_ids
      *
      * @return $this
      */
-    public function setExternalIds($externalIds)
+    public function setExternalIds($external_ids)
     {
-        $this->container['externalIds'] = $externalIds;
+        $this->container['external_ids'] = $external_ids;
 
         return $this;
     }
@@ -406,73 +406,73 @@ class MemberCouponResponse implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets articleNumber
+     * Gets article_number
      *
      * @return string
      */
     public function getArticleNumber()
     {
-        return $this->container['articleNumber'];
+        return $this->container['article_number'];
     }
 
     /**
-     * Sets articleNumber
+     * Sets article_number
      *
-     * @param string $articleNumber articleNumber
+     * @param string $article_number article_number
      *
      * @return $this
      */
-    public function setArticleNumber($articleNumber)
+    public function setArticleNumber($article_number)
     {
-        $this->container['articleNumber'] = $articleNumber;
+        $this->container['article_number'] = $article_number;
 
         return $this;
     }
 
     /**
-     * Gets validFrom
+     * Gets valid_from
      *
      * @return \DateTime
      */
     public function getValidFrom()
     {
-        return $this->container['validFrom'];
+        return $this->container['valid_from'];
     }
 
     /**
-     * Sets validFrom
+     * Sets valid_from
      *
-     * @param \DateTime $validFrom The startDate of the coupon
+     * @param \DateTime $valid_from The startDate of the coupon
      *
      * @return $this
      */
-    public function setValidFrom($validFrom)
+    public function setValidFrom($valid_from)
     {
-        $this->container['validFrom'] = $validFrom;
+        $this->container['valid_from'] = $valid_from;
 
         return $this;
     }
 
     /**
-     * Gets validTo
+     * Gets valid_to
      *
      * @return \DateTime
      */
     public function getValidTo()
     {
-        return $this->container['validTo'];
+        return $this->container['valid_to'];
     }
 
     /**
-     * Sets validTo
+     * Sets valid_to
      *
-     * @param \DateTime $validTo validTo
+     * @param \DateTime $valid_to valid_to
      *
      * @return $this
      */
-    public function setValidTo($validTo)
+    public function setValidTo($valid_to)
     {
-        $this->container['validTo'] = $validTo;
+        $this->container['valid_to'] = $valid_to;
 
         return $this;
     }
@@ -480,7 +480,7 @@ class MemberCouponResponse implements ModelInterface, ArrayAccess
     /**
      * Gets type
      *
-     * @return \DillerAPI\Model\CouponType
+     * @return \Swagger\Client\Model\CouponType
      */
     public function getType()
     {
@@ -490,7 +490,7 @@ class MemberCouponResponse implements ModelInterface, ArrayAccess
     /**
      * Sets type
      *
-     * @param \DillerAPI\Model\CouponType $type type
+     * @param \Swagger\Client\Model\CouponType $type type
      *
      * @return $this
      */
@@ -502,145 +502,145 @@ class MemberCouponResponse implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets discountType
+     * Gets discount_type
      *
-     * @return \DillerAPI\Model\CouponDiscountType
+     * @return \Swagger\Client\Model\CouponDiscountType
      */
     public function getDiscountType()
     {
-        return $this->container['discountType'];
+        return $this->container['discount_type'];
     }
 
     /**
-     * Sets discountType
+     * Sets discount_type
      *
-     * @param \DillerAPI\Model\CouponDiscountType $discountType discountType
+     * @param \Swagger\Client\Model\CouponDiscountType $discount_type discount_type
      *
      * @return $this
      */
-    public function setDiscountType($discountType)
+    public function setDiscountType($discount_type)
     {
-        $this->container['discountType'] = $discountType;
+        $this->container['discount_type'] = $discount_type;
 
         return $this;
     }
 
     /**
-     * Gets discountValue
+     * Gets discount_value
      *
      * @return double
      */
     public function getDiscountValue()
     {
-        return $this->container['discountValue'];
+        return $this->container['discount_value'];
     }
 
     /**
-     * Sets discountValue
+     * Sets discount_value
      *
-     * @param double $discountValue discountValue
+     * @param double $discount_value discount_value
      *
      * @return $this
      */
-    public function setDiscountValue($discountValue)
+    public function setDiscountValue($discount_value)
     {
-        $this->container['discountValue'] = $discountValue;
+        $this->container['discount_value'] = $discount_value;
 
         return $this;
     }
 
     /**
-     * Gets maxRedemptions
+     * Gets max_redemptions
      *
      * @return int
      */
     public function getMaxRedemptions()
     {
-        return $this->container['maxRedemptions'];
+        return $this->container['max_redemptions'];
     }
 
     /**
-     * Sets maxRedemptions
+     * Sets max_redemptions
      *
-     * @param int $maxRedemptions maxRedemptions
+     * @param int $max_redemptions max_redemptions
      *
      * @return $this
      */
-    public function setMaxRedemptions($maxRedemptions)
+    public function setMaxRedemptions($max_redemptions)
     {
-        $this->container['maxRedemptions'] = $maxRedemptions;
+        $this->container['max_redemptions'] = $max_redemptions;
 
         return $this;
     }
 
     /**
-     * Gets imageUrl
+     * Gets image_url
      *
      * @return string
      */
     public function getImageUrl()
     {
-        return $this->container['imageUrl'];
+        return $this->container['image_url'];
     }
 
     /**
-     * Sets imageUrl
+     * Sets image_url
      *
-     * @param string $imageUrl imageUrl
+     * @param string $image_url image_url
      *
      * @return $this
      */
-    public function setImageUrl($imageUrl)
+    public function setImageUrl($image_url)
     {
-        $this->container['imageUrl'] = $imageUrl;
+        $this->container['image_url'] = $image_url;
 
         return $this;
     }
 
     /**
-     * Gets productIds
+     * Gets product_ids
      *
      * @return string[]
      */
     public function getProductIds()
     {
-        return $this->container['productIds'];
+        return $this->container['product_ids'];
     }
 
     /**
-     * Sets productIds
+     * Sets product_ids
      *
-     * @param string[] $productIds productIds
+     * @param string[] $product_ids product_ids
      *
      * @return $this
      */
-    public function setProductIds($productIds)
+    public function setProductIds($product_ids)
     {
-        $this->container['productIds'] = $productIds;
+        $this->container['product_ids'] = $product_ids;
 
         return $this;
     }
 
     /**
-     * Gets timesRedeemed
+     * Gets times_redeemed
      *
      * @return int
      */
     public function getTimesRedeemed()
     {
-        return $this->container['timesRedeemed'];
+        return $this->container['times_redeemed'];
     }
 
     /**
-     * Sets timesRedeemed
+     * Sets times_redeemed
      *
-     * @param int $timesRedeemed timesRedeemed
+     * @param int $times_redeemed times_redeemed
      *
      * @return $this
      */
-    public function setTimesRedeemed($timesRedeemed)
+    public function setTimesRedeemed($times_redeemed)
     {
-        $this->container['timesRedeemed'] = $timesRedeemed;
+        $this->container['times_redeemed'] = $times_redeemed;
 
         return $this;
     }

@@ -16,14 +16,14 @@
  * Do not edit the class manually.
  */
 
-namespace DillerAPI\Model;
+namespace Swagger\Client\Model;
 use \DillerAPI\ObjectSerializer;
 
 /**
  * SegmentType Class Doc Comment
  *
  * @category Class
- * @package  DillerAPI
+ * @package  Swagger\Client
  * @author   DILLER AS
  * @link     https://diller.io
  */
@@ -33,10 +33,10 @@ class SegmentType
      * Possible values of this enum
      */
     const TEXT = 'Text';
-const DATE_TIME = 'DateTime';
-const RADIO = 'Radio';
-const CHECKBOX = 'Checkbox';
-const DROPDOWN = 'Dropdown';
+    const DATE_TIME = 'DateTime';
+    const RADIO = 'Radio';
+    const CHECKBOX = 'Checkbox';
+    const DROPDOWN = 'Dropdown';
     /**
      * Gets allowable values of the enum
      * @return string[]
@@ -44,7 +44,11 @@ const DROPDOWN = 'Dropdown';
     public static function getAllowableEnumValues()
     {
         return [
-            self::TEXT,self::DATE_TIME,self::RADIO,self::CHECKBOX,self::DROPDOWN,
+            self::TEXT,
+            self::DATE_TIME,
+            self::RADIO,
+            self::CHECKBOX,
+            self::DROPDOWN,
         ];
     }
 }

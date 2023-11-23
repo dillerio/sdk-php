@@ -16,7 +16,7 @@
  * Do not edit the class manually.
  */
 
-namespace DillerAPI\Model;
+namespace Swagger\Client\Model;
 
 use \ArrayAccess;
 use \DillerAPI\ObjectSerializer;
@@ -25,7 +25,7 @@ use \DillerAPI\ObjectSerializer;
  * ExternalCouponIdentifier Class Doc Comment
  *
  * @category Class
- * @package  DillerAPI
+ * @package  Swagger\Client
  * @author   DILLER AS
  * @link     https://diller.io
  */
@@ -46,8 +46,8 @@ class ExternalCouponIdentifier implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'platform' => '\DillerAPI\Model\PlatformType',
-'externalId' => 'string'    ];
+        'platform' => '\Swagger\Client\Model\PlatformType',
+'external_id' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -56,7 +56,7 @@ class ExternalCouponIdentifier implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'platform' => null,
-'externalId' => null    ];
+'external_id' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -86,7 +86,7 @@ class ExternalCouponIdentifier implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'platform' => 'platform',
-'externalId' => 'external_id'    ];
+'external_id' => 'external_id'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -95,7 +95,7 @@ class ExternalCouponIdentifier implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'platform' => 'setPlatform',
-'externalId' => 'setExternalId'    ];
+'external_id' => 'setExternalId'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -104,7 +104,7 @@ class ExternalCouponIdentifier implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'platform' => 'getPlatform',
-'externalId' => 'getExternalId'    ];
+'external_id' => 'getExternalId'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -165,7 +165,7 @@ class ExternalCouponIdentifier implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['platform'] = isset($data['platform']) ? $data['platform'] : null;
-        $this->container['externalId'] = isset($data['externalId']) ? $data['externalId'] : null;
+        $this->container['external_id'] = isset($data['external_id']) ? $data['external_id'] : null;
     }
 
     /**
@@ -195,7 +195,7 @@ class ExternalCouponIdentifier implements ModelInterface, ArrayAccess
     /**
      * Gets platform
      *
-     * @return \DillerAPI\Model\PlatformType
+     * @return \Swagger\Client\Model\PlatformType
      */
     public function getPlatform()
     {
@@ -205,7 +205,7 @@ class ExternalCouponIdentifier implements ModelInterface, ArrayAccess
     /**
      * Sets platform
      *
-     * @param \DillerAPI\Model\PlatformType $platform platform
+     * @param \Swagger\Client\Model\PlatformType $platform platform
      *
      * @return $this
      */
@@ -217,25 +217,25 @@ class ExternalCouponIdentifier implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets externalId
+     * Gets external_id
      *
      * @return string
      */
     public function getExternalId()
     {
-        return $this->container['externalId'];
+        return $this->container['external_id'];
     }
 
     /**
-     * Sets externalId
+     * Sets external_id
      *
-     * @param string $externalId This is the ID the cupon has in the external system / platform.
+     * @param string $external_id This is the ID the cupon has in the external system / platform.
      *
      * @return $this
      */
-    public function setExternalId($externalId)
+    public function setExternalId($external_id)
     {
-        $this->container['externalId'] = $externalId;
+        $this->container['external_id'] = $external_id;
 
         return $this;
     }
