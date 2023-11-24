@@ -16,7 +16,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace DillerAPI\Model;
 
 use \ArrayAccess;
 use \DillerAPI\ObjectSerializer;
@@ -25,7 +25,7 @@ use \DillerAPI\ObjectSerializer;
  * StoreSegmentResponse Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  DillerAPI
  * @author   DILLER AS
  * @link     https://diller.io
  */
@@ -48,10 +48,10 @@ class StoreSegmentResponse implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'id' => 'int',
 'text' => 'string',
-'type' => '\Swagger\Client\Model\SegmentType',
-'is_visible_to_follower' => 'bool',
-'is_required' => 'bool',
-'options' => '\Swagger\Client\Model\SegmentOption[]'    ];
+'type' => '\DillerAPI\Model\SegmentType',
+'isVisibleToFollower' => 'bool',
+'isRequired' => 'bool',
+'options' => '\DillerAPI\Model\SegmentOption[]'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -62,8 +62,8 @@ class StoreSegmentResponse implements ModelInterface, ArrayAccess
         'id' => 'int32',
 'text' => null,
 'type' => null,
-'is_visible_to_follower' => null,
-'is_required' => null,
+'isVisibleToFollower' => null,
+'isRequired' => null,
 'options' => null    ];
 
     /**
@@ -96,8 +96,8 @@ class StoreSegmentResponse implements ModelInterface, ArrayAccess
         'id' => 'id',
 'text' => 'text',
 'type' => 'type',
-'is_visible_to_follower' => 'is_visible_to_follower',
-'is_required' => 'is_required',
+'isVisibleToFollower' => 'is_visible_to_follower',
+'isRequired' => 'is_required',
 'options' => 'options'    ];
 
     /**
@@ -109,8 +109,8 @@ class StoreSegmentResponse implements ModelInterface, ArrayAccess
         'id' => 'setId',
 'text' => 'setText',
 'type' => 'setType',
-'is_visible_to_follower' => 'setIsVisibleToFollower',
-'is_required' => 'setIsRequired',
+'isVisibleToFollower' => 'setIsVisibleToFollower',
+'isRequired' => 'setIsRequired',
 'options' => 'setOptions'    ];
 
     /**
@@ -122,8 +122,8 @@ class StoreSegmentResponse implements ModelInterface, ArrayAccess
         'id' => 'getId',
 'text' => 'getText',
 'type' => 'getType',
-'is_visible_to_follower' => 'getIsVisibleToFollower',
-'is_required' => 'getIsRequired',
+'isVisibleToFollower' => 'getIsVisibleToFollower',
+'isRequired' => 'getIsRequired',
 'options' => 'getOptions'    ];
 
     /**
@@ -187,8 +187,8 @@ class StoreSegmentResponse implements ModelInterface, ArrayAccess
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['text'] = isset($data['text']) ? $data['text'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
-        $this->container['is_visible_to_follower'] = isset($data['is_visible_to_follower']) ? $data['is_visible_to_follower'] : null;
-        $this->container['is_required'] = isset($data['is_required']) ? $data['is_required'] : null;
+        $this->container['isVisibleToFollower'] = isset($data['isVisibleToFollower']) ? $data['isVisibleToFollower'] : null;
+        $this->container['isRequired'] = isset($data['isRequired']) ? $data['isRequired'] : null;
         $this->container['options'] = isset($data['options']) ? $data['options'] : null;
     }
 
@@ -270,7 +270,7 @@ class StoreSegmentResponse implements ModelInterface, ArrayAccess
     /**
      * Gets type
      *
-     * @return \Swagger\Client\Model\SegmentType
+     * @return \DillerAPI\Model\SegmentType
      */
     public function getType()
     {
@@ -280,7 +280,7 @@ class StoreSegmentResponse implements ModelInterface, ArrayAccess
     /**
      * Sets type
      *
-     * @param \Swagger\Client\Model\SegmentType $type type
+     * @param \DillerAPI\Model\SegmentType $type type
      *
      * @return $this
      */
@@ -292,49 +292,49 @@ class StoreSegmentResponse implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets is_visible_to_follower
+     * Gets isVisibleToFollower
      *
      * @return bool
      */
     public function getIsVisibleToFollower()
     {
-        return $this->container['is_visible_to_follower'];
+        return $this->container['isVisibleToFollower'];
     }
 
     /**
-     * Sets is_visible_to_follower
+     * Sets isVisibleToFollower
      *
-     * @param bool $is_visible_to_follower is_visible_to_follower
+     * @param bool $isVisibleToFollower isVisibleToFollower
      *
      * @return $this
      */
-    public function setIsVisibleToFollower($is_visible_to_follower)
+    public function setIsVisibleToFollower($isVisibleToFollower)
     {
-        $this->container['is_visible_to_follower'] = $is_visible_to_follower;
+        $this->container['isVisibleToFollower'] = $isVisibleToFollower;
 
         return $this;
     }
 
     /**
-     * Gets is_required
+     * Gets isRequired
      *
      * @return bool
      */
     public function getIsRequired()
     {
-        return $this->container['is_required'];
+        return $this->container['isRequired'];
     }
 
     /**
-     * Sets is_required
+     * Sets isRequired
      *
-     * @param bool $is_required is_required
+     * @param bool $isRequired isRequired
      *
      * @return $this
      */
-    public function setIsRequired($is_required)
+    public function setIsRequired($isRequired)
     {
-        $this->container['is_required'] = $is_required;
+        $this->container['isRequired'] = $isRequired;
 
         return $this;
     }
@@ -342,7 +342,7 @@ class StoreSegmentResponse implements ModelInterface, ArrayAccess
     /**
      * Gets options
      *
-     * @return \Swagger\Client\Model\SegmentOption[]
+     * @return \DillerAPI\Model\SegmentOption[]
      */
     public function getOptions()
     {
@@ -352,7 +352,7 @@ class StoreSegmentResponse implements ModelInterface, ArrayAccess
     /**
      * Sets options
      *
-     * @param \Swagger\Client\Model\SegmentOption[] $options options
+     * @param \DillerAPI\Model\SegmentOption[] $options options
      *
      * @return $this
      */

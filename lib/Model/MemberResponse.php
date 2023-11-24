@@ -16,7 +16,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace DillerAPI\Model;
 
 use \ArrayAccess;
 use \DillerAPI\ObjectSerializer;
@@ -25,7 +25,7 @@ use \DillerAPI\ObjectSerializer;
  * MemberResponse Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  DillerAPI
  * @author   DILLER AS
  * @link     https://diller.io
  */
@@ -47,19 +47,19 @@ class MemberResponse implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'id' => 'string',
-'first_name' => 'string',
-'last_name' => 'string',
+'firstName' => 'string',
+'lastName' => 'string',
 'email' => 'string',
-'additional_identifiers' => 'string[]',
+'additionalIdentifiers' => 'string[]',
 'remarks' => 'string',
-'phone' => '\Swagger\Client\Model\Phone',
-'birth_date' => '\DateTime',
-'address' => '\Swagger\Client\Model\Address',
-'gender' => '\Swagger\Client\Model\Gender',
-'consent' => '\Swagger\Client\Model\MemberConsent',
-'membership_detail' => '\Swagger\Client\Model\MemberMembershipDetail',
-'department_ids' => 'string[]',
-'segments' => '\Swagger\Client\Model\MemberSegmentResponse[]'    ];
+'phone' => '\DillerAPI\Model\Phone',
+'birthDate' => '\DateTime',
+'address' => '\DillerAPI\Model\Address',
+'gender' => '\DillerAPI\Model\Gender',
+'consent' => '\DillerAPI\Model\MemberConsent',
+'membershipDetail' => '\DillerAPI\Model\MemberMembershipDetail',
+'departmentIds' => 'string[]',
+'segments' => '\DillerAPI\Model\MemberSegmentResponse[]'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -68,18 +68,18 @@ class MemberResponse implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'id' => null,
-'first_name' => null,
-'last_name' => null,
+'firstName' => null,
+'lastName' => null,
 'email' => null,
-'additional_identifiers' => null,
+'additionalIdentifiers' => null,
 'remarks' => null,
 'phone' => null,
-'birth_date' => 'date-time',
+'birthDate' => 'date-time',
 'address' => null,
 'gender' => null,
 'consent' => null,
-'membership_detail' => null,
-'department_ids' => null,
+'membershipDetail' => null,
+'departmentIds' => null,
 'segments' => null    ];
 
     /**
@@ -110,18 +110,18 @@ class MemberResponse implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'id' => 'id',
-'first_name' => 'first_name',
-'last_name' => 'last_name',
+'firstName' => 'first_name',
+'lastName' => 'last_name',
 'email' => 'email',
-'additional_identifiers' => 'additional_identifiers',
+'additionalIdentifiers' => 'additional_identifiers',
 'remarks' => 'remarks',
 'phone' => 'phone',
-'birth_date' => 'birth_date',
+'birthDate' => 'birth_date',
 'address' => 'address',
 'gender' => 'gender',
 'consent' => 'consent',
-'membership_detail' => 'membership_detail',
-'department_ids' => 'department_ids',
+'membershipDetail' => 'membership_detail',
+'departmentIds' => 'department_ids',
 'segments' => 'segments'    ];
 
     /**
@@ -131,18 +131,18 @@ class MemberResponse implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'id' => 'setId',
-'first_name' => 'setFirstName',
-'last_name' => 'setLastName',
+'firstName' => 'setFirstName',
+'lastName' => 'setLastName',
 'email' => 'setEmail',
-'additional_identifiers' => 'setAdditionalIdentifiers',
+'additionalIdentifiers' => 'setAdditionalIdentifiers',
 'remarks' => 'setRemarks',
 'phone' => 'setPhone',
-'birth_date' => 'setBirthDate',
+'birthDate' => 'setBirthDate',
 'address' => 'setAddress',
 'gender' => 'setGender',
 'consent' => 'setConsent',
-'membership_detail' => 'setMembershipDetail',
-'department_ids' => 'setDepartmentIds',
+'membershipDetail' => 'setMembershipDetail',
+'departmentIds' => 'setDepartmentIds',
 'segments' => 'setSegments'    ];
 
     /**
@@ -152,18 +152,18 @@ class MemberResponse implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'id' => 'getId',
-'first_name' => 'getFirstName',
-'last_name' => 'getLastName',
+'firstName' => 'getFirstName',
+'lastName' => 'getLastName',
 'email' => 'getEmail',
-'additional_identifiers' => 'getAdditionalIdentifiers',
+'additionalIdentifiers' => 'getAdditionalIdentifiers',
 'remarks' => 'getRemarks',
 'phone' => 'getPhone',
-'birth_date' => 'getBirthDate',
+'birthDate' => 'getBirthDate',
 'address' => 'getAddress',
 'gender' => 'getGender',
 'consent' => 'getConsent',
-'membership_detail' => 'getMembershipDetail',
-'department_ids' => 'getDepartmentIds',
+'membershipDetail' => 'getMembershipDetail',
+'departmentIds' => 'getDepartmentIds',
 'segments' => 'getSegments'    ];
 
     /**
@@ -225,18 +225,18 @@ class MemberResponse implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['first_name'] = isset($data['first_name']) ? $data['first_name'] : null;
-        $this->container['last_name'] = isset($data['last_name']) ? $data['last_name'] : null;
+        $this->container['firstName'] = isset($data['firstName']) ? $data['firstName'] : null;
+        $this->container['lastName'] = isset($data['lastName']) ? $data['lastName'] : null;
         $this->container['email'] = isset($data['email']) ? $data['email'] : null;
-        $this->container['additional_identifiers'] = isset($data['additional_identifiers']) ? $data['additional_identifiers'] : null;
+        $this->container['additionalIdentifiers'] = isset($data['additionalIdentifiers']) ? $data['additionalIdentifiers'] : null;
         $this->container['remarks'] = isset($data['remarks']) ? $data['remarks'] : null;
         $this->container['phone'] = isset($data['phone']) ? $data['phone'] : null;
-        $this->container['birth_date'] = isset($data['birth_date']) ? $data['birth_date'] : null;
+        $this->container['birthDate'] = isset($data['birthDate']) ? $data['birthDate'] : null;
         $this->container['address'] = isset($data['address']) ? $data['address'] : null;
         $this->container['gender'] = isset($data['gender']) ? $data['gender'] : null;
         $this->container['consent'] = isset($data['consent']) ? $data['consent'] : null;
-        $this->container['membership_detail'] = isset($data['membership_detail']) ? $data['membership_detail'] : null;
-        $this->container['department_ids'] = isset($data['department_ids']) ? $data['department_ids'] : null;
+        $this->container['membershipDetail'] = isset($data['membershipDetail']) ? $data['membershipDetail'] : null;
+        $this->container['departmentIds'] = isset($data['departmentIds']) ? $data['departmentIds'] : null;
         $this->container['segments'] = isset($data['segments']) ? $data['segments'] : null;
     }
 
@@ -292,49 +292,49 @@ class MemberResponse implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets first_name
+     * Gets firstName
      *
      * @return string
      */
     public function getFirstName()
     {
-        return $this->container['first_name'];
+        return $this->container['firstName'];
     }
 
     /**
-     * Sets first_name
+     * Sets firstName
      *
-     * @param string $first_name first_name
+     * @param string $firstName firstName
      *
      * @return $this
      */
-    public function setFirstName($first_name)
+    public function setFirstName($firstName)
     {
-        $this->container['first_name'] = $first_name;
+        $this->container['firstName'] = $firstName;
 
         return $this;
     }
 
     /**
-     * Gets last_name
+     * Gets lastName
      *
      * @return string
      */
     public function getLastName()
     {
-        return $this->container['last_name'];
+        return $this->container['lastName'];
     }
 
     /**
-     * Sets last_name
+     * Sets lastName
      *
-     * @param string $last_name last_name
+     * @param string $lastName lastName
      *
      * @return $this
      */
-    public function setLastName($last_name)
+    public function setLastName($lastName)
     {
-        $this->container['last_name'] = $last_name;
+        $this->container['lastName'] = $lastName;
 
         return $this;
     }
@@ -364,25 +364,25 @@ class MemberResponse implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets additional_identifiers
+     * Gets additionalIdentifiers
      *
      * @return string[]
      */
     public function getAdditionalIdentifiers()
     {
-        return $this->container['additional_identifiers'];
+        return $this->container['additionalIdentifiers'];
     }
 
     /**
-     * Sets additional_identifiers
+     * Sets additionalIdentifiers
      *
-     * @param string[] $additional_identifiers Specifies an additional identifier value for the member identifier type that is defined at the store level.
+     * @param string[] $additionalIdentifiers Specifies an additional identifier value for the member identifier type that is defined at the store level.
      *
      * @return $this
      */
-    public function setAdditionalIdentifiers($additional_identifiers)
+    public function setAdditionalIdentifiers($additionalIdentifiers)
     {
-        $this->container['additional_identifiers'] = $additional_identifiers;
+        $this->container['additionalIdentifiers'] = $additionalIdentifiers;
 
         return $this;
     }
@@ -414,7 +414,7 @@ class MemberResponse implements ModelInterface, ArrayAccess
     /**
      * Gets phone
      *
-     * @return \Swagger\Client\Model\Phone
+     * @return \DillerAPI\Model\Phone
      */
     public function getPhone()
     {
@@ -424,7 +424,7 @@ class MemberResponse implements ModelInterface, ArrayAccess
     /**
      * Sets phone
      *
-     * @param \Swagger\Client\Model\Phone $phone phone
+     * @param \DillerAPI\Model\Phone $phone phone
      *
      * @return $this
      */
@@ -436,25 +436,25 @@ class MemberResponse implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets birth_date
+     * Gets birthDate
      *
      * @return \DateTime
      */
     public function getBirthDate()
     {
-        return $this->container['birth_date'];
+        return $this->container['birthDate'];
     }
 
     /**
-     * Sets birth_date
+     * Sets birthDate
      *
-     * @param \DateTime $birth_date birth_date
+     * @param \DateTime $birthDate birthDate
      *
      * @return $this
      */
-    public function setBirthDate($birth_date)
+    public function setBirthDate($birthDate)
     {
-        $this->container['birth_date'] = $birth_date;
+        $this->container['birthDate'] = $birthDate;
 
         return $this;
     }
@@ -462,7 +462,7 @@ class MemberResponse implements ModelInterface, ArrayAccess
     /**
      * Gets address
      *
-     * @return \Swagger\Client\Model\Address
+     * @return \DillerAPI\Model\Address
      */
     public function getAddress()
     {
@@ -472,7 +472,7 @@ class MemberResponse implements ModelInterface, ArrayAccess
     /**
      * Sets address
      *
-     * @param \Swagger\Client\Model\Address $address address
+     * @param \DillerAPI\Model\Address $address address
      *
      * @return $this
      */
@@ -486,7 +486,7 @@ class MemberResponse implements ModelInterface, ArrayAccess
     /**
      * Gets gender
      *
-     * @return \Swagger\Client\Model\Gender
+     * @return \DillerAPI\Model\Gender
      */
     public function getGender()
     {
@@ -496,7 +496,7 @@ class MemberResponse implements ModelInterface, ArrayAccess
     /**
      * Sets gender
      *
-     * @param \Swagger\Client\Model\Gender $gender gender
+     * @param \DillerAPI\Model\Gender $gender gender
      *
      * @return $this
      */
@@ -510,7 +510,7 @@ class MemberResponse implements ModelInterface, ArrayAccess
     /**
      * Gets consent
      *
-     * @return \Swagger\Client\Model\MemberConsent
+     * @return \DillerAPI\Model\MemberConsent
      */
     public function getConsent()
     {
@@ -520,7 +520,7 @@ class MemberResponse implements ModelInterface, ArrayAccess
     /**
      * Sets consent
      *
-     * @param \Swagger\Client\Model\MemberConsent $consent consent
+     * @param \DillerAPI\Model\MemberConsent $consent consent
      *
      * @return $this
      */
@@ -532,49 +532,49 @@ class MemberResponse implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets membership_detail
+     * Gets membershipDetail
      *
-     * @return \Swagger\Client\Model\MemberMembershipDetail
+     * @return \DillerAPI\Model\MemberMembershipDetail
      */
     public function getMembershipDetail()
     {
-        return $this->container['membership_detail'];
+        return $this->container['membershipDetail'];
     }
 
     /**
-     * Sets membership_detail
+     * Sets membershipDetail
      *
-     * @param \Swagger\Client\Model\MemberMembershipDetail $membership_detail membership_detail
+     * @param \DillerAPI\Model\MemberMembershipDetail $membershipDetail membershipDetail
      *
      * @return $this
      */
-    public function setMembershipDetail($membership_detail)
+    public function setMembershipDetail($membershipDetail)
     {
-        $this->container['membership_detail'] = $membership_detail;
+        $this->container['membershipDetail'] = $membershipDetail;
 
         return $this;
     }
 
     /**
-     * Gets department_ids
+     * Gets departmentIds
      *
      * @return string[]
      */
     public function getDepartmentIds()
     {
-        return $this->container['department_ids'];
+        return $this->container['departmentIds'];
     }
 
     /**
-     * Sets department_ids
+     * Sets departmentIds
      *
-     * @param string[] $department_ids department_ids
+     * @param string[] $departmentIds departmentIds
      *
      * @return $this
      */
-    public function setDepartmentIds($department_ids)
+    public function setDepartmentIds($departmentIds)
     {
-        $this->container['department_ids'] = $department_ids;
+        $this->container['departmentIds'] = $departmentIds;
 
         return $this;
     }
@@ -582,7 +582,7 @@ class MemberResponse implements ModelInterface, ArrayAccess
     /**
      * Gets segments
      *
-     * @return \Swagger\Client\Model\MemberSegmentResponse[]
+     * @return \DillerAPI\Model\MemberSegmentResponse[]
      */
     public function getSegments()
     {
@@ -592,7 +592,7 @@ class MemberResponse implements ModelInterface, ArrayAccess
     /**
      * Sets segments
      *
-     * @param \Swagger\Client\Model\MemberSegmentResponse[] $segments segments
+     * @param \DillerAPI\Model\MemberSegmentResponse[] $segments segments
      *
      * @return $this
      */

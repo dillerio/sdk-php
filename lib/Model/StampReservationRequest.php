@@ -16,7 +16,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace DillerAPI\Model;
 
 use \ArrayAccess;
 use \DillerAPI\ObjectSerializer;
@@ -25,7 +25,7 @@ use \DillerAPI\ObjectSerializer;
  * StampReservationRequest Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  DillerAPI
  * @author   DILLER AS
  * @link     https://diller.io
  */
@@ -47,8 +47,8 @@ class StampReservationRequest implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'channel' => 'string',
-'external_product_id' => 'string',
-'external_transaction_id' => 'string'    ];
+'externalProductId' => 'string',
+'externalTransactionId' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -57,8 +57,8 @@ class StampReservationRequest implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'channel' => null,
-'external_product_id' => null,
-'external_transaction_id' => null    ];
+'externalProductId' => null,
+'externalTransactionId' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -88,8 +88,8 @@ class StampReservationRequest implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'channel' => 'channel',
-'external_product_id' => 'external_product_id',
-'external_transaction_id' => 'external_transaction_id'    ];
+'externalProductId' => 'external_product_id',
+'externalTransactionId' => 'external_transaction_id'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -98,8 +98,8 @@ class StampReservationRequest implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'channel' => 'setChannel',
-'external_product_id' => 'setExternalProductId',
-'external_transaction_id' => 'setExternalTransactionId'    ];
+'externalProductId' => 'setExternalProductId',
+'externalTransactionId' => 'setExternalTransactionId'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -108,8 +108,8 @@ class StampReservationRequest implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'channel' => 'getChannel',
-'external_product_id' => 'getExternalProductId',
-'external_transaction_id' => 'getExternalTransactionId'    ];
+'externalProductId' => 'getExternalProductId',
+'externalTransactionId' => 'getExternalTransactionId'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -170,8 +170,8 @@ class StampReservationRequest implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['channel'] = isset($data['channel']) ? $data['channel'] : null;
-        $this->container['external_product_id'] = isset($data['external_product_id']) ? $data['external_product_id'] : null;
-        $this->container['external_transaction_id'] = isset($data['external_transaction_id']) ? $data['external_transaction_id'] : null;
+        $this->container['externalProductId'] = isset($data['externalProductId']) ? $data['externalProductId'] : null;
+        $this->container['externalTransactionId'] = isset($data['externalTransactionId']) ? $data['externalTransactionId'] : null;
     }
 
     /**
@@ -223,49 +223,49 @@ class StampReservationRequest implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets external_product_id
+     * Gets externalProductId
      *
      * @return string
      */
     public function getExternalProductId()
     {
-        return $this->container['external_product_id'];
+        return $this->container['externalProductId'];
     }
 
     /**
-     * Sets external_product_id
+     * Sets externalProductId
      *
-     * @param string $external_product_id external_product_id
+     * @param string $externalProductId externalProductId
      *
      * @return $this
      */
-    public function setExternalProductId($external_product_id)
+    public function setExternalProductId($externalProductId)
     {
-        $this->container['external_product_id'] = $external_product_id;
+        $this->container['externalProductId'] = $externalProductId;
 
         return $this;
     }
 
     /**
-     * Gets external_transaction_id
+     * Gets externalTransactionId
      *
      * @return string
      */
     public function getExternalTransactionId()
     {
-        return $this->container['external_transaction_id'];
+        return $this->container['externalTransactionId'];
     }
 
     /**
-     * Sets external_transaction_id
+     * Sets externalTransactionId
      *
-     * @param string $external_transaction_id external_transaction_id
+     * @param string $externalTransactionId externalTransactionId
      *
      * @return $this
      */
-    public function setExternalTransactionId($external_transaction_id)
+    public function setExternalTransactionId($externalTransactionId)
     {
-        $this->container['external_transaction_id'] = $external_transaction_id;
+        $this->container['externalTransactionId'] = $externalTransactionId;
 
         return $this;
     }

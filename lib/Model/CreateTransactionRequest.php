@@ -16,7 +16,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace DillerAPI\Model;
 
 use \ArrayAccess;
 use \DillerAPI\ObjectSerializer;
@@ -25,7 +25,7 @@ use \DillerAPI\ObjectSerializer;
  * CreateTransactionRequest Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  DillerAPI
  * @author   DILLER AS
  * @link     https://diller.io
  */
@@ -46,21 +46,21 @@ class CreateTransactionRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'external_id' => 'string',
-'created_at' => '\DateTime',
-'payment_details' => '\Swagger\Client\Model\PaymentDetails[]',
-'eft_pos' => 'string',
-'send_email_receipt' => 'bool',
+        'externalId' => 'string',
+'createdAt' => '\DateTime',
+'paymentDetails' => '\DillerAPI\Model\PaymentDetails[]',
+'eftPos' => 'string',
+'sendEmailReceipt' => 'bool',
 'total' => 'double',
-'total_tax' => 'double',
-'total_discount' => 'double',
+'totalTax' => 'double',
+'totalDiscount' => 'double',
 'currency' => 'string',
-'round_off_amount' => 'double',
-'origin' => '\Swagger\Client\Model\Origin',
-'coupon_codes' => 'string[]',
-'stamp_card_ids' => 'int[]',
-'details' => '\Swagger\Client\Model\TransactionDetailRequest[]',
-'department_id' => 'string'    ];
+'roundOffAmount' => 'double',
+'origin' => '\DillerAPI\Model\Origin',
+'couponCodes' => 'string[]',
+'stampCardIds' => 'int[]',
+'details' => '\DillerAPI\Model\TransactionDetailRequest[]',
+'departmentId' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -68,21 +68,21 @@ class CreateTransactionRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'external_id' => null,
-'created_at' => 'date-time',
-'payment_details' => null,
-'eft_pos' => null,
-'send_email_receipt' => null,
+        'externalId' => null,
+'createdAt' => 'date-time',
+'paymentDetails' => null,
+'eftPos' => null,
+'sendEmailReceipt' => null,
 'total' => 'double',
-'total_tax' => 'double',
-'total_discount' => 'double',
+'totalTax' => 'double',
+'totalDiscount' => 'double',
 'currency' => null,
-'round_off_amount' => 'double',
+'roundOffAmount' => 'double',
 'origin' => null,
-'coupon_codes' => null,
-'stamp_card_ids' => 'int32',
+'couponCodes' => null,
+'stampCardIds' => 'int32',
 'details' => null,
-'department_id' => null    ];
+'departmentId' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -111,21 +111,21 @@ class CreateTransactionRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'external_id' => 'external_id',
-'created_at' => 'created_at',
-'payment_details' => 'payment_details',
-'eft_pos' => 'eft_pos',
-'send_email_receipt' => 'send_email_receipt',
+        'externalId' => 'external_id',
+'createdAt' => 'created_at',
+'paymentDetails' => 'payment_details',
+'eftPos' => 'eft_pos',
+'sendEmailReceipt' => 'send_email_receipt',
 'total' => 'total',
-'total_tax' => 'total_tax',
-'total_discount' => 'total_discount',
+'totalTax' => 'total_tax',
+'totalDiscount' => 'total_discount',
 'currency' => 'currency',
-'round_off_amount' => 'round_off_amount',
+'roundOffAmount' => 'round_off_amount',
 'origin' => 'origin',
-'coupon_codes' => 'coupon_codes',
-'stamp_card_ids' => 'stamp_card_ids',
+'couponCodes' => 'coupon_codes',
+'stampCardIds' => 'stamp_card_ids',
 'details' => 'details',
-'department_id' => 'department_id'    ];
+'departmentId' => 'department_id'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -133,21 +133,21 @@ class CreateTransactionRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'external_id' => 'setExternalId',
-'created_at' => 'setCreatedAt',
-'payment_details' => 'setPaymentDetails',
-'eft_pos' => 'setEftPos',
-'send_email_receipt' => 'setSendEmailReceipt',
+        'externalId' => 'setExternalId',
+'createdAt' => 'setCreatedAt',
+'paymentDetails' => 'setPaymentDetails',
+'eftPos' => 'setEftPos',
+'sendEmailReceipt' => 'setSendEmailReceipt',
 'total' => 'setTotal',
-'total_tax' => 'setTotalTax',
-'total_discount' => 'setTotalDiscount',
+'totalTax' => 'setTotalTax',
+'totalDiscount' => 'setTotalDiscount',
 'currency' => 'setCurrency',
-'round_off_amount' => 'setRoundOffAmount',
+'roundOffAmount' => 'setRoundOffAmount',
 'origin' => 'setOrigin',
-'coupon_codes' => 'setCouponCodes',
-'stamp_card_ids' => 'setStampCardIds',
+'couponCodes' => 'setCouponCodes',
+'stampCardIds' => 'setStampCardIds',
 'details' => 'setDetails',
-'department_id' => 'setDepartmentId'    ];
+'departmentId' => 'setDepartmentId'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -155,21 +155,21 @@ class CreateTransactionRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'external_id' => 'getExternalId',
-'created_at' => 'getCreatedAt',
-'payment_details' => 'getPaymentDetails',
-'eft_pos' => 'getEftPos',
-'send_email_receipt' => 'getSendEmailReceipt',
+        'externalId' => 'getExternalId',
+'createdAt' => 'getCreatedAt',
+'paymentDetails' => 'getPaymentDetails',
+'eftPos' => 'getEftPos',
+'sendEmailReceipt' => 'getSendEmailReceipt',
 'total' => 'getTotal',
-'total_tax' => 'getTotalTax',
-'total_discount' => 'getTotalDiscount',
+'totalTax' => 'getTotalTax',
+'totalDiscount' => 'getTotalDiscount',
 'currency' => 'getCurrency',
-'round_off_amount' => 'getRoundOffAmount',
+'roundOffAmount' => 'getRoundOffAmount',
 'origin' => 'getOrigin',
-'coupon_codes' => 'getCouponCodes',
-'stamp_card_ids' => 'getStampCardIds',
+'couponCodes' => 'getCouponCodes',
+'stampCardIds' => 'getStampCardIds',
 'details' => 'getDetails',
-'department_id' => 'getDepartmentId'    ];
+'departmentId' => 'getDepartmentId'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -229,21 +229,21 @@ class CreateTransactionRequest implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['external_id'] = isset($data['external_id']) ? $data['external_id'] : null;
-        $this->container['created_at'] = isset($data['created_at']) ? $data['created_at'] : null;
-        $this->container['payment_details'] = isset($data['payment_details']) ? $data['payment_details'] : null;
-        $this->container['eft_pos'] = isset($data['eft_pos']) ? $data['eft_pos'] : null;
-        $this->container['send_email_receipt'] = isset($data['send_email_receipt']) ? $data['send_email_receipt'] : null;
+        $this->container['externalId'] = isset($data['externalId']) ? $data['externalId'] : null;
+        $this->container['createdAt'] = isset($data['createdAt']) ? $data['createdAt'] : null;
+        $this->container['paymentDetails'] = isset($data['paymentDetails']) ? $data['paymentDetails'] : null;
+        $this->container['eftPos'] = isset($data['eftPos']) ? $data['eftPos'] : null;
+        $this->container['sendEmailReceipt'] = isset($data['sendEmailReceipt']) ? $data['sendEmailReceipt'] : null;
         $this->container['total'] = isset($data['total']) ? $data['total'] : null;
-        $this->container['total_tax'] = isset($data['total_tax']) ? $data['total_tax'] : null;
-        $this->container['total_discount'] = isset($data['total_discount']) ? $data['total_discount'] : null;
+        $this->container['totalTax'] = isset($data['totalTax']) ? $data['totalTax'] : null;
+        $this->container['totalDiscount'] = isset($data['totalDiscount']) ? $data['totalDiscount'] : null;
         $this->container['currency'] = isset($data['currency']) ? $data['currency'] : null;
-        $this->container['round_off_amount'] = isset($data['round_off_amount']) ? $data['round_off_amount'] : null;
+        $this->container['roundOffAmount'] = isset($data['roundOffAmount']) ? $data['roundOffAmount'] : null;
         $this->container['origin'] = isset($data['origin']) ? $data['origin'] : null;
-        $this->container['coupon_codes'] = isset($data['coupon_codes']) ? $data['coupon_codes'] : null;
-        $this->container['stamp_card_ids'] = isset($data['stamp_card_ids']) ? $data['stamp_card_ids'] : null;
+        $this->container['couponCodes'] = isset($data['couponCodes']) ? $data['couponCodes'] : null;
+        $this->container['stampCardIds'] = isset($data['stampCardIds']) ? $data['stampCardIds'] : null;
         $this->container['details'] = isset($data['details']) ? $data['details'] : null;
-        $this->container['department_id'] = isset($data['department_id']) ? $data['department_id'] : null;
+        $this->container['departmentId'] = isset($data['departmentId']) ? $data['departmentId'] : null;
     }
 
     /**
@@ -271,121 +271,121 @@ class CreateTransactionRequest implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets external_id
+     * Gets externalId
      *
      * @return string
      */
     public function getExternalId()
     {
-        return $this->container['external_id'];
+        return $this->container['externalId'];
     }
 
     /**
-     * Sets external_id
+     * Sets externalId
      *
-     * @param string $external_id The store's transaction unique identifier. Eg. Order-1234
+     * @param string $externalId The store's transaction unique identifier. Eg. Order-1234
      *
      * @return $this
      */
-    public function setExternalId($external_id)
+    public function setExternalId($externalId)
     {
-        $this->container['external_id'] = $external_id;
+        $this->container['externalId'] = $externalId;
 
         return $this;
     }
 
     /**
-     * Gets created_at
+     * Gets createdAt
      *
      * @return \DateTime
      */
     public function getCreatedAt()
     {
-        return $this->container['created_at'];
+        return $this->container['createdAt'];
     }
 
     /**
-     * Sets created_at
+     * Sets createdAt
      *
-     * @param \DateTime $created_at The date and time the transaction was created in ISO 8601 format.
+     * @param \DateTime $createdAt The date and time the transaction was created in ISO 8601 format.
      *
      * @return $this
      */
-    public function setCreatedAt($created_at)
+    public function setCreatedAt($createdAt)
     {
-        $this->container['created_at'] = $created_at;
+        $this->container['createdAt'] = $createdAt;
 
         return $this;
     }
 
     /**
-     * Gets payment_details
+     * Gets paymentDetails
      *
-     * @return \Swagger\Client\Model\PaymentDetails[]
+     * @return \DillerAPI\Model\PaymentDetails[]
      */
     public function getPaymentDetails()
     {
-        return $this->container['payment_details'];
+        return $this->container['paymentDetails'];
     }
 
     /**
-     * Sets payment_details
+     * Sets paymentDetails
      *
-     * @param \Swagger\Client\Model\PaymentDetails[] $payment_details payment_details
+     * @param \DillerAPI\Model\PaymentDetails[] $paymentDetails paymentDetails
      *
      * @return $this
      */
-    public function setPaymentDetails($payment_details)
+    public function setPaymentDetails($paymentDetails)
     {
-        $this->container['payment_details'] = $payment_details;
+        $this->container['paymentDetails'] = $paymentDetails;
 
         return $this;
     }
 
     /**
-     * Gets eft_pos
+     * Gets eftPos
      *
      * @return string
      */
     public function getEftPos()
     {
-        return $this->container['eft_pos'];
+        return $this->container['eftPos'];
     }
 
     /**
-     * Sets eft_pos
+     * Sets eftPos
      *
-     * @param string $eft_pos Electronic funds transfer at point of sale
+     * @param string $eftPos Electronic funds transfer at point of sale
      *
      * @return $this
      */
-    public function setEftPos($eft_pos)
+    public function setEftPos($eftPos)
     {
-        $this->container['eft_pos'] = $eft_pos;
+        $this->container['eftPos'] = $eftPos;
 
         return $this;
     }
 
     /**
-     * Gets send_email_receipt
+     * Gets sendEmailReceipt
      *
      * @return bool
      */
     public function getSendEmailReceipt()
     {
-        return $this->container['send_email_receipt'];
+        return $this->container['sendEmailReceipt'];
     }
 
     /**
-     * Sets send_email_receipt
+     * Sets sendEmailReceipt
      *
-     * @param bool $send_email_receipt send_email_receipt
+     * @param bool $sendEmailReceipt sendEmailReceipt
      *
      * @return $this
      */
-    public function setSendEmailReceipt($send_email_receipt)
+    public function setSendEmailReceipt($sendEmailReceipt)
     {
-        $this->container['send_email_receipt'] = $send_email_receipt;
+        $this->container['sendEmailReceipt'] = $sendEmailReceipt;
 
         return $this;
     }
@@ -415,49 +415,49 @@ class CreateTransactionRequest implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets total_tax
+     * Gets totalTax
      *
      * @return double
      */
     public function getTotalTax()
     {
-        return $this->container['total_tax'];
+        return $this->container['totalTax'];
     }
 
     /**
-     * Sets total_tax
+     * Sets totalTax
      *
-     * @param double $total_tax Total amount of taxes paid
+     * @param double $totalTax Total amount of taxes paid
      *
      * @return $this
      */
-    public function setTotalTax($total_tax)
+    public function setTotalTax($totalTax)
     {
-        $this->container['total_tax'] = $total_tax;
+        $this->container['totalTax'] = $totalTax;
 
         return $this;
     }
 
     /**
-     * Gets total_discount
+     * Gets totalDiscount
      *
      * @return double
      */
     public function getTotalDiscount()
     {
-        return $this->container['total_discount'];
+        return $this->container['totalDiscount'];
     }
 
     /**
-     * Sets total_discount
+     * Sets totalDiscount
      *
-     * @param double $total_discount Discount amount applied to this purchase
+     * @param double $totalDiscount Discount amount applied to this purchase
      *
      * @return $this
      */
-    public function setTotalDiscount($total_discount)
+    public function setTotalDiscount($totalDiscount)
     {
-        $this->container['total_discount'] = $total_discount;
+        $this->container['totalDiscount'] = $totalDiscount;
 
         return $this;
     }
@@ -487,25 +487,25 @@ class CreateTransactionRequest implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets round_off_amount
+     * Gets roundOffAmount
      *
      * @return double
      */
     public function getRoundOffAmount()
     {
-        return $this->container['round_off_amount'];
+        return $this->container['roundOffAmount'];
     }
 
     /**
-     * Sets round_off_amount
+     * Sets roundOffAmount
      *
-     * @param double $round_off_amount Stores the specific value used for rounding calculations
+     * @param double $roundOffAmount Stores the specific value used for rounding calculations
      *
      * @return $this
      */
-    public function setRoundOffAmount($round_off_amount)
+    public function setRoundOffAmount($roundOffAmount)
     {
-        $this->container['round_off_amount'] = $round_off_amount;
+        $this->container['roundOffAmount'] = $roundOffAmount;
 
         return $this;
     }
@@ -513,7 +513,7 @@ class CreateTransactionRequest implements ModelInterface, ArrayAccess
     /**
      * Gets origin
      *
-     * @return \Swagger\Client\Model\Origin
+     * @return \DillerAPI\Model\Origin
      */
     public function getOrigin()
     {
@@ -523,7 +523,7 @@ class CreateTransactionRequest implements ModelInterface, ArrayAccess
     /**
      * Sets origin
      *
-     * @param \Swagger\Client\Model\Origin $origin origin
+     * @param \DillerAPI\Model\Origin $origin origin
      *
      * @return $this
      */
@@ -535,49 +535,49 @@ class CreateTransactionRequest implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets coupon_codes
+     * Gets couponCodes
      *
      * @return string[]
      */
     public function getCouponCodes()
     {
-        return $this->container['coupon_codes'];
+        return $this->container['couponCodes'];
     }
 
     /**
-     * Sets coupon_codes
+     * Sets couponCodes
      *
-     * @param string[] $coupon_codes coupon_codes
+     * @param string[] $couponCodes couponCodes
      *
      * @return $this
      */
-    public function setCouponCodes($coupon_codes)
+    public function setCouponCodes($couponCodes)
     {
-        $this->container['coupon_codes'] = $coupon_codes;
+        $this->container['couponCodes'] = $couponCodes;
 
         return $this;
     }
 
     /**
-     * Gets stamp_card_ids
+     * Gets stampCardIds
      *
      * @return int[]
      */
     public function getStampCardIds()
     {
-        return $this->container['stamp_card_ids'];
+        return $this->container['stampCardIds'];
     }
 
     /**
-     * Sets stamp_card_ids
+     * Sets stampCardIds
      *
-     * @param int[] $stamp_card_ids stamp_card_ids
+     * @param int[] $stampCardIds stampCardIds
      *
      * @return $this
      */
-    public function setStampCardIds($stamp_card_ids)
+    public function setStampCardIds($stampCardIds)
     {
-        $this->container['stamp_card_ids'] = $stamp_card_ids;
+        $this->container['stampCardIds'] = $stampCardIds;
 
         return $this;
     }
@@ -585,7 +585,7 @@ class CreateTransactionRequest implements ModelInterface, ArrayAccess
     /**
      * Gets details
      *
-     * @return \Swagger\Client\Model\TransactionDetailRequest[]
+     * @return \DillerAPI\Model\TransactionDetailRequest[]
      */
     public function getDetails()
     {
@@ -595,7 +595,7 @@ class CreateTransactionRequest implements ModelInterface, ArrayAccess
     /**
      * Sets details
      *
-     * @param \Swagger\Client\Model\TransactionDetailRequest[] $details details
+     * @param \DillerAPI\Model\TransactionDetailRequest[] $details details
      *
      * @return $this
      */
@@ -607,25 +607,25 @@ class CreateTransactionRequest implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets department_id
+     * Gets departmentId
      *
      * @return string
      */
     public function getDepartmentId()
     {
-        return $this->container['department_id'];
+        return $this->container['departmentId'];
     }
 
     /**
-     * Sets department_id
+     * Sets departmentId
      *
-     * @param string $department_id The Id assigned by the retailer
+     * @param string $departmentId The Id assigned by the retailer
      *
      * @return $this
      */
-    public function setDepartmentId($department_id)
+    public function setDepartmentId($departmentId)
     {
-        $this->container['department_id'] = $department_id;
+        $this->container['departmentId'] = $departmentId;
 
         return $this;
     }

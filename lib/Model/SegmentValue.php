@@ -16,7 +16,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace DillerAPI\Model;
 
 use \ArrayAccess;
 use \DillerAPI\ObjectSerializer;
@@ -25,7 +25,7 @@ use \DillerAPI\ObjectSerializer;
  * SegmentValue Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  DillerAPI
  * @author   DILLER AS
  * @link     https://diller.io
  */
@@ -46,9 +46,9 @@ class SegmentValue implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'segment_id' => 'int',
+        'segmentId' => 'int',
 'value' => 'string',
-'selected_options' => 'int[]'    ];
+'selectedOptions' => 'int[]'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -56,9 +56,9 @@ class SegmentValue implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'segment_id' => 'int32',
+        'segmentId' => 'int32',
 'value' => null,
-'selected_options' => 'int32'    ];
+'selectedOptions' => 'int32'    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -87,9 +87,9 @@ class SegmentValue implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'segment_id' => 'segment_id',
+        'segmentId' => 'segment_id',
 'value' => 'value',
-'selected_options' => 'selected_options'    ];
+'selectedOptions' => 'selected_options'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -97,9 +97,9 @@ class SegmentValue implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'segment_id' => 'setSegmentId',
+        'segmentId' => 'setSegmentId',
 'value' => 'setValue',
-'selected_options' => 'setSelectedOptions'    ];
+'selectedOptions' => 'setSelectedOptions'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -107,9 +107,9 @@ class SegmentValue implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'segment_id' => 'getSegmentId',
+        'segmentId' => 'getSegmentId',
 'value' => 'getValue',
-'selected_options' => 'getSelectedOptions'    ];
+'selectedOptions' => 'getSelectedOptions'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -169,9 +169,9 @@ class SegmentValue implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['segment_id'] = isset($data['segment_id']) ? $data['segment_id'] : null;
+        $this->container['segmentId'] = isset($data['segmentId']) ? $data['segmentId'] : null;
         $this->container['value'] = isset($data['value']) ? $data['value'] : null;
-        $this->container['selected_options'] = isset($data['selected_options']) ? $data['selected_options'] : null;
+        $this->container['selectedOptions'] = isset($data['selectedOptions']) ? $data['selectedOptions'] : null;
     }
 
     /**
@@ -199,25 +199,25 @@ class SegmentValue implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets segment_id
+     * Gets segmentId
      *
      * @return int
      */
     public function getSegmentId()
     {
-        return $this->container['segment_id'];
+        return $this->container['segmentId'];
     }
 
     /**
-     * Sets segment_id
+     * Sets segmentId
      *
-     * @param int $segment_id segment_id
+     * @param int $segmentId segmentId
      *
      * @return $this
      */
-    public function setSegmentId($segment_id)
+    public function setSegmentId($segmentId)
     {
-        $this->container['segment_id'] = $segment_id;
+        $this->container['segmentId'] = $segmentId;
 
         return $this;
     }
@@ -247,25 +247,25 @@ class SegmentValue implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets selected_options
+     * Gets selectedOptions
      *
      * @return int[]
      */
     public function getSelectedOptions()
     {
-        return $this->container['selected_options'];
+        return $this->container['selectedOptions'];
     }
 
     /**
-     * Sets selected_options
+     * Sets selectedOptions
      *
-     * @param int[] $selected_options Fill this field when the segment is of type 'Checkbox', 'Dropdown', or 'Radio'.
+     * @param int[] $selectedOptions Fill this field when the segment is of type 'Checkbox', 'Dropdown', or 'Radio'.
      *
      * @return $this
      */
-    public function setSelectedOptions($selected_options)
+    public function setSelectedOptions($selectedOptions)
     {
-        $this->container['selected_options'] = $selected_options;
+        $this->container['selectedOptions'] = $selectedOptions;
 
         return $this;
     }

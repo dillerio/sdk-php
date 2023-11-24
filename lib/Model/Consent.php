@@ -16,7 +16,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace DillerAPI\Model;
 
 use \ArrayAccess;
 use \DillerAPI\ObjectSerializer;
@@ -25,7 +25,7 @@ use \DillerAPI\ObjectSerializer;
  * Consent Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  DillerAPI
  * @author   DILLER AS
  * @link     https://diller.io
  */
@@ -46,8 +46,8 @@ class Consent implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'gdpr_accepted' => 'bool',
-'save_order_history' => 'bool'    ];
+        'gdprAccepted' => 'bool',
+'saveOrderHistory' => 'bool'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -55,8 +55,8 @@ class Consent implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'gdpr_accepted' => null,
-'save_order_history' => null    ];
+        'gdprAccepted' => null,
+'saveOrderHistory' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -85,8 +85,8 @@ class Consent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'gdpr_accepted' => 'gdpr_accepted',
-'save_order_history' => 'save_order_history'    ];
+        'gdprAccepted' => 'gdpr_accepted',
+'saveOrderHistory' => 'save_order_history'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -94,8 +94,8 @@ class Consent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'gdpr_accepted' => 'setGdprAccepted',
-'save_order_history' => 'setSaveOrderHistory'    ];
+        'gdprAccepted' => 'setGdprAccepted',
+'saveOrderHistory' => 'setSaveOrderHistory'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -103,8 +103,8 @@ class Consent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'gdpr_accepted' => 'getGdprAccepted',
-'save_order_history' => 'getSaveOrderHistory'    ];
+        'gdprAccepted' => 'getGdprAccepted',
+'saveOrderHistory' => 'getSaveOrderHistory'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -164,8 +164,8 @@ class Consent implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['gdpr_accepted'] = isset($data['gdpr_accepted']) ? $data['gdpr_accepted'] : null;
-        $this->container['save_order_history'] = isset($data['save_order_history']) ? $data['save_order_history'] : null;
+        $this->container['gdprAccepted'] = isset($data['gdprAccepted']) ? $data['gdprAccepted'] : null;
+        $this->container['saveOrderHistory'] = isset($data['saveOrderHistory']) ? $data['saveOrderHistory'] : null;
     }
 
     /**
@@ -193,49 +193,49 @@ class Consent implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets gdpr_accepted
+     * Gets gdprAccepted
      *
      * @return bool
      */
     public function getGdprAccepted()
     {
-        return $this->container['gdpr_accepted'];
+        return $this->container['gdprAccepted'];
     }
 
     /**
-     * Sets gdpr_accepted
+     * Sets gdprAccepted
      *
-     * @param bool $gdpr_accepted True if the member has accepted the GDPR. False otherwise.
+     * @param bool $gdprAccepted True if the member has accepted the GDPR. False otherwise.
      *
      * @return $this
      */
-    public function setGdprAccepted($gdpr_accepted)
+    public function setGdprAccepted($gdprAccepted)
     {
-        $this->container['gdpr_accepted'] = $gdpr_accepted;
+        $this->container['gdprAccepted'] = $gdprAccepted;
 
         return $this;
     }
 
     /**
-     * Gets save_order_history
+     * Gets saveOrderHistory
      *
      * @return bool
      */
     public function getSaveOrderHistory()
     {
-        return $this->container['save_order_history'];
+        return $this->container['saveOrderHistory'];
     }
 
     /**
-     * Sets save_order_history
+     * Sets saveOrderHistory
      *
-     * @param bool $save_order_history True if member has authorized to save order history e.g. transaction details about their purchases.
+     * @param bool $saveOrderHistory True if member has authorized to save order history e.g. transaction details about their purchases.
      *
      * @return $this
      */
-    public function setSaveOrderHistory($save_order_history)
+    public function setSaveOrderHistory($saveOrderHistory)
     {
-        $this->container['save_order_history'] = $save_order_history;
+        $this->container['saveOrderHistory'] = $saveOrderHistory;
 
         return $this;
     }

@@ -16,7 +16,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace DillerAPI\Model;
 
 use \ArrayAccess;
 use \DillerAPI\ObjectSerializer;
@@ -25,7 +25,7 @@ use \DillerAPI\ObjectSerializer;
  * CouponCancelReservationRequest Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  DillerAPI
  * @author   DILLER AS
  * @link     https://diller.io
  */
@@ -46,7 +46,7 @@ class CouponCancelReservationRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'external_transaction_id' => 'string'    ];
+        'externalTransactionId' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -54,7 +54,7 @@ class CouponCancelReservationRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'external_transaction_id' => null    ];
+        'externalTransactionId' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -83,7 +83,7 @@ class CouponCancelReservationRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'external_transaction_id' => 'external_transaction_id'    ];
+        'externalTransactionId' => 'external_transaction_id'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -91,7 +91,7 @@ class CouponCancelReservationRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'external_transaction_id' => 'setExternalTransactionId'    ];
+        'externalTransactionId' => 'setExternalTransactionId'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -99,7 +99,7 @@ class CouponCancelReservationRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'external_transaction_id' => 'getExternalTransactionId'    ];
+        'externalTransactionId' => 'getExternalTransactionId'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -159,7 +159,7 @@ class CouponCancelReservationRequest implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['external_transaction_id'] = isset($data['external_transaction_id']) ? $data['external_transaction_id'] : null;
+        $this->container['externalTransactionId'] = isset($data['externalTransactionId']) ? $data['externalTransactionId'] : null;
     }
 
     /**
@@ -187,25 +187,25 @@ class CouponCancelReservationRequest implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets external_transaction_id
+     * Gets externalTransactionId
      *
      * @return string
      */
     public function getExternalTransactionId()
     {
-        return $this->container['external_transaction_id'];
+        return $this->container['externalTransactionId'];
     }
 
     /**
-     * Sets external_transaction_id
+     * Sets externalTransactionId
      *
-     * @param string $external_transaction_id external_transaction_id
+     * @param string $externalTransactionId externalTransactionId
      *
      * @return $this
      */
-    public function setExternalTransactionId($external_transaction_id)
+    public function setExternalTransactionId($externalTransactionId)
     {
-        $this->container['external_transaction_id'] = $external_transaction_id;
+        $this->container['externalTransactionId'] = $externalTransactionId;
 
         return $this;
     }

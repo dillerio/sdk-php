@@ -16,7 +16,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace DillerAPI\Model;
 
 use \ArrayAccess;
 use \DillerAPI\ObjectSerializer;
@@ -26,7 +26,7 @@ use \DillerAPI\ObjectSerializer;
  *
  * @category Class
  * @description Defines where the coupon can be applied to.  The filters are cumulativelly applied.
- * @package  Swagger\Client
+ * @package  DillerAPI
  * @author   DILLER AS
  * @link     https://diller.io
  */
@@ -47,9 +47,9 @@ class CouponTarget implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'required_points' => 'int',
-'membership_level' => 'int',
-'list_id' => 'int'    ];
+        'requiredPoints' => 'int',
+'membershipLevel' => 'int',
+'listId' => 'int'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -57,9 +57,9 @@ class CouponTarget implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'required_points' => 'int32',
-'membership_level' => 'int32',
-'list_id' => 'int32'    ];
+        'requiredPoints' => 'int32',
+'membershipLevel' => 'int32',
+'listId' => 'int32'    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -88,9 +88,9 @@ class CouponTarget implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'required_points' => 'required_points',
-'membership_level' => 'membership_level',
-'list_id' => 'list_id'    ];
+        'requiredPoints' => 'required_points',
+'membershipLevel' => 'membership_level',
+'listId' => 'list_id'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -98,9 +98,9 @@ class CouponTarget implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'required_points' => 'setRequiredPoints',
-'membership_level' => 'setMembershipLevel',
-'list_id' => 'setListId'    ];
+        'requiredPoints' => 'setRequiredPoints',
+'membershipLevel' => 'setMembershipLevel',
+'listId' => 'setListId'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -108,9 +108,9 @@ class CouponTarget implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'required_points' => 'getRequiredPoints',
-'membership_level' => 'getMembershipLevel',
-'list_id' => 'getListId'    ];
+        'requiredPoints' => 'getRequiredPoints',
+'membershipLevel' => 'getMembershipLevel',
+'listId' => 'getListId'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -170,9 +170,9 @@ class CouponTarget implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['required_points'] = isset($data['required_points']) ? $data['required_points'] : null;
-        $this->container['membership_level'] = isset($data['membership_level']) ? $data['membership_level'] : null;
-        $this->container['list_id'] = isset($data['list_id']) ? $data['list_id'] : null;
+        $this->container['requiredPoints'] = isset($data['requiredPoints']) ? $data['requiredPoints'] : null;
+        $this->container['membershipLevel'] = isset($data['membershipLevel']) ? $data['membershipLevel'] : null;
+        $this->container['listId'] = isset($data['listId']) ? $data['listId'] : null;
     }
 
     /**
@@ -200,73 +200,73 @@ class CouponTarget implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets required_points
+     * Gets requiredPoints
      *
      * @return int
      */
     public function getRequiredPoints()
     {
-        return $this->container['required_points'];
+        return $this->container['requiredPoints'];
     }
 
     /**
-     * Sets required_points
+     * Sets requiredPoints
      *
-     * @param int $required_points required_points
+     * @param int $requiredPoints requiredPoints
      *
      * @return $this
      */
-    public function setRequiredPoints($required_points)
+    public function setRequiredPoints($requiredPoints)
     {
-        $this->container['required_points'] = $required_points;
+        $this->container['requiredPoints'] = $requiredPoints;
 
         return $this;
     }
 
     /**
-     * Gets membership_level
+     * Gets membershipLevel
      *
      * @return int
      */
     public function getMembershipLevel()
     {
-        return $this->container['membership_level'];
+        return $this->container['membershipLevel'];
     }
 
     /**
-     * Sets membership_level
+     * Sets membershipLevel
      *
-     * @param int $membership_level membership_level
+     * @param int $membershipLevel membershipLevel
      *
      * @return $this
      */
-    public function setMembershipLevel($membership_level)
+    public function setMembershipLevel($membershipLevel)
     {
-        $this->container['membership_level'] = $membership_level;
+        $this->container['membershipLevel'] = $membershipLevel;
 
         return $this;
     }
 
     /**
-     * Gets list_id
+     * Gets listId
      *
      * @return int
      */
     public function getListId()
     {
-        return $this->container['list_id'];
+        return $this->container['listId'];
     }
 
     /**
-     * Sets list_id
+     * Sets listId
      *
-     * @param int $list_id list_id
+     * @param int $listId listId
      *
      * @return $this
      */
-    public function setListId($list_id)
+    public function setListId($listId)
     {
-        $this->container['list_id'] = $list_id;
+        $this->container['listId'] = $listId;
 
         return $this;
     }

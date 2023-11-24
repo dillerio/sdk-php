@@ -16,7 +16,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace DillerAPI\Model;
 
 use \ArrayAccess;
 use \DillerAPI\ObjectSerializer;
@@ -25,7 +25,7 @@ use \DillerAPI\ObjectSerializer;
  * CreateRefundTransactionRequest Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  DillerAPI
  * @author   DILLER AS
  * @link     https://diller.io
  */
@@ -47,18 +47,18 @@ class CreateRefundTransactionRequest implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'reason' => 'string',
-'external_id' => 'string',
-'created_at' => '\DateTime',
-'payment_details' => '\Swagger\Client\Model\PaymentDetails[]',
-'eft_pos' => 'string',
+'externalId' => 'string',
+'createdAt' => '\DateTime',
+'paymentDetails' => '\DillerAPI\Model\PaymentDetails[]',
+'eftPos' => 'string',
 'total' => 'double',
-'total_tax' => 'double',
-'total_discount' => 'double',
+'totalTax' => 'double',
+'totalDiscount' => 'double',
 'currency' => 'string',
-'round_off_amount' => 'double',
-'origin' => '\Swagger\Client\Model\Origin',
-'details' => '\Swagger\Client\Model\RefundDetailRequest[]',
-'department_id' => 'string'    ];
+'roundOffAmount' => 'double',
+'origin' => '\DillerAPI\Model\Origin',
+'details' => '\DillerAPI\Model\RefundDetailRequest[]',
+'departmentId' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -67,18 +67,18 @@ class CreateRefundTransactionRequest implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'reason' => null,
-'external_id' => null,
-'created_at' => 'date-time',
-'payment_details' => null,
-'eft_pos' => null,
+'externalId' => null,
+'createdAt' => 'date-time',
+'paymentDetails' => null,
+'eftPos' => null,
 'total' => 'double',
-'total_tax' => 'double',
-'total_discount' => 'double',
+'totalTax' => 'double',
+'totalDiscount' => 'double',
 'currency' => null,
-'round_off_amount' => 'double',
+'roundOffAmount' => 'double',
 'origin' => null,
 'details' => null,
-'department_id' => null    ];
+'departmentId' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -108,18 +108,18 @@ class CreateRefundTransactionRequest implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'reason' => 'reason',
-'external_id' => 'external_id',
-'created_at' => 'created_at',
-'payment_details' => 'payment_details',
-'eft_pos' => 'eft_pos',
+'externalId' => 'external_id',
+'createdAt' => 'created_at',
+'paymentDetails' => 'payment_details',
+'eftPos' => 'eft_pos',
 'total' => 'total',
-'total_tax' => 'total_tax',
-'total_discount' => 'total_discount',
+'totalTax' => 'total_tax',
+'totalDiscount' => 'total_discount',
 'currency' => 'currency',
-'round_off_amount' => 'round_off_amount',
+'roundOffAmount' => 'round_off_amount',
 'origin' => 'origin',
 'details' => 'details',
-'department_id' => 'department_id'    ];
+'departmentId' => 'department_id'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -128,18 +128,18 @@ class CreateRefundTransactionRequest implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'reason' => 'setReason',
-'external_id' => 'setExternalId',
-'created_at' => 'setCreatedAt',
-'payment_details' => 'setPaymentDetails',
-'eft_pos' => 'setEftPos',
+'externalId' => 'setExternalId',
+'createdAt' => 'setCreatedAt',
+'paymentDetails' => 'setPaymentDetails',
+'eftPos' => 'setEftPos',
 'total' => 'setTotal',
-'total_tax' => 'setTotalTax',
-'total_discount' => 'setTotalDiscount',
+'totalTax' => 'setTotalTax',
+'totalDiscount' => 'setTotalDiscount',
 'currency' => 'setCurrency',
-'round_off_amount' => 'setRoundOffAmount',
+'roundOffAmount' => 'setRoundOffAmount',
 'origin' => 'setOrigin',
 'details' => 'setDetails',
-'department_id' => 'setDepartmentId'    ];
+'departmentId' => 'setDepartmentId'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -148,18 +148,18 @@ class CreateRefundTransactionRequest implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'reason' => 'getReason',
-'external_id' => 'getExternalId',
-'created_at' => 'getCreatedAt',
-'payment_details' => 'getPaymentDetails',
-'eft_pos' => 'getEftPos',
+'externalId' => 'getExternalId',
+'createdAt' => 'getCreatedAt',
+'paymentDetails' => 'getPaymentDetails',
+'eftPos' => 'getEftPos',
 'total' => 'getTotal',
-'total_tax' => 'getTotalTax',
-'total_discount' => 'getTotalDiscount',
+'totalTax' => 'getTotalTax',
+'totalDiscount' => 'getTotalDiscount',
 'currency' => 'getCurrency',
-'round_off_amount' => 'getRoundOffAmount',
+'roundOffAmount' => 'getRoundOffAmount',
 'origin' => 'getOrigin',
 'details' => 'getDetails',
-'department_id' => 'getDepartmentId'    ];
+'departmentId' => 'getDepartmentId'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -220,18 +220,18 @@ class CreateRefundTransactionRequest implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['reason'] = isset($data['reason']) ? $data['reason'] : null;
-        $this->container['external_id'] = isset($data['external_id']) ? $data['external_id'] : null;
-        $this->container['created_at'] = isset($data['created_at']) ? $data['created_at'] : null;
-        $this->container['payment_details'] = isset($data['payment_details']) ? $data['payment_details'] : null;
-        $this->container['eft_pos'] = isset($data['eft_pos']) ? $data['eft_pos'] : null;
+        $this->container['externalId'] = isset($data['externalId']) ? $data['externalId'] : null;
+        $this->container['createdAt'] = isset($data['createdAt']) ? $data['createdAt'] : null;
+        $this->container['paymentDetails'] = isset($data['paymentDetails']) ? $data['paymentDetails'] : null;
+        $this->container['eftPos'] = isset($data['eftPos']) ? $data['eftPos'] : null;
         $this->container['total'] = isset($data['total']) ? $data['total'] : null;
-        $this->container['total_tax'] = isset($data['total_tax']) ? $data['total_tax'] : null;
-        $this->container['total_discount'] = isset($data['total_discount']) ? $data['total_discount'] : null;
+        $this->container['totalTax'] = isset($data['totalTax']) ? $data['totalTax'] : null;
+        $this->container['totalDiscount'] = isset($data['totalDiscount']) ? $data['totalDiscount'] : null;
         $this->container['currency'] = isset($data['currency']) ? $data['currency'] : null;
-        $this->container['round_off_amount'] = isset($data['round_off_amount']) ? $data['round_off_amount'] : null;
+        $this->container['roundOffAmount'] = isset($data['roundOffAmount']) ? $data['roundOffAmount'] : null;
         $this->container['origin'] = isset($data['origin']) ? $data['origin'] : null;
         $this->container['details'] = isset($data['details']) ? $data['details'] : null;
-        $this->container['department_id'] = isset($data['department_id']) ? $data['department_id'] : null;
+        $this->container['departmentId'] = isset($data['departmentId']) ? $data['departmentId'] : null;
     }
 
     /**
@@ -283,97 +283,97 @@ class CreateRefundTransactionRequest implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets external_id
+     * Gets externalId
      *
      * @return string
      */
     public function getExternalId()
     {
-        return $this->container['external_id'];
+        return $this->container['externalId'];
     }
 
     /**
-     * Sets external_id
+     * Sets externalId
      *
-     * @param string $external_id The store's transaction unique identifier. Eg. Order-1234
+     * @param string $externalId The store's transaction unique identifier. Eg. Order-1234
      *
      * @return $this
      */
-    public function setExternalId($external_id)
+    public function setExternalId($externalId)
     {
-        $this->container['external_id'] = $external_id;
+        $this->container['externalId'] = $externalId;
 
         return $this;
     }
 
     /**
-     * Gets created_at
+     * Gets createdAt
      *
      * @return \DateTime
      */
     public function getCreatedAt()
     {
-        return $this->container['created_at'];
+        return $this->container['createdAt'];
     }
 
     /**
-     * Sets created_at
+     * Sets createdAt
      *
-     * @param \DateTime $created_at The date and time the transaction was created in ISO 8601 format.
+     * @param \DateTime $createdAt The date and time the transaction was created in ISO 8601 format.
      *
      * @return $this
      */
-    public function setCreatedAt($created_at)
+    public function setCreatedAt($createdAt)
     {
-        $this->container['created_at'] = $created_at;
+        $this->container['createdAt'] = $createdAt;
 
         return $this;
     }
 
     /**
-     * Gets payment_details
+     * Gets paymentDetails
      *
-     * @return \Swagger\Client\Model\PaymentDetails[]
+     * @return \DillerAPI\Model\PaymentDetails[]
      */
     public function getPaymentDetails()
     {
-        return $this->container['payment_details'];
+        return $this->container['paymentDetails'];
     }
 
     /**
-     * Sets payment_details
+     * Sets paymentDetails
      *
-     * @param \Swagger\Client\Model\PaymentDetails[] $payment_details payment_details
+     * @param \DillerAPI\Model\PaymentDetails[] $paymentDetails paymentDetails
      *
      * @return $this
      */
-    public function setPaymentDetails($payment_details)
+    public function setPaymentDetails($paymentDetails)
     {
-        $this->container['payment_details'] = $payment_details;
+        $this->container['paymentDetails'] = $paymentDetails;
 
         return $this;
     }
 
     /**
-     * Gets eft_pos
+     * Gets eftPos
      *
      * @return string
      */
     public function getEftPos()
     {
-        return $this->container['eft_pos'];
+        return $this->container['eftPos'];
     }
 
     /**
-     * Sets eft_pos
+     * Sets eftPos
      *
-     * @param string $eft_pos Electronic funds transfer at point of sale
+     * @param string $eftPos Electronic funds transfer at point of sale
      *
      * @return $this
      */
-    public function setEftPos($eft_pos)
+    public function setEftPos($eftPos)
     {
-        $this->container['eft_pos'] = $eft_pos;
+        $this->container['eftPos'] = $eftPos;
 
         return $this;
     }
@@ -403,49 +403,49 @@ class CreateRefundTransactionRequest implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets total_tax
+     * Gets totalTax
      *
      * @return double
      */
     public function getTotalTax()
     {
-        return $this->container['total_tax'];
+        return $this->container['totalTax'];
     }
 
     /**
-     * Sets total_tax
+     * Sets totalTax
      *
-     * @param double $total_tax Total amount of taxes paid
+     * @param double $totalTax Total amount of taxes paid
      *
      * @return $this
      */
-    public function setTotalTax($total_tax)
+    public function setTotalTax($totalTax)
     {
-        $this->container['total_tax'] = $total_tax;
+        $this->container['totalTax'] = $totalTax;
 
         return $this;
     }
 
     /**
-     * Gets total_discount
+     * Gets totalDiscount
      *
      * @return double
      */
     public function getTotalDiscount()
     {
-        return $this->container['total_discount'];
+        return $this->container['totalDiscount'];
     }
 
     /**
-     * Sets total_discount
+     * Sets totalDiscount
      *
-     * @param double $total_discount Discount amount applied to this purchase
+     * @param double $totalDiscount Discount amount applied to this purchase
      *
      * @return $this
      */
-    public function setTotalDiscount($total_discount)
+    public function setTotalDiscount($totalDiscount)
     {
-        $this->container['total_discount'] = $total_discount;
+        $this->container['totalDiscount'] = $totalDiscount;
 
         return $this;
     }
@@ -475,25 +475,25 @@ class CreateRefundTransactionRequest implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets round_off_amount
+     * Gets roundOffAmount
      *
      * @return double
      */
     public function getRoundOffAmount()
     {
-        return $this->container['round_off_amount'];
+        return $this->container['roundOffAmount'];
     }
 
     /**
-     * Sets round_off_amount
+     * Sets roundOffAmount
      *
-     * @param double $round_off_amount Stores the specific value used for rounding calculations
+     * @param double $roundOffAmount Stores the specific value used for rounding calculations
      *
      * @return $this
      */
-    public function setRoundOffAmount($round_off_amount)
+    public function setRoundOffAmount($roundOffAmount)
     {
-        $this->container['round_off_amount'] = $round_off_amount;
+        $this->container['roundOffAmount'] = $roundOffAmount;
 
         return $this;
     }
@@ -501,7 +501,7 @@ class CreateRefundTransactionRequest implements ModelInterface, ArrayAccess
     /**
      * Gets origin
      *
-     * @return \Swagger\Client\Model\Origin
+     * @return \DillerAPI\Model\Origin
      */
     public function getOrigin()
     {
@@ -511,7 +511,7 @@ class CreateRefundTransactionRequest implements ModelInterface, ArrayAccess
     /**
      * Sets origin
      *
-     * @param \Swagger\Client\Model\Origin $origin origin
+     * @param \DillerAPI\Model\Origin $origin origin
      *
      * @return $this
      */
@@ -525,7 +525,7 @@ class CreateRefundTransactionRequest implements ModelInterface, ArrayAccess
     /**
      * Gets details
      *
-     * @return \Swagger\Client\Model\RefundDetailRequest[]
+     * @return \DillerAPI\Model\RefundDetailRequest[]
      */
     public function getDetails()
     {
@@ -535,7 +535,7 @@ class CreateRefundTransactionRequest implements ModelInterface, ArrayAccess
     /**
      * Sets details
      *
-     * @param \Swagger\Client\Model\RefundDetailRequest[] $details details
+     * @param \DillerAPI\Model\RefundDetailRequest[] $details details
      *
      * @return $this
      */
@@ -547,25 +547,25 @@ class CreateRefundTransactionRequest implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets department_id
+     * Gets departmentId
      *
      * @return string
      */
     public function getDepartmentId()
     {
-        return $this->container['department_id'];
+        return $this->container['departmentId'];
     }
 
     /**
-     * Sets department_id
+     * Sets departmentId
      *
-     * @param string $department_id The Id assigned by the retailer
+     * @param string $departmentId The Id assigned by the retailer
      *
      * @return $this
      */
-    public function setDepartmentId($department_id)
+    public function setDepartmentId($departmentId)
     {
-        $this->container['department_id'] = $department_id;
+        $this->container['departmentId'] = $departmentId;
 
         return $this;
     }

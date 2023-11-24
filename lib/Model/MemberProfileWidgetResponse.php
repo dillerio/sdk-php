@@ -16,7 +16,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace DillerAPI\Model;
 
 use \ArrayAccess;
 use \DillerAPI\ObjectSerializer;
@@ -25,7 +25,7 @@ use \DillerAPI\ObjectSerializer;
  * MemberProfileWidgetResponse Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  DillerAPI
  * @author   DILLER AS
  * @link     https://diller.io
  */
@@ -46,7 +46,7 @@ class MemberProfileWidgetResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'details_url' => 'string'    ];
+        'detailsUrl' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -54,7 +54,7 @@ class MemberProfileWidgetResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'details_url' => null    ];
+        'detailsUrl' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -83,7 +83,7 @@ class MemberProfileWidgetResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'details_url' => 'details_url'    ];
+        'detailsUrl' => 'details_url'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -91,7 +91,7 @@ class MemberProfileWidgetResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'details_url' => 'setDetailsUrl'    ];
+        'detailsUrl' => 'setDetailsUrl'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -99,7 +99,7 @@ class MemberProfileWidgetResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'details_url' => 'getDetailsUrl'    ];
+        'detailsUrl' => 'getDetailsUrl'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -159,7 +159,7 @@ class MemberProfileWidgetResponse implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['details_url'] = isset($data['details_url']) ? $data['details_url'] : null;
+        $this->container['detailsUrl'] = isset($data['detailsUrl']) ? $data['detailsUrl'] : null;
     }
 
     /**
@@ -187,25 +187,25 @@ class MemberProfileWidgetResponse implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets details_url
+     * Gets detailsUrl
      *
      * @return string
      */
     public function getDetailsUrl()
     {
-        return $this->container['details_url'];
+        return $this->container['detailsUrl'];
     }
 
     /**
-     * Sets details_url
+     * Sets detailsUrl
      *
-     * @param string $details_url details_url
+     * @param string $detailsUrl detailsUrl
      *
      * @return $this
      */
-    public function setDetailsUrl($details_url)
+    public function setDetailsUrl($detailsUrl)
     {
-        $this->container['details_url'] = $details_url;
+        $this->container['detailsUrl'] = $detailsUrl;
 
         return $this;
     }

@@ -16,7 +16,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace DillerAPI\Model;
 
 use \ArrayAccess;
 use \DillerAPI\ObjectSerializer;
@@ -25,7 +25,7 @@ use \DillerAPI\ObjectSerializer;
  * ResetPhoneVerificationRequest Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  DillerAPI
  * @author   DILLER AS
  * @link     https://diller.io
  */
@@ -46,8 +46,8 @@ class ResetPhoneVerificationRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'phone' => '\Swagger\Client\Model\Phone',
-'otp_code' => 'int'    ];
+        'phone' => '\DillerAPI\Model\Phone',
+'otpCode' => 'int'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -56,7 +56,7 @@ class ResetPhoneVerificationRequest implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'phone' => null,
-'otp_code' => 'int32'    ];
+'otpCode' => 'int32'    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -86,7 +86,7 @@ class ResetPhoneVerificationRequest implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'phone' => 'phone',
-'otp_code' => 'otp_code'    ];
+'otpCode' => 'otp_code'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -95,7 +95,7 @@ class ResetPhoneVerificationRequest implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'phone' => 'setPhone',
-'otp_code' => 'setOtpCode'    ];
+'otpCode' => 'setOtpCode'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -104,7 +104,7 @@ class ResetPhoneVerificationRequest implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'phone' => 'getPhone',
-'otp_code' => 'getOtpCode'    ];
+'otpCode' => 'getOtpCode'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -165,7 +165,7 @@ class ResetPhoneVerificationRequest implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['phone'] = isset($data['phone']) ? $data['phone'] : null;
-        $this->container['otp_code'] = isset($data['otp_code']) ? $data['otp_code'] : null;
+        $this->container['otpCode'] = isset($data['otpCode']) ? $data['otpCode'] : null;
     }
 
     /**
@@ -195,7 +195,7 @@ class ResetPhoneVerificationRequest implements ModelInterface, ArrayAccess
     /**
      * Gets phone
      *
-     * @return \Swagger\Client\Model\Phone
+     * @return \DillerAPI\Model\Phone
      */
     public function getPhone()
     {
@@ -205,7 +205,7 @@ class ResetPhoneVerificationRequest implements ModelInterface, ArrayAccess
     /**
      * Sets phone
      *
-     * @param \Swagger\Client\Model\Phone $phone phone
+     * @param \DillerAPI\Model\Phone $phone phone
      *
      * @return $this
      */
@@ -217,25 +217,25 @@ class ResetPhoneVerificationRequest implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets otp_code
+     * Gets otpCode
      *
      * @return int
      */
     public function getOtpCode()
     {
-        return $this->container['otp_code'];
+        return $this->container['otpCode'];
     }
 
     /**
-     * Sets otp_code
+     * Sets otpCode
      *
-     * @param int $otp_code otp_code
+     * @param int $otpCode otpCode
      *
      * @return $this
      */
-    public function setOtpCode($otp_code)
+    public function setOtpCode($otpCode)
     {
-        $this->container['otp_code'] = $otp_code;
+        $this->container['otpCode'] = $otpCode;
 
         return $this;
     }
