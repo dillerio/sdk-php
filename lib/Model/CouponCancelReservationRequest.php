@@ -16,7 +16,7 @@
  * Do not edit the class manually.
  */
 
-namespace DillerAPI\Model;
+namespace Swagger\Client\Model;
 
 use \ArrayAccess;
 use \DillerAPI\ObjectSerializer;
@@ -25,7 +25,7 @@ use \DillerAPI\ObjectSerializer;
  * CouponCancelReservationRequest Class Doc Comment
  *
  * @category Class
- * @package  DillerAPI
+ * @package  Swagger\Client
  * @author   DILLER AS
  * @link     https://diller.io
  */
@@ -46,7 +46,7 @@ class CouponCancelReservationRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'externalTransactionId' => 'string'    ];
+        'external_transaction_id' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -54,7 +54,7 @@ class CouponCancelReservationRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'externalTransactionId' => null    ];
+        'external_transaction_id' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -83,7 +83,7 @@ class CouponCancelReservationRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'externalTransactionId' => 'external_transaction_id'    ];
+        'external_transaction_id' => 'external_transaction_id'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -91,7 +91,7 @@ class CouponCancelReservationRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'externalTransactionId' => 'setExternalTransactionId'    ];
+        'external_transaction_id' => 'setExternalTransactionId'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -99,7 +99,7 @@ class CouponCancelReservationRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'externalTransactionId' => 'getExternalTransactionId'    ];
+        'external_transaction_id' => 'getExternalTransactionId'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -159,7 +159,7 @@ class CouponCancelReservationRequest implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['externalTransactionId'] = isset($data['externalTransactionId']) ? $data['externalTransactionId'] : null;
+        $this->container['external_transaction_id'] = isset($data['external_transaction_id']) ? $data['external_transaction_id'] : null;
     }
 
     /**
@@ -187,25 +187,25 @@ class CouponCancelReservationRequest implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets externalTransactionId
+     * Gets external_transaction_id
      *
      * @return string
      */
     public function getExternalTransactionId()
     {
-        return $this->container['externalTransactionId'];
+        return $this->container['external_transaction_id'];
     }
 
     /**
-     * Sets externalTransactionId
+     * Sets external_transaction_id
      *
-     * @param string $externalTransactionId externalTransactionId
+     * @param string $external_transaction_id external_transaction_id
      *
      * @return $this
      */
-    public function setExternalTransactionId($externalTransactionId)
+    public function setExternalTransactionId($external_transaction_id)
     {
-        $this->container['externalTransactionId'] = $externalTransactionId;
+        $this->container['external_transaction_id'] = $external_transaction_id;
 
         return $this;
     }
@@ -226,9 +226,8 @@ class CouponCancelReservationRequest implements ModelInterface, ArrayAccess
      *
      * @param integer $offset Offset
      *
-     * @return mixed
      */
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }

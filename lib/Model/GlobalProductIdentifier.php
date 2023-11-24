@@ -16,7 +16,7 @@
  * Do not edit the class manually.
  */
 
-namespace DillerAPI\Model;
+namespace Swagger\Client\Model;
 
 use \ArrayAccess;
 use \DillerAPI\ObjectSerializer;
@@ -25,7 +25,7 @@ use \DillerAPI\ObjectSerializer;
  * GlobalProductIdentifier Class Doc Comment
  *
  * @category Class
- * @package  DillerAPI
+ * @package  Swagger\Client
  * @author   DILLER AS
  * @link     https://diller.io
  */
@@ -46,7 +46,7 @@ class GlobalProductIdentifier implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'type' => '\DillerAPI\Model\GtinType',
+        'type' => '\Swagger\Client\Model\GtinType',
 'code' => 'string'    ];
 
     /**
@@ -195,7 +195,7 @@ class GlobalProductIdentifier implements ModelInterface, ArrayAccess
     /**
      * Gets type
      *
-     * @return \DillerAPI\Model\GtinType
+     * @return \Swagger\Client\Model\GtinType
      */
     public function getType()
     {
@@ -205,7 +205,7 @@ class GlobalProductIdentifier implements ModelInterface, ArrayAccess
     /**
      * Sets type
      *
-     * @param \DillerAPI\Model\GtinType $type type
+     * @param \Swagger\Client\Model\GtinType $type type
      *
      * @return $this
      */
@@ -256,9 +256,8 @@ class GlobalProductIdentifier implements ModelInterface, ArrayAccess
      *
      * @param integer $offset Offset
      *
-     * @return mixed
      */
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }

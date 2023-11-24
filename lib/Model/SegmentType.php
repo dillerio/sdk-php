@@ -16,14 +16,14 @@
  * Do not edit the class manually.
  */
 
-namespace DillerAPI\Model;
+namespace Swagger\Client\Model;
 use \DillerAPI\ObjectSerializer;
 
 /**
  * SegmentType Class Doc Comment
  *
  * @category Class
- * @package  DillerAPI
+ * @package  Swagger\Client
  * @author   DILLER AS
  * @link     https://diller.io
  */
@@ -44,11 +44,11 @@ class SegmentType
     public static function getAllowableEnumValues()
     {
         return [
-            self::TEXT
-            self::DATE_TIME
-            self::RADIO
-            self::CHECKBOX
-            self::DROPDOWN
+            self::TEXT, 
+            self::DATE_TIME, 
+            self::RADIO, 
+            self::CHECKBOX, 
+            self::DROPDOWN, 
         ];
     }
 }

@@ -16,14 +16,14 @@
  * Do not edit the class manually.
  */
 
-namespace DillerAPI\Model;
+namespace Swagger\Client\Model;
 use \DillerAPI\ObjectSerializer;
 
 /**
  * Gender Class Doc Comment
  *
  * @category Class
- * @package  DillerAPI
+ * @package  Swagger\Client
  * @author   DILLER AS
  * @link     https://diller.io
  */
@@ -43,10 +43,10 @@ class Gender
     public static function getAllowableEnumValues()
     {
         return [
-            self::MALE
-            self::FEMALE
-            self::NOT_SHARED
-            self::NON_BINARY
+            self::MALE, 
+            self::FEMALE, 
+            self::NOT_SHARED, 
+            self::NON_BINARY, 
         ];
     }
 }

@@ -16,7 +16,7 @@
  * Do not edit the class manually.
  */
 
-namespace DillerAPI\Model;
+namespace Swagger\Client\Model;
 
 use \ArrayAccess;
 use \DillerAPI\ObjectSerializer;
@@ -25,7 +25,7 @@ use \DillerAPI\ObjectSerializer;
  * CancelationReason Class Doc Comment
  *
  * @category Class
- * @package  DillerAPI
+ * @package  Swagger\Client
  * @author   DILLER AS
  * @link     https://diller.io
  */
@@ -47,7 +47,7 @@ class CancelationReason implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'reason' => 'string',
-'origin' => '\DillerAPI\Model\Origin'    ];
+'origin' => '\Swagger\Client\Model\Origin'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -219,7 +219,7 @@ class CancelationReason implements ModelInterface, ArrayAccess
     /**
      * Gets origin
      *
-     * @return \DillerAPI\Model\Origin
+     * @return \Swagger\Client\Model\Origin
      */
     public function getOrigin()
     {
@@ -229,7 +229,7 @@ class CancelationReason implements ModelInterface, ArrayAccess
     /**
      * Sets origin
      *
-     * @param \DillerAPI\Model\Origin $origin origin
+     * @param \Swagger\Client\Model\Origin $origin origin
      *
      * @return $this
      */
@@ -256,9 +256,8 @@ class CancelationReason implements ModelInterface, ArrayAccess
      *
      * @param integer $offset Offset
      *
-     * @return mixed
      */
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }

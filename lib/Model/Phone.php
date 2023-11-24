@@ -16,7 +16,7 @@
  * Do not edit the class manually.
  */
 
-namespace DillerAPI\Model;
+namespace Swagger\Client\Model;
 
 use \ArrayAccess;
 use \DillerAPI\ObjectSerializer;
@@ -25,7 +25,7 @@ use \DillerAPI\ObjectSerializer;
  * Phone Class Doc Comment
  *
  * @category Class
- * @package  DillerAPI
+ * @package  Swagger\Client
  * @author   DILLER AS
  * @link     https://diller.io
  */
@@ -46,7 +46,7 @@ class Phone implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'countryCode' => 'string',
+        'country_code' => 'string',
 'number' => 'string'    ];
 
     /**
@@ -55,7 +55,7 @@ class Phone implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'countryCode' => null,
+        'country_code' => null,
 'number' => null    ];
 
     /**
@@ -85,7 +85,7 @@ class Phone implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'countryCode' => 'country_code',
+        'country_code' => 'country_code',
 'number' => 'number'    ];
 
     /**
@@ -94,7 +94,7 @@ class Phone implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'countryCode' => 'setCountryCode',
+        'country_code' => 'setCountryCode',
 'number' => 'setNumber'    ];
 
     /**
@@ -103,7 +103,7 @@ class Phone implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'countryCode' => 'getCountryCode',
+        'country_code' => 'getCountryCode',
 'number' => 'getNumber'    ];
 
     /**
@@ -164,7 +164,7 @@ class Phone implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['countryCode'] = isset($data['countryCode']) ? $data['countryCode'] : null;
+        $this->container['country_code'] = isset($data['country_code']) ? $data['country_code'] : null;
         $this->container['number'] = isset($data['number']) ? $data['number'] : null;
     }
 
@@ -177,8 +177,8 @@ class Phone implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['countryCode'] === null) {
-            $invalidProperties[] = "'countryCode' can't be null";
+        if ($this->container['country_code'] === null) {
+            $invalidProperties[] = "'country_code' can't be null";
         }
         if ($this->container['number'] === null) {
             $invalidProperties[] = "'number' can't be null";
@@ -199,25 +199,25 @@ class Phone implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets countryCode
+     * Gets country_code
      *
      * @return string
      */
     public function getCountryCode()
     {
-        return $this->container['countryCode'];
+        return $this->container['country_code'];
     }
 
     /**
-     * Sets countryCode
+     * Sets country_code
      *
-     * @param string $countryCode countryCode
+     * @param string $country_code country_code
      *
      * @return $this
      */
-    public function setCountryCode($countryCode)
+    public function setCountryCode($country_code)
     {
-        $this->container['countryCode'] = $countryCode;
+        $this->container['country_code'] = $country_code;
 
         return $this;
     }
@@ -262,9 +262,8 @@ class Phone implements ModelInterface, ArrayAccess
      *
      * @param integer $offset Offset
      *
-     * @return mixed
      */
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }

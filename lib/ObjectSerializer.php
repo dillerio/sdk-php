@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  DillerAPI
+ * @package  Swagger\Client
  * @author   DILLER AS
  * @link     https://diller.io
  */
@@ -15,13 +15,13 @@
  * Do not edit the class manually.
  */
 
-namespace DillerAPI;
+namespace Swagger\Client;
 
 /**
  * ObjectSerializer Class Doc Comment
  *
  * @category Class
- * @package  DillerAPI
+ * @package  Swagger\Client
  * @author   DILLER AS
  * @link     https://diller.io
  */

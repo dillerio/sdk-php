@@ -16,7 +16,7 @@
  * Do not edit the class manually.
  */
 
-namespace DillerAPI\Model;
+namespace Swagger\Client\Model;
 
 use \ArrayAccess;
 use \DillerAPI\ObjectSerializer;
@@ -25,7 +25,7 @@ use \DillerAPI\ObjectSerializer;
  * Address Class Doc Comment
  *
  * @category Class
- * @package  DillerAPI
+ * @package  Swagger\Client
  * @author   DILLER AS
  * @link     https://diller.io
  */
@@ -48,9 +48,9 @@ class Address implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'street' => 'string',
 'city' => 'string',
-'zipCode' => 'string',
+'zip_code' => 'string',
 'state' => 'string',
-'countryCode' => 'string'    ];
+'country_code' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -60,9 +60,9 @@ class Address implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'street' => null,
 'city' => null,
-'zipCode' => null,
+'zip_code' => null,
 'state' => null,
-'countryCode' => null    ];
+'country_code' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -93,9 +93,9 @@ class Address implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'street' => 'street',
 'city' => 'city',
-'zipCode' => 'zip_code',
+'zip_code' => 'zip_code',
 'state' => 'state',
-'countryCode' => 'country_code'    ];
+'country_code' => 'country_code'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -105,9 +105,9 @@ class Address implements ModelInterface, ArrayAccess
     protected static $setters = [
         'street' => 'setStreet',
 'city' => 'setCity',
-'zipCode' => 'setZipCode',
+'zip_code' => 'setZipCode',
 'state' => 'setState',
-'countryCode' => 'setCountryCode'    ];
+'country_code' => 'setCountryCode'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -117,9 +117,9 @@ class Address implements ModelInterface, ArrayAccess
     protected static $getters = [
         'street' => 'getStreet',
 'city' => 'getCity',
-'zipCode' => 'getZipCode',
+'zip_code' => 'getZipCode',
 'state' => 'getState',
-'countryCode' => 'getCountryCode'    ];
+'country_code' => 'getCountryCode'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -181,9 +181,9 @@ class Address implements ModelInterface, ArrayAccess
     {
         $this->container['street'] = isset($data['street']) ? $data['street'] : null;
         $this->container['city'] = isset($data['city']) ? $data['city'] : null;
-        $this->container['zipCode'] = isset($data['zipCode']) ? $data['zipCode'] : null;
+        $this->container['zip_code'] = isset($data['zip_code']) ? $data['zip_code'] : null;
         $this->container['state'] = isset($data['state']) ? $data['state'] : null;
-        $this->container['countryCode'] = isset($data['countryCode']) ? $data['countryCode'] : null;
+        $this->container['country_code'] = isset($data['country_code']) ? $data['country_code'] : null;
     }
 
     /**
@@ -259,25 +259,25 @@ class Address implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets zipCode
+     * Gets zip_code
      *
      * @return string
      */
     public function getZipCode()
     {
-        return $this->container['zipCode'];
+        return $this->container['zip_code'];
     }
 
     /**
-     * Sets zipCode
+     * Sets zip_code
      *
-     * @param string $zipCode zipCode
+     * @param string $zip_code zip_code
      *
      * @return $this
      */
-    public function setZipCode($zipCode)
+    public function setZipCode($zip_code)
     {
-        $this->container['zipCode'] = $zipCode;
+        $this->container['zip_code'] = $zip_code;
 
         return $this;
     }
@@ -307,25 +307,25 @@ class Address implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets countryCode
+     * Gets country_code
      *
      * @return string
      */
     public function getCountryCode()
     {
-        return $this->container['countryCode'];
+        return $this->container['country_code'];
     }
 
     /**
-     * Sets countryCode
+     * Sets country_code
      *
-     * @param string $countryCode The alpha-2 code of country
+     * @param string $country_code The alpha-2 code of country
      *
      * @return $this
      */
-    public function setCountryCode($countryCode)
+    public function setCountryCode($country_code)
     {
-        $this->container['countryCode'] = $countryCode;
+        $this->container['country_code'] = $country_code;
 
         return $this;
     }
@@ -346,9 +346,8 @@ class Address implements ModelInterface, ArrayAccess
      *
      * @param integer $offset Offset
      *
-     * @return mixed
      */
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }

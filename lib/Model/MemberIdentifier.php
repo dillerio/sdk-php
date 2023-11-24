@@ -16,7 +16,7 @@
  * Do not edit the class manually.
  */
 
-namespace DillerAPI\Model;
+namespace Swagger\Client\Model;
 
 use \ArrayAccess;
 use \DillerAPI\ObjectSerializer;
@@ -25,7 +25,7 @@ use \DillerAPI\ObjectSerializer;
  * MemberIdentifier Class Doc Comment
  *
  * @category Class
- * @package  DillerAPI
+ * @package  Swagger\Client
  * @author   DILLER AS
  * @link     https://diller.io
  */
@@ -47,7 +47,7 @@ class MemberIdentifier implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'type' => 'string',
-'isUniquePerCountry' => 'bool'    ];
+'is_unique_per_country' => 'bool'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -56,7 +56,7 @@ class MemberIdentifier implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'type' => null,
-'isUniquePerCountry' => null    ];
+'is_unique_per_country' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -86,7 +86,7 @@ class MemberIdentifier implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'type' => 'type',
-'isUniquePerCountry' => 'is_unique_per_country'    ];
+'is_unique_per_country' => 'is_unique_per_country'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -95,7 +95,7 @@ class MemberIdentifier implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'type' => 'setType',
-'isUniquePerCountry' => 'setIsUniquePerCountry'    ];
+'is_unique_per_country' => 'setIsUniquePerCountry'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -104,7 +104,7 @@ class MemberIdentifier implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'type' => 'getType',
-'isUniquePerCountry' => 'getIsUniquePerCountry'    ];
+'is_unique_per_country' => 'getIsUniquePerCountry'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -165,7 +165,7 @@ class MemberIdentifier implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
-        $this->container['isUniquePerCountry'] = isset($data['isUniquePerCountry']) ? $data['isUniquePerCountry'] : null;
+        $this->container['is_unique_per_country'] = isset($data['is_unique_per_country']) ? $data['is_unique_per_country'] : null;
     }
 
     /**
@@ -217,25 +217,25 @@ class MemberIdentifier implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets isUniquePerCountry
+     * Gets is_unique_per_country
      *
      * @return bool
      */
     public function getIsUniquePerCountry()
     {
-        return $this->container['isUniquePerCountry'];
+        return $this->container['is_unique_per_country'];
     }
 
     /**
-     * Sets isUniquePerCountry
+     * Sets is_unique_per_country
      *
-     * @param bool $isUniquePerCountry Defines whether the member identifier value should be unique per country
+     * @param bool $is_unique_per_country Defines whether the member identifier value should be unique per country
      *
      * @return $this
      */
-    public function setIsUniquePerCountry($isUniquePerCountry)
+    public function setIsUniquePerCountry($is_unique_per_country)
     {
-        $this->container['isUniquePerCountry'] = $isUniquePerCountry;
+        $this->container['is_unique_per_country'] = $is_unique_per_country;
 
         return $this;
     }
@@ -256,9 +256,8 @@ class MemberIdentifier implements ModelInterface, ArrayAccess
      *
      * @param integer $offset Offset
      *
-     * @return mixed
      */
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }

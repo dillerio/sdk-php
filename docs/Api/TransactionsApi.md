@@ -1,4 +1,4 @@
-# DillerAPI\TransactionsApi
+# Swagger\Client\TransactionsApi
 
 All URIs are relative to */*
 
@@ -9,7 +9,7 @@ Method | HTTP request | Description
 [**createTransaction**](TransactionsApi.md#createtransaction) | **POST** /api/v2.0/stores/{storeId}/members/{memberId}/transactions | Creates transaction
 
 # **cancelTransaction**
-> \DillerAPI\Model\ActionResponse cancelTransaction($storeId, $transactionId, $body)
+> \Swagger\Client\Model\ActionResponse cancelTransaction($store_id, $transaction_id, $body)
 
 Cancel transaction
 
@@ -19,20 +19,20 @@ Cancel transaction
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: OAuth2
-$config = DillerAPI\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$apiInstance = new DillerAPI\Api\TransactionsApi(
+$apiInstance = new Swagger\Client\Api\TransactionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$storeId = "storeId_example"; // string | 
-$transactionId = "transactionId_example"; // string | 
-$body = new \DillerAPI\Model\CancelationReason(); // \DillerAPI\Model\CancelationReason | 
+$store_id = "store_id_example"; // string | 
+$transaction_id = "transaction_id_example"; // string | 
+$body = new \Swagger\Client\Model\CancelationReason(); // \Swagger\Client\Model\CancelationReason | 
 
 try {
-    $result = $apiInstance->cancelTransaction($storeId, $transactionId, $body);
+    $result = $apiInstance->cancelTransaction($store_id, $transaction_id, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TransactionsApi->cancelTransaction: ', $e->getMessage(), PHP_EOL;
@@ -44,13 +44,13 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **storeId** | **string**|  |
- **transactionId** | **string**|  |
- **body** | [**\DillerAPI\Model\CancelationReason**](../Model/CancelationReason.md)|  | [optional]
+ **store_id** | **string**|  |
+ **transaction_id** | **string**|  |
+ **body** | [**\Swagger\Client\Model\CancelationReason**](../Model/CancelationReason.md)|  | [optional]
 
 ### Return type
 
-[**\DillerAPI\Model\ActionResponse**](../Model/ActionResponse.md)
+[**\Swagger\Client\Model\ActionResponse**](../Model/ActionResponse.md)
 
 ### Authorization
 
@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createRefundTransaction**
-> \DillerAPI\Model\ActionResponse createRefundTransaction($storeId, $memberId, $transactionId, $body)
+> \Swagger\Client\Model\ActionResponse createRefundTransaction($store_id, $member_id, $transaction_id, $body)
 
 Allows for the partial refund of a previous transaction, without taking into account any coupons or stamp cards applied earlier.
 
@@ -76,21 +76,21 @@ If the entire transaction needs to be refunded, consider using the \"cancel tran
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: OAuth2
-$config = DillerAPI\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$apiInstance = new DillerAPI\Api\TransactionsApi(
+$apiInstance = new Swagger\Client\Api\TransactionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$storeId = "storeId_example"; // string | Store Id
-$memberId = "memberId_example"; // string | Member Id
-$transactionId = "transactionId_example"; // string | The original transaction Id that is being refunded
-$body = new \DillerAPI\Model\CreateRefundTransactionRequest(); // \DillerAPI\Model\CreateRefundTransactionRequest | CreateRefundTransactionRequest object
+$store_id = "store_id_example"; // string | Store Id
+$member_id = "member_id_example"; // string | Member Id
+$transaction_id = "transaction_id_example"; // string | The original transaction Id that is being refunded
+$body = new \Swagger\Client\Model\CreateRefundTransactionRequest(); // \Swagger\Client\Model\CreateRefundTransactionRequest | CreateRefundTransactionRequest object
 
 try {
-    $result = $apiInstance->createRefundTransaction($storeId, $memberId, $transactionId, $body);
+    $result = $apiInstance->createRefundTransaction($store_id, $member_id, $transaction_id, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TransactionsApi->createRefundTransaction: ', $e->getMessage(), PHP_EOL;
@@ -102,14 +102,14 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **storeId** | **string**| Store Id |
- **memberId** | **string**| Member Id |
- **transactionId** | **string**| The original transaction Id that is being refunded |
- **body** | [**\DillerAPI\Model\CreateRefundTransactionRequest**](../Model/CreateRefundTransactionRequest.md)| CreateRefundTransactionRequest object | [optional]
+ **store_id** | **string**| Store Id |
+ **member_id** | **string**| Member Id |
+ **transaction_id** | **string**| The original transaction Id that is being refunded |
+ **body** | [**\Swagger\Client\Model\CreateRefundTransactionRequest**](../Model/CreateRefundTransactionRequest.md)| CreateRefundTransactionRequest object | [optional]
 
 ### Return type
 
-[**\DillerAPI\Model\ActionResponse**](../Model/ActionResponse.md)
+[**\Swagger\Client\Model\ActionResponse**](../Model/ActionResponse.md)
 
 ### Authorization
 
@@ -123,7 +123,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createTransaction**
-> \DillerAPI\Model\ActionResponse createTransaction($storeId, $memberId, $body)
+> \Swagger\Client\Model\ActionResponse createTransaction($store_id, $member_id, $body)
 
 Creates transaction
 
@@ -133,20 +133,20 @@ Creates transaction
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: OAuth2
-$config = DillerAPI\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$apiInstance = new DillerAPI\Api\TransactionsApi(
+$apiInstance = new Swagger\Client\Api\TransactionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$storeId = "storeId_example"; // string | Store Id
-$memberId = "memberId_example"; // string | Member Id
-$body = new \DillerAPI\Model\CreateTransactionRequest(); // \DillerAPI\Model\CreateTransactionRequest | CreateTransactionRequest object
+$store_id = "store_id_example"; // string | Store Id
+$member_id = "member_id_example"; // string | Member Id
+$body = new \Swagger\Client\Model\CreateTransactionRequest(); // \Swagger\Client\Model\CreateTransactionRequest | CreateTransactionRequest object
 
 try {
-    $result = $apiInstance->createTransaction($storeId, $memberId, $body);
+    $result = $apiInstance->createTransaction($store_id, $member_id, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TransactionsApi->createTransaction: ', $e->getMessage(), PHP_EOL;
@@ -158,13 +158,13 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **storeId** | **string**| Store Id |
- **memberId** | **string**| Member Id |
- **body** | [**\DillerAPI\Model\CreateTransactionRequest**](../Model/CreateTransactionRequest.md)| CreateTransactionRequest object | [optional]
+ **store_id** | **string**| Store Id |
+ **member_id** | **string**| Member Id |
+ **body** | [**\Swagger\Client\Model\CreateTransactionRequest**](../Model/CreateTransactionRequest.md)| CreateTransactionRequest object | [optional]
 
 ### Return type
 
-[**\DillerAPI\Model\ActionResponse**](../Model/ActionResponse.md)
+[**\Swagger\Client\Model\ActionResponse**](../Model/ActionResponse.md)
 
 ### Authorization
 

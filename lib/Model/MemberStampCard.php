@@ -16,7 +16,7 @@
  * Do not edit the class manually.
  */
 
-namespace DillerAPI\Model;
+namespace Swagger\Client\Model;
 
 use \ArrayAccess;
 use \DillerAPI\ObjectSerializer;
@@ -25,7 +25,7 @@ use \DillerAPI\ObjectSerializer;
  * MemberStampCard Class Doc Comment
  *
  * @category Class
- * @package  DillerAPI
+ * @package  Swagger\Client
  * @author   DILLER AS
  * @link     https://diller.io
  */
@@ -47,19 +47,19 @@ class MemberStampCard implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'id' => 'int',
-'externalId' => 'string',
-'articleNumber' => 'string',
+'external_id' => 'string',
+'article_number' => 'string',
 'title' => 'string',
 'description' => 'string',
-'requiredPoints' => 'int',
-'isRestartable' => 'bool',
-'requiredStamps' => 'int',
-'imageUrl' => 'string',
-'lastStampText' => 'string',
-'productIds' => 'string[]',
-'validFrom' => '\DateTime',
-'validTo' => '\DateTime',
-'stampsCollected' => 'int'    ];
+'required_points' => 'int',
+'is_restartable' => 'bool',
+'required_stamps' => 'int',
+'image_url' => 'string',
+'last_stamp_text' => 'string',
+'product_ids' => 'string[]',
+'valid_from' => '\DateTime',
+'valid_to' => '\DateTime',
+'stamps_collected' => 'int'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -68,19 +68,19 @@ class MemberStampCard implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'id' => 'int32',
-'externalId' => null,
-'articleNumber' => null,
+'external_id' => null,
+'article_number' => null,
 'title' => null,
 'description' => null,
-'requiredPoints' => 'int32',
-'isRestartable' => null,
-'requiredStamps' => 'int32',
-'imageUrl' => null,
-'lastStampText' => null,
-'productIds' => null,
-'validFrom' => 'date-time',
-'validTo' => 'date-time',
-'stampsCollected' => 'int32'    ];
+'required_points' => 'int32',
+'is_restartable' => null,
+'required_stamps' => 'int32',
+'image_url' => null,
+'last_stamp_text' => null,
+'product_ids' => null,
+'valid_from' => 'date-time',
+'valid_to' => 'date-time',
+'stamps_collected' => 'int32'    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -110,19 +110,19 @@ class MemberStampCard implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'id' => 'id',
-'externalId' => 'external_id',
-'articleNumber' => 'article_number',
+'external_id' => 'external_id',
+'article_number' => 'article_number',
 'title' => 'title',
 'description' => 'description',
-'requiredPoints' => 'required_points',
-'isRestartable' => 'is_restartable',
-'requiredStamps' => 'required_stamps',
-'imageUrl' => 'image_url',
-'lastStampText' => 'last_stamp_text',
-'productIds' => 'product_ids',
-'validFrom' => 'valid_from',
-'validTo' => 'valid_to',
-'stampsCollected' => 'stamps_collected'    ];
+'required_points' => 'required_points',
+'is_restartable' => 'is_restartable',
+'required_stamps' => 'required_stamps',
+'image_url' => 'image_url',
+'last_stamp_text' => 'last_stamp_text',
+'product_ids' => 'product_ids',
+'valid_from' => 'valid_from',
+'valid_to' => 'valid_to',
+'stamps_collected' => 'stamps_collected'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -131,19 +131,19 @@ class MemberStampCard implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'id' => 'setId',
-'externalId' => 'setExternalId',
-'articleNumber' => 'setArticleNumber',
+'external_id' => 'setExternalId',
+'article_number' => 'setArticleNumber',
 'title' => 'setTitle',
 'description' => 'setDescription',
-'requiredPoints' => 'setRequiredPoints',
-'isRestartable' => 'setIsRestartable',
-'requiredStamps' => 'setRequiredStamps',
-'imageUrl' => 'setImageUrl',
-'lastStampText' => 'setLastStampText',
-'productIds' => 'setProductIds',
-'validFrom' => 'setValidFrom',
-'validTo' => 'setValidTo',
-'stampsCollected' => 'setStampsCollected'    ];
+'required_points' => 'setRequiredPoints',
+'is_restartable' => 'setIsRestartable',
+'required_stamps' => 'setRequiredStamps',
+'image_url' => 'setImageUrl',
+'last_stamp_text' => 'setLastStampText',
+'product_ids' => 'setProductIds',
+'valid_from' => 'setValidFrom',
+'valid_to' => 'setValidTo',
+'stamps_collected' => 'setStampsCollected'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -152,19 +152,19 @@ class MemberStampCard implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'id' => 'getId',
-'externalId' => 'getExternalId',
-'articleNumber' => 'getArticleNumber',
+'external_id' => 'getExternalId',
+'article_number' => 'getArticleNumber',
 'title' => 'getTitle',
 'description' => 'getDescription',
-'requiredPoints' => 'getRequiredPoints',
-'isRestartable' => 'getIsRestartable',
-'requiredStamps' => 'getRequiredStamps',
-'imageUrl' => 'getImageUrl',
-'lastStampText' => 'getLastStampText',
-'productIds' => 'getProductIds',
-'validFrom' => 'getValidFrom',
-'validTo' => 'getValidTo',
-'stampsCollected' => 'getStampsCollected'    ];
+'required_points' => 'getRequiredPoints',
+'is_restartable' => 'getIsRestartable',
+'required_stamps' => 'getRequiredStamps',
+'image_url' => 'getImageUrl',
+'last_stamp_text' => 'getLastStampText',
+'product_ids' => 'getProductIds',
+'valid_from' => 'getValidFrom',
+'valid_to' => 'getValidTo',
+'stamps_collected' => 'getStampsCollected'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -225,19 +225,19 @@ class MemberStampCard implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['externalId'] = isset($data['externalId']) ? $data['externalId'] : null;
-        $this->container['articleNumber'] = isset($data['articleNumber']) ? $data['articleNumber'] : null;
+        $this->container['external_id'] = isset($data['external_id']) ? $data['external_id'] : null;
+        $this->container['article_number'] = isset($data['article_number']) ? $data['article_number'] : null;
         $this->container['title'] = isset($data['title']) ? $data['title'] : null;
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
-        $this->container['requiredPoints'] = isset($data['requiredPoints']) ? $data['requiredPoints'] : null;
-        $this->container['isRestartable'] = isset($data['isRestartable']) ? $data['isRestartable'] : null;
-        $this->container['requiredStamps'] = isset($data['requiredStamps']) ? $data['requiredStamps'] : null;
-        $this->container['imageUrl'] = isset($data['imageUrl']) ? $data['imageUrl'] : null;
-        $this->container['lastStampText'] = isset($data['lastStampText']) ? $data['lastStampText'] : null;
-        $this->container['productIds'] = isset($data['productIds']) ? $data['productIds'] : null;
-        $this->container['validFrom'] = isset($data['validFrom']) ? $data['validFrom'] : null;
-        $this->container['validTo'] = isset($data['validTo']) ? $data['validTo'] : null;
-        $this->container['stampsCollected'] = isset($data['stampsCollected']) ? $data['stampsCollected'] : null;
+        $this->container['required_points'] = isset($data['required_points']) ? $data['required_points'] : null;
+        $this->container['is_restartable'] = isset($data['is_restartable']) ? $data['is_restartable'] : null;
+        $this->container['required_stamps'] = isset($data['required_stamps']) ? $data['required_stamps'] : null;
+        $this->container['image_url'] = isset($data['image_url']) ? $data['image_url'] : null;
+        $this->container['last_stamp_text'] = isset($data['last_stamp_text']) ? $data['last_stamp_text'] : null;
+        $this->container['product_ids'] = isset($data['product_ids']) ? $data['product_ids'] : null;
+        $this->container['valid_from'] = isset($data['valid_from']) ? $data['valid_from'] : null;
+        $this->container['valid_to'] = isset($data['valid_to']) ? $data['valid_to'] : null;
+        $this->container['stamps_collected'] = isset($data['stamps_collected']) ? $data['stamps_collected'] : null;
     }
 
     /**
@@ -289,49 +289,49 @@ class MemberStampCard implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets externalId
+     * Gets external_id
      *
      * @return string
      */
     public function getExternalId()
     {
-        return $this->container['externalId'];
+        return $this->container['external_id'];
     }
 
     /**
-     * Sets externalId
+     * Sets external_id
      *
-     * @param string $externalId externalId
+     * @param string $external_id external_id
      *
      * @return $this
      */
-    public function setExternalId($externalId)
+    public function setExternalId($external_id)
     {
-        $this->container['externalId'] = $externalId;
+        $this->container['external_id'] = $external_id;
 
         return $this;
     }
 
     /**
-     * Gets articleNumber
+     * Gets article_number
      *
      * @return string
      */
     public function getArticleNumber()
     {
-        return $this->container['articleNumber'];
+        return $this->container['article_number'];
     }
 
     /**
-     * Sets articleNumber
+     * Sets article_number
      *
-     * @param string $articleNumber articleNumber
+     * @param string $article_number article_number
      *
      * @return $this
      */
-    public function setArticleNumber($articleNumber)
+    public function setArticleNumber($article_number)
     {
-        $this->container['articleNumber'] = $articleNumber;
+        $this->container['article_number'] = $article_number;
 
         return $this;
     }
@@ -385,217 +385,217 @@ class MemberStampCard implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets requiredPoints
+     * Gets required_points
      *
      * @return int
      */
     public function getRequiredPoints()
     {
-        return $this->container['requiredPoints'];
+        return $this->container['required_points'];
     }
 
     /**
-     * Sets requiredPoints
+     * Sets required_points
      *
-     * @param int $requiredPoints requiredPoints
+     * @param int $required_points required_points
      *
      * @return $this
      */
-    public function setRequiredPoints($requiredPoints)
+    public function setRequiredPoints($required_points)
     {
-        $this->container['requiredPoints'] = $requiredPoints;
+        $this->container['required_points'] = $required_points;
 
         return $this;
     }
 
     /**
-     * Gets isRestartable
+     * Gets is_restartable
      *
      * @return bool
      */
     public function getIsRestartable()
     {
-        return $this->container['isRestartable'];
+        return $this->container['is_restartable'];
     }
 
     /**
-     * Sets isRestartable
+     * Sets is_restartable
      *
-     * @param bool $isRestartable isRestartable
+     * @param bool $is_restartable is_restartable
      *
      * @return $this
      */
-    public function setIsRestartable($isRestartable)
+    public function setIsRestartable($is_restartable)
     {
-        $this->container['isRestartable'] = $isRestartable;
+        $this->container['is_restartable'] = $is_restartable;
 
         return $this;
     }
 
     /**
-     * Gets requiredStamps
+     * Gets required_stamps
      *
      * @return int
      */
     public function getRequiredStamps()
     {
-        return $this->container['requiredStamps'];
+        return $this->container['required_stamps'];
     }
 
     /**
-     * Sets requiredStamps
+     * Sets required_stamps
      *
-     * @param int $requiredStamps requiredStamps
+     * @param int $required_stamps required_stamps
      *
      * @return $this
      */
-    public function setRequiredStamps($requiredStamps)
+    public function setRequiredStamps($required_stamps)
     {
-        $this->container['requiredStamps'] = $requiredStamps;
+        $this->container['required_stamps'] = $required_stamps;
 
         return $this;
     }
 
     /**
-     * Gets imageUrl
+     * Gets image_url
      *
      * @return string
      */
     public function getImageUrl()
     {
-        return $this->container['imageUrl'];
+        return $this->container['image_url'];
     }
 
     /**
-     * Sets imageUrl
+     * Sets image_url
      *
-     * @param string $imageUrl imageUrl
+     * @param string $image_url image_url
      *
      * @return $this
      */
-    public function setImageUrl($imageUrl)
+    public function setImageUrl($image_url)
     {
-        $this->container['imageUrl'] = $imageUrl;
+        $this->container['image_url'] = $image_url;
 
         return $this;
     }
 
     /**
-     * Gets lastStampText
+     * Gets last_stamp_text
      *
      * @return string
      */
     public function getLastStampText()
     {
-        return $this->container['lastStampText'];
+        return $this->container['last_stamp_text'];
     }
 
     /**
-     * Sets lastStampText
+     * Sets last_stamp_text
      *
-     * @param string $lastStampText lastStampText
+     * @param string $last_stamp_text last_stamp_text
      *
      * @return $this
      */
-    public function setLastStampText($lastStampText)
+    public function setLastStampText($last_stamp_text)
     {
-        $this->container['lastStampText'] = $lastStampText;
+        $this->container['last_stamp_text'] = $last_stamp_text;
 
         return $this;
     }
 
     /**
-     * Gets productIds
+     * Gets product_ids
      *
      * @return string[]
      */
     public function getProductIds()
     {
-        return $this->container['productIds'];
+        return $this->container['product_ids'];
     }
 
     /**
-     * Sets productIds
+     * Sets product_ids
      *
-     * @param string[] $productIds productIds
+     * @param string[] $product_ids product_ids
      *
      * @return $this
      */
-    public function setProductIds($productIds)
+    public function setProductIds($product_ids)
     {
-        $this->container['productIds'] = $productIds;
+        $this->container['product_ids'] = $product_ids;
 
         return $this;
     }
 
     /**
-     * Gets validFrom
+     * Gets valid_from
      *
      * @return \DateTime
      */
     public function getValidFrom()
     {
-        return $this->container['validFrom'];
+        return $this->container['valid_from'];
     }
 
     /**
-     * Sets validFrom
+     * Sets valid_from
      *
-     * @param \DateTime $validFrom validFrom
+     * @param \DateTime $valid_from valid_from
      *
      * @return $this
      */
-    public function setValidFrom($validFrom)
+    public function setValidFrom($valid_from)
     {
-        $this->container['validFrom'] = $validFrom;
+        $this->container['valid_from'] = $valid_from;
 
         return $this;
     }
 
     /**
-     * Gets validTo
+     * Gets valid_to
      *
      * @return \DateTime
      */
     public function getValidTo()
     {
-        return $this->container['validTo'];
+        return $this->container['valid_to'];
     }
 
     /**
-     * Sets validTo
+     * Sets valid_to
      *
-     * @param \DateTime $validTo validTo
+     * @param \DateTime $valid_to valid_to
      *
      * @return $this
      */
-    public function setValidTo($validTo)
+    public function setValidTo($valid_to)
     {
-        $this->container['validTo'] = $validTo;
+        $this->container['valid_to'] = $valid_to;
 
         return $this;
     }
 
     /**
-     * Gets stampsCollected
+     * Gets stamps_collected
      *
      * @return int
      */
     public function getStampsCollected()
     {
-        return $this->container['stampsCollected'];
+        return $this->container['stamps_collected'];
     }
 
     /**
-     * Sets stampsCollected
+     * Sets stamps_collected
      *
-     * @param int $stampsCollected stampsCollected
+     * @param int $stamps_collected stamps_collected
      *
      * @return $this
      */
-    public function setStampsCollected($stampsCollected)
+    public function setStampsCollected($stamps_collected)
     {
-        $this->container['stampsCollected'] = $stampsCollected;
+        $this->container['stamps_collected'] = $stamps_collected;
 
         return $this;
     }
@@ -616,9 +616,8 @@ class MemberStampCard implements ModelInterface, ArrayAccess
      *
      * @param integer $offset Offset
      *
-     * @return mixed
      */
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }

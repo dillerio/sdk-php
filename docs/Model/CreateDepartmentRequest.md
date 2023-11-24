@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **string** |  | [optional] 
 **name** | **string** |  | [optional] 
-**origin** | [**\DillerAPI\Model\Origin**](Origin.md) |  | [optional] 
+**origin** | [**\Swagger\Client\Model\Origin**](Origin.md) |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

@@ -16,14 +16,14 @@
  * Do not edit the class manually.
  */
 
-namespace DillerAPI\Model;
+namespace Swagger\Client\Model;
 use \DillerAPI\ObjectSerializer;
 
 /**
  * PlatformType Class Doc Comment
  *
  * @category Class
- * @package  DillerAPI
+ * @package  Swagger\Client
  * @author   DILLER AS
  * @link     https://diller.io
  */
@@ -45,12 +45,12 @@ class PlatformType
     public static function getAllowableEnumValues()
     {
         return [
-            self::EXTENDA_GO
-            self::WOOCOMERCE
-            self::MAGENTO
-            self::SHOPIFY
-            self::LINK_POS
-            self::PCK
+            self::EXTENDA_GO, 
+            self::WOOCOMERCE, 
+            self::MAGENTO, 
+            self::SHOPIFY, 
+            self::LINK_POS, 
+            self::PCK, 
         ];
     }
 }

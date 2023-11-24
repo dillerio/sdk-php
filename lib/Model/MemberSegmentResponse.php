@@ -16,7 +16,7 @@
  * Do not edit the class manually.
  */
 
-namespace DillerAPI\Model;
+namespace Swagger\Client\Model;
 
 use \ArrayAccess;
 use \DillerAPI\ObjectSerializer;
@@ -25,7 +25,7 @@ use \DillerAPI\ObjectSerializer;
  * MemberSegmentResponse Class Doc Comment
  *
  * @category Class
- * @package  DillerAPI
+ * @package  Swagger\Client
  * @author   DILLER AS
  * @link     https://diller.io
  */
@@ -48,11 +48,11 @@ class MemberSegmentResponse implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'id' => 'int',
 'text' => 'string',
-'type' => '\DillerAPI\Model\SegmentType',
-'isVisibleToFollower' => 'bool',
-'isRequired' => 'bool',
+'type' => '\Swagger\Client\Model\SegmentType',
+'is_visible_to_follower' => 'bool',
+'is_required' => 'bool',
 'value' => 'string',
-'selectedOptions' => 'int[]'    ];
+'selected_options' => 'int[]'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -63,10 +63,10 @@ class MemberSegmentResponse implements ModelInterface, ArrayAccess
         'id' => 'int32',
 'text' => null,
 'type' => null,
-'isVisibleToFollower' => null,
-'isRequired' => null,
+'is_visible_to_follower' => null,
+'is_required' => null,
 'value' => null,
-'selectedOptions' => 'int32'    ];
+'selected_options' => 'int32'    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -98,10 +98,10 @@ class MemberSegmentResponse implements ModelInterface, ArrayAccess
         'id' => 'id',
 'text' => 'text',
 'type' => 'type',
-'isVisibleToFollower' => 'is_visible_to_follower',
-'isRequired' => 'is_required',
+'is_visible_to_follower' => 'is_visible_to_follower',
+'is_required' => 'is_required',
 'value' => 'value',
-'selectedOptions' => 'selected_options'    ];
+'selected_options' => 'selected_options'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -112,10 +112,10 @@ class MemberSegmentResponse implements ModelInterface, ArrayAccess
         'id' => 'setId',
 'text' => 'setText',
 'type' => 'setType',
-'isVisibleToFollower' => 'setIsVisibleToFollower',
-'isRequired' => 'setIsRequired',
+'is_visible_to_follower' => 'setIsVisibleToFollower',
+'is_required' => 'setIsRequired',
 'value' => 'setValue',
-'selectedOptions' => 'setSelectedOptions'    ];
+'selected_options' => 'setSelectedOptions'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -126,10 +126,10 @@ class MemberSegmentResponse implements ModelInterface, ArrayAccess
         'id' => 'getId',
 'text' => 'getText',
 'type' => 'getType',
-'isVisibleToFollower' => 'getIsVisibleToFollower',
-'isRequired' => 'getIsRequired',
+'is_visible_to_follower' => 'getIsVisibleToFollower',
+'is_required' => 'getIsRequired',
 'value' => 'getValue',
-'selectedOptions' => 'getSelectedOptions'    ];
+'selected_options' => 'getSelectedOptions'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -192,10 +192,10 @@ class MemberSegmentResponse implements ModelInterface, ArrayAccess
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['text'] = isset($data['text']) ? $data['text'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
-        $this->container['isVisibleToFollower'] = isset($data['isVisibleToFollower']) ? $data['isVisibleToFollower'] : null;
-        $this->container['isRequired'] = isset($data['isRequired']) ? $data['isRequired'] : null;
+        $this->container['is_visible_to_follower'] = isset($data['is_visible_to_follower']) ? $data['is_visible_to_follower'] : null;
+        $this->container['is_required'] = isset($data['is_required']) ? $data['is_required'] : null;
         $this->container['value'] = isset($data['value']) ? $data['value'] : null;
-        $this->container['selectedOptions'] = isset($data['selectedOptions']) ? $data['selectedOptions'] : null;
+        $this->container['selected_options'] = isset($data['selected_options']) ? $data['selected_options'] : null;
     }
 
     /**
@@ -276,7 +276,7 @@ class MemberSegmentResponse implements ModelInterface, ArrayAccess
     /**
      * Gets type
      *
-     * @return \DillerAPI\Model\SegmentType
+     * @return \Swagger\Client\Model\SegmentType
      */
     public function getType()
     {
@@ -286,7 +286,7 @@ class MemberSegmentResponse implements ModelInterface, ArrayAccess
     /**
      * Sets type
      *
-     * @param \DillerAPI\Model\SegmentType $type type
+     * @param \Swagger\Client\Model\SegmentType $type type
      *
      * @return $this
      */
@@ -298,49 +298,49 @@ class MemberSegmentResponse implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets isVisibleToFollower
+     * Gets is_visible_to_follower
      *
      * @return bool
      */
     public function getIsVisibleToFollower()
     {
-        return $this->container['isVisibleToFollower'];
+        return $this->container['is_visible_to_follower'];
     }
 
     /**
-     * Sets isVisibleToFollower
+     * Sets is_visible_to_follower
      *
-     * @param bool $isVisibleToFollower isVisibleToFollower
+     * @param bool $is_visible_to_follower is_visible_to_follower
      *
      * @return $this
      */
-    public function setIsVisibleToFollower($isVisibleToFollower)
+    public function setIsVisibleToFollower($is_visible_to_follower)
     {
-        $this->container['isVisibleToFollower'] = $isVisibleToFollower;
+        $this->container['is_visible_to_follower'] = $is_visible_to_follower;
 
         return $this;
     }
 
     /**
-     * Gets isRequired
+     * Gets is_required
      *
      * @return bool
      */
     public function getIsRequired()
     {
-        return $this->container['isRequired'];
+        return $this->container['is_required'];
     }
 
     /**
-     * Sets isRequired
+     * Sets is_required
      *
-     * @param bool $isRequired isRequired
+     * @param bool $is_required is_required
      *
      * @return $this
      */
-    public function setIsRequired($isRequired)
+    public function setIsRequired($is_required)
     {
-        $this->container['isRequired'] = $isRequired;
+        $this->container['is_required'] = $is_required;
 
         return $this;
     }
@@ -370,25 +370,25 @@ class MemberSegmentResponse implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets selectedOptions
+     * Gets selected_options
      *
      * @return int[]
      */
     public function getSelectedOptions()
     {
-        return $this->container['selectedOptions'];
+        return $this->container['selected_options'];
     }
 
     /**
-     * Sets selectedOptions
+     * Sets selected_options
      *
-     * @param int[] $selectedOptions Use SelectedOptions when segment type is Radio, Combobox or Dropbox
+     * @param int[] $selected_options Use SelectedOptions when segment type is Radio, Combobox or Dropbox
      *
      * @return $this
      */
-    public function setSelectedOptions($selectedOptions)
+    public function setSelectedOptions($selected_options)
     {
-        $this->container['selectedOptions'] = $selectedOptions;
+        $this->container['selected_options'] = $selected_options;
 
         return $this;
     }
@@ -409,9 +409,8 @@ class MemberSegmentResponse implements ModelInterface, ArrayAccess
      *
      * @param integer $offset Offset
      *
-     * @return mixed
      */
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }

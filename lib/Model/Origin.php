@@ -16,7 +16,7 @@
  * Do not edit the class manually.
  */
 
-namespace DillerAPI\Model;
+namespace Swagger\Client\Model;
 
 use \ArrayAccess;
 use \DillerAPI\ObjectSerializer;
@@ -26,7 +26,7 @@ use \DillerAPI\ObjectSerializer;
  *
  * @category Class
  * @description Represents the origin of the request, by department, employee, system id and channel.  Eg. Employee John Doe at Pos number 10 in the store department \&quot;New York\&quot; submitted this request.
- * @package  DillerAPI
+ * @package  Swagger\Client
  * @author   DILLER AS
  * @link     https://diller.io
  */
@@ -47,9 +47,9 @@ class Origin implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'systemId' => 'string',
-'employeeId' => 'string',
-'departmentId' => 'string',
+        'system_id' => 'string',
+'employee_id' => 'string',
+'department_id' => 'string',
 'channel' => 'string'    ];
 
     /**
@@ -58,9 +58,9 @@ class Origin implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'systemId' => null,
-'employeeId' => null,
-'departmentId' => null,
+        'system_id' => null,
+'employee_id' => null,
+'department_id' => null,
 'channel' => null    ];
 
     /**
@@ -90,9 +90,9 @@ class Origin implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'systemId' => 'system_id',
-'employeeId' => 'employee_id',
-'departmentId' => 'department_id',
+        'system_id' => 'system_id',
+'employee_id' => 'employee_id',
+'department_id' => 'department_id',
 'channel' => 'channel'    ];
 
     /**
@@ -101,9 +101,9 @@ class Origin implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'systemId' => 'setSystemId',
-'employeeId' => 'setEmployeeId',
-'departmentId' => 'setDepartmentId',
+        'system_id' => 'setSystemId',
+'employee_id' => 'setEmployeeId',
+'department_id' => 'setDepartmentId',
 'channel' => 'setChannel'    ];
 
     /**
@@ -112,9 +112,9 @@ class Origin implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'systemId' => 'getSystemId',
-'employeeId' => 'getEmployeeId',
-'departmentId' => 'getDepartmentId',
+        'system_id' => 'getSystemId',
+'employee_id' => 'getEmployeeId',
+'department_id' => 'getDepartmentId',
 'channel' => 'getChannel'    ];
 
     /**
@@ -175,9 +175,9 @@ class Origin implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['systemId'] = isset($data['systemId']) ? $data['systemId'] : null;
-        $this->container['employeeId'] = isset($data['employeeId']) ? $data['employeeId'] : null;
-        $this->container['departmentId'] = isset($data['departmentId']) ? $data['departmentId'] : null;
+        $this->container['system_id'] = isset($data['system_id']) ? $data['system_id'] : null;
+        $this->container['employee_id'] = isset($data['employee_id']) ? $data['employee_id'] : null;
+        $this->container['department_id'] = isset($data['department_id']) ? $data['department_id'] : null;
         $this->container['channel'] = isset($data['channel']) ? $data['channel'] : null;
     }
 
@@ -206,73 +206,73 @@ class Origin implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets systemId
+     * Gets system_id
      *
      * @return string
      */
     public function getSystemId()
     {
-        return $this->container['systemId'];
+        return $this->container['system_id'];
     }
 
     /**
-     * Sets systemId
+     * Sets system_id
      *
-     * @param string $systemId systemId
+     * @param string $system_id system_id
      *
      * @return $this
      */
-    public function setSystemId($systemId)
+    public function setSystemId($system_id)
     {
-        $this->container['systemId'] = $systemId;
+        $this->container['system_id'] = $system_id;
 
         return $this;
     }
 
     /**
-     * Gets employeeId
+     * Gets employee_id
      *
      * @return string
      */
     public function getEmployeeId()
     {
-        return $this->container['employeeId'];
+        return $this->container['employee_id'];
     }
 
     /**
-     * Sets employeeId
+     * Sets employee_id
      *
-     * @param string $employeeId The id for of the operator that made the request (if applicable)
+     * @param string $employee_id The id for of the operator that made the request (if applicable)
      *
      * @return $this
      */
-    public function setEmployeeId($employeeId)
+    public function setEmployeeId($employee_id)
     {
-        $this->container['employeeId'] = $employeeId;
+        $this->container['employee_id'] = $employee_id;
 
         return $this;
     }
 
     /**
-     * Gets departmentId
+     * Gets department_id
      *
      * @return string
      */
     public function getDepartmentId()
     {
-        return $this->container['departmentId'];
+        return $this->container['department_id'];
     }
 
     /**
-     * Sets departmentId
+     * Sets department_id
      *
-     * @param string $departmentId departmentId
+     * @param string $department_id department_id
      *
      * @return $this
      */
-    public function setDepartmentId($departmentId)
+    public function setDepartmentId($department_id)
     {
-        $this->container['departmentId'] = $departmentId;
+        $this->container['department_id'] = $department_id;
 
         return $this;
     }
@@ -317,9 +317,8 @@ class Origin implements ModelInterface, ArrayAccess
      *
      * @param integer $offset Offset
      *
-     * @return mixed
      */
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }

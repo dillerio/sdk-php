@@ -1,4 +1,4 @@
-# DillerAPI\StoresApi
+# Swagger\Client\StoresApi
 
 All URIs are relative to */*
 
@@ -11,7 +11,7 @@ Method | HTTP request | Description
 [**getSegments**](StoresApi.md#getsegments) | **GET** /api/v2.0/stores/{storeId}/segments | Retrieves all store&#x27;s segments
 
 # **createDepartment**
-> \DillerAPI\Model\StoreDepartmentResponse[] createDepartment($storeId, $body)
+> \Swagger\Client\Model\StoreDepartmentResponse[] createDepartment($store_id, $body)
 
 Add store department
 
@@ -21,19 +21,19 @@ Add store department
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: OAuth2
-$config = DillerAPI\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$apiInstance = new DillerAPI\Api\StoresApi(
+$apiInstance = new Swagger\Client\Api\StoresApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$storeId = "storeId_example"; // string | The store id
-$body = new \DillerAPI\Model\CreateDepartmentRequest(); // \DillerAPI\Model\CreateDepartmentRequest | 
+$store_id = "store_id_example"; // string | The store id
+$body = new \Swagger\Client\Model\CreateDepartmentRequest(); // \Swagger\Client\Model\CreateDepartmentRequest | 
 
 try {
-    $result = $apiInstance->createDepartment($storeId, $body);
+    $result = $apiInstance->createDepartment($store_id, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StoresApi->createDepartment: ', $e->getMessage(), PHP_EOL;
@@ -45,12 +45,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **storeId** | **string**| The store id |
- **body** | [**\DillerAPI\Model\CreateDepartmentRequest**](../Model/CreateDepartmentRequest.md)|  | [optional]
+ **store_id** | **string**| The store id |
+ **body** | [**\Swagger\Client\Model\CreateDepartmentRequest**](../Model/CreateDepartmentRequest.md)|  | [optional]
 
 ### Return type
 
-[**\DillerAPI\Model\StoreDepartmentResponse[]**](../Model/StoreDepartmentResponse.md)
+[**\Swagger\Client\Model\StoreDepartmentResponse[]**](../Model/StoreDepartmentResponse.md)
 
 ### Authorization
 
@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **get**
-> \DillerAPI\Model\StoreResponse get($storeId)
+> \Swagger\Client\Model\StoreResponse get($store_id)
 
 Gets store
 
@@ -74,18 +74,18 @@ Gets store
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: OAuth2
-$config = DillerAPI\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$apiInstance = new DillerAPI\Api\StoresApi(
+$apiInstance = new Swagger\Client\Api\StoresApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$storeId = "storeId_example"; // string | The id of the store
+$store_id = "store_id_example"; // string | The id of the store
 
 try {
-    $result = $apiInstance->get($storeId);
+    $result = $apiInstance->get($store_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StoresApi->get: ', $e->getMessage(), PHP_EOL;
@@ -97,11 +97,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **storeId** | **string**| The id of the store |
+ **store_id** | **string**| The id of the store |
 
 ### Return type
 
-[**\DillerAPI\Model\StoreResponse**](../Model/StoreResponse.md)
+[**\Swagger\Client\Model\StoreResponse**](../Model/StoreResponse.md)
 
 ### Authorization
 
@@ -115,7 +115,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAll**
-> \DillerAPI\Model\StoreResponse[] getAll()
+> \Swagger\Client\Model\StoreResponse[] getAll()
 
 Get all stores that the client has access to
 
@@ -125,9 +125,9 @@ Get all stores that the client has access to
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: OAuth2
-$config = DillerAPI\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$apiInstance = new DillerAPI\Api\StoresApi(
+$apiInstance = new Swagger\Client\Api\StoresApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -148,7 +148,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\DillerAPI\Model\StoreResponse[]**](../Model/StoreResponse.md)
+[**\Swagger\Client\Model\StoreResponse[]**](../Model/StoreResponse.md)
 
 ### Authorization
 
@@ -162,7 +162,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getDepartments**
-> \DillerAPI\Model\StoreDepartmentResponse[] getDepartments($storeId)
+> \Swagger\Client\Model\StoreDepartmentResponse[] getDepartments($store_id)
 
 Get store departments
 
@@ -172,18 +172,18 @@ Get store departments
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: OAuth2
-$config = DillerAPI\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$apiInstance = new DillerAPI\Api\StoresApi(
+$apiInstance = new Swagger\Client\Api\StoresApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$storeId = "storeId_example"; // string | The store id
+$store_id = "store_id_example"; // string | The store id
 
 try {
-    $result = $apiInstance->getDepartments($storeId);
+    $result = $apiInstance->getDepartments($store_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StoresApi->getDepartments: ', $e->getMessage(), PHP_EOL;
@@ -195,11 +195,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **storeId** | **string**| The store id |
+ **store_id** | **string**| The store id |
 
 ### Return type
 
-[**\DillerAPI\Model\StoreDepartmentResponse[]**](../Model/StoreDepartmentResponse.md)
+[**\Swagger\Client\Model\StoreDepartmentResponse[]**](../Model/StoreDepartmentResponse.md)
 
 ### Authorization
 
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getSegments**
-> \DillerAPI\Model\StoreSegmentResponse[] getSegments($storeId)
+> \Swagger\Client\Model\StoreSegmentResponse[] getSegments($store_id)
 
 Retrieves all store's segments
 
@@ -223,18 +223,18 @@ Retrieves all store's segments
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: OAuth2
-$config = DillerAPI\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$apiInstance = new DillerAPI\Api\StoresApi(
+$apiInstance = new Swagger\Client\Api\StoresApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$storeId = "storeId_example"; // string | The Id of the store
+$store_id = "store_id_example"; // string | The Id of the store
 
 try {
-    $result = $apiInstance->getSegments($storeId);
+    $result = $apiInstance->getSegments($store_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StoresApi->getSegments: ', $e->getMessage(), PHP_EOL;
@@ -246,11 +246,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **storeId** | **string**| The Id of the store |
+ **store_id** | **string**| The Id of the store |
 
 ### Return type
 
-[**\DillerAPI\Model\StoreSegmentResponse[]**](../Model/StoreSegmentResponse.md)
+[**\Swagger\Client\Model\StoreSegmentResponse[]**](../Model/StoreSegmentResponse.md)
 
 ### Authorization
 
