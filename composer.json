@@ -1,37 +1,38 @@
 {
-    "name": "git_user_id/git_repo_id",
-    "description": "",
+    "name": "diller-loyalty/sdk-php",
+    "version": "v0.1.8",
+    "description": "PHP SDK for Diller API",
     "keywords": [
-        "swagger",
+        "diller",
         "php",
         "sdk",
-        "rest",
         "api"
     ],
-    "homepage": "http://swagger.io",
+    "homepage": "https://diller.io",
     "license": "proprietary",
     "authors": [
         {
-            "name": "Swagger and contributors",
-            "homepage": "https://github.com/swagger-api/swagger-codegen"
+            "name": "Diller",
+            "email": "dillertechsupport@diller.no",
+            "homepage": "https://diller.io"
         }
     ],
     "require": {
-        "php": "^7.4 || ^8.0",
+        "php": ">=7.4",
         "ext-curl": "*",
         "ext-json": "*",
         "ext-mbstring": "*",
-        "guzzlehttp/guzzle": "^7.3",
-        "guzzlehttp/psr7": "^1.7 || ^2.0"
+        "guzzlehttp/guzzle": ">=6.5.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "^8.0 || ^9.0",
-        "friendsofphp/php-cs-fixer": "^3.5"
+        "phpunit/phpunit": "^9.6.3",
+        "fakerphp/faker": "v1.21.0",
+        "squizlabs/php_codesniffer": "~2.6",
+        "vlucas/phpdotenv": "v5.5.0"
     },
     "autoload": {
-        "psr-4": { "Swagger\\Client\\" : "lib/" }
-    },
-    "autoload-dev": {
-        "psr-4": { "Swagger\\Client\\" : "test/" }
+        "psr-4": {
+            "Swagger\\Client\\" : "lib/"
+        }
     }
-,"version":"v0.1.7"}
+}
