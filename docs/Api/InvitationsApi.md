@@ -1,4 +1,4 @@
-# Swagger\Client\InvitationsApi
+# DillerAPI\InvitationsApi
 
 All URIs are relative to */*
 
@@ -8,7 +8,7 @@ Method | HTTP request | Description
 [**getReferrals**](InvitationsApi.md#getreferrals) | **GET** /api/v2.0/stores/{storeId}/members/{memberId}/invited-friend | Returns an invited friend by invitation token
 
 # **getInvitedFriends**
-> \Swagger\Client\Model\InvitedFriendResponse[] getInvitedFriends($store_id, $member_id)
+> \DillerAPI\Model\InvitedFriendResponse[] getInvitedFriends($storeId, $memberId)
 
 Returns a list of all invited friends
 
@@ -18,19 +18,19 @@ Returns a list of all invited friends
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: OAuth2
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = DillerAPI\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$apiInstance = new Swagger\Client\Api\InvitationsApi(
+$apiInstance = new DillerAPI\Api\InvitationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$store_id = "store_id_example"; // string | The store Id
-$member_id = "member_id_example"; // string | The member Id
+$storeId = "storeId_example"; // string | The store Id
+$memberId = "memberId_example"; // string | The member Id
 
 try {
-    $result = $apiInstance->getInvitedFriends($store_id, $member_id);
+    $result = $apiInstance->getInvitedFriends($storeId, $memberId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InvitationsApi->getInvitedFriends: ', $e->getMessage(), PHP_EOL;
@@ -42,12 +42,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **store_id** | **string**| The store Id |
- **member_id** | **string**| The member Id |
+ **storeId** | **string**| The store Id |
+ **memberId** | **string**| The member Id |
 
 ### Return type
 
-[**\Swagger\Client\Model\InvitedFriendResponse[]**](../Model/InvitedFriendResponse.md)
+[**\DillerAPI\Model\InvitedFriendResponse[]**](../Model/InvitedFriendResponse.md)
 
 ### Authorization
 
@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getReferrals**
-> \Swagger\Client\Model\InvitedFriendResponse[] getReferrals($store_id, $member_id, $invitation_token)
+> \DillerAPI\Model\InvitedFriendResponse[] getReferrals($storeId, $memberId, $invitationToken)
 
 Returns an invited friend by invitation token
 
@@ -71,20 +71,20 @@ Returns an invited friend by invitation token
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: OAuth2
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = DillerAPI\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$apiInstance = new Swagger\Client\Api\InvitationsApi(
+$apiInstance = new DillerAPI\Api\InvitationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$store_id = "store_id_example"; // string | The store Id
-$member_id = "member_id_example"; // string | The member Id
-$invitation_token = "invitation_token_example"; // string | The invitation token
+$storeId = "storeId_example"; // string | The store Id
+$memberId = "memberId_example"; // string | The member Id
+$invitationToken = "invitationToken_example"; // string | The invitation token
 
 try {
-    $result = $apiInstance->getReferrals($store_id, $member_id, $invitation_token);
+    $result = $apiInstance->getReferrals($storeId, $memberId, $invitationToken);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InvitationsApi->getReferrals: ', $e->getMessage(), PHP_EOL;
@@ -96,13 +96,13 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **store_id** | **string**| The store Id |
- **member_id** | **string**| The member Id |
- **invitation_token** | **string**| The invitation token | [optional]
+ **storeId** | **string**| The store Id |
+ **memberId** | **string**| The member Id |
+ **invitationToken** | **string**| The invitation token | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\InvitedFriendResponse[]**](../Model/InvitedFriendResponse.md)
+[**\DillerAPI\Model\InvitedFriendResponse[]**](../Model/InvitedFriendResponse.md)
 
 ### Authorization
 

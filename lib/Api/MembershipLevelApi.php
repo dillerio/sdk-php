@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  DillerAPI
  * @author   DILLER AS
  * @link     https://diller.io
  */
@@ -15,7 +15,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Api;
+namespace DillerAPI\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -23,16 +23,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use Swagger\Client\ApiException;
-use Swagger\Client\Configuration;
-use Swagger\Client\HeaderSelector;
-use Swagger\Client\ObjectSerializer;
+use DillerAPI\ApiException;
+use DillerAPI\Configuration;
+use DillerAPI\HeaderSelector;
+use DillerAPI\ObjectSerializer;
 
 /**
  * MembershipLevelApi Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  DillerAPI
  * @author   DILLER AS
  * @link     https://diller.io
  */
@@ -81,15 +81,15 @@ class MembershipLevelApi
      *
      * Retrieve store membership level information
      *
-     * @param  string $store_id The store id (required)
+     * @param  string $storeId The store id (required)
      *
      * @throws {{invokerPackage}}\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\StoreMembershipLevelResponse[]
+     * @return \DillerAPI\Model\StoreMembershipLevelResponse[]
      */
-    public function getStoreMembershipLevel($store_id)
+    public function getStoreMembershipLevel($storeId)
     {
-        list($response) = $this->getStoreMembershipLevelWithHttpInfo($store_id);
+        list($response) = $this->getStoreMembershipLevelWithHttpInfo($storeId);
         return $response;
     }
 
@@ -98,16 +98,16 @@ class MembershipLevelApi
      *
      * Retrieve store membership level information
      *
-     * @param  string $store_id The store id (required)
+     * @param  string $storeId The store id (required)
      *
      * @throws {{invokerPackage}}\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\StoreMembershipLevelResponse[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \DillerAPI\Model\StoreMembershipLevelResponse[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getStoreMembershipLevelWithHttpInfo($store_id)
+    public function getStoreMembershipLevelWithHttpInfo($storeId)
     {
-        $returnType = '\Swagger\Client\Model\StoreMembershipLevelResponse[]';
-        $request = $this->getStoreMembershipLevelRequest($store_id);
+        $returnType = '\DillerAPI\Model\StoreMembershipLevelResponse[]';
+        $request = $this->getStoreMembershipLevelRequest($storeId);
 
         try {
             $options = $this->createHttpClientOption();
@@ -158,7 +158,7 @@ class MembershipLevelApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ApiError',
+                        '\DillerAPI\Model\ApiError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -166,7 +166,7 @@ class MembershipLevelApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\StoreMembershipLevelResponse[]',
+                        '\DillerAPI\Model\StoreMembershipLevelResponse[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -181,14 +181,14 @@ class MembershipLevelApi
      *
      * Retrieve store membership level information
      *
-     * @param  string $store_id The store id (required)
+     * @param  string $storeId The store id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStoreMembershipLevelAsync($store_id)
+    public function getStoreMembershipLevelAsync($storeId)
     {
-        return $this->getStoreMembershipLevelAsyncWithHttpInfo($store_id)
+        return $this->getStoreMembershipLevelAsyncWithHttpInfo($storeId)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -201,15 +201,15 @@ class MembershipLevelApi
      *
      * Retrieve store membership level information
      *
-     * @param  string $store_id The store id (required)
+     * @param  string $storeId The store id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStoreMembershipLevelAsyncWithHttpInfo($store_id)
+    public function getStoreMembershipLevelAsyncWithHttpInfo($storeId)
     {
-        $returnType = '\Swagger\Client\Model\StoreMembershipLevelResponse[]';
-        $request = $this->getStoreMembershipLevelRequest($store_id);
+        $returnType = '\DillerAPI\Model\StoreMembershipLevelResponse[]';
+        $request = $this->getStoreMembershipLevelRequest($storeId);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -251,17 +251,17 @@ class MembershipLevelApi
     /**
      * Create request for operation 'getStoreMembershipLevel'
      *
-     * @param  string $store_id The store id (required)
+     * @param  string $storeId The store id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getStoreMembershipLevelRequest($store_id)
+    protected function getStoreMembershipLevelRequest($storeId)
     {
-        // verify the required parameter 'store_id' is set
-        if ($store_id === null || (is_array($store_id) && count($store_id) === 0)) {
+        // verify the required parameter 'storeId' is set
+        if ($storeId === null || (is_array($storeId) && count($storeId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $store_id when calling getStoreMembershipLevel'
+                'Missing the required parameter $storeId when calling getStoreMembershipLevel'
             );
         }
 
@@ -274,10 +274,10 @@ class MembershipLevelApi
 
 
         // path params
-        if ($store_id !== null) {
+        if ($storeId !== null) {
             $resourcePath = str_replace(
                 '{' . 'storeId' . '}',
-                ObjectSerializer::toPathValue($store_id),
+                ObjectSerializer::toPathValue($storeId),
                 $resourcePath
             );
         }

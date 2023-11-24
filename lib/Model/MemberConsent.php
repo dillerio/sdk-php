@@ -16,7 +16,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace DillerAPI\Model;
 
 use \ArrayAccess;
 use \DillerAPI\ObjectSerializer;
@@ -25,7 +25,7 @@ use \DillerAPI\ObjectSerializer;
  * MemberConsent Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  DillerAPI
  * @author   DILLER AS
  * @link     https://diller.io
  */
@@ -46,10 +46,10 @@ class MemberConsent implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'gdpr_accepted' => 'bool',
-'save_order_history' => 'bool',
-'receive_sms' => 'bool',
-'receive_email' => 'bool'    ];
+        'gdprAccepted' => 'bool',
+'saveOrderHistory' => 'bool',
+'receiveSms' => 'bool',
+'receiveEmail' => 'bool'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -57,10 +57,10 @@ class MemberConsent implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'gdpr_accepted' => null,
-'save_order_history' => null,
-'receive_sms' => null,
-'receive_email' => null    ];
+        'gdprAccepted' => null,
+'saveOrderHistory' => null,
+'receiveSms' => null,
+'receiveEmail' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -89,10 +89,10 @@ class MemberConsent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'gdpr_accepted' => 'gdpr_accepted',
-'save_order_history' => 'save_order_history',
-'receive_sms' => 'receive_sms',
-'receive_email' => 'receive_email'    ];
+        'gdprAccepted' => 'gdpr_accepted',
+'saveOrderHistory' => 'save_order_history',
+'receiveSms' => 'receive_sms',
+'receiveEmail' => 'receive_email'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -100,10 +100,10 @@ class MemberConsent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'gdpr_accepted' => 'setGdprAccepted',
-'save_order_history' => 'setSaveOrderHistory',
-'receive_sms' => 'setReceiveSms',
-'receive_email' => 'setReceiveEmail'    ];
+        'gdprAccepted' => 'setGdprAccepted',
+'saveOrderHistory' => 'setSaveOrderHistory',
+'receiveSms' => 'setReceiveSms',
+'receiveEmail' => 'setReceiveEmail'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -111,10 +111,10 @@ class MemberConsent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'gdpr_accepted' => 'getGdprAccepted',
-'save_order_history' => 'getSaveOrderHistory',
-'receive_sms' => 'getReceiveSms',
-'receive_email' => 'getReceiveEmail'    ];
+        'gdprAccepted' => 'getGdprAccepted',
+'saveOrderHistory' => 'getSaveOrderHistory',
+'receiveSms' => 'getReceiveSms',
+'receiveEmail' => 'getReceiveEmail'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -174,10 +174,10 @@ class MemberConsent implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['gdpr_accepted'] = isset($data['gdpr_accepted']) ? $data['gdpr_accepted'] : null;
-        $this->container['save_order_history'] = isset($data['save_order_history']) ? $data['save_order_history'] : null;
-        $this->container['receive_sms'] = isset($data['receive_sms']) ? $data['receive_sms'] : null;
-        $this->container['receive_email'] = isset($data['receive_email']) ? $data['receive_email'] : null;
+        $this->container['gdprAccepted'] = isset($data['gdprAccepted']) ? $data['gdprAccepted'] : null;
+        $this->container['saveOrderHistory'] = isset($data['saveOrderHistory']) ? $data['saveOrderHistory'] : null;
+        $this->container['receiveSms'] = isset($data['receiveSms']) ? $data['receiveSms'] : null;
+        $this->container['receiveEmail'] = isset($data['receiveEmail']) ? $data['receiveEmail'] : null;
     }
 
     /**
@@ -205,97 +205,97 @@ class MemberConsent implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets gdpr_accepted
+     * Gets gdprAccepted
      *
      * @return bool
      */
     public function getGdprAccepted()
     {
-        return $this->container['gdpr_accepted'];
+        return $this->container['gdprAccepted'];
     }
 
     /**
-     * Sets gdpr_accepted
+     * Sets gdprAccepted
      *
-     * @param bool $gdpr_accepted True if the member has accepted the GDPR. False otherwise.
+     * @param bool $gdprAccepted True if the member has accepted the GDPR. False otherwise.
      *
      * @return $this
      */
-    public function setGdprAccepted($gdpr_accepted)
+    public function setGdprAccepted($gdprAccepted)
     {
-        $this->container['gdpr_accepted'] = $gdpr_accepted;
+        $this->container['gdprAccepted'] = $gdprAccepted;
 
         return $this;
     }
 
     /**
-     * Gets save_order_history
+     * Gets saveOrderHistory
      *
      * @return bool
      */
     public function getSaveOrderHistory()
     {
-        return $this->container['save_order_history'];
+        return $this->container['saveOrderHistory'];
     }
 
     /**
-     * Sets save_order_history
+     * Sets saveOrderHistory
      *
-     * @param bool $save_order_history True if member has authorized to save order history e.g. transaction details about their purchases.
+     * @param bool $saveOrderHistory True if member has authorized to save order history e.g. transaction details about their purchases.
      *
      * @return $this
      */
-    public function setSaveOrderHistory($save_order_history)
+    public function setSaveOrderHistory($saveOrderHistory)
     {
-        $this->container['save_order_history'] = $save_order_history;
+        $this->container['saveOrderHistory'] = $saveOrderHistory;
 
         return $this;
     }
 
     /**
-     * Gets receive_sms
+     * Gets receiveSms
      *
      * @return bool
      */
     public function getReceiveSms()
     {
-        return $this->container['receive_sms'];
+        return $this->container['receiveSms'];
     }
 
     /**
-     * Sets receive_sms
+     * Sets receiveSms
      *
-     * @param bool $receive_sms True if the member has authorized the sending of promotional SMS. False otherwise.
+     * @param bool $receiveSms True if the member has authorized the sending of promotional SMS. False otherwise.
      *
      * @return $this
      */
-    public function setReceiveSms($receive_sms)
+    public function setReceiveSms($receiveSms)
     {
-        $this->container['receive_sms'] = $receive_sms;
+        $this->container['receiveSms'] = $receiveSms;
 
         return $this;
     }
 
     /**
-     * Gets receive_email
+     * Gets receiveEmail
      *
      * @return bool
      */
     public function getReceiveEmail()
     {
-        return $this->container['receive_email'];
+        return $this->container['receiveEmail'];
     }
 
     /**
-     * Sets receive_email
+     * Sets receiveEmail
      *
-     * @param bool $receive_email True if the member has authorized the sending of promotional Emails. False otherwise.
+     * @param bool $receiveEmail True if the member has authorized the sending of promotional Emails. False otherwise.
      *
      * @return $this
      */
-    public function setReceiveEmail($receive_email)
+    public function setReceiveEmail($receiveEmail)
     {
-        $this->container['receive_email'] = $receive_email;
+        $this->container['receiveEmail'] = $receiveEmail;
 
         return $this;
     }
@@ -316,8 +316,9 @@ class MemberConsent implements ModelInterface, ArrayAccess
      *
      * @param integer $offset Offset
      *
+     * @return mixed
      */
-    public function offsetGet($offset)
+    public function offsetGet($offset): mixed
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }

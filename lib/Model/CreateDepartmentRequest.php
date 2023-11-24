@@ -16,7 +16,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace DillerAPI\Model;
 
 use \ArrayAccess;
 use \DillerAPI\ObjectSerializer;
@@ -25,7 +25,7 @@ use \DillerAPI\ObjectSerializer;
  * CreateDepartmentRequest Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  DillerAPI
  * @author   DILLER AS
  * @link     https://diller.io
  */
@@ -48,7 +48,7 @@ class CreateDepartmentRequest implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'id' => 'string',
 'name' => 'string',
-'origin' => '\Swagger\Client\Model\Origin'    ];
+'origin' => '\DillerAPI\Model\Origin'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -249,7 +249,7 @@ class CreateDepartmentRequest implements ModelInterface, ArrayAccess
     /**
      * Gets origin
      *
-     * @return \Swagger\Client\Model\Origin
+     * @return \DillerAPI\Model\Origin
      */
     public function getOrigin()
     {
@@ -259,7 +259,7 @@ class CreateDepartmentRequest implements ModelInterface, ArrayAccess
     /**
      * Sets origin
      *
-     * @param \Swagger\Client\Model\Origin $origin origin
+     * @param \DillerAPI\Model\Origin $origin origin
      *
      * @return $this
      */
@@ -286,8 +286,9 @@ class CreateDepartmentRequest implements ModelInterface, ArrayAccess
      *
      * @param integer $offset Offset
      *
+     * @return mixed
      */
-    public function offsetGet($offset)
+    public function offsetGet($offset): mixed
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }

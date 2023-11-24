@@ -16,7 +16,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace DillerAPI\Model;
 
 use \ArrayAccess;
 use \DillerAPI\ObjectSerializer;
@@ -25,7 +25,7 @@ use \DillerAPI\ObjectSerializer;
  * EnrollMemberRequest Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  DillerAPI
  * @author   DILLER AS
  * @link     https://diller.io
  */
@@ -46,10 +46,10 @@ class EnrollMemberRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'phone' => '\Swagger\Client\Model\Phone',
-'department_id' => 'string',
-'origin' => '\Swagger\Client\Model\Origin',
-'additional_info' => '\Swagger\Client\Model\MemberAdditionalInfo'    ];
+        'phone' => '\DillerAPI\Model\Phone',
+'departmentId' => 'string',
+'origin' => '\DillerAPI\Model\Origin',
+'additionalInfo' => '\DillerAPI\Model\MemberAdditionalInfo'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -58,9 +58,9 @@ class EnrollMemberRequest implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'phone' => null,
-'department_id' => null,
+'departmentId' => null,
 'origin' => null,
-'additional_info' => null    ];
+'additionalInfo' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -90,9 +90,9 @@ class EnrollMemberRequest implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'phone' => 'phone',
-'department_id' => 'department_id',
+'departmentId' => 'department_id',
 'origin' => 'origin',
-'additional_info' => 'additional_info'    ];
+'additionalInfo' => 'additional_info'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -101,9 +101,9 @@ class EnrollMemberRequest implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'phone' => 'setPhone',
-'department_id' => 'setDepartmentId',
+'departmentId' => 'setDepartmentId',
 'origin' => 'setOrigin',
-'additional_info' => 'setAdditionalInfo'    ];
+'additionalInfo' => 'setAdditionalInfo'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -112,9 +112,9 @@ class EnrollMemberRequest implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'phone' => 'getPhone',
-'department_id' => 'getDepartmentId',
+'departmentId' => 'getDepartmentId',
 'origin' => 'getOrigin',
-'additional_info' => 'getAdditionalInfo'    ];
+'additionalInfo' => 'getAdditionalInfo'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -175,9 +175,9 @@ class EnrollMemberRequest implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['phone'] = isset($data['phone']) ? $data['phone'] : null;
-        $this->container['department_id'] = isset($data['department_id']) ? $data['department_id'] : null;
+        $this->container['departmentId'] = isset($data['departmentId']) ? $data['departmentId'] : null;
         $this->container['origin'] = isset($data['origin']) ? $data['origin'] : null;
-        $this->container['additional_info'] = isset($data['additional_info']) ? $data['additional_info'] : null;
+        $this->container['additionalInfo'] = isset($data['additionalInfo']) ? $data['additionalInfo'] : null;
     }
 
     /**
@@ -210,7 +210,7 @@ class EnrollMemberRequest implements ModelInterface, ArrayAccess
     /**
      * Gets phone
      *
-     * @return \Swagger\Client\Model\Phone
+     * @return \DillerAPI\Model\Phone
      */
     public function getPhone()
     {
@@ -220,7 +220,7 @@ class EnrollMemberRequest implements ModelInterface, ArrayAccess
     /**
      * Sets phone
      *
-     * @param \Swagger\Client\Model\Phone $phone phone
+     * @param \DillerAPI\Model\Phone $phone phone
      *
      * @return $this
      */
@@ -232,25 +232,25 @@ class EnrollMemberRequest implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets department_id
+     * Gets departmentId
      *
      * @return string
      */
     public function getDepartmentId()
     {
-        return $this->container['department_id'];
+        return $this->container['departmentId'];
     }
 
     /**
-     * Sets department_id
+     * Sets departmentId
      *
-     * @param string $department_id department_id
+     * @param string $departmentId departmentId
      *
      * @return $this
      */
-    public function setDepartmentId($department_id)
+    public function setDepartmentId($departmentId)
     {
-        $this->container['department_id'] = $department_id;
+        $this->container['departmentId'] = $departmentId;
 
         return $this;
     }
@@ -258,7 +258,7 @@ class EnrollMemberRequest implements ModelInterface, ArrayAccess
     /**
      * Gets origin
      *
-     * @return \Swagger\Client\Model\Origin
+     * @return \DillerAPI\Model\Origin
      */
     public function getOrigin()
     {
@@ -268,7 +268,7 @@ class EnrollMemberRequest implements ModelInterface, ArrayAccess
     /**
      * Sets origin
      *
-     * @param \Swagger\Client\Model\Origin $origin origin
+     * @param \DillerAPI\Model\Origin $origin origin
      *
      * @return $this
      */
@@ -280,25 +280,25 @@ class EnrollMemberRequest implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets additional_info
+     * Gets additionalInfo
      *
-     * @return \Swagger\Client\Model\MemberAdditionalInfo
+     * @return \DillerAPI\Model\MemberAdditionalInfo
      */
     public function getAdditionalInfo()
     {
-        return $this->container['additional_info'];
+        return $this->container['additionalInfo'];
     }
 
     /**
-     * Sets additional_info
+     * Sets additionalInfo
      *
-     * @param \Swagger\Client\Model\MemberAdditionalInfo $additional_info additional_info
+     * @param \DillerAPI\Model\MemberAdditionalInfo $additionalInfo additionalInfo
      *
      * @return $this
      */
-    public function setAdditionalInfo($additional_info)
+    public function setAdditionalInfo($additionalInfo)
     {
-        $this->container['additional_info'] = $additional_info;
+        $this->container['additionalInfo'] = $additionalInfo;
 
         return $this;
     }
@@ -319,8 +319,9 @@ class EnrollMemberRequest implements ModelInterface, ArrayAccess
      *
      * @param integer $offset Offset
      *
+     * @return mixed
      */
-    public function offsetGet($offset)
+    public function offsetGet($offset): mixed
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }

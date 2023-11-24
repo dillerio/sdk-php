@@ -16,14 +16,14 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace DillerAPI\Model;
 use \DillerAPI\ObjectSerializer;
 
 /**
  * GtinType Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  DillerAPI
  * @author   DILLER AS
  * @link     https://diller.io
  */
@@ -42,9 +42,9 @@ class GtinType
     public static function getAllowableEnumValues()
     {
         return [
-            self::ISBN, 
-            self::UPC_GTIN12, 
-            self::EAN_GTIN13, 
+            self::ISBN
+            self::UPC_GTIN12
+            self::EAN_GTIN13
         ];
     }
 }

@@ -16,7 +16,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace DillerAPI\Model;
 
 use \ArrayAccess;
 use \DillerAPI\ObjectSerializer;
@@ -25,7 +25,7 @@ use \DillerAPI\ObjectSerializer;
  * LoginOtpVerificationRequest Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  DillerAPI
  * @author   DILLER AS
  * @link     https://diller.io
  */
@@ -46,7 +46,7 @@ class LoginOtpVerificationRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'otp_code' => 'int'    ];
+        'otpCode' => 'int'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -54,7 +54,7 @@ class LoginOtpVerificationRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'otp_code' => 'int32'    ];
+        'otpCode' => 'int32'    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -83,7 +83,7 @@ class LoginOtpVerificationRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'otp_code' => 'otp_code'    ];
+        'otpCode' => 'otp_code'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -91,7 +91,7 @@ class LoginOtpVerificationRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'otp_code' => 'setOtpCode'    ];
+        'otpCode' => 'setOtpCode'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -99,7 +99,7 @@ class LoginOtpVerificationRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'otp_code' => 'getOtpCode'    ];
+        'otpCode' => 'getOtpCode'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -159,7 +159,7 @@ class LoginOtpVerificationRequest implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['otp_code'] = isset($data['otp_code']) ? $data['otp_code'] : null;
+        $this->container['otpCode'] = isset($data['otpCode']) ? $data['otpCode'] : null;
     }
 
     /**
@@ -187,25 +187,25 @@ class LoginOtpVerificationRequest implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets otp_code
+     * Gets otpCode
      *
      * @return int
      */
     public function getOtpCode()
     {
-        return $this->container['otp_code'];
+        return $this->container['otpCode'];
     }
 
     /**
-     * Sets otp_code
+     * Sets otpCode
      *
-     * @param int $otp_code otp_code
+     * @param int $otpCode otpCode
      *
      * @return $this
      */
-    public function setOtpCode($otp_code)
+    public function setOtpCode($otpCode)
     {
-        $this->container['otp_code'] = $otp_code;
+        $this->container['otpCode'] = $otpCode;
 
         return $this;
     }
@@ -226,8 +226,9 @@ class LoginOtpVerificationRequest implements ModelInterface, ArrayAccess
      *
      * @param integer $offset Offset
      *
+     * @return mixed
      */
-    public function offsetGet($offset)
+    public function offsetGet($offset): mixed
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }

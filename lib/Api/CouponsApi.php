@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  DillerAPI
  * @author   DILLER AS
  * @link     https://diller.io
  */
@@ -15,7 +15,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Api;
+namespace DillerAPI\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -23,16 +23,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use Swagger\Client\ApiException;
-use Swagger\Client\Configuration;
-use Swagger\Client\HeaderSelector;
-use Swagger\Client\ObjectSerializer;
+use DillerAPI\ApiException;
+use DillerAPI\Configuration;
+use DillerAPI\HeaderSelector;
+use DillerAPI\ObjectSerializer;
 
 /**
  * CouponsApi Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  DillerAPI
  * @author   DILLER AS
  * @link     https://diller.io
  */
@@ -81,18 +81,18 @@ class CouponsApi
      *
      * This endpoint should be called when a transaction is completed or cancelled to   release the coupon reservation and avoid making it unavailable for other transactions.
      *
-     * @param  string $store_id store_id (required)
-     * @param  string $member_id member_id (required)
-     * @param  string $coupon_code coupon_code (required)
-     * @param  \Swagger\Client\Model\CouponCancelReservationRequest $body body (optional)
+     * @param  string $storeId storeId (required)
+     * @param  string $memberId memberId (required)
+     * @param  string $couponCode couponCode (required)
+     * @param  \DillerAPI\Model\CouponCancelReservationRequest $body body (optional)
      *
      * @throws {{invokerPackage}}\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\ActionResponse
+     * @return \DillerAPI\Model\ActionResponse
      */
-    public function cancelCouponReservation($store_id, $member_id, $coupon_code, $body = null)
+    public function cancelCouponReservation($storeId, $memberId, $couponCode, $body = null)
     {
-        list($response) = $this->cancelCouponReservationWithHttpInfo($store_id, $member_id, $coupon_code, $body);
+        list($response) = $this->cancelCouponReservationWithHttpInfo($storeId, $memberId, $couponCode, $body);
         return $response;
     }
 
@@ -101,19 +101,19 @@ class CouponsApi
      *
      * This endpoint should be called when a transaction is completed or cancelled to   release the coupon reservation and avoid making it unavailable for other transactions.
      *
-     * @param  string $store_id (required)
-     * @param  string $member_id (required)
-     * @param  string $coupon_code (required)
-     * @param  \Swagger\Client\Model\CouponCancelReservationRequest $body (optional)
+     * @param  string $storeId (required)
+     * @param  string $memberId (required)
+     * @param  string $couponCode (required)
+     * @param  \DillerAPI\Model\CouponCancelReservationRequest $body (optional)
      *
      * @throws {{invokerPackage}}\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\ActionResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \DillerAPI\Model\ActionResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cancelCouponReservationWithHttpInfo($store_id, $member_id, $coupon_code, $body = null)
+    public function cancelCouponReservationWithHttpInfo($storeId, $memberId, $couponCode, $body = null)
     {
-        $returnType = '\Swagger\Client\Model\ActionResponse';
-        $request = $this->cancelCouponReservationRequest($store_id, $member_id, $coupon_code, $body);
+        $returnType = '\DillerAPI\Model\ActionResponse';
+        $request = $this->cancelCouponReservationRequest($storeId, $memberId, $couponCode, $body);
 
         try {
             $options = $this->createHttpClientOption();
@@ -164,7 +164,7 @@ class CouponsApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ApiError',
+                        '\DillerAPI\Model\ApiError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -172,7 +172,7 @@ class CouponsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ActionResponse',
+                        '\DillerAPI\Model\ActionResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -187,17 +187,17 @@ class CouponsApi
      *
      * This endpoint should be called when a transaction is completed or cancelled to   release the coupon reservation and avoid making it unavailable for other transactions.
      *
-     * @param  string $store_id (required)
-     * @param  string $member_id (required)
-     * @param  string $coupon_code (required)
-     * @param  \Swagger\Client\Model\CouponCancelReservationRequest $body (optional)
+     * @param  string $storeId (required)
+     * @param  string $memberId (required)
+     * @param  string $couponCode (required)
+     * @param  \DillerAPI\Model\CouponCancelReservationRequest $body (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cancelCouponReservationAsync($store_id, $member_id, $coupon_code, $body = null)
+    public function cancelCouponReservationAsync($storeId, $memberId, $couponCode, $body = null)
     {
-        return $this->cancelCouponReservationAsyncWithHttpInfo($store_id, $member_id, $coupon_code, $body)
+        return $this->cancelCouponReservationAsyncWithHttpInfo($storeId, $memberId, $couponCode, $body)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -210,18 +210,18 @@ class CouponsApi
      *
      * This endpoint should be called when a transaction is completed or cancelled to   release the coupon reservation and avoid making it unavailable for other transactions.
      *
-     * @param  string $store_id (required)
-     * @param  string $member_id (required)
-     * @param  string $coupon_code (required)
-     * @param  \Swagger\Client\Model\CouponCancelReservationRequest $body (optional)
+     * @param  string $storeId (required)
+     * @param  string $memberId (required)
+     * @param  string $couponCode (required)
+     * @param  \DillerAPI\Model\CouponCancelReservationRequest $body (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cancelCouponReservationAsyncWithHttpInfo($store_id, $member_id, $coupon_code, $body = null)
+    public function cancelCouponReservationAsyncWithHttpInfo($storeId, $memberId, $couponCode, $body = null)
     {
-        $returnType = '\Swagger\Client\Model\ActionResponse';
-        $request = $this->cancelCouponReservationRequest($store_id, $member_id, $coupon_code, $body);
+        $returnType = '\DillerAPI\Model\ActionResponse';
+        $request = $this->cancelCouponReservationRequest($storeId, $memberId, $couponCode, $body);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -263,32 +263,32 @@ class CouponsApi
     /**
      * Create request for operation 'cancelCouponReservation'
      *
-     * @param  string $store_id (required)
-     * @param  string $member_id (required)
-     * @param  string $coupon_code (required)
-     * @param  \Swagger\Client\Model\CouponCancelReservationRequest $body (optional)
+     * @param  string $storeId (required)
+     * @param  string $memberId (required)
+     * @param  string $couponCode (required)
+     * @param  \DillerAPI\Model\CouponCancelReservationRequest $body (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cancelCouponReservationRequest($store_id, $member_id, $coupon_code, $body = null)
+    protected function cancelCouponReservationRequest($storeId, $memberId, $couponCode, $body = null)
     {
-        // verify the required parameter 'store_id' is set
-        if ($store_id === null || (is_array($store_id) && count($store_id) === 0)) {
+        // verify the required parameter 'storeId' is set
+        if ($storeId === null || (is_array($storeId) && count($storeId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $store_id when calling cancelCouponReservation'
+                'Missing the required parameter $storeId when calling cancelCouponReservation'
             );
         }
-        // verify the required parameter 'member_id' is set
-        if ($member_id === null || (is_array($member_id) && count($member_id) === 0)) {
+        // verify the required parameter 'memberId' is set
+        if ($memberId === null || (is_array($memberId) && count($memberId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $member_id when calling cancelCouponReservation'
+                'Missing the required parameter $memberId when calling cancelCouponReservation'
             );
         }
-        // verify the required parameter 'coupon_code' is set
-        if ($coupon_code === null || (is_array($coupon_code) && count($coupon_code) === 0)) {
+        // verify the required parameter 'couponCode' is set
+        if ($couponCode === null || (is_array($couponCode) && count($couponCode) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $coupon_code when calling cancelCouponReservation'
+                'Missing the required parameter $couponCode when calling cancelCouponReservation'
             );
         }
 
@@ -301,26 +301,26 @@ class CouponsApi
 
 
         // path params
-        if ($store_id !== null) {
+        if ($storeId !== null) {
             $resourcePath = str_replace(
                 '{' . 'storeId' . '}',
-                ObjectSerializer::toPathValue($store_id),
+                ObjectSerializer::toPathValue($storeId),
                 $resourcePath
             );
         }
         // path params
-        if ($member_id !== null) {
+        if ($memberId !== null) {
             $resourcePath = str_replace(
                 '{' . 'memberId' . '}',
-                ObjectSerializer::toPathValue($member_id),
+                ObjectSerializer::toPathValue($memberId),
                 $resourcePath
             );
         }
         // path params
-        if ($coupon_code !== null) {
+        if ($couponCode !== null) {
             $resourcePath = str_replace(
                 '{' . 'couponCode' . '}',
-                ObjectSerializer::toPathValue($coupon_code),
+                ObjectSerializer::toPathValue($couponCode),
                 $resourcePath
             );
         }
@@ -408,16 +408,16 @@ class CouponsApi
      *
      * This endpoint retrieves available coupons for a specific member.
      *
-     * @param  string $store_id store_id (required)
-     * @param  string $member_id member_id (required)
+     * @param  string $storeId storeId (required)
+     * @param  string $memberId memberId (required)
      *
      * @throws {{invokerPackage}}\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\MemberCouponResponse[]
+     * @return \DillerAPI\Model\MemberCouponResponse[]
      */
-    public function getMemberCoupons($store_id, $member_id)
+    public function getMemberCoupons($storeId, $memberId)
     {
-        list($response) = $this->getMemberCouponsWithHttpInfo($store_id, $member_id);
+        list($response) = $this->getMemberCouponsWithHttpInfo($storeId, $memberId);
         return $response;
     }
 
@@ -426,17 +426,17 @@ class CouponsApi
      *
      * This endpoint retrieves available coupons for a specific member.
      *
-     * @param  string $store_id (required)
-     * @param  string $member_id (required)
+     * @param  string $storeId (required)
+     * @param  string $memberId (required)
      *
      * @throws {{invokerPackage}}\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\MemberCouponResponse[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \DillerAPI\Model\MemberCouponResponse[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getMemberCouponsWithHttpInfo($store_id, $member_id)
+    public function getMemberCouponsWithHttpInfo($storeId, $memberId)
     {
-        $returnType = '\Swagger\Client\Model\MemberCouponResponse[]';
-        $request = $this->getMemberCouponsRequest($store_id, $member_id);
+        $returnType = '\DillerAPI\Model\MemberCouponResponse[]';
+        $request = $this->getMemberCouponsRequest($storeId, $memberId);
 
         try {
             $options = $this->createHttpClientOption();
@@ -487,7 +487,7 @@ class CouponsApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ApiError',
+                        '\DillerAPI\Model\ApiError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -495,7 +495,7 @@ class CouponsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\MemberCouponResponse[]',
+                        '\DillerAPI\Model\MemberCouponResponse[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -510,15 +510,15 @@ class CouponsApi
      *
      * This endpoint retrieves available coupons for a specific member.
      *
-     * @param  string $store_id (required)
-     * @param  string $member_id (required)
+     * @param  string $storeId (required)
+     * @param  string $memberId (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getMemberCouponsAsync($store_id, $member_id)
+    public function getMemberCouponsAsync($storeId, $memberId)
     {
-        return $this->getMemberCouponsAsyncWithHttpInfo($store_id, $member_id)
+        return $this->getMemberCouponsAsyncWithHttpInfo($storeId, $memberId)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -531,16 +531,16 @@ class CouponsApi
      *
      * This endpoint retrieves available coupons for a specific member.
      *
-     * @param  string $store_id (required)
-     * @param  string $member_id (required)
+     * @param  string $storeId (required)
+     * @param  string $memberId (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getMemberCouponsAsyncWithHttpInfo($store_id, $member_id)
+    public function getMemberCouponsAsyncWithHttpInfo($storeId, $memberId)
     {
-        $returnType = '\Swagger\Client\Model\MemberCouponResponse[]';
-        $request = $this->getMemberCouponsRequest($store_id, $member_id);
+        $returnType = '\DillerAPI\Model\MemberCouponResponse[]';
+        $request = $this->getMemberCouponsRequest($storeId, $memberId);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -582,24 +582,24 @@ class CouponsApi
     /**
      * Create request for operation 'getMemberCoupons'
      *
-     * @param  string $store_id (required)
-     * @param  string $member_id (required)
+     * @param  string $storeId (required)
+     * @param  string $memberId (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getMemberCouponsRequest($store_id, $member_id)
+    protected function getMemberCouponsRequest($storeId, $memberId)
     {
-        // verify the required parameter 'store_id' is set
-        if ($store_id === null || (is_array($store_id) && count($store_id) === 0)) {
+        // verify the required parameter 'storeId' is set
+        if ($storeId === null || (is_array($storeId) && count($storeId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $store_id when calling getMemberCoupons'
+                'Missing the required parameter $storeId when calling getMemberCoupons'
             );
         }
-        // verify the required parameter 'member_id' is set
-        if ($member_id === null || (is_array($member_id) && count($member_id) === 0)) {
+        // verify the required parameter 'memberId' is set
+        if ($memberId === null || (is_array($memberId) && count($memberId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $member_id when calling getMemberCoupons'
+                'Missing the required parameter $memberId when calling getMemberCoupons'
             );
         }
 
@@ -612,18 +612,18 @@ class CouponsApi
 
 
         // path params
-        if ($store_id !== null) {
+        if ($storeId !== null) {
             $resourcePath = str_replace(
                 '{' . 'storeId' . '}',
-                ObjectSerializer::toPathValue($store_id),
+                ObjectSerializer::toPathValue($storeId),
                 $resourcePath
             );
         }
         // path params
-        if ($member_id !== null) {
+        if ($memberId !== null) {
             $resourcePath = str_replace(
                 '{' . 'memberId' . '}',
-                ObjectSerializer::toPathValue($member_id),
+                ObjectSerializer::toPathValue($memberId),
                 $resourcePath
             );
         }
@@ -708,16 +708,16 @@ class CouponsApi
      *
      * Retrieves store coupons. By default it only retrieves active coupons.
      *
-     * @param  string $store_id The store Id (required)
-     * @param  bool $also_inactive When true, it also return coupons that are not currently valid. (optional)
+     * @param  string $storeId The store Id (required)
+     * @param  bool $alsoInactive When true, it also return coupons that are not currently valid. (optional)
      *
      * @throws {{invokerPackage}}\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\StoreCouponResponse[]
+     * @return \DillerAPI\Model\StoreCouponResponse[]
      */
-    public function getStoreCoupons($store_id, $also_inactive = null)
+    public function getStoreCoupons($storeId, $alsoInactive = null)
     {
-        list($response) = $this->getStoreCouponsWithHttpInfo($store_id, $also_inactive);
+        list($response) = $this->getStoreCouponsWithHttpInfo($storeId, $alsoInactive);
         return $response;
     }
 
@@ -726,17 +726,17 @@ class CouponsApi
      *
      * Retrieves store coupons. By default it only retrieves active coupons.
      *
-     * @param  string $store_id The store Id (required)
-     * @param  bool $also_inactive When true, it also return coupons that are not currently valid. (optional)
+     * @param  string $storeId The store Id (required)
+     * @param  bool $alsoInactive When true, it also return coupons that are not currently valid. (optional)
      *
      * @throws {{invokerPackage}}\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\StoreCouponResponse[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \DillerAPI\Model\StoreCouponResponse[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getStoreCouponsWithHttpInfo($store_id, $also_inactive = null)
+    public function getStoreCouponsWithHttpInfo($storeId, $alsoInactive = null)
     {
-        $returnType = '\Swagger\Client\Model\StoreCouponResponse[]';
-        $request = $this->getStoreCouponsRequest($store_id, $also_inactive);
+        $returnType = '\DillerAPI\Model\StoreCouponResponse[]';
+        $request = $this->getStoreCouponsRequest($storeId, $alsoInactive);
 
         try {
             $options = $this->createHttpClientOption();
@@ -787,7 +787,7 @@ class CouponsApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ApiError',
+                        '\DillerAPI\Model\ApiError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -795,7 +795,7 @@ class CouponsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\StoreCouponResponse[]',
+                        '\DillerAPI\Model\StoreCouponResponse[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -810,15 +810,15 @@ class CouponsApi
      *
      * Retrieves store coupons. By default it only retrieves active coupons.
      *
-     * @param  string $store_id The store Id (required)
-     * @param  bool $also_inactive When true, it also return coupons that are not currently valid. (optional)
+     * @param  string $storeId The store Id (required)
+     * @param  bool $alsoInactive When true, it also return coupons that are not currently valid. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStoreCouponsAsync($store_id, $also_inactive = null)
+    public function getStoreCouponsAsync($storeId, $alsoInactive = null)
     {
-        return $this->getStoreCouponsAsyncWithHttpInfo($store_id, $also_inactive)
+        return $this->getStoreCouponsAsyncWithHttpInfo($storeId, $alsoInactive)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -831,16 +831,16 @@ class CouponsApi
      *
      * Retrieves store coupons. By default it only retrieves active coupons.
      *
-     * @param  string $store_id The store Id (required)
-     * @param  bool $also_inactive When true, it also return coupons that are not currently valid. (optional)
+     * @param  string $storeId The store Id (required)
+     * @param  bool $alsoInactive When true, it also return coupons that are not currently valid. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStoreCouponsAsyncWithHttpInfo($store_id, $also_inactive = null)
+    public function getStoreCouponsAsyncWithHttpInfo($storeId, $alsoInactive = null)
     {
-        $returnType = '\Swagger\Client\Model\StoreCouponResponse[]';
-        $request = $this->getStoreCouponsRequest($store_id, $also_inactive);
+        $returnType = '\DillerAPI\Model\StoreCouponResponse[]';
+        $request = $this->getStoreCouponsRequest($storeId, $alsoInactive);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -882,18 +882,18 @@ class CouponsApi
     /**
      * Create request for operation 'getStoreCoupons'
      *
-     * @param  string $store_id The store Id (required)
-     * @param  bool $also_inactive When true, it also return coupons that are not currently valid. (optional)
+     * @param  string $storeId The store Id (required)
+     * @param  bool $alsoInactive When true, it also return coupons that are not currently valid. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getStoreCouponsRequest($store_id, $also_inactive = null)
+    protected function getStoreCouponsRequest($storeId, $alsoInactive = null)
     {
-        // verify the required parameter 'store_id' is set
-        if ($store_id === null || (is_array($store_id) && count($store_id) === 0)) {
+        // verify the required parameter 'storeId' is set
+        if ($storeId === null || (is_array($storeId) && count($storeId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $store_id when calling getStoreCoupons'
+                'Missing the required parameter $storeId when calling getStoreCoupons'
             );
         }
 
@@ -905,15 +905,15 @@ class CouponsApi
         $multipart = false;
 
         // query params
-        if ($also_inactive !== null) {
-            $queryParams['alsoInactive'] = ObjectSerializer::toQueryValue($also_inactive);
+        if ($alsoInactive !== null) {
+            $queryParams['alsoInactive'] = ObjectSerializer::toQueryValue($alsoInactive);
         }
 
         // path params
-        if ($store_id !== null) {
+        if ($storeId !== null) {
             $resourcePath = str_replace(
                 '{' . 'storeId' . '}',
-                ObjectSerializer::toPathValue($store_id),
+                ObjectSerializer::toPathValue($storeId),
                 $resourcePath
             );
         }
@@ -998,18 +998,18 @@ class CouponsApi
      *
      * This endpoint enables users to reserve a coupon for their pending orders,   thereby ensuring that the coupon cannot be used for any other transactions.
      *
-     * @param  string $store_id The storeId (required)
-     * @param  string $member_id The memberId (required)
-     * @param  string $coupon_code The coupon code (required)
-     * @param  \Swagger\Client\Model\CouponReservationRequest $body Details of the coupon reservation request (optional)
+     * @param  string $storeId The storeId (required)
+     * @param  string $memberId The memberId (required)
+     * @param  string $couponCode The coupon code (required)
+     * @param  \DillerAPI\Model\CouponReservationRequest $body Details of the coupon reservation request (optional)
      *
      * @throws {{invokerPackage}}\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\ActionResponse
+     * @return \DillerAPI\Model\ActionResponse
      */
-    public function reserveCoupon($store_id, $member_id, $coupon_code, $body = null)
+    public function reserveCoupon($storeId, $memberId, $couponCode, $body = null)
     {
-        list($response) = $this->reserveCouponWithHttpInfo($store_id, $member_id, $coupon_code, $body);
+        list($response) = $this->reserveCouponWithHttpInfo($storeId, $memberId, $couponCode, $body);
         return $response;
     }
 
@@ -1018,19 +1018,19 @@ class CouponsApi
      *
      * This endpoint enables users to reserve a coupon for their pending orders,   thereby ensuring that the coupon cannot be used for any other transactions.
      *
-     * @param  string $store_id The storeId (required)
-     * @param  string $member_id The memberId (required)
-     * @param  string $coupon_code The coupon code (required)
-     * @param  \Swagger\Client\Model\CouponReservationRequest $body Details of the coupon reservation request (optional)
+     * @param  string $storeId The storeId (required)
+     * @param  string $memberId The memberId (required)
+     * @param  string $couponCode The coupon code (required)
+     * @param  \DillerAPI\Model\CouponReservationRequest $body Details of the coupon reservation request (optional)
      *
      * @throws {{invokerPackage}}\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\ActionResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \DillerAPI\Model\ActionResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function reserveCouponWithHttpInfo($store_id, $member_id, $coupon_code, $body = null)
+    public function reserveCouponWithHttpInfo($storeId, $memberId, $couponCode, $body = null)
     {
-        $returnType = '\Swagger\Client\Model\ActionResponse';
-        $request = $this->reserveCouponRequest($store_id, $member_id, $coupon_code, $body);
+        $returnType = '\DillerAPI\Model\ActionResponse';
+        $request = $this->reserveCouponRequest($storeId, $memberId, $couponCode, $body);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1081,7 +1081,7 @@ class CouponsApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ApiError',
+                        '\DillerAPI\Model\ApiError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1089,7 +1089,7 @@ class CouponsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ActionResponse',
+                        '\DillerAPI\Model\ActionResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1104,17 +1104,17 @@ class CouponsApi
      *
      * This endpoint enables users to reserve a coupon for their pending orders,   thereby ensuring that the coupon cannot be used for any other transactions.
      *
-     * @param  string $store_id The storeId (required)
-     * @param  string $member_id The memberId (required)
-     * @param  string $coupon_code The coupon code (required)
-     * @param  \Swagger\Client\Model\CouponReservationRequest $body Details of the coupon reservation request (optional)
+     * @param  string $storeId The storeId (required)
+     * @param  string $memberId The memberId (required)
+     * @param  string $couponCode The coupon code (required)
+     * @param  \DillerAPI\Model\CouponReservationRequest $body Details of the coupon reservation request (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function reserveCouponAsync($store_id, $member_id, $coupon_code, $body = null)
+    public function reserveCouponAsync($storeId, $memberId, $couponCode, $body = null)
     {
-        return $this->reserveCouponAsyncWithHttpInfo($store_id, $member_id, $coupon_code, $body)
+        return $this->reserveCouponAsyncWithHttpInfo($storeId, $memberId, $couponCode, $body)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1127,18 +1127,18 @@ class CouponsApi
      *
      * This endpoint enables users to reserve a coupon for their pending orders,   thereby ensuring that the coupon cannot be used for any other transactions.
      *
-     * @param  string $store_id The storeId (required)
-     * @param  string $member_id The memberId (required)
-     * @param  string $coupon_code The coupon code (required)
-     * @param  \Swagger\Client\Model\CouponReservationRequest $body Details of the coupon reservation request (optional)
+     * @param  string $storeId The storeId (required)
+     * @param  string $memberId The memberId (required)
+     * @param  string $couponCode The coupon code (required)
+     * @param  \DillerAPI\Model\CouponReservationRequest $body Details of the coupon reservation request (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function reserveCouponAsyncWithHttpInfo($store_id, $member_id, $coupon_code, $body = null)
+    public function reserveCouponAsyncWithHttpInfo($storeId, $memberId, $couponCode, $body = null)
     {
-        $returnType = '\Swagger\Client\Model\ActionResponse';
-        $request = $this->reserveCouponRequest($store_id, $member_id, $coupon_code, $body);
+        $returnType = '\DillerAPI\Model\ActionResponse';
+        $request = $this->reserveCouponRequest($storeId, $memberId, $couponCode, $body);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1180,32 +1180,32 @@ class CouponsApi
     /**
      * Create request for operation 'reserveCoupon'
      *
-     * @param  string $store_id The storeId (required)
-     * @param  string $member_id The memberId (required)
-     * @param  string $coupon_code The coupon code (required)
-     * @param  \Swagger\Client\Model\CouponReservationRequest $body Details of the coupon reservation request (optional)
+     * @param  string $storeId The storeId (required)
+     * @param  string $memberId The memberId (required)
+     * @param  string $couponCode The coupon code (required)
+     * @param  \DillerAPI\Model\CouponReservationRequest $body Details of the coupon reservation request (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function reserveCouponRequest($store_id, $member_id, $coupon_code, $body = null)
+    protected function reserveCouponRequest($storeId, $memberId, $couponCode, $body = null)
     {
-        // verify the required parameter 'store_id' is set
-        if ($store_id === null || (is_array($store_id) && count($store_id) === 0)) {
+        // verify the required parameter 'storeId' is set
+        if ($storeId === null || (is_array($storeId) && count($storeId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $store_id when calling reserveCoupon'
+                'Missing the required parameter $storeId when calling reserveCoupon'
             );
         }
-        // verify the required parameter 'member_id' is set
-        if ($member_id === null || (is_array($member_id) && count($member_id) === 0)) {
+        // verify the required parameter 'memberId' is set
+        if ($memberId === null || (is_array($memberId) && count($memberId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $member_id when calling reserveCoupon'
+                'Missing the required parameter $memberId when calling reserveCoupon'
             );
         }
-        // verify the required parameter 'coupon_code' is set
-        if ($coupon_code === null || (is_array($coupon_code) && count($coupon_code) === 0)) {
+        // verify the required parameter 'couponCode' is set
+        if ($couponCode === null || (is_array($couponCode) && count($couponCode) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $coupon_code when calling reserveCoupon'
+                'Missing the required parameter $couponCode when calling reserveCoupon'
             );
         }
 
@@ -1218,26 +1218,26 @@ class CouponsApi
 
 
         // path params
-        if ($store_id !== null) {
+        if ($storeId !== null) {
             $resourcePath = str_replace(
                 '{' . 'storeId' . '}',
-                ObjectSerializer::toPathValue($store_id),
+                ObjectSerializer::toPathValue($storeId),
                 $resourcePath
             );
         }
         // path params
-        if ($member_id !== null) {
+        if ($memberId !== null) {
             $resourcePath = str_replace(
                 '{' . 'memberId' . '}',
-                ObjectSerializer::toPathValue($member_id),
+                ObjectSerializer::toPathValue($memberId),
                 $resourcePath
             );
         }
         // path params
-        if ($coupon_code !== null) {
+        if ($couponCode !== null) {
             $resourcePath = str_replace(
                 '{' . 'couponCode' . '}',
-                ObjectSerializer::toPathValue($coupon_code),
+                ObjectSerializer::toPathValue($couponCode),
                 $resourcePath
             );
         }
@@ -1325,17 +1325,17 @@ class CouponsApi
      *
      * This endpoint validates a coupon code for a specific member.
      *
-     * @param  string $store_id The store id (required)
-     * @param  string $member_id The member id (required)
-     * @param  string $coupon_code The coupon code (required)
+     * @param  string $storeId The store id (required)
+     * @param  string $memberId The member id (required)
+     * @param  string $couponCode The coupon code (required)
      *
      * @throws {{invokerPackage}}\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\ActionResponse
+     * @return \DillerAPI\Model\ActionResponse
      */
-    public function validateCoupon($store_id, $member_id, $coupon_code)
+    public function validateCoupon($storeId, $memberId, $couponCode)
     {
-        list($response) = $this->validateCouponWithHttpInfo($store_id, $member_id, $coupon_code);
+        list($response) = $this->validateCouponWithHttpInfo($storeId, $memberId, $couponCode);
         return $response;
     }
 
@@ -1344,18 +1344,18 @@ class CouponsApi
      *
      * This endpoint validates a coupon code for a specific member.
      *
-     * @param  string $store_id The store id (required)
-     * @param  string $member_id The member id (required)
-     * @param  string $coupon_code The coupon code (required)
+     * @param  string $storeId The store id (required)
+     * @param  string $memberId The member id (required)
+     * @param  string $couponCode The coupon code (required)
      *
      * @throws {{invokerPackage}}\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\ActionResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \DillerAPI\Model\ActionResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function validateCouponWithHttpInfo($store_id, $member_id, $coupon_code)
+    public function validateCouponWithHttpInfo($storeId, $memberId, $couponCode)
     {
-        $returnType = '\Swagger\Client\Model\ActionResponse';
-        $request = $this->validateCouponRequest($store_id, $member_id, $coupon_code);
+        $returnType = '\DillerAPI\Model\ActionResponse';
+        $request = $this->validateCouponRequest($storeId, $memberId, $couponCode);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1406,7 +1406,7 @@ class CouponsApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ApiError',
+                        '\DillerAPI\Model\ApiError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1414,7 +1414,7 @@ class CouponsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ActionResponse',
+                        '\DillerAPI\Model\ActionResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1429,16 +1429,16 @@ class CouponsApi
      *
      * This endpoint validates a coupon code for a specific member.
      *
-     * @param  string $store_id The store id (required)
-     * @param  string $member_id The member id (required)
-     * @param  string $coupon_code The coupon code (required)
+     * @param  string $storeId The store id (required)
+     * @param  string $memberId The member id (required)
+     * @param  string $couponCode The coupon code (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function validateCouponAsync($store_id, $member_id, $coupon_code)
+    public function validateCouponAsync($storeId, $memberId, $couponCode)
     {
-        return $this->validateCouponAsyncWithHttpInfo($store_id, $member_id, $coupon_code)
+        return $this->validateCouponAsyncWithHttpInfo($storeId, $memberId, $couponCode)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1451,17 +1451,17 @@ class CouponsApi
      *
      * This endpoint validates a coupon code for a specific member.
      *
-     * @param  string $store_id The store id (required)
-     * @param  string $member_id The member id (required)
-     * @param  string $coupon_code The coupon code (required)
+     * @param  string $storeId The store id (required)
+     * @param  string $memberId The member id (required)
+     * @param  string $couponCode The coupon code (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function validateCouponAsyncWithHttpInfo($store_id, $member_id, $coupon_code)
+    public function validateCouponAsyncWithHttpInfo($storeId, $memberId, $couponCode)
     {
-        $returnType = '\Swagger\Client\Model\ActionResponse';
-        $request = $this->validateCouponRequest($store_id, $member_id, $coupon_code);
+        $returnType = '\DillerAPI\Model\ActionResponse';
+        $request = $this->validateCouponRequest($storeId, $memberId, $couponCode);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1503,31 +1503,31 @@ class CouponsApi
     /**
      * Create request for operation 'validateCoupon'
      *
-     * @param  string $store_id The store id (required)
-     * @param  string $member_id The member id (required)
-     * @param  string $coupon_code The coupon code (required)
+     * @param  string $storeId The store id (required)
+     * @param  string $memberId The member id (required)
+     * @param  string $couponCode The coupon code (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function validateCouponRequest($store_id, $member_id, $coupon_code)
+    protected function validateCouponRequest($storeId, $memberId, $couponCode)
     {
-        // verify the required parameter 'store_id' is set
-        if ($store_id === null || (is_array($store_id) && count($store_id) === 0)) {
+        // verify the required parameter 'storeId' is set
+        if ($storeId === null || (is_array($storeId) && count($storeId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $store_id when calling validateCoupon'
+                'Missing the required parameter $storeId when calling validateCoupon'
             );
         }
-        // verify the required parameter 'member_id' is set
-        if ($member_id === null || (is_array($member_id) && count($member_id) === 0)) {
+        // verify the required parameter 'memberId' is set
+        if ($memberId === null || (is_array($memberId) && count($memberId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $member_id when calling validateCoupon'
+                'Missing the required parameter $memberId when calling validateCoupon'
             );
         }
-        // verify the required parameter 'coupon_code' is set
-        if ($coupon_code === null || (is_array($coupon_code) && count($coupon_code) === 0)) {
+        // verify the required parameter 'couponCode' is set
+        if ($couponCode === null || (is_array($couponCode) && count($couponCode) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $coupon_code when calling validateCoupon'
+                'Missing the required parameter $couponCode when calling validateCoupon'
             );
         }
 
@@ -1540,26 +1540,26 @@ class CouponsApi
 
 
         // path params
-        if ($store_id !== null) {
+        if ($storeId !== null) {
             $resourcePath = str_replace(
                 '{' . 'storeId' . '}',
-                ObjectSerializer::toPathValue($store_id),
+                ObjectSerializer::toPathValue($storeId),
                 $resourcePath
             );
         }
         // path params
-        if ($member_id !== null) {
+        if ($memberId !== null) {
             $resourcePath = str_replace(
                 '{' . 'memberId' . '}',
-                ObjectSerializer::toPathValue($member_id),
+                ObjectSerializer::toPathValue($memberId),
                 $resourcePath
             );
         }
         // path params
-        if ($coupon_code !== null) {
+        if ($couponCode !== null) {
             $resourcePath = str_replace(
                 '{' . 'couponCode' . '}',
-                ObjectSerializer::toPathValue($coupon_code),
+                ObjectSerializer::toPathValue($couponCode),
                 $resourcePath
             );
         }

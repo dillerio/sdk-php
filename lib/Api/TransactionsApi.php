@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  DillerAPI
  * @author   DILLER AS
  * @link     https://diller.io
  */
@@ -15,7 +15,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Api;
+namespace DillerAPI\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -23,16 +23,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use Swagger\Client\ApiException;
-use Swagger\Client\Configuration;
-use Swagger\Client\HeaderSelector;
-use Swagger\Client\ObjectSerializer;
+use DillerAPI\ApiException;
+use DillerAPI\Configuration;
+use DillerAPI\HeaderSelector;
+use DillerAPI\ObjectSerializer;
 
 /**
  * TransactionsApi Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  DillerAPI
  * @author   DILLER AS
  * @link     https://diller.io
  */
@@ -81,17 +81,17 @@ class TransactionsApi
      *
      * Cancel transaction
      *
-     * @param  string $store_id store_id (required)
-     * @param  string $transaction_id transaction_id (required)
-     * @param  \Swagger\Client\Model\CancelationReason $body body (optional)
+     * @param  string $storeId storeId (required)
+     * @param  string $transactionId transactionId (required)
+     * @param  \DillerAPI\Model\CancelationReason $body body (optional)
      *
      * @throws {{invokerPackage}}\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\ActionResponse
+     * @return \DillerAPI\Model\ActionResponse
      */
-    public function cancelTransaction($store_id, $transaction_id, $body = null)
+    public function cancelTransaction($storeId, $transactionId, $body = null)
     {
-        list($response) = $this->cancelTransactionWithHttpInfo($store_id, $transaction_id, $body);
+        list($response) = $this->cancelTransactionWithHttpInfo($storeId, $transactionId, $body);
         return $response;
     }
 
@@ -100,18 +100,18 @@ class TransactionsApi
      *
      * Cancel transaction
      *
-     * @param  string $store_id (required)
-     * @param  string $transaction_id (required)
-     * @param  \Swagger\Client\Model\CancelationReason $body (optional)
+     * @param  string $storeId (required)
+     * @param  string $transactionId (required)
+     * @param  \DillerAPI\Model\CancelationReason $body (optional)
      *
      * @throws {{invokerPackage}}\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\ActionResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \DillerAPI\Model\ActionResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cancelTransactionWithHttpInfo($store_id, $transaction_id, $body = null)
+    public function cancelTransactionWithHttpInfo($storeId, $transactionId, $body = null)
     {
-        $returnType = '\Swagger\Client\Model\ActionResponse';
-        $request = $this->cancelTransactionRequest($store_id, $transaction_id, $body);
+        $returnType = '\DillerAPI\Model\ActionResponse';
+        $request = $this->cancelTransactionRequest($storeId, $transactionId, $body);
 
         try {
             $options = $this->createHttpClientOption();
@@ -162,7 +162,7 @@ class TransactionsApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ApiError',
+                        '\DillerAPI\Model\ApiError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -170,7 +170,7 @@ class TransactionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ActionResponse',
+                        '\DillerAPI\Model\ActionResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -185,16 +185,16 @@ class TransactionsApi
      *
      * Cancel transaction
      *
-     * @param  string $store_id (required)
-     * @param  string $transaction_id (required)
-     * @param  \Swagger\Client\Model\CancelationReason $body (optional)
+     * @param  string $storeId (required)
+     * @param  string $transactionId (required)
+     * @param  \DillerAPI\Model\CancelationReason $body (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cancelTransactionAsync($store_id, $transaction_id, $body = null)
+    public function cancelTransactionAsync($storeId, $transactionId, $body = null)
     {
-        return $this->cancelTransactionAsyncWithHttpInfo($store_id, $transaction_id, $body)
+        return $this->cancelTransactionAsyncWithHttpInfo($storeId, $transactionId, $body)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -207,17 +207,17 @@ class TransactionsApi
      *
      * Cancel transaction
      *
-     * @param  string $store_id (required)
-     * @param  string $transaction_id (required)
-     * @param  \Swagger\Client\Model\CancelationReason $body (optional)
+     * @param  string $storeId (required)
+     * @param  string $transactionId (required)
+     * @param  \DillerAPI\Model\CancelationReason $body (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cancelTransactionAsyncWithHttpInfo($store_id, $transaction_id, $body = null)
+    public function cancelTransactionAsyncWithHttpInfo($storeId, $transactionId, $body = null)
     {
-        $returnType = '\Swagger\Client\Model\ActionResponse';
-        $request = $this->cancelTransactionRequest($store_id, $transaction_id, $body);
+        $returnType = '\DillerAPI\Model\ActionResponse';
+        $request = $this->cancelTransactionRequest($storeId, $transactionId, $body);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -259,25 +259,25 @@ class TransactionsApi
     /**
      * Create request for operation 'cancelTransaction'
      *
-     * @param  string $store_id (required)
-     * @param  string $transaction_id (required)
-     * @param  \Swagger\Client\Model\CancelationReason $body (optional)
+     * @param  string $storeId (required)
+     * @param  string $transactionId (required)
+     * @param  \DillerAPI\Model\CancelationReason $body (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cancelTransactionRequest($store_id, $transaction_id, $body = null)
+    protected function cancelTransactionRequest($storeId, $transactionId, $body = null)
     {
-        // verify the required parameter 'store_id' is set
-        if ($store_id === null || (is_array($store_id) && count($store_id) === 0)) {
+        // verify the required parameter 'storeId' is set
+        if ($storeId === null || (is_array($storeId) && count($storeId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $store_id when calling cancelTransaction'
+                'Missing the required parameter $storeId when calling cancelTransaction'
             );
         }
-        // verify the required parameter 'transaction_id' is set
-        if ($transaction_id === null || (is_array($transaction_id) && count($transaction_id) === 0)) {
+        // verify the required parameter 'transactionId' is set
+        if ($transactionId === null || (is_array($transactionId) && count($transactionId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $transaction_id when calling cancelTransaction'
+                'Missing the required parameter $transactionId when calling cancelTransaction'
             );
         }
 
@@ -290,18 +290,18 @@ class TransactionsApi
 
 
         // path params
-        if ($store_id !== null) {
+        if ($storeId !== null) {
             $resourcePath = str_replace(
                 '{' . 'storeId' . '}',
-                ObjectSerializer::toPathValue($store_id),
+                ObjectSerializer::toPathValue($storeId),
                 $resourcePath
             );
         }
         // path params
-        if ($transaction_id !== null) {
+        if ($transactionId !== null) {
             $resourcePath = str_replace(
                 '{' . 'transactionId' . '}',
-                ObjectSerializer::toPathValue($transaction_id),
+                ObjectSerializer::toPathValue($transactionId),
                 $resourcePath
             );
         }
@@ -389,18 +389,18 @@ class TransactionsApi
      *
      * Allows for the partial refund of a previous transaction, without taking into account any coupons or stamp cards applied earlier.
      *
-     * @param  string $store_id Store Id (required)
-     * @param  string $member_id Member Id (required)
-     * @param  string $transaction_id The original transaction Id that is being refunded (required)
-     * @param  \Swagger\Client\Model\CreateRefundTransactionRequest $body CreateRefundTransactionRequest object (optional)
+     * @param  string $storeId Store Id (required)
+     * @param  string $memberId Member Id (required)
+     * @param  string $transactionId The original transaction Id that is being refunded (required)
+     * @param  \DillerAPI\Model\CreateRefundTransactionRequest $body CreateRefundTransactionRequest object (optional)
      *
      * @throws {{invokerPackage}}\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\ActionResponse
+     * @return \DillerAPI\Model\ActionResponse
      */
-    public function createRefundTransaction($store_id, $member_id, $transaction_id, $body = null)
+    public function createRefundTransaction($storeId, $memberId, $transactionId, $body = null)
     {
-        list($response) = $this->createRefundTransactionWithHttpInfo($store_id, $member_id, $transaction_id, $body);
+        list($response) = $this->createRefundTransactionWithHttpInfo($storeId, $memberId, $transactionId, $body);
         return $response;
     }
 
@@ -409,19 +409,19 @@ class TransactionsApi
      *
      * Allows for the partial refund of a previous transaction, without taking into account any coupons or stamp cards applied earlier.
      *
-     * @param  string $store_id Store Id (required)
-     * @param  string $member_id Member Id (required)
-     * @param  string $transaction_id The original transaction Id that is being refunded (required)
-     * @param  \Swagger\Client\Model\CreateRefundTransactionRequest $body CreateRefundTransactionRequest object (optional)
+     * @param  string $storeId Store Id (required)
+     * @param  string $memberId Member Id (required)
+     * @param  string $transactionId The original transaction Id that is being refunded (required)
+     * @param  \DillerAPI\Model\CreateRefundTransactionRequest $body CreateRefundTransactionRequest object (optional)
      *
      * @throws {{invokerPackage}}\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\ActionResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \DillerAPI\Model\ActionResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createRefundTransactionWithHttpInfo($store_id, $member_id, $transaction_id, $body = null)
+    public function createRefundTransactionWithHttpInfo($storeId, $memberId, $transactionId, $body = null)
     {
-        $returnType = '\Swagger\Client\Model\ActionResponse';
-        $request = $this->createRefundTransactionRequest($store_id, $member_id, $transaction_id, $body);
+        $returnType = '\DillerAPI\Model\ActionResponse';
+        $request = $this->createRefundTransactionRequest($storeId, $memberId, $transactionId, $body);
 
         try {
             $options = $this->createHttpClientOption();
@@ -472,7 +472,7 @@ class TransactionsApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ApiError',
+                        '\DillerAPI\Model\ApiError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -480,7 +480,7 @@ class TransactionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ActionResponse',
+                        '\DillerAPI\Model\ActionResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -495,17 +495,17 @@ class TransactionsApi
      *
      * Allows for the partial refund of a previous transaction, without taking into account any coupons or stamp cards applied earlier.
      *
-     * @param  string $store_id Store Id (required)
-     * @param  string $member_id Member Id (required)
-     * @param  string $transaction_id The original transaction Id that is being refunded (required)
-     * @param  \Swagger\Client\Model\CreateRefundTransactionRequest $body CreateRefundTransactionRequest object (optional)
+     * @param  string $storeId Store Id (required)
+     * @param  string $memberId Member Id (required)
+     * @param  string $transactionId The original transaction Id that is being refunded (required)
+     * @param  \DillerAPI\Model\CreateRefundTransactionRequest $body CreateRefundTransactionRequest object (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createRefundTransactionAsync($store_id, $member_id, $transaction_id, $body = null)
+    public function createRefundTransactionAsync($storeId, $memberId, $transactionId, $body = null)
     {
-        return $this->createRefundTransactionAsyncWithHttpInfo($store_id, $member_id, $transaction_id, $body)
+        return $this->createRefundTransactionAsyncWithHttpInfo($storeId, $memberId, $transactionId, $body)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -518,18 +518,18 @@ class TransactionsApi
      *
      * Allows for the partial refund of a previous transaction, without taking into account any coupons or stamp cards applied earlier.
      *
-     * @param  string $store_id Store Id (required)
-     * @param  string $member_id Member Id (required)
-     * @param  string $transaction_id The original transaction Id that is being refunded (required)
-     * @param  \Swagger\Client\Model\CreateRefundTransactionRequest $body CreateRefundTransactionRequest object (optional)
+     * @param  string $storeId Store Id (required)
+     * @param  string $memberId Member Id (required)
+     * @param  string $transactionId The original transaction Id that is being refunded (required)
+     * @param  \DillerAPI\Model\CreateRefundTransactionRequest $body CreateRefundTransactionRequest object (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createRefundTransactionAsyncWithHttpInfo($store_id, $member_id, $transaction_id, $body = null)
+    public function createRefundTransactionAsyncWithHttpInfo($storeId, $memberId, $transactionId, $body = null)
     {
-        $returnType = '\Swagger\Client\Model\ActionResponse';
-        $request = $this->createRefundTransactionRequest($store_id, $member_id, $transaction_id, $body);
+        $returnType = '\DillerAPI\Model\ActionResponse';
+        $request = $this->createRefundTransactionRequest($storeId, $memberId, $transactionId, $body);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -571,32 +571,32 @@ class TransactionsApi
     /**
      * Create request for operation 'createRefundTransaction'
      *
-     * @param  string $store_id Store Id (required)
-     * @param  string $member_id Member Id (required)
-     * @param  string $transaction_id The original transaction Id that is being refunded (required)
-     * @param  \Swagger\Client\Model\CreateRefundTransactionRequest $body CreateRefundTransactionRequest object (optional)
+     * @param  string $storeId Store Id (required)
+     * @param  string $memberId Member Id (required)
+     * @param  string $transactionId The original transaction Id that is being refunded (required)
+     * @param  \DillerAPI\Model\CreateRefundTransactionRequest $body CreateRefundTransactionRequest object (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function createRefundTransactionRequest($store_id, $member_id, $transaction_id, $body = null)
+    protected function createRefundTransactionRequest($storeId, $memberId, $transactionId, $body = null)
     {
-        // verify the required parameter 'store_id' is set
-        if ($store_id === null || (is_array($store_id) && count($store_id) === 0)) {
+        // verify the required parameter 'storeId' is set
+        if ($storeId === null || (is_array($storeId) && count($storeId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $store_id when calling createRefundTransaction'
+                'Missing the required parameter $storeId when calling createRefundTransaction'
             );
         }
-        // verify the required parameter 'member_id' is set
-        if ($member_id === null || (is_array($member_id) && count($member_id) === 0)) {
+        // verify the required parameter 'memberId' is set
+        if ($memberId === null || (is_array($memberId) && count($memberId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $member_id when calling createRefundTransaction'
+                'Missing the required parameter $memberId when calling createRefundTransaction'
             );
         }
-        // verify the required parameter 'transaction_id' is set
-        if ($transaction_id === null || (is_array($transaction_id) && count($transaction_id) === 0)) {
+        // verify the required parameter 'transactionId' is set
+        if ($transactionId === null || (is_array($transactionId) && count($transactionId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $transaction_id when calling createRefundTransaction'
+                'Missing the required parameter $transactionId when calling createRefundTransaction'
             );
         }
 
@@ -609,26 +609,26 @@ class TransactionsApi
 
 
         // path params
-        if ($store_id !== null) {
+        if ($storeId !== null) {
             $resourcePath = str_replace(
                 '{' . 'storeId' . '}',
-                ObjectSerializer::toPathValue($store_id),
+                ObjectSerializer::toPathValue($storeId),
                 $resourcePath
             );
         }
         // path params
-        if ($member_id !== null) {
+        if ($memberId !== null) {
             $resourcePath = str_replace(
                 '{' . 'memberId' . '}',
-                ObjectSerializer::toPathValue($member_id),
+                ObjectSerializer::toPathValue($memberId),
                 $resourcePath
             );
         }
         // path params
-        if ($transaction_id !== null) {
+        if ($transactionId !== null) {
             $resourcePath = str_replace(
                 '{' . 'transactionId' . '}',
-                ObjectSerializer::toPathValue($transaction_id),
+                ObjectSerializer::toPathValue($transactionId),
                 $resourcePath
             );
         }
@@ -716,17 +716,17 @@ class TransactionsApi
      *
      * Creates transaction
      *
-     * @param  string $store_id Store Id (required)
-     * @param  string $member_id Member Id (required)
-     * @param  \Swagger\Client\Model\CreateTransactionRequest $body CreateTransactionRequest object (optional)
+     * @param  string $storeId Store Id (required)
+     * @param  string $memberId Member Id (required)
+     * @param  \DillerAPI\Model\CreateTransactionRequest $body CreateTransactionRequest object (optional)
      *
      * @throws {{invokerPackage}}\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\ActionResponse
+     * @return \DillerAPI\Model\ActionResponse
      */
-    public function createTransaction($store_id, $member_id, $body = null)
+    public function createTransaction($storeId, $memberId, $body = null)
     {
-        list($response) = $this->createTransactionWithHttpInfo($store_id, $member_id, $body);
+        list($response) = $this->createTransactionWithHttpInfo($storeId, $memberId, $body);
         return $response;
     }
 
@@ -735,18 +735,18 @@ class TransactionsApi
      *
      * Creates transaction
      *
-     * @param  string $store_id Store Id (required)
-     * @param  string $member_id Member Id (required)
-     * @param  \Swagger\Client\Model\CreateTransactionRequest $body CreateTransactionRequest object (optional)
+     * @param  string $storeId Store Id (required)
+     * @param  string $memberId Member Id (required)
+     * @param  \DillerAPI\Model\CreateTransactionRequest $body CreateTransactionRequest object (optional)
      *
      * @throws {{invokerPackage}}\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\ActionResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \DillerAPI\Model\ActionResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createTransactionWithHttpInfo($store_id, $member_id, $body = null)
+    public function createTransactionWithHttpInfo($storeId, $memberId, $body = null)
     {
-        $returnType = '\Swagger\Client\Model\ActionResponse';
-        $request = $this->createTransactionRequest($store_id, $member_id, $body);
+        $returnType = '\DillerAPI\Model\ActionResponse';
+        $request = $this->createTransactionRequest($storeId, $memberId, $body);
 
         try {
             $options = $this->createHttpClientOption();
@@ -797,7 +797,7 @@ class TransactionsApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ApiError',
+                        '\DillerAPI\Model\ApiError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -805,7 +805,7 @@ class TransactionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ActionResponse',
+                        '\DillerAPI\Model\ActionResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -820,16 +820,16 @@ class TransactionsApi
      *
      * Creates transaction
      *
-     * @param  string $store_id Store Id (required)
-     * @param  string $member_id Member Id (required)
-     * @param  \Swagger\Client\Model\CreateTransactionRequest $body CreateTransactionRequest object (optional)
+     * @param  string $storeId Store Id (required)
+     * @param  string $memberId Member Id (required)
+     * @param  \DillerAPI\Model\CreateTransactionRequest $body CreateTransactionRequest object (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createTransactionAsync($store_id, $member_id, $body = null)
+    public function createTransactionAsync($storeId, $memberId, $body = null)
     {
-        return $this->createTransactionAsyncWithHttpInfo($store_id, $member_id, $body)
+        return $this->createTransactionAsyncWithHttpInfo($storeId, $memberId, $body)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -842,17 +842,17 @@ class TransactionsApi
      *
      * Creates transaction
      *
-     * @param  string $store_id Store Id (required)
-     * @param  string $member_id Member Id (required)
-     * @param  \Swagger\Client\Model\CreateTransactionRequest $body CreateTransactionRequest object (optional)
+     * @param  string $storeId Store Id (required)
+     * @param  string $memberId Member Id (required)
+     * @param  \DillerAPI\Model\CreateTransactionRequest $body CreateTransactionRequest object (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createTransactionAsyncWithHttpInfo($store_id, $member_id, $body = null)
+    public function createTransactionAsyncWithHttpInfo($storeId, $memberId, $body = null)
     {
-        $returnType = '\Swagger\Client\Model\ActionResponse';
-        $request = $this->createTransactionRequest($store_id, $member_id, $body);
+        $returnType = '\DillerAPI\Model\ActionResponse';
+        $request = $this->createTransactionRequest($storeId, $memberId, $body);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -894,25 +894,25 @@ class TransactionsApi
     /**
      * Create request for operation 'createTransaction'
      *
-     * @param  string $store_id Store Id (required)
-     * @param  string $member_id Member Id (required)
-     * @param  \Swagger\Client\Model\CreateTransactionRequest $body CreateTransactionRequest object (optional)
+     * @param  string $storeId Store Id (required)
+     * @param  string $memberId Member Id (required)
+     * @param  \DillerAPI\Model\CreateTransactionRequest $body CreateTransactionRequest object (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function createTransactionRequest($store_id, $member_id, $body = null)
+    protected function createTransactionRequest($storeId, $memberId, $body = null)
     {
-        // verify the required parameter 'store_id' is set
-        if ($store_id === null || (is_array($store_id) && count($store_id) === 0)) {
+        // verify the required parameter 'storeId' is set
+        if ($storeId === null || (is_array($storeId) && count($storeId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $store_id when calling createTransaction'
+                'Missing the required parameter $storeId when calling createTransaction'
             );
         }
-        // verify the required parameter 'member_id' is set
-        if ($member_id === null || (is_array($member_id) && count($member_id) === 0)) {
+        // verify the required parameter 'memberId' is set
+        if ($memberId === null || (is_array($memberId) && count($memberId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $member_id when calling createTransaction'
+                'Missing the required parameter $memberId when calling createTransaction'
             );
         }
 
@@ -925,18 +925,18 @@ class TransactionsApi
 
 
         // path params
-        if ($store_id !== null) {
+        if ($storeId !== null) {
             $resourcePath = str_replace(
                 '{' . 'storeId' . '}',
-                ObjectSerializer::toPathValue($store_id),
+                ObjectSerializer::toPathValue($storeId),
                 $resourcePath
             );
         }
         // path params
-        if ($member_id !== null) {
+        if ($memberId !== null) {
             $resourcePath = str_replace(
                 '{' . 'memberId' . '}',
-                ObjectSerializer::toPathValue($member_id),
+                ObjectSerializer::toPathValue($memberId),
                 $resourcePath
             );
         }

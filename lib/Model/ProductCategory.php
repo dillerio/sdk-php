@@ -16,7 +16,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace DillerAPI\Model;
 
 use \ArrayAccess;
 use \DillerAPI\ObjectSerializer;
@@ -25,7 +25,7 @@ use \DillerAPI\ObjectSerializer;
  * ProductCategory Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  DillerAPI
  * @author   DILLER AS
  * @link     https://diller.io
  */
@@ -47,7 +47,7 @@ class ProductCategory implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'name' => 'string',
-'external_id' => 'string'    ];
+'externalId' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -56,7 +56,7 @@ class ProductCategory implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'name' => null,
-'external_id' => null    ];
+'externalId' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -86,7 +86,7 @@ class ProductCategory implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'name' => 'name',
-'external_id' => 'external_id'    ];
+'externalId' => 'external_id'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -95,7 +95,7 @@ class ProductCategory implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'name' => 'setName',
-'external_id' => 'setExternalId'    ];
+'externalId' => 'setExternalId'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -104,7 +104,7 @@ class ProductCategory implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'name' => 'getName',
-'external_id' => 'getExternalId'    ];
+'externalId' => 'getExternalId'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -165,7 +165,7 @@ class ProductCategory implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['external_id'] = isset($data['external_id']) ? $data['external_id'] : null;
+        $this->container['externalId'] = isset($data['externalId']) ? $data['externalId'] : null;
     }
 
     /**
@@ -217,25 +217,25 @@ class ProductCategory implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets external_id
+     * Gets externalId
      *
      * @return string
      */
     public function getExternalId()
     {
-        return $this->container['external_id'];
+        return $this->container['externalId'];
     }
 
     /**
-     * Sets external_id
+     * Sets externalId
      *
-     * @param string $external_id external_id
+     * @param string $externalId externalId
      *
      * @return $this
      */
-    public function setExternalId($external_id)
+    public function setExternalId($externalId)
     {
-        $this->container['external_id'] = $external_id;
+        $this->container['externalId'] = $externalId;
 
         return $this;
     }
@@ -256,8 +256,9 @@ class ProductCategory implements ModelInterface, ArrayAccess
      *
      * @param integer $offset Offset
      *
+     * @return mixed
      */
-    public function offsetGet($offset)
+    public function offsetGet($offset): mixed
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }

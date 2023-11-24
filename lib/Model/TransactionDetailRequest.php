@@ -16,7 +16,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace DillerAPI\Model;
 
 use \ArrayAccess;
 use \DillerAPI\ObjectSerializer;
@@ -25,7 +25,7 @@ use \DillerAPI\ObjectSerializer;
  * TransactionDetailRequest Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  DillerAPI
  * @author   DILLER AS
  * @link     https://diller.io
  */
@@ -46,15 +46,15 @@ class TransactionDetailRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'product' => '\Swagger\Client\Model\ProductDetail',
+        'product' => '\DillerAPI\Model\ProductDetail',
 'quantity' => 'double',
-'unit_price' => 'double',
-'unit_measure' => 'string',
-'tax_percentage' => 'double',
+'unitPrice' => 'double',
+'unitMeasure' => 'string',
+'taxPercentage' => 'double',
 'discount' => 'double',
-'total_price' => 'double',
-'stamp_card_ids' => 'int[]',
-'coupon_codes' => 'string[]'    ];
+'totalPrice' => 'double',
+'stampCardIds' => 'int[]',
+'couponCodes' => 'string[]'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -64,13 +64,13 @@ class TransactionDetailRequest implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'product' => null,
 'quantity' => 'double',
-'unit_price' => 'double',
-'unit_measure' => null,
-'tax_percentage' => 'double',
+'unitPrice' => 'double',
+'unitMeasure' => null,
+'taxPercentage' => 'double',
 'discount' => 'double',
-'total_price' => 'double',
-'stamp_card_ids' => 'int32',
-'coupon_codes' => null    ];
+'totalPrice' => 'double',
+'stampCardIds' => 'int32',
+'couponCodes' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -101,13 +101,13 @@ class TransactionDetailRequest implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'product' => 'product',
 'quantity' => 'quantity',
-'unit_price' => 'unit_price',
-'unit_measure' => 'unit_measure',
-'tax_percentage' => 'tax_percentage',
+'unitPrice' => 'unit_price',
+'unitMeasure' => 'unit_measure',
+'taxPercentage' => 'tax_percentage',
 'discount' => 'discount',
-'total_price' => 'total_price',
-'stamp_card_ids' => 'stamp_card_ids',
-'coupon_codes' => 'coupon_codes'    ];
+'totalPrice' => 'total_price',
+'stampCardIds' => 'stamp_card_ids',
+'couponCodes' => 'coupon_codes'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -117,13 +117,13 @@ class TransactionDetailRequest implements ModelInterface, ArrayAccess
     protected static $setters = [
         'product' => 'setProduct',
 'quantity' => 'setQuantity',
-'unit_price' => 'setUnitPrice',
-'unit_measure' => 'setUnitMeasure',
-'tax_percentage' => 'setTaxPercentage',
+'unitPrice' => 'setUnitPrice',
+'unitMeasure' => 'setUnitMeasure',
+'taxPercentage' => 'setTaxPercentage',
 'discount' => 'setDiscount',
-'total_price' => 'setTotalPrice',
-'stamp_card_ids' => 'setStampCardIds',
-'coupon_codes' => 'setCouponCodes'    ];
+'totalPrice' => 'setTotalPrice',
+'stampCardIds' => 'setStampCardIds',
+'couponCodes' => 'setCouponCodes'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -133,13 +133,13 @@ class TransactionDetailRequest implements ModelInterface, ArrayAccess
     protected static $getters = [
         'product' => 'getProduct',
 'quantity' => 'getQuantity',
-'unit_price' => 'getUnitPrice',
-'unit_measure' => 'getUnitMeasure',
-'tax_percentage' => 'getTaxPercentage',
+'unitPrice' => 'getUnitPrice',
+'unitMeasure' => 'getUnitMeasure',
+'taxPercentage' => 'getTaxPercentage',
 'discount' => 'getDiscount',
-'total_price' => 'getTotalPrice',
-'stamp_card_ids' => 'getStampCardIds',
-'coupon_codes' => 'getCouponCodes'    ];
+'totalPrice' => 'getTotalPrice',
+'stampCardIds' => 'getStampCardIds',
+'couponCodes' => 'getCouponCodes'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -201,13 +201,13 @@ class TransactionDetailRequest implements ModelInterface, ArrayAccess
     {
         $this->container['product'] = isset($data['product']) ? $data['product'] : null;
         $this->container['quantity'] = isset($data['quantity']) ? $data['quantity'] : null;
-        $this->container['unit_price'] = isset($data['unit_price']) ? $data['unit_price'] : null;
-        $this->container['unit_measure'] = isset($data['unit_measure']) ? $data['unit_measure'] : null;
-        $this->container['tax_percentage'] = isset($data['tax_percentage']) ? $data['tax_percentage'] : null;
+        $this->container['unitPrice'] = isset($data['unitPrice']) ? $data['unitPrice'] : null;
+        $this->container['unitMeasure'] = isset($data['unitMeasure']) ? $data['unitMeasure'] : null;
+        $this->container['taxPercentage'] = isset($data['taxPercentage']) ? $data['taxPercentage'] : null;
         $this->container['discount'] = isset($data['discount']) ? $data['discount'] : null;
-        $this->container['total_price'] = isset($data['total_price']) ? $data['total_price'] : null;
-        $this->container['stamp_card_ids'] = isset($data['stamp_card_ids']) ? $data['stamp_card_ids'] : null;
-        $this->container['coupon_codes'] = isset($data['coupon_codes']) ? $data['coupon_codes'] : null;
+        $this->container['totalPrice'] = isset($data['totalPrice']) ? $data['totalPrice'] : null;
+        $this->container['stampCardIds'] = isset($data['stampCardIds']) ? $data['stampCardIds'] : null;
+        $this->container['couponCodes'] = isset($data['couponCodes']) ? $data['couponCodes'] : null;
     }
 
     /**
@@ -237,7 +237,7 @@ class TransactionDetailRequest implements ModelInterface, ArrayAccess
     /**
      * Gets product
      *
-     * @return \Swagger\Client\Model\ProductDetail
+     * @return \DillerAPI\Model\ProductDetail
      */
     public function getProduct()
     {
@@ -247,7 +247,7 @@ class TransactionDetailRequest implements ModelInterface, ArrayAccess
     /**
      * Sets product
      *
-     * @param \Swagger\Client\Model\ProductDetail $product product
+     * @param \DillerAPI\Model\ProductDetail $product product
      *
      * @return $this
      */
@@ -283,73 +283,73 @@ class TransactionDetailRequest implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets unit_price
+     * Gets unitPrice
      *
      * @return double
      */
     public function getUnitPrice()
     {
-        return $this->container['unit_price'];
+        return $this->container['unitPrice'];
     }
 
     /**
-     * Sets unit_price
+     * Sets unitPrice
      *
-     * @param double $unit_price Unit price including taxes
+     * @param double $unitPrice Unit price including taxes
      *
      * @return $this
      */
-    public function setUnitPrice($unit_price)
+    public function setUnitPrice($unitPrice)
     {
-        $this->container['unit_price'] = $unit_price;
+        $this->container['unitPrice'] = $unitPrice;
 
         return $this;
     }
 
     /**
-     * Gets unit_measure
+     * Gets unitMeasure
      *
      * @return string
      */
     public function getUnitMeasure()
     {
-        return $this->container['unit_measure'];
+        return $this->container['unitMeasure'];
     }
 
     /**
-     * Sets unit_measure
+     * Sets unitMeasure
      *
-     * @param string $unit_measure unit_measure
+     * @param string $unitMeasure unitMeasure
      *
      * @return $this
      */
-    public function setUnitMeasure($unit_measure)
+    public function setUnitMeasure($unitMeasure)
     {
-        $this->container['unit_measure'] = $unit_measure;
+        $this->container['unitMeasure'] = $unitMeasure;
 
         return $this;
     }
 
     /**
-     * Gets tax_percentage
+     * Gets taxPercentage
      *
      * @return double
      */
     public function getTaxPercentage()
     {
-        return $this->container['tax_percentage'];
+        return $this->container['taxPercentage'];
     }
 
     /**
-     * Sets tax_percentage
+     * Sets taxPercentage
      *
-     * @param double $tax_percentage Value stored from 0.00 to 100.00
+     * @param double $taxPercentage Value stored from 0.00 to 100.00
      *
      * @return $this
      */
-    public function setTaxPercentage($tax_percentage)
+    public function setTaxPercentage($taxPercentage)
     {
-        $this->container['tax_percentage'] = $tax_percentage;
+        $this->container['taxPercentage'] = $taxPercentage;
 
         return $this;
     }
@@ -379,73 +379,73 @@ class TransactionDetailRequest implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets total_price
+     * Gets totalPrice
      *
      * @return double
      */
     public function getTotalPrice()
     {
-        return $this->container['total_price'];
+        return $this->container['totalPrice'];
     }
 
     /**
-     * Sets total_price
+     * Sets totalPrice
      *
-     * @param double $total_price Total price after dicount and taxes  Qty x unit price - discount
+     * @param double $totalPrice Total price after dicount and taxes  Qty x unit price - discount
      *
      * @return $this
      */
-    public function setTotalPrice($total_price)
+    public function setTotalPrice($totalPrice)
     {
-        $this->container['total_price'] = $total_price;
+        $this->container['totalPrice'] = $totalPrice;
 
         return $this;
     }
 
     /**
-     * Gets stamp_card_ids
+     * Gets stampCardIds
      *
      * @return int[]
      */
     public function getStampCardIds()
     {
-        return $this->container['stamp_card_ids'];
+        return $this->container['stampCardIds'];
     }
 
     /**
-     * Sets stamp_card_ids
+     * Sets stampCardIds
      *
-     * @param int[] $stamp_card_ids stamp_card_ids
+     * @param int[] $stampCardIds stampCardIds
      *
      * @return $this
      */
-    public function setStampCardIds($stamp_card_ids)
+    public function setStampCardIds($stampCardIds)
     {
-        $this->container['stamp_card_ids'] = $stamp_card_ids;
+        $this->container['stampCardIds'] = $stampCardIds;
 
         return $this;
     }
 
     /**
-     * Gets coupon_codes
+     * Gets couponCodes
      *
      * @return string[]
      */
     public function getCouponCodes()
     {
-        return $this->container['coupon_codes'];
+        return $this->container['couponCodes'];
     }
 
     /**
-     * Sets coupon_codes
+     * Sets couponCodes
      *
-     * @param string[] $coupon_codes coupon_codes
+     * @param string[] $couponCodes couponCodes
      *
      * @return $this
      */
-    public function setCouponCodes($coupon_codes)
+    public function setCouponCodes($couponCodes)
     {
-        $this->container['coupon_codes'] = $coupon_codes;
+        $this->container['couponCodes'] = $couponCodes;
 
         return $this;
     }
@@ -466,8 +466,9 @@ class TransactionDetailRequest implements ModelInterface, ArrayAccess
      *
      * @param integer $offset Offset
      *
+     * @return mixed
      */
-    public function offsetGet($offset)
+    public function offsetGet($offset): mixed
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }

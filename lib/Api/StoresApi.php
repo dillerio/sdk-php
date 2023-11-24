@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  DillerAPI
  * @author   DILLER AS
  * @link     https://diller.io
  */
@@ -15,7 +15,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Api;
+namespace DillerAPI\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -23,16 +23,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use Swagger\Client\ApiException;
-use Swagger\Client\Configuration;
-use Swagger\Client\HeaderSelector;
-use Swagger\Client\ObjectSerializer;
+use DillerAPI\ApiException;
+use DillerAPI\Configuration;
+use DillerAPI\HeaderSelector;
+use DillerAPI\ObjectSerializer;
 
 /**
  * StoresApi Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  DillerAPI
  * @author   DILLER AS
  * @link     https://diller.io
  */
@@ -81,16 +81,16 @@ class StoresApi
      *
      * Add store department
      *
-     * @param  string $store_id The store id (required)
-     * @param  \Swagger\Client\Model\CreateDepartmentRequest $body body (optional)
+     * @param  string $storeId The store id (required)
+     * @param  \DillerAPI\Model\CreateDepartmentRequest $body body (optional)
      *
      * @throws {{invokerPackage}}\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\StoreDepartmentResponse[]
+     * @return \DillerAPI\Model\StoreDepartmentResponse[]
      */
-    public function createDepartment($store_id, $body = null)
+    public function createDepartment($storeId, $body = null)
     {
-        list($response) = $this->createDepartmentWithHttpInfo($store_id, $body);
+        list($response) = $this->createDepartmentWithHttpInfo($storeId, $body);
         return $response;
     }
 
@@ -99,17 +99,17 @@ class StoresApi
      *
      * Add store department
      *
-     * @param  string $store_id The store id (required)
-     * @param  \Swagger\Client\Model\CreateDepartmentRequest $body (optional)
+     * @param  string $storeId The store id (required)
+     * @param  \DillerAPI\Model\CreateDepartmentRequest $body (optional)
      *
      * @throws {{invokerPackage}}\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\StoreDepartmentResponse[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \DillerAPI\Model\StoreDepartmentResponse[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function createDepartmentWithHttpInfo($store_id, $body = null)
+    public function createDepartmentWithHttpInfo($storeId, $body = null)
     {
-        $returnType = '\Swagger\Client\Model\StoreDepartmentResponse[]';
-        $request = $this->createDepartmentRequest($store_id, $body);
+        $returnType = '\DillerAPI\Model\StoreDepartmentResponse[]';
+        $request = $this->createDepartmentRequest($storeId, $body);
 
         try {
             $options = $this->createHttpClientOption();
@@ -160,7 +160,7 @@ class StoresApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ApiError',
+                        '\DillerAPI\Model\ApiError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -168,7 +168,7 @@ class StoresApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\StoreDepartmentResponse[]',
+                        '\DillerAPI\Model\StoreDepartmentResponse[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -183,15 +183,15 @@ class StoresApi
      *
      * Add store department
      *
-     * @param  string $store_id The store id (required)
-     * @param  \Swagger\Client\Model\CreateDepartmentRequest $body (optional)
+     * @param  string $storeId The store id (required)
+     * @param  \DillerAPI\Model\CreateDepartmentRequest $body (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createDepartmentAsync($store_id, $body = null)
+    public function createDepartmentAsync($storeId, $body = null)
     {
-        return $this->createDepartmentAsyncWithHttpInfo($store_id, $body)
+        return $this->createDepartmentAsyncWithHttpInfo($storeId, $body)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -204,16 +204,16 @@ class StoresApi
      *
      * Add store department
      *
-     * @param  string $store_id The store id (required)
-     * @param  \Swagger\Client\Model\CreateDepartmentRequest $body (optional)
+     * @param  string $storeId The store id (required)
+     * @param  \DillerAPI\Model\CreateDepartmentRequest $body (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createDepartmentAsyncWithHttpInfo($store_id, $body = null)
+    public function createDepartmentAsyncWithHttpInfo($storeId, $body = null)
     {
-        $returnType = '\Swagger\Client\Model\StoreDepartmentResponse[]';
-        $request = $this->createDepartmentRequest($store_id, $body);
+        $returnType = '\DillerAPI\Model\StoreDepartmentResponse[]';
+        $request = $this->createDepartmentRequest($storeId, $body);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -255,18 +255,18 @@ class StoresApi
     /**
      * Create request for operation 'createDepartment'
      *
-     * @param  string $store_id The store id (required)
-     * @param  \Swagger\Client\Model\CreateDepartmentRequest $body (optional)
+     * @param  string $storeId The store id (required)
+     * @param  \DillerAPI\Model\CreateDepartmentRequest $body (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function createDepartmentRequest($store_id, $body = null)
+    protected function createDepartmentRequest($storeId, $body = null)
     {
-        // verify the required parameter 'store_id' is set
-        if ($store_id === null || (is_array($store_id) && count($store_id) === 0)) {
+        // verify the required parameter 'storeId' is set
+        if ($storeId === null || (is_array($storeId) && count($storeId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $store_id when calling createDepartment'
+                'Missing the required parameter $storeId when calling createDepartment'
             );
         }
 
@@ -279,10 +279,10 @@ class StoresApi
 
 
         // path params
-        if ($store_id !== null) {
+        if ($storeId !== null) {
             $resourcePath = str_replace(
                 '{' . 'storeId' . '}',
-                ObjectSerializer::toPathValue($store_id),
+                ObjectSerializer::toPathValue($storeId),
                 $resourcePath
             );
         }
@@ -370,15 +370,15 @@ class StoresApi
      *
      * Gets store
      *
-     * @param  string $store_id The id of the store (required)
+     * @param  string $storeId The id of the store (required)
      *
      * @throws {{invokerPackage}}\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\StoreResponse
+     * @return \DillerAPI\Model\StoreResponse
      */
-    public function get($store_id)
+    public function get($storeId)
     {
-        list($response) = $this->getWithHttpInfo($store_id);
+        list($response) = $this->getWithHttpInfo($storeId);
         return $response;
     }
 
@@ -387,16 +387,16 @@ class StoresApi
      *
      * Gets store
      *
-     * @param  string $store_id The id of the store (required)
+     * @param  string $storeId The id of the store (required)
      *
      * @throws {{invokerPackage}}\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\StoreResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \DillerAPI\Model\StoreResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getWithHttpInfo($store_id)
+    public function getWithHttpInfo($storeId)
     {
-        $returnType = '\Swagger\Client\Model\StoreResponse';
-        $request = $this->getRequest($store_id);
+        $returnType = '\DillerAPI\Model\StoreResponse';
+        $request = $this->getRequest($storeId);
 
         try {
             $options = $this->createHttpClientOption();
@@ -447,7 +447,7 @@ class StoresApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ApiError',
+                        '\DillerAPI\Model\ApiError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -455,7 +455,7 @@ class StoresApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\StoreResponse',
+                        '\DillerAPI\Model\StoreResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -470,14 +470,14 @@ class StoresApi
      *
      * Gets store
      *
-     * @param  string $store_id The id of the store (required)
+     * @param  string $storeId The id of the store (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAsync($store_id)
+    public function getAsync($storeId)
     {
-        return $this->getAsyncWithHttpInfo($store_id)
+        return $this->getAsyncWithHttpInfo($storeId)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -490,15 +490,15 @@ class StoresApi
      *
      * Gets store
      *
-     * @param  string $store_id The id of the store (required)
+     * @param  string $storeId The id of the store (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAsyncWithHttpInfo($store_id)
+    public function getAsyncWithHttpInfo($storeId)
     {
-        $returnType = '\Swagger\Client\Model\StoreResponse';
-        $request = $this->getRequest($store_id);
+        $returnType = '\DillerAPI\Model\StoreResponse';
+        $request = $this->getRequest($storeId);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -540,17 +540,17 @@ class StoresApi
     /**
      * Create request for operation 'get'
      *
-     * @param  string $store_id The id of the store (required)
+     * @param  string $storeId The id of the store (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getRequest($store_id)
+    protected function getRequest($storeId)
     {
-        // verify the required parameter 'store_id' is set
-        if ($store_id === null || (is_array($store_id) && count($store_id) === 0)) {
+        // verify the required parameter 'storeId' is set
+        if ($storeId === null || (is_array($storeId) && count($storeId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $store_id when calling get'
+                'Missing the required parameter $storeId when calling get'
             );
         }
 
@@ -563,10 +563,10 @@ class StoresApi
 
 
         // path params
-        if ($store_id !== null) {
+        if ($storeId !== null) {
             $resourcePath = str_replace(
                 '{' . 'storeId' . '}',
-                ObjectSerializer::toPathValue($store_id),
+                ObjectSerializer::toPathValue($storeId),
                 $resourcePath
             );
         }
@@ -654,7 +654,7 @@ class StoresApi
      *
      * @throws {{invokerPackage}}\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\StoreResponse[]
+     * @return \DillerAPI\Model\StoreResponse[]
      */
     public function getAll()
     {
@@ -670,11 +670,11 @@ class StoresApi
      *
      * @throws {{invokerPackage}}\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\StoreResponse[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \DillerAPI\Model\StoreResponse[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getAllWithHttpInfo()
     {
-        $returnType = '\Swagger\Client\Model\StoreResponse[]';
+        $returnType = '\DillerAPI\Model\StoreResponse[]';
         $request = $this->getAllRequest();
 
         try {
@@ -726,7 +726,7 @@ class StoresApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ApiError',
+                        '\DillerAPI\Model\ApiError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -734,7 +734,7 @@ class StoresApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\StoreResponse[]',
+                        '\DillerAPI\Model\StoreResponse[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -774,7 +774,7 @@ class StoresApi
      */
     public function getAllAsyncWithHttpInfo()
     {
-        $returnType = '\Swagger\Client\Model\StoreResponse[]';
+        $returnType = '\DillerAPI\Model\StoreResponse[]';
         $request = $this->getAllRequest();
 
         return $this->client
@@ -913,15 +913,15 @@ class StoresApi
      *
      * Get store departments
      *
-     * @param  string $store_id The store id (required)
+     * @param  string $storeId The store id (required)
      *
      * @throws {{invokerPackage}}\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\StoreDepartmentResponse[]
+     * @return \DillerAPI\Model\StoreDepartmentResponse[]
      */
-    public function getDepartments($store_id)
+    public function getDepartments($storeId)
     {
-        list($response) = $this->getDepartmentsWithHttpInfo($store_id);
+        list($response) = $this->getDepartmentsWithHttpInfo($storeId);
         return $response;
     }
 
@@ -930,16 +930,16 @@ class StoresApi
      *
      * Get store departments
      *
-     * @param  string $store_id The store id (required)
+     * @param  string $storeId The store id (required)
      *
      * @throws {{invokerPackage}}\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\StoreDepartmentResponse[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \DillerAPI\Model\StoreDepartmentResponse[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getDepartmentsWithHttpInfo($store_id)
+    public function getDepartmentsWithHttpInfo($storeId)
     {
-        $returnType = '\Swagger\Client\Model\StoreDepartmentResponse[]';
-        $request = $this->getDepartmentsRequest($store_id);
+        $returnType = '\DillerAPI\Model\StoreDepartmentResponse[]';
+        $request = $this->getDepartmentsRequest($storeId);
 
         try {
             $options = $this->createHttpClientOption();
@@ -990,7 +990,7 @@ class StoresApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ApiError',
+                        '\DillerAPI\Model\ApiError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -998,7 +998,7 @@ class StoresApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\StoreDepartmentResponse[]',
+                        '\DillerAPI\Model\StoreDepartmentResponse[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1013,14 +1013,14 @@ class StoresApi
      *
      * Get store departments
      *
-     * @param  string $store_id The store id (required)
+     * @param  string $storeId The store id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDepartmentsAsync($store_id)
+    public function getDepartmentsAsync($storeId)
     {
-        return $this->getDepartmentsAsyncWithHttpInfo($store_id)
+        return $this->getDepartmentsAsyncWithHttpInfo($storeId)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1033,15 +1033,15 @@ class StoresApi
      *
      * Get store departments
      *
-     * @param  string $store_id The store id (required)
+     * @param  string $storeId The store id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDepartmentsAsyncWithHttpInfo($store_id)
+    public function getDepartmentsAsyncWithHttpInfo($storeId)
     {
-        $returnType = '\Swagger\Client\Model\StoreDepartmentResponse[]';
-        $request = $this->getDepartmentsRequest($store_id);
+        $returnType = '\DillerAPI\Model\StoreDepartmentResponse[]';
+        $request = $this->getDepartmentsRequest($storeId);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1083,17 +1083,17 @@ class StoresApi
     /**
      * Create request for operation 'getDepartments'
      *
-     * @param  string $store_id The store id (required)
+     * @param  string $storeId The store id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getDepartmentsRequest($store_id)
+    protected function getDepartmentsRequest($storeId)
     {
-        // verify the required parameter 'store_id' is set
-        if ($store_id === null || (is_array($store_id) && count($store_id) === 0)) {
+        // verify the required parameter 'storeId' is set
+        if ($storeId === null || (is_array($storeId) && count($storeId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $store_id when calling getDepartments'
+                'Missing the required parameter $storeId when calling getDepartments'
             );
         }
 
@@ -1106,10 +1106,10 @@ class StoresApi
 
 
         // path params
-        if ($store_id !== null) {
+        if ($storeId !== null) {
             $resourcePath = str_replace(
                 '{' . 'storeId' . '}',
-                ObjectSerializer::toPathValue($store_id),
+                ObjectSerializer::toPathValue($storeId),
                 $resourcePath
             );
         }
@@ -1194,15 +1194,15 @@ class StoresApi
      *
      * Retrieves all store's segments
      *
-     * @param  string $store_id The Id of the store (required)
+     * @param  string $storeId The Id of the store (required)
      *
      * @throws {{invokerPackage}}\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\StoreSegmentResponse[]
+     * @return \DillerAPI\Model\StoreSegmentResponse[]
      */
-    public function getSegments($store_id)
+    public function getSegments($storeId)
     {
-        list($response) = $this->getSegmentsWithHttpInfo($store_id);
+        list($response) = $this->getSegmentsWithHttpInfo($storeId);
         return $response;
     }
 
@@ -1211,16 +1211,16 @@ class StoresApi
      *
      * Retrieves all store's segments
      *
-     * @param  string $store_id The Id of the store (required)
+     * @param  string $storeId The Id of the store (required)
      *
      * @throws {{invokerPackage}}\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\StoreSegmentResponse[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \DillerAPI\Model\StoreSegmentResponse[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getSegmentsWithHttpInfo($store_id)
+    public function getSegmentsWithHttpInfo($storeId)
     {
-        $returnType = '\Swagger\Client\Model\StoreSegmentResponse[]';
-        $request = $this->getSegmentsRequest($store_id);
+        $returnType = '\DillerAPI\Model\StoreSegmentResponse[]';
+        $request = $this->getSegmentsRequest($storeId);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1271,7 +1271,7 @@ class StoresApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ApiError',
+                        '\DillerAPI\Model\ApiError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1279,7 +1279,7 @@ class StoresApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\StoreSegmentResponse[]',
+                        '\DillerAPI\Model\StoreSegmentResponse[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1294,14 +1294,14 @@ class StoresApi
      *
      * Retrieves all store's segments
      *
-     * @param  string $store_id The Id of the store (required)
+     * @param  string $storeId The Id of the store (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getSegmentsAsync($store_id)
+    public function getSegmentsAsync($storeId)
     {
-        return $this->getSegmentsAsyncWithHttpInfo($store_id)
+        return $this->getSegmentsAsyncWithHttpInfo($storeId)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1314,15 +1314,15 @@ class StoresApi
      *
      * Retrieves all store's segments
      *
-     * @param  string $store_id The Id of the store (required)
+     * @param  string $storeId The Id of the store (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getSegmentsAsyncWithHttpInfo($store_id)
+    public function getSegmentsAsyncWithHttpInfo($storeId)
     {
-        $returnType = '\Swagger\Client\Model\StoreSegmentResponse[]';
-        $request = $this->getSegmentsRequest($store_id);
+        $returnType = '\DillerAPI\Model\StoreSegmentResponse[]';
+        $request = $this->getSegmentsRequest($storeId);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1364,17 +1364,17 @@ class StoresApi
     /**
      * Create request for operation 'getSegments'
      *
-     * @param  string $store_id The Id of the store (required)
+     * @param  string $storeId The Id of the store (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getSegmentsRequest($store_id)
+    protected function getSegmentsRequest($storeId)
     {
-        // verify the required parameter 'store_id' is set
-        if ($store_id === null || (is_array($store_id) && count($store_id) === 0)) {
+        // verify the required parameter 'storeId' is set
+        if ($storeId === null || (is_array($storeId) && count($storeId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $store_id when calling getSegments'
+                'Missing the required parameter $storeId when calling getSegments'
             );
         }
 
@@ -1387,10 +1387,10 @@ class StoresApi
 
 
         // path params
-        if ($store_id !== null) {
+        if ($storeId !== null) {
             $resourcePath = str_replace(
                 '{' . 'storeId' . '}',
-                ObjectSerializer::toPathValue($store_id),
+                ObjectSerializer::toPathValue($storeId),
                 $resourcePath
             );
         }

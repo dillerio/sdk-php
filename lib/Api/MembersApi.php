@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  DillerAPI
  * @author   DILLER AS
  * @link     https://diller.io
  */
@@ -15,7 +15,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Api;
+namespace DillerAPI\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -23,16 +23,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use Swagger\Client\ApiException;
-use Swagger\Client\Configuration;
-use Swagger\Client\HeaderSelector;
-use Swagger\Client\ObjectSerializer;
+use DillerAPI\ApiException;
+use DillerAPI\Configuration;
+use DillerAPI\HeaderSelector;
+use DillerAPI\ObjectSerializer;
 
 /**
  * MembersApi Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  DillerAPI
  * @author   DILLER AS
  * @link     https://diller.io
  */
@@ -81,16 +81,16 @@ class MembersApi
      *
      * This endpoint deletes a member.  Note that while the member may not be immediately removed from the system,  they will be marked for deletion and permanently removed after a period of 10 days.
      *
-     * @param  string $store_id The store id (required)
-     * @param  string $member_id The member id (required)
+     * @param  string $storeId The store id (required)
+     * @param  string $memberId The member id (required)
      *
      * @throws {{invokerPackage}}\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\ActionResponse
+     * @return \DillerAPI\Model\ActionResponse
      */
-    public function deleteMember($store_id, $member_id)
+    public function deleteMember($storeId, $memberId)
     {
-        list($response) = $this->deleteMemberWithHttpInfo($store_id, $member_id);
+        list($response) = $this->deleteMemberWithHttpInfo($storeId, $memberId);
         return $response;
     }
 
@@ -99,17 +99,17 @@ class MembersApi
      *
      * This endpoint deletes a member.  Note that while the member may not be immediately removed from the system,  they will be marked for deletion and permanently removed after a period of 10 days.
      *
-     * @param  string $store_id The store id (required)
-     * @param  string $member_id The member id (required)
+     * @param  string $storeId The store id (required)
+     * @param  string $memberId The member id (required)
      *
      * @throws {{invokerPackage}}\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\ActionResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \DillerAPI\Model\ActionResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteMemberWithHttpInfo($store_id, $member_id)
+    public function deleteMemberWithHttpInfo($storeId, $memberId)
     {
-        $returnType = '\Swagger\Client\Model\ActionResponse';
-        $request = $this->deleteMemberRequest($store_id, $member_id);
+        $returnType = '\DillerAPI\Model\ActionResponse';
+        $request = $this->deleteMemberRequest($storeId, $memberId);
 
         try {
             $options = $this->createHttpClientOption();
@@ -160,7 +160,7 @@ class MembersApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ApiError',
+                        '\DillerAPI\Model\ApiError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -168,7 +168,7 @@ class MembersApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ActionResponse',
+                        '\DillerAPI\Model\ActionResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -183,15 +183,15 @@ class MembersApi
      *
      * This endpoint deletes a member.  Note that while the member may not be immediately removed from the system,  they will be marked for deletion and permanently removed after a period of 10 days.
      *
-     * @param  string $store_id The store id (required)
-     * @param  string $member_id The member id (required)
+     * @param  string $storeId The store id (required)
+     * @param  string $memberId The member id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteMemberAsync($store_id, $member_id)
+    public function deleteMemberAsync($storeId, $memberId)
     {
-        return $this->deleteMemberAsyncWithHttpInfo($store_id, $member_id)
+        return $this->deleteMemberAsyncWithHttpInfo($storeId, $memberId)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -204,16 +204,16 @@ class MembersApi
      *
      * This endpoint deletes a member.  Note that while the member may not be immediately removed from the system,  they will be marked for deletion and permanently removed after a period of 10 days.
      *
-     * @param  string $store_id The store id (required)
-     * @param  string $member_id The member id (required)
+     * @param  string $storeId The store id (required)
+     * @param  string $memberId The member id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteMemberAsyncWithHttpInfo($store_id, $member_id)
+    public function deleteMemberAsyncWithHttpInfo($storeId, $memberId)
     {
-        $returnType = '\Swagger\Client\Model\ActionResponse';
-        $request = $this->deleteMemberRequest($store_id, $member_id);
+        $returnType = '\DillerAPI\Model\ActionResponse';
+        $request = $this->deleteMemberRequest($storeId, $memberId);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -255,24 +255,24 @@ class MembersApi
     /**
      * Create request for operation 'deleteMember'
      *
-     * @param  string $store_id The store id (required)
-     * @param  string $member_id The member id (required)
+     * @param  string $storeId The store id (required)
+     * @param  string $memberId The member id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function deleteMemberRequest($store_id, $member_id)
+    protected function deleteMemberRequest($storeId, $memberId)
     {
-        // verify the required parameter 'store_id' is set
-        if ($store_id === null || (is_array($store_id) && count($store_id) === 0)) {
+        // verify the required parameter 'storeId' is set
+        if ($storeId === null || (is_array($storeId) && count($storeId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $store_id when calling deleteMember'
+                'Missing the required parameter $storeId when calling deleteMember'
             );
         }
-        // verify the required parameter 'member_id' is set
-        if ($member_id === null || (is_array($member_id) && count($member_id) === 0)) {
+        // verify the required parameter 'memberId' is set
+        if ($memberId === null || (is_array($memberId) && count($memberId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $member_id when calling deleteMember'
+                'Missing the required parameter $memberId when calling deleteMember'
             );
         }
 
@@ -285,18 +285,18 @@ class MembersApi
 
 
         // path params
-        if ($store_id !== null) {
+        if ($storeId !== null) {
             $resourcePath = str_replace(
                 '{' . 'storeId' . '}',
-                ObjectSerializer::toPathValue($store_id),
+                ObjectSerializer::toPathValue($storeId),
                 $resourcePath
             );
         }
         // path params
-        if ($member_id !== null) {
+        if ($memberId !== null) {
             $resourcePath = str_replace(
                 '{' . 'memberId' . '}',
-                ObjectSerializer::toPathValue($member_id),
+                ObjectSerializer::toPathValue($memberId),
                 $resourcePath
             );
         }
@@ -381,16 +381,16 @@ class MembersApi
      *
      * Enrolls a member into the Loyalty Program.  This will create a new member in the system and send an activation link via SMS to the member.  If the member already exists, and GDPR is not accepted yet then a new activation link will be sent.  If the store does not have SMS enabled, the activation link will be sent by email.
      *
-     * @param  string $store_id store_id (required)
-     * @param  \Swagger\Client\Model\EnrollMemberRequest $body body (optional)
+     * @param  string $storeId storeId (required)
+     * @param  \DillerAPI\Model\EnrollMemberRequest $body body (optional)
      *
      * @throws {{invokerPackage}}\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\MemberResponse
+     * @return \DillerAPI\Model\MemberResponse
      */
-    public function enrollMember($store_id, $body = null)
+    public function enrollMember($storeId, $body = null)
     {
-        list($response) = $this->enrollMemberWithHttpInfo($store_id, $body);
+        list($response) = $this->enrollMemberWithHttpInfo($storeId, $body);
         return $response;
     }
 
@@ -399,17 +399,17 @@ class MembersApi
      *
      * Enrolls a member into the Loyalty Program.  This will create a new member in the system and send an activation link via SMS to the member.  If the member already exists, and GDPR is not accepted yet then a new activation link will be sent.  If the store does not have SMS enabled, the activation link will be sent by email.
      *
-     * @param  string $store_id (required)
-     * @param  \Swagger\Client\Model\EnrollMemberRequest $body (optional)
+     * @param  string $storeId (required)
+     * @param  \DillerAPI\Model\EnrollMemberRequest $body (optional)
      *
      * @throws {{invokerPackage}}\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\MemberResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \DillerAPI\Model\MemberResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function enrollMemberWithHttpInfo($store_id, $body = null)
+    public function enrollMemberWithHttpInfo($storeId, $body = null)
     {
-        $returnType = '\Swagger\Client\Model\MemberResponse';
-        $request = $this->enrollMemberRequest($store_id, $body);
+        $returnType = '\DillerAPI\Model\MemberResponse';
+        $request = $this->enrollMemberRequest($storeId, $body);
 
         try {
             $options = $this->createHttpClientOption();
@@ -460,7 +460,7 @@ class MembersApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ApiError',
+                        '\DillerAPI\Model\ApiError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -468,7 +468,7 @@ class MembersApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\MemberResponse',
+                        '\DillerAPI\Model\MemberResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -483,15 +483,15 @@ class MembersApi
      *
      * Enrolls a member into the Loyalty Program.  This will create a new member in the system and send an activation link via SMS to the member.  If the member already exists, and GDPR is not accepted yet then a new activation link will be sent.  If the store does not have SMS enabled, the activation link will be sent by email.
      *
-     * @param  string $store_id (required)
-     * @param  \Swagger\Client\Model\EnrollMemberRequest $body (optional)
+     * @param  string $storeId (required)
+     * @param  \DillerAPI\Model\EnrollMemberRequest $body (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function enrollMemberAsync($store_id, $body = null)
+    public function enrollMemberAsync($storeId, $body = null)
     {
-        return $this->enrollMemberAsyncWithHttpInfo($store_id, $body)
+        return $this->enrollMemberAsyncWithHttpInfo($storeId, $body)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -504,16 +504,16 @@ class MembersApi
      *
      * Enrolls a member into the Loyalty Program.  This will create a new member in the system and send an activation link via SMS to the member.  If the member already exists, and GDPR is not accepted yet then a new activation link will be sent.  If the store does not have SMS enabled, the activation link will be sent by email.
      *
-     * @param  string $store_id (required)
-     * @param  \Swagger\Client\Model\EnrollMemberRequest $body (optional)
+     * @param  string $storeId (required)
+     * @param  \DillerAPI\Model\EnrollMemberRequest $body (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function enrollMemberAsyncWithHttpInfo($store_id, $body = null)
+    public function enrollMemberAsyncWithHttpInfo($storeId, $body = null)
     {
-        $returnType = '\Swagger\Client\Model\MemberResponse';
-        $request = $this->enrollMemberRequest($store_id, $body);
+        $returnType = '\DillerAPI\Model\MemberResponse';
+        $request = $this->enrollMemberRequest($storeId, $body);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -555,18 +555,18 @@ class MembersApi
     /**
      * Create request for operation 'enrollMember'
      *
-     * @param  string $store_id (required)
-     * @param  \Swagger\Client\Model\EnrollMemberRequest $body (optional)
+     * @param  string $storeId (required)
+     * @param  \DillerAPI\Model\EnrollMemberRequest $body (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function enrollMemberRequest($store_id, $body = null)
+    protected function enrollMemberRequest($storeId, $body = null)
     {
-        // verify the required parameter 'store_id' is set
-        if ($store_id === null || (is_array($store_id) && count($store_id) === 0)) {
+        // verify the required parameter 'storeId' is set
+        if ($storeId === null || (is_array($storeId) && count($storeId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $store_id when calling enrollMember'
+                'Missing the required parameter $storeId when calling enrollMember'
             );
         }
 
@@ -579,10 +579,10 @@ class MembersApi
 
 
         // path params
-        if ($store_id !== null) {
+        if ($storeId !== null) {
             $resourcePath = str_replace(
                 '{' . 'storeId' . '}',
-                ObjectSerializer::toPathValue($store_id),
+                ObjectSerializer::toPathValue($storeId),
                 $resourcePath
             );
         }
@@ -670,16 +670,16 @@ class MembersApi
      *
      * Retrieves a member's dependents
      *
-     * @param  string $store_id The Store id (required)
-     * @param  string $member_id The member id (required)
+     * @param  string $storeId The Store id (required)
+     * @param  string $memberId The member id (required)
      *
      * @throws {{invokerPackage}}\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\Dependent[]
+     * @return \DillerAPI\Model\Dependent[]
      */
-    public function getDependents($store_id, $member_id)
+    public function getDependents($storeId, $memberId)
     {
-        list($response) = $this->getDependentsWithHttpInfo($store_id, $member_id);
+        list($response) = $this->getDependentsWithHttpInfo($storeId, $memberId);
         return $response;
     }
 
@@ -688,17 +688,17 @@ class MembersApi
      *
      * Retrieves a member's dependents
      *
-     * @param  string $store_id The Store id (required)
-     * @param  string $member_id The member id (required)
+     * @param  string $storeId The Store id (required)
+     * @param  string $memberId The member id (required)
      *
      * @throws {{invokerPackage}}\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\Dependent[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \DillerAPI\Model\Dependent[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getDependentsWithHttpInfo($store_id, $member_id)
+    public function getDependentsWithHttpInfo($storeId, $memberId)
     {
-        $returnType = '\Swagger\Client\Model\Dependent[]';
-        $request = $this->getDependentsRequest($store_id, $member_id);
+        $returnType = '\DillerAPI\Model\Dependent[]';
+        $request = $this->getDependentsRequest($storeId, $memberId);
 
         try {
             $options = $this->createHttpClientOption();
@@ -749,7 +749,7 @@ class MembersApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ApiError',
+                        '\DillerAPI\Model\ApiError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -757,7 +757,7 @@ class MembersApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\Dependent[]',
+                        '\DillerAPI\Model\Dependent[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -772,15 +772,15 @@ class MembersApi
      *
      * Retrieves a member's dependents
      *
-     * @param  string $store_id The Store id (required)
-     * @param  string $member_id The member id (required)
+     * @param  string $storeId The Store id (required)
+     * @param  string $memberId The member id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDependentsAsync($store_id, $member_id)
+    public function getDependentsAsync($storeId, $memberId)
     {
-        return $this->getDependentsAsyncWithHttpInfo($store_id, $member_id)
+        return $this->getDependentsAsyncWithHttpInfo($storeId, $memberId)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -793,16 +793,16 @@ class MembersApi
      *
      * Retrieves a member's dependents
      *
-     * @param  string $store_id The Store id (required)
-     * @param  string $member_id The member id (required)
+     * @param  string $storeId The Store id (required)
+     * @param  string $memberId The member id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDependentsAsyncWithHttpInfo($store_id, $member_id)
+    public function getDependentsAsyncWithHttpInfo($storeId, $memberId)
     {
-        $returnType = '\Swagger\Client\Model\Dependent[]';
-        $request = $this->getDependentsRequest($store_id, $member_id);
+        $returnType = '\DillerAPI\Model\Dependent[]';
+        $request = $this->getDependentsRequest($storeId, $memberId);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -844,24 +844,24 @@ class MembersApi
     /**
      * Create request for operation 'getDependents'
      *
-     * @param  string $store_id The Store id (required)
-     * @param  string $member_id The member id (required)
+     * @param  string $storeId The Store id (required)
+     * @param  string $memberId The member id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getDependentsRequest($store_id, $member_id)
+    protected function getDependentsRequest($storeId, $memberId)
     {
-        // verify the required parameter 'store_id' is set
-        if ($store_id === null || (is_array($store_id) && count($store_id) === 0)) {
+        // verify the required parameter 'storeId' is set
+        if ($storeId === null || (is_array($storeId) && count($storeId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $store_id when calling getDependents'
+                'Missing the required parameter $storeId when calling getDependents'
             );
         }
-        // verify the required parameter 'member_id' is set
-        if ($member_id === null || (is_array($member_id) && count($member_id) === 0)) {
+        // verify the required parameter 'memberId' is set
+        if ($memberId === null || (is_array($memberId) && count($memberId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $member_id when calling getDependents'
+                'Missing the required parameter $memberId when calling getDependents'
             );
         }
 
@@ -874,18 +874,18 @@ class MembersApi
 
 
         // path params
-        if ($store_id !== null) {
+        if ($storeId !== null) {
             $resourcePath = str_replace(
                 '{' . 'storeId' . '}',
-                ObjectSerializer::toPathValue($store_id),
+                ObjectSerializer::toPathValue($storeId),
                 $resourcePath
             );
         }
         // path params
-        if ($member_id !== null) {
+        if ($memberId !== null) {
             $resourcePath = str_replace(
                 '{' . 'memberId' . '}',
-                ObjectSerializer::toPathValue($member_id),
+                ObjectSerializer::toPathValue($memberId),
                 $resourcePath
             );
         }
@@ -970,19 +970,19 @@ class MembersApi
      *
      * Searchs members by email, phone number, activation token or any other identifier (country dependant - eg. SSN, licence plate, National ID)
      *
-     * @param  string $store_id The member&#x27;s store id (required)
+     * @param  string $storeId The member&#x27;s store id (required)
      * @param  string $email Email Address of the member (optional)
      * @param  string $phone The phone number can be entered in international format, starting with either \&quot;00\&quot; or \&quot;+\&quot;.              If the phone number is entered in national format, it will be assumed that the number belongs              to the same country as the store (optional)
-     * @param  string $identifier_value The extra identifier of a member defined at the store level. (optional)
-     * @param  string $activation_token The token value for when a member signed up via POS or any other source, that requires an activation step. (optional)
+     * @param  string $identifierValue The extra identifier of a member defined at the store level. (optional)
+     * @param  string $activationToken The token value for when a member signed up via POS or any other source, that requires an activation step. (optional)
      *
      * @throws {{invokerPackage}}\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\MemberResponse[]
+     * @return \DillerAPI\Model\MemberResponse[]
      */
-    public function getMemberByFilter($store_id, $email = null, $phone = null, $identifier_value = null, $activation_token = null)
+    public function getMemberByFilter($storeId, $email = null, $phone = null, $identifierValue = null, $activationToken = null)
     {
-        list($response) = $this->getMemberByFilterWithHttpInfo($store_id, $email, $phone, $identifier_value, $activation_token);
+        list($response) = $this->getMemberByFilterWithHttpInfo($storeId, $email, $phone, $identifierValue, $activationToken);
         return $response;
     }
 
@@ -991,20 +991,20 @@ class MembersApi
      *
      * Searchs members by email, phone number, activation token or any other identifier (country dependant - eg. SSN, licence plate, National ID)
      *
-     * @param  string $store_id The member&#x27;s store id (required)
+     * @param  string $storeId The member&#x27;s store id (required)
      * @param  string $email Email Address of the member (optional)
      * @param  string $phone The phone number can be entered in international format, starting with either \&quot;00\&quot; or \&quot;+\&quot;.              If the phone number is entered in national format, it will be assumed that the number belongs              to the same country as the store (optional)
-     * @param  string $identifier_value The extra identifier of a member defined at the store level. (optional)
-     * @param  string $activation_token The token value for when a member signed up via POS or any other source, that requires an activation step. (optional)
+     * @param  string $identifierValue The extra identifier of a member defined at the store level. (optional)
+     * @param  string $activationToken The token value for when a member signed up via POS or any other source, that requires an activation step. (optional)
      *
      * @throws {{invokerPackage}}\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\MemberResponse[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \DillerAPI\Model\MemberResponse[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getMemberByFilterWithHttpInfo($store_id, $email = null, $phone = null, $identifier_value = null, $activation_token = null)
+    public function getMemberByFilterWithHttpInfo($storeId, $email = null, $phone = null, $identifierValue = null, $activationToken = null)
     {
-        $returnType = '\Swagger\Client\Model\MemberResponse[]';
-        $request = $this->getMemberByFilterRequest($store_id, $email, $phone, $identifier_value, $activation_token);
+        $returnType = '\DillerAPI\Model\MemberResponse[]';
+        $request = $this->getMemberByFilterRequest($storeId, $email, $phone, $identifierValue, $activationToken);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1055,7 +1055,7 @@ class MembersApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ApiError',
+                        '\DillerAPI\Model\ApiError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1063,7 +1063,7 @@ class MembersApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\MemberResponse[]',
+                        '\DillerAPI\Model\MemberResponse[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1078,18 +1078,18 @@ class MembersApi
      *
      * Searchs members by email, phone number, activation token or any other identifier (country dependant - eg. SSN, licence plate, National ID)
      *
-     * @param  string $store_id The member&#x27;s store id (required)
+     * @param  string $storeId The member&#x27;s store id (required)
      * @param  string $email Email Address of the member (optional)
      * @param  string $phone The phone number can be entered in international format, starting with either \&quot;00\&quot; or \&quot;+\&quot;.              If the phone number is entered in national format, it will be assumed that the number belongs              to the same country as the store (optional)
-     * @param  string $identifier_value The extra identifier of a member defined at the store level. (optional)
-     * @param  string $activation_token The token value for when a member signed up via POS or any other source, that requires an activation step. (optional)
+     * @param  string $identifierValue The extra identifier of a member defined at the store level. (optional)
+     * @param  string $activationToken The token value for when a member signed up via POS or any other source, that requires an activation step. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getMemberByFilterAsync($store_id, $email = null, $phone = null, $identifier_value = null, $activation_token = null)
+    public function getMemberByFilterAsync($storeId, $email = null, $phone = null, $identifierValue = null, $activationToken = null)
     {
-        return $this->getMemberByFilterAsyncWithHttpInfo($store_id, $email, $phone, $identifier_value, $activation_token)
+        return $this->getMemberByFilterAsyncWithHttpInfo($storeId, $email, $phone, $identifierValue, $activationToken)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1102,19 +1102,19 @@ class MembersApi
      *
      * Searchs members by email, phone number, activation token or any other identifier (country dependant - eg. SSN, licence plate, National ID)
      *
-     * @param  string $store_id The member&#x27;s store id (required)
+     * @param  string $storeId The member&#x27;s store id (required)
      * @param  string $email Email Address of the member (optional)
      * @param  string $phone The phone number can be entered in international format, starting with either \&quot;00\&quot; or \&quot;+\&quot;.              If the phone number is entered in national format, it will be assumed that the number belongs              to the same country as the store (optional)
-     * @param  string $identifier_value The extra identifier of a member defined at the store level. (optional)
-     * @param  string $activation_token The token value for when a member signed up via POS or any other source, that requires an activation step. (optional)
+     * @param  string $identifierValue The extra identifier of a member defined at the store level. (optional)
+     * @param  string $activationToken The token value for when a member signed up via POS or any other source, that requires an activation step. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getMemberByFilterAsyncWithHttpInfo($store_id, $email = null, $phone = null, $identifier_value = null, $activation_token = null)
+    public function getMemberByFilterAsyncWithHttpInfo($storeId, $email = null, $phone = null, $identifierValue = null, $activationToken = null)
     {
-        $returnType = '\Swagger\Client\Model\MemberResponse[]';
-        $request = $this->getMemberByFilterRequest($store_id, $email, $phone, $identifier_value, $activation_token);
+        $returnType = '\DillerAPI\Model\MemberResponse[]';
+        $request = $this->getMemberByFilterRequest($storeId, $email, $phone, $identifierValue, $activationToken);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1156,21 +1156,21 @@ class MembersApi
     /**
      * Create request for operation 'getMemberByFilter'
      *
-     * @param  string $store_id The member&#x27;s store id (required)
+     * @param  string $storeId The member&#x27;s store id (required)
      * @param  string $email Email Address of the member (optional)
      * @param  string $phone The phone number can be entered in international format, starting with either \&quot;00\&quot; or \&quot;+\&quot;.              If the phone number is entered in national format, it will be assumed that the number belongs              to the same country as the store (optional)
-     * @param  string $identifier_value The extra identifier of a member defined at the store level. (optional)
-     * @param  string $activation_token The token value for when a member signed up via POS or any other source, that requires an activation step. (optional)
+     * @param  string $identifierValue The extra identifier of a member defined at the store level. (optional)
+     * @param  string $activationToken The token value for when a member signed up via POS or any other source, that requires an activation step. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getMemberByFilterRequest($store_id, $email = null, $phone = null, $identifier_value = null, $activation_token = null)
+    protected function getMemberByFilterRequest($storeId, $email = null, $phone = null, $identifierValue = null, $activationToken = null)
     {
-        // verify the required parameter 'store_id' is set
-        if ($store_id === null || (is_array($store_id) && count($store_id) === 0)) {
+        // verify the required parameter 'storeId' is set
+        if ($storeId === null || (is_array($storeId) && count($storeId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $store_id when calling getMemberByFilter'
+                'Missing the required parameter $storeId when calling getMemberByFilter'
             );
         }
 
@@ -1190,19 +1190,19 @@ class MembersApi
             $queryParams['phone'] = ObjectSerializer::toQueryValue($phone);
         }
         // query params
-        if ($identifier_value !== null) {
-            $queryParams['identifierValue'] = ObjectSerializer::toQueryValue($identifier_value);
+        if ($identifierValue !== null) {
+            $queryParams['identifierValue'] = ObjectSerializer::toQueryValue($identifierValue);
         }
         // query params
-        if ($activation_token !== null) {
-            $queryParams['activationToken'] = ObjectSerializer::toQueryValue($activation_token);
+        if ($activationToken !== null) {
+            $queryParams['activationToken'] = ObjectSerializer::toQueryValue($activationToken);
         }
 
         // path params
-        if ($store_id !== null) {
+        if ($storeId !== null) {
             $resourcePath = str_replace(
                 '{' . 'storeId' . '}',
-                ObjectSerializer::toPathValue($store_id),
+                ObjectSerializer::toPathValue($storeId),
                 $resourcePath
             );
         }
@@ -1287,16 +1287,16 @@ class MembersApi
      *
      * Get member by id
      *
-     * @param  string $store_id The id of the store (required)
-     * @param  string $member_id The member Id (required)
+     * @param  string $storeId The id of the store (required)
+     * @param  string $memberId The member Id (required)
      *
      * @throws {{invokerPackage}}\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\MemberResponse
+     * @return \DillerAPI\Model\MemberResponse
      */
-    public function getMemberById($store_id, $member_id)
+    public function getMemberById($storeId, $memberId)
     {
-        list($response) = $this->getMemberByIdWithHttpInfo($store_id, $member_id);
+        list($response) = $this->getMemberByIdWithHttpInfo($storeId, $memberId);
         return $response;
     }
 
@@ -1305,17 +1305,17 @@ class MembersApi
      *
      * Get member by id
      *
-     * @param  string $store_id The id of the store (required)
-     * @param  string $member_id The member Id (required)
+     * @param  string $storeId The id of the store (required)
+     * @param  string $memberId The member Id (required)
      *
      * @throws {{invokerPackage}}\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\MemberResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \DillerAPI\Model\MemberResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getMemberByIdWithHttpInfo($store_id, $member_id)
+    public function getMemberByIdWithHttpInfo($storeId, $memberId)
     {
-        $returnType = '\Swagger\Client\Model\MemberResponse';
-        $request = $this->getMemberByIdRequest($store_id, $member_id);
+        $returnType = '\DillerAPI\Model\MemberResponse';
+        $request = $this->getMemberByIdRequest($storeId, $memberId);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1366,7 +1366,7 @@ class MembersApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ApiError',
+                        '\DillerAPI\Model\ApiError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1374,7 +1374,7 @@ class MembersApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\MemberResponse',
+                        '\DillerAPI\Model\MemberResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1389,15 +1389,15 @@ class MembersApi
      *
      * Get member by id
      *
-     * @param  string $store_id The id of the store (required)
-     * @param  string $member_id The member Id (required)
+     * @param  string $storeId The id of the store (required)
+     * @param  string $memberId The member Id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getMemberByIdAsync($store_id, $member_id)
+    public function getMemberByIdAsync($storeId, $memberId)
     {
-        return $this->getMemberByIdAsyncWithHttpInfo($store_id, $member_id)
+        return $this->getMemberByIdAsyncWithHttpInfo($storeId, $memberId)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1410,16 +1410,16 @@ class MembersApi
      *
      * Get member by id
      *
-     * @param  string $store_id The id of the store (required)
-     * @param  string $member_id The member Id (required)
+     * @param  string $storeId The id of the store (required)
+     * @param  string $memberId The member Id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getMemberByIdAsyncWithHttpInfo($store_id, $member_id)
+    public function getMemberByIdAsyncWithHttpInfo($storeId, $memberId)
     {
-        $returnType = '\Swagger\Client\Model\MemberResponse';
-        $request = $this->getMemberByIdRequest($store_id, $member_id);
+        $returnType = '\DillerAPI\Model\MemberResponse';
+        $request = $this->getMemberByIdRequest($storeId, $memberId);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1461,24 +1461,24 @@ class MembersApi
     /**
      * Create request for operation 'getMemberById'
      *
-     * @param  string $store_id The id of the store (required)
-     * @param  string $member_id The member Id (required)
+     * @param  string $storeId The id of the store (required)
+     * @param  string $memberId The member Id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getMemberByIdRequest($store_id, $member_id)
+    protected function getMemberByIdRequest($storeId, $memberId)
     {
-        // verify the required parameter 'store_id' is set
-        if ($store_id === null || (is_array($store_id) && count($store_id) === 0)) {
+        // verify the required parameter 'storeId' is set
+        if ($storeId === null || (is_array($storeId) && count($storeId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $store_id when calling getMemberById'
+                'Missing the required parameter $storeId when calling getMemberById'
             );
         }
-        // verify the required parameter 'member_id' is set
-        if ($member_id === null || (is_array($member_id) && count($member_id) === 0)) {
+        // verify the required parameter 'memberId' is set
+        if ($memberId === null || (is_array($memberId) && count($memberId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $member_id when calling getMemberById'
+                'Missing the required parameter $memberId when calling getMemberById'
             );
         }
 
@@ -1491,18 +1491,18 @@ class MembersApi
 
 
         // path params
-        if ($store_id !== null) {
+        if ($storeId !== null) {
             $resourcePath = str_replace(
                 '{' . 'storeId' . '}',
-                ObjectSerializer::toPathValue($store_id),
+                ObjectSerializer::toPathValue($storeId),
                 $resourcePath
             );
         }
         // path params
-        if ($member_id !== null) {
+        if ($memberId !== null) {
             $resourcePath = str_replace(
                 '{' . 'memberId' . '}',
-                ObjectSerializer::toPathValue($member_id),
+                ObjectSerializer::toPathValue($memberId),
                 $resourcePath
             );
         }
@@ -1587,16 +1587,16 @@ class MembersApi
      *
      * Get member widget details
      *
-     * @param  string $store_id store_id (required)
-     * @param  string $member_id The id of the member (required)
+     * @param  string $storeId storeId (required)
+     * @param  string $memberId The id of the member (required)
      *
      * @throws {{invokerPackage}}\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\MemberProfileWidgetResponse
+     * @return \DillerAPI\Model\MemberProfileWidgetResponse
      */
-    public function getWidgetProfile($store_id, $member_id)
+    public function getWidgetProfile($storeId, $memberId)
     {
-        list($response) = $this->getWidgetProfileWithHttpInfo($store_id, $member_id);
+        list($response) = $this->getWidgetProfileWithHttpInfo($storeId, $memberId);
         return $response;
     }
 
@@ -1605,17 +1605,17 @@ class MembersApi
      *
      * Get member widget details
      *
-     * @param  string $store_id (required)
-     * @param  string $member_id The id of the member (required)
+     * @param  string $storeId (required)
+     * @param  string $memberId The id of the member (required)
      *
      * @throws {{invokerPackage}}\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\MemberProfileWidgetResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \DillerAPI\Model\MemberProfileWidgetResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getWidgetProfileWithHttpInfo($store_id, $member_id)
+    public function getWidgetProfileWithHttpInfo($storeId, $memberId)
     {
-        $returnType = '\Swagger\Client\Model\MemberProfileWidgetResponse';
-        $request = $this->getWidgetProfileRequest($store_id, $member_id);
+        $returnType = '\DillerAPI\Model\MemberProfileWidgetResponse';
+        $request = $this->getWidgetProfileRequest($storeId, $memberId);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1666,7 +1666,7 @@ class MembersApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ApiError',
+                        '\DillerAPI\Model\ApiError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1674,7 +1674,7 @@ class MembersApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\MemberProfileWidgetResponse',
+                        '\DillerAPI\Model\MemberProfileWidgetResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1689,15 +1689,15 @@ class MembersApi
      *
      * Get member widget details
      *
-     * @param  string $store_id (required)
-     * @param  string $member_id The id of the member (required)
+     * @param  string $storeId (required)
+     * @param  string $memberId The id of the member (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getWidgetProfileAsync($store_id, $member_id)
+    public function getWidgetProfileAsync($storeId, $memberId)
     {
-        return $this->getWidgetProfileAsyncWithHttpInfo($store_id, $member_id)
+        return $this->getWidgetProfileAsyncWithHttpInfo($storeId, $memberId)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1710,16 +1710,16 @@ class MembersApi
      *
      * Get member widget details
      *
-     * @param  string $store_id (required)
-     * @param  string $member_id The id of the member (required)
+     * @param  string $storeId (required)
+     * @param  string $memberId The id of the member (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getWidgetProfileAsyncWithHttpInfo($store_id, $member_id)
+    public function getWidgetProfileAsyncWithHttpInfo($storeId, $memberId)
     {
-        $returnType = '\Swagger\Client\Model\MemberProfileWidgetResponse';
-        $request = $this->getWidgetProfileRequest($store_id, $member_id);
+        $returnType = '\DillerAPI\Model\MemberProfileWidgetResponse';
+        $request = $this->getWidgetProfileRequest($storeId, $memberId);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1761,24 +1761,24 @@ class MembersApi
     /**
      * Create request for operation 'getWidgetProfile'
      *
-     * @param  string $store_id (required)
-     * @param  string $member_id The id of the member (required)
+     * @param  string $storeId (required)
+     * @param  string $memberId The id of the member (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getWidgetProfileRequest($store_id, $member_id)
+    protected function getWidgetProfileRequest($storeId, $memberId)
     {
-        // verify the required parameter 'store_id' is set
-        if ($store_id === null || (is_array($store_id) && count($store_id) === 0)) {
+        // verify the required parameter 'storeId' is set
+        if ($storeId === null || (is_array($storeId) && count($storeId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $store_id when calling getWidgetProfile'
+                'Missing the required parameter $storeId when calling getWidgetProfile'
             );
         }
-        // verify the required parameter 'member_id' is set
-        if ($member_id === null || (is_array($member_id) && count($member_id) === 0)) {
+        // verify the required parameter 'memberId' is set
+        if ($memberId === null || (is_array($memberId) && count($memberId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $member_id when calling getWidgetProfile'
+                'Missing the required parameter $memberId when calling getWidgetProfile'
             );
         }
 
@@ -1791,18 +1791,18 @@ class MembersApi
 
 
         // path params
-        if ($store_id !== null) {
+        if ($storeId !== null) {
             $resourcePath = str_replace(
                 '{' . 'storeId' . '}',
-                ObjectSerializer::toPathValue($store_id),
+                ObjectSerializer::toPathValue($storeId),
                 $resourcePath
             );
         }
         // path params
-        if ($member_id !== null) {
+        if ($memberId !== null) {
             $resourcePath = str_replace(
                 '{' . 'memberId' . '}',
-                ObjectSerializer::toPathValue($member_id),
+                ObjectSerializer::toPathValue($memberId),
                 $resourcePath
             );
         }
@@ -1887,16 +1887,16 @@ class MembersApi
      *
      * Sends a login OTP code that allows the member to login without the password.
      *
-     * @param  string $store_id The store Id (required)
-     * @param  string $member_id The member Id (required)
+     * @param  string $storeId The store Id (required)
+     * @param  string $memberId The member Id (required)
      *
      * @throws {{invokerPackage}}\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\ActionResponse
+     * @return \DillerAPI\Model\ActionResponse
      */
-    public function loginOTP($store_id, $member_id)
+    public function loginOTP($storeId, $memberId)
     {
-        list($response) = $this->loginOTPWithHttpInfo($store_id, $member_id);
+        list($response) = $this->loginOTPWithHttpInfo($storeId, $memberId);
         return $response;
     }
 
@@ -1905,17 +1905,17 @@ class MembersApi
      *
      * Sends a login OTP code that allows the member to login without the password.
      *
-     * @param  string $store_id The store Id (required)
-     * @param  string $member_id The member Id (required)
+     * @param  string $storeId The store Id (required)
+     * @param  string $memberId The member Id (required)
      *
      * @throws {{invokerPackage}}\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\ActionResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \DillerAPI\Model\ActionResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function loginOTPWithHttpInfo($store_id, $member_id)
+    public function loginOTPWithHttpInfo($storeId, $memberId)
     {
-        $returnType = '\Swagger\Client\Model\ActionResponse';
-        $request = $this->loginOTPRequest($store_id, $member_id);
+        $returnType = '\DillerAPI\Model\ActionResponse';
+        $request = $this->loginOTPRequest($storeId, $memberId);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1966,7 +1966,7 @@ class MembersApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ApiError',
+                        '\DillerAPI\Model\ApiError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1974,7 +1974,7 @@ class MembersApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ActionResponse',
+                        '\DillerAPI\Model\ActionResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1989,15 +1989,15 @@ class MembersApi
      *
      * Sends a login OTP code that allows the member to login without the password.
      *
-     * @param  string $store_id The store Id (required)
-     * @param  string $member_id The member Id (required)
+     * @param  string $storeId The store Id (required)
+     * @param  string $memberId The member Id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function loginOTPAsync($store_id, $member_id)
+    public function loginOTPAsync($storeId, $memberId)
     {
-        return $this->loginOTPAsyncWithHttpInfo($store_id, $member_id)
+        return $this->loginOTPAsyncWithHttpInfo($storeId, $memberId)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2010,16 +2010,16 @@ class MembersApi
      *
      * Sends a login OTP code that allows the member to login without the password.
      *
-     * @param  string $store_id The store Id (required)
-     * @param  string $member_id The member Id (required)
+     * @param  string $storeId The store Id (required)
+     * @param  string $memberId The member Id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function loginOTPAsyncWithHttpInfo($store_id, $member_id)
+    public function loginOTPAsyncWithHttpInfo($storeId, $memberId)
     {
-        $returnType = '\Swagger\Client\Model\ActionResponse';
-        $request = $this->loginOTPRequest($store_id, $member_id);
+        $returnType = '\DillerAPI\Model\ActionResponse';
+        $request = $this->loginOTPRequest($storeId, $memberId);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2061,24 +2061,24 @@ class MembersApi
     /**
      * Create request for operation 'loginOTP'
      *
-     * @param  string $store_id The store Id (required)
-     * @param  string $member_id The member Id (required)
+     * @param  string $storeId The store Id (required)
+     * @param  string $memberId The member Id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function loginOTPRequest($store_id, $member_id)
+    protected function loginOTPRequest($storeId, $memberId)
     {
-        // verify the required parameter 'store_id' is set
-        if ($store_id === null || (is_array($store_id) && count($store_id) === 0)) {
+        // verify the required parameter 'storeId' is set
+        if ($storeId === null || (is_array($storeId) && count($storeId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $store_id when calling loginOTP'
+                'Missing the required parameter $storeId when calling loginOTP'
             );
         }
-        // verify the required parameter 'member_id' is set
-        if ($member_id === null || (is_array($member_id) && count($member_id) === 0)) {
+        // verify the required parameter 'memberId' is set
+        if ($memberId === null || (is_array($memberId) && count($memberId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $member_id when calling loginOTP'
+                'Missing the required parameter $memberId when calling loginOTP'
             );
         }
 
@@ -2091,18 +2091,18 @@ class MembersApi
 
 
         // path params
-        if ($store_id !== null) {
+        if ($storeId !== null) {
             $resourcePath = str_replace(
                 '{' . 'storeId' . '}',
-                ObjectSerializer::toPathValue($store_id),
+                ObjectSerializer::toPathValue($storeId),
                 $resourcePath
             );
         }
         // path params
-        if ($member_id !== null) {
+        if ($memberId !== null) {
             $resourcePath = str_replace(
                 '{' . 'memberId' . '}',
-                ObjectSerializer::toPathValue($member_id),
+                ObjectSerializer::toPathValue($memberId),
                 $resourcePath
             );
         }
@@ -2187,17 +2187,17 @@ class MembersApi
      *
      * Handles the verification of a One-Time Password (OTP) code during the login process.
      *
-     * @param  string $store_id The store Id (required)
-     * @param  string $member_id The member Id (required)
-     * @param  \Swagger\Client\Model\LoginOtpVerificationRequest $body Otp code generated previously using the endpoint /login-otp (optional)
+     * @param  string $storeId The store Id (required)
+     * @param  string $memberId The member Id (required)
+     * @param  \DillerAPI\Model\LoginOtpVerificationRequest $body Otp code generated previously using the endpoint /login-otp (optional)
      *
      * @throws {{invokerPackage}}\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\ActionResponse
+     * @return \DillerAPI\Model\ActionResponse
      */
-    public function loginOtpVerification($store_id, $member_id, $body = null)
+    public function loginOtpVerification($storeId, $memberId, $body = null)
     {
-        list($response) = $this->loginOtpVerificationWithHttpInfo($store_id, $member_id, $body);
+        list($response) = $this->loginOtpVerificationWithHttpInfo($storeId, $memberId, $body);
         return $response;
     }
 
@@ -2206,18 +2206,18 @@ class MembersApi
      *
      * Handles the verification of a One-Time Password (OTP) code during the login process.
      *
-     * @param  string $store_id The store Id (required)
-     * @param  string $member_id The member Id (required)
-     * @param  \Swagger\Client\Model\LoginOtpVerificationRequest $body Otp code generated previously using the endpoint /login-otp (optional)
+     * @param  string $storeId The store Id (required)
+     * @param  string $memberId The member Id (required)
+     * @param  \DillerAPI\Model\LoginOtpVerificationRequest $body Otp code generated previously using the endpoint /login-otp (optional)
      *
      * @throws {{invokerPackage}}\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\ActionResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \DillerAPI\Model\ActionResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function loginOtpVerificationWithHttpInfo($store_id, $member_id, $body = null)
+    public function loginOtpVerificationWithHttpInfo($storeId, $memberId, $body = null)
     {
-        $returnType = '\Swagger\Client\Model\ActionResponse';
-        $request = $this->loginOtpVerificationRequest($store_id, $member_id, $body);
+        $returnType = '\DillerAPI\Model\ActionResponse';
+        $request = $this->loginOtpVerificationRequest($storeId, $memberId, $body);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2268,7 +2268,7 @@ class MembersApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ApiError',
+                        '\DillerAPI\Model\ApiError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2276,7 +2276,7 @@ class MembersApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ActionResponse',
+                        '\DillerAPI\Model\ActionResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2291,16 +2291,16 @@ class MembersApi
      *
      * Handles the verification of a One-Time Password (OTP) code during the login process.
      *
-     * @param  string $store_id The store Id (required)
-     * @param  string $member_id The member Id (required)
-     * @param  \Swagger\Client\Model\LoginOtpVerificationRequest $body Otp code generated previously using the endpoint /login-otp (optional)
+     * @param  string $storeId The store Id (required)
+     * @param  string $memberId The member Id (required)
+     * @param  \DillerAPI\Model\LoginOtpVerificationRequest $body Otp code generated previously using the endpoint /login-otp (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function loginOtpVerificationAsync($store_id, $member_id, $body = null)
+    public function loginOtpVerificationAsync($storeId, $memberId, $body = null)
     {
-        return $this->loginOtpVerificationAsyncWithHttpInfo($store_id, $member_id, $body)
+        return $this->loginOtpVerificationAsyncWithHttpInfo($storeId, $memberId, $body)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2313,17 +2313,17 @@ class MembersApi
      *
      * Handles the verification of a One-Time Password (OTP) code during the login process.
      *
-     * @param  string $store_id The store Id (required)
-     * @param  string $member_id The member Id (required)
-     * @param  \Swagger\Client\Model\LoginOtpVerificationRequest $body Otp code generated previously using the endpoint /login-otp (optional)
+     * @param  string $storeId The store Id (required)
+     * @param  string $memberId The member Id (required)
+     * @param  \DillerAPI\Model\LoginOtpVerificationRequest $body Otp code generated previously using the endpoint /login-otp (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function loginOtpVerificationAsyncWithHttpInfo($store_id, $member_id, $body = null)
+    public function loginOtpVerificationAsyncWithHttpInfo($storeId, $memberId, $body = null)
     {
-        $returnType = '\Swagger\Client\Model\ActionResponse';
-        $request = $this->loginOtpVerificationRequest($store_id, $member_id, $body);
+        $returnType = '\DillerAPI\Model\ActionResponse';
+        $request = $this->loginOtpVerificationRequest($storeId, $memberId, $body);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2365,25 +2365,25 @@ class MembersApi
     /**
      * Create request for operation 'loginOtpVerification'
      *
-     * @param  string $store_id The store Id (required)
-     * @param  string $member_id The member Id (required)
-     * @param  \Swagger\Client\Model\LoginOtpVerificationRequest $body Otp code generated previously using the endpoint /login-otp (optional)
+     * @param  string $storeId The store Id (required)
+     * @param  string $memberId The member Id (required)
+     * @param  \DillerAPI\Model\LoginOtpVerificationRequest $body Otp code generated previously using the endpoint /login-otp (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function loginOtpVerificationRequest($store_id, $member_id, $body = null)
+    protected function loginOtpVerificationRequest($storeId, $memberId, $body = null)
     {
-        // verify the required parameter 'store_id' is set
-        if ($store_id === null || (is_array($store_id) && count($store_id) === 0)) {
+        // verify the required parameter 'storeId' is set
+        if ($storeId === null || (is_array($storeId) && count($storeId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $store_id when calling loginOtpVerification'
+                'Missing the required parameter $storeId when calling loginOtpVerification'
             );
         }
-        // verify the required parameter 'member_id' is set
-        if ($member_id === null || (is_array($member_id) && count($member_id) === 0)) {
+        // verify the required parameter 'memberId' is set
+        if ($memberId === null || (is_array($memberId) && count($memberId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $member_id when calling loginOtpVerification'
+                'Missing the required parameter $memberId when calling loginOtpVerification'
             );
         }
 
@@ -2396,18 +2396,18 @@ class MembersApi
 
 
         // path params
-        if ($store_id !== null) {
+        if ($storeId !== null) {
             $resourcePath = str_replace(
                 '{' . 'storeId' . '}',
-                ObjectSerializer::toPathValue($store_id),
+                ObjectSerializer::toPathValue($storeId),
                 $resourcePath
             );
         }
         // path params
-        if ($member_id !== null) {
+        if ($memberId !== null) {
             $resourcePath = str_replace(
                 '{' . 'memberId' . '}',
-                ObjectSerializer::toPathValue($member_id),
+                ObjectSerializer::toPathValue($memberId),
                 $resourcePath
             );
         }
@@ -2495,16 +2495,16 @@ class MembersApi
      *
      * Adds a new member to the store.  This will create a new member and automatically add him to the Loyalty Program, followed by a welcome SMS.  If the store is not configured to send SMS, a welcome email is sent instead.
      *
-     * @param  string $store_id The store id (required)
-     * @param  \Swagger\Client\Model\RegisterMemberRequest $body body (optional)
+     * @param  string $storeId The store id (required)
+     * @param  \DillerAPI\Model\RegisterMemberRequest $body body (optional)
      *
      * @throws {{invokerPackage}}\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\MemberResponse
+     * @return \DillerAPI\Model\MemberResponse
      */
-    public function registerMember($store_id, $body = null)
+    public function registerMember($storeId, $body = null)
     {
-        list($response) = $this->registerMemberWithHttpInfo($store_id, $body);
+        list($response) = $this->registerMemberWithHttpInfo($storeId, $body);
         return $response;
     }
 
@@ -2513,17 +2513,17 @@ class MembersApi
      *
      * Adds a new member to the store.  This will create a new member and automatically add him to the Loyalty Program, followed by a welcome SMS.  If the store is not configured to send SMS, a welcome email is sent instead.
      *
-     * @param  string $store_id The store id (required)
-     * @param  \Swagger\Client\Model\RegisterMemberRequest $body (optional)
+     * @param  string $storeId The store id (required)
+     * @param  \DillerAPI\Model\RegisterMemberRequest $body (optional)
      *
      * @throws {{invokerPackage}}\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\MemberResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \DillerAPI\Model\MemberResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function registerMemberWithHttpInfo($store_id, $body = null)
+    public function registerMemberWithHttpInfo($storeId, $body = null)
     {
-        $returnType = '\Swagger\Client\Model\MemberResponse';
-        $request = $this->registerMemberRequest($store_id, $body);
+        $returnType = '\DillerAPI\Model\MemberResponse';
+        $request = $this->registerMemberRequest($storeId, $body);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2574,7 +2574,7 @@ class MembersApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ApiError',
+                        '\DillerAPI\Model\ApiError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2582,7 +2582,7 @@ class MembersApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\MemberResponse',
+                        '\DillerAPI\Model\MemberResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2597,15 +2597,15 @@ class MembersApi
      *
      * Adds a new member to the store.  This will create a new member and automatically add him to the Loyalty Program, followed by a welcome SMS.  If the store is not configured to send SMS, a welcome email is sent instead.
      *
-     * @param  string $store_id The store id (required)
-     * @param  \Swagger\Client\Model\RegisterMemberRequest $body (optional)
+     * @param  string $storeId The store id (required)
+     * @param  \DillerAPI\Model\RegisterMemberRequest $body (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function registerMemberAsync($store_id, $body = null)
+    public function registerMemberAsync($storeId, $body = null)
     {
-        return $this->registerMemberAsyncWithHttpInfo($store_id, $body)
+        return $this->registerMemberAsyncWithHttpInfo($storeId, $body)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2618,16 +2618,16 @@ class MembersApi
      *
      * Adds a new member to the store.  This will create a new member and automatically add him to the Loyalty Program, followed by a welcome SMS.  If the store is not configured to send SMS, a welcome email is sent instead.
      *
-     * @param  string $store_id The store id (required)
-     * @param  \Swagger\Client\Model\RegisterMemberRequest $body (optional)
+     * @param  string $storeId The store id (required)
+     * @param  \DillerAPI\Model\RegisterMemberRequest $body (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function registerMemberAsyncWithHttpInfo($store_id, $body = null)
+    public function registerMemberAsyncWithHttpInfo($storeId, $body = null)
     {
-        $returnType = '\Swagger\Client\Model\MemberResponse';
-        $request = $this->registerMemberRequest($store_id, $body);
+        $returnType = '\DillerAPI\Model\MemberResponse';
+        $request = $this->registerMemberRequest($storeId, $body);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2669,18 +2669,18 @@ class MembersApi
     /**
      * Create request for operation 'registerMember'
      *
-     * @param  string $store_id The store id (required)
-     * @param  \Swagger\Client\Model\RegisterMemberRequest $body (optional)
+     * @param  string $storeId The store id (required)
+     * @param  \DillerAPI\Model\RegisterMemberRequest $body (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function registerMemberRequest($store_id, $body = null)
+    protected function registerMemberRequest($storeId, $body = null)
     {
-        // verify the required parameter 'store_id' is set
-        if ($store_id === null || (is_array($store_id) && count($store_id) === 0)) {
+        // verify the required parameter 'storeId' is set
+        if ($storeId === null || (is_array($storeId) && count($storeId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $store_id when calling registerMember'
+                'Missing the required parameter $storeId when calling registerMember'
             );
         }
 
@@ -2693,10 +2693,10 @@ class MembersApi
 
 
         // path params
-        if ($store_id !== null) {
+        if ($storeId !== null) {
             $resourcePath = str_replace(
                 '{' . 'storeId' . '}',
-                ObjectSerializer::toPathValue($store_id),
+                ObjectSerializer::toPathValue($storeId),
                 $resourcePath
             );
         }
@@ -2784,17 +2784,17 @@ class MembersApi
      *
      * Initiates the process of resetting or changing the member's phone number.
      *
-     * @param  string $store_id The store Id (required)
-     * @param  string $member_id The member Id (required)
-     * @param  \Swagger\Client\Model\Phone $body The new phone number using the international format (optional)
+     * @param  string $storeId The store Id (required)
+     * @param  string $memberId The member Id (required)
+     * @param  \DillerAPI\Model\Phone $body The new phone number using the international format (optional)
      *
      * @throws {{invokerPackage}}\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\ActionResponse
+     * @return \DillerAPI\Model\ActionResponse
      */
-    public function resetPhone($store_id, $member_id, $body = null)
+    public function resetPhone($storeId, $memberId, $body = null)
     {
-        list($response) = $this->resetPhoneWithHttpInfo($store_id, $member_id, $body);
+        list($response) = $this->resetPhoneWithHttpInfo($storeId, $memberId, $body);
         return $response;
     }
 
@@ -2803,18 +2803,18 @@ class MembersApi
      *
      * Initiates the process of resetting or changing the member's phone number.
      *
-     * @param  string $store_id The store Id (required)
-     * @param  string $member_id The member Id (required)
-     * @param  \Swagger\Client\Model\Phone $body The new phone number using the international format (optional)
+     * @param  string $storeId The store Id (required)
+     * @param  string $memberId The member Id (required)
+     * @param  \DillerAPI\Model\Phone $body The new phone number using the international format (optional)
      *
      * @throws {{invokerPackage}}\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\ActionResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \DillerAPI\Model\ActionResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function resetPhoneWithHttpInfo($store_id, $member_id, $body = null)
+    public function resetPhoneWithHttpInfo($storeId, $memberId, $body = null)
     {
-        $returnType = '\Swagger\Client\Model\ActionResponse';
-        $request = $this->resetPhoneRequest($store_id, $member_id, $body);
+        $returnType = '\DillerAPI\Model\ActionResponse';
+        $request = $this->resetPhoneRequest($storeId, $memberId, $body);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2865,7 +2865,7 @@ class MembersApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ApiError',
+                        '\DillerAPI\Model\ApiError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2873,7 +2873,7 @@ class MembersApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ActionResponse',
+                        '\DillerAPI\Model\ActionResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2888,16 +2888,16 @@ class MembersApi
      *
      * Initiates the process of resetting or changing the member's phone number.
      *
-     * @param  string $store_id The store Id (required)
-     * @param  string $member_id The member Id (required)
-     * @param  \Swagger\Client\Model\Phone $body The new phone number using the international format (optional)
+     * @param  string $storeId The store Id (required)
+     * @param  string $memberId The member Id (required)
+     * @param  \DillerAPI\Model\Phone $body The new phone number using the international format (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function resetPhoneAsync($store_id, $member_id, $body = null)
+    public function resetPhoneAsync($storeId, $memberId, $body = null)
     {
-        return $this->resetPhoneAsyncWithHttpInfo($store_id, $member_id, $body)
+        return $this->resetPhoneAsyncWithHttpInfo($storeId, $memberId, $body)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2910,17 +2910,17 @@ class MembersApi
      *
      * Initiates the process of resetting or changing the member's phone number.
      *
-     * @param  string $store_id The store Id (required)
-     * @param  string $member_id The member Id (required)
-     * @param  \Swagger\Client\Model\Phone $body The new phone number using the international format (optional)
+     * @param  string $storeId The store Id (required)
+     * @param  string $memberId The member Id (required)
+     * @param  \DillerAPI\Model\Phone $body The new phone number using the international format (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function resetPhoneAsyncWithHttpInfo($store_id, $member_id, $body = null)
+    public function resetPhoneAsyncWithHttpInfo($storeId, $memberId, $body = null)
     {
-        $returnType = '\Swagger\Client\Model\ActionResponse';
-        $request = $this->resetPhoneRequest($store_id, $member_id, $body);
+        $returnType = '\DillerAPI\Model\ActionResponse';
+        $request = $this->resetPhoneRequest($storeId, $memberId, $body);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2962,25 +2962,25 @@ class MembersApi
     /**
      * Create request for operation 'resetPhone'
      *
-     * @param  string $store_id The store Id (required)
-     * @param  string $member_id The member Id (required)
-     * @param  \Swagger\Client\Model\Phone $body The new phone number using the international format (optional)
+     * @param  string $storeId The store Id (required)
+     * @param  string $memberId The member Id (required)
+     * @param  \DillerAPI\Model\Phone $body The new phone number using the international format (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function resetPhoneRequest($store_id, $member_id, $body = null)
+    protected function resetPhoneRequest($storeId, $memberId, $body = null)
     {
-        // verify the required parameter 'store_id' is set
-        if ($store_id === null || (is_array($store_id) && count($store_id) === 0)) {
+        // verify the required parameter 'storeId' is set
+        if ($storeId === null || (is_array($storeId) && count($storeId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $store_id when calling resetPhone'
+                'Missing the required parameter $storeId when calling resetPhone'
             );
         }
-        // verify the required parameter 'member_id' is set
-        if ($member_id === null || (is_array($member_id) && count($member_id) === 0)) {
+        // verify the required parameter 'memberId' is set
+        if ($memberId === null || (is_array($memberId) && count($memberId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $member_id when calling resetPhone'
+                'Missing the required parameter $memberId when calling resetPhone'
             );
         }
 
@@ -2993,18 +2993,18 @@ class MembersApi
 
 
         // path params
-        if ($store_id !== null) {
+        if ($storeId !== null) {
             $resourcePath = str_replace(
                 '{' . 'storeId' . '}',
-                ObjectSerializer::toPathValue($store_id),
+                ObjectSerializer::toPathValue($storeId),
                 $resourcePath
             );
         }
         // path params
-        if ($member_id !== null) {
+        if ($memberId !== null) {
             $resourcePath = str_replace(
                 '{' . 'memberId' . '}',
-                ObjectSerializer::toPathValue($member_id),
+                ObjectSerializer::toPathValue($memberId),
                 $resourcePath
             );
         }
@@ -3092,17 +3092,17 @@ class MembersApi
      *
      * Finishes the process of resetting or changing the member's phone number.
      *
-     * @param  string $store_id The store Id (required)
-     * @param  string $member_id The member Id (required)
-     * @param  \Swagger\Client\Model\ResetPhoneVerificationRequest $body The new phone number using the international format (optional)
+     * @param  string $storeId The store Id (required)
+     * @param  string $memberId The member Id (required)
+     * @param  \DillerAPI\Model\ResetPhoneVerificationRequest $body The new phone number using the international format (optional)
      *
      * @throws {{invokerPackage}}\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\ActionResponse
+     * @return \DillerAPI\Model\ActionResponse
      */
-    public function resetPhoneVerification($store_id, $member_id, $body = null)
+    public function resetPhoneVerification($storeId, $memberId, $body = null)
     {
-        list($response) = $this->resetPhoneVerificationWithHttpInfo($store_id, $member_id, $body);
+        list($response) = $this->resetPhoneVerificationWithHttpInfo($storeId, $memberId, $body);
         return $response;
     }
 
@@ -3111,18 +3111,18 @@ class MembersApi
      *
      * Finishes the process of resetting or changing the member's phone number.
      *
-     * @param  string $store_id The store Id (required)
-     * @param  string $member_id The member Id (required)
-     * @param  \Swagger\Client\Model\ResetPhoneVerificationRequest $body The new phone number using the international format (optional)
+     * @param  string $storeId The store Id (required)
+     * @param  string $memberId The member Id (required)
+     * @param  \DillerAPI\Model\ResetPhoneVerificationRequest $body The new phone number using the international format (optional)
      *
      * @throws {{invokerPackage}}\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\ActionResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \DillerAPI\Model\ActionResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function resetPhoneVerificationWithHttpInfo($store_id, $member_id, $body = null)
+    public function resetPhoneVerificationWithHttpInfo($storeId, $memberId, $body = null)
     {
-        $returnType = '\Swagger\Client\Model\ActionResponse';
-        $request = $this->resetPhoneVerificationRequest($store_id, $member_id, $body);
+        $returnType = '\DillerAPI\Model\ActionResponse';
+        $request = $this->resetPhoneVerificationRequest($storeId, $memberId, $body);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3173,7 +3173,7 @@ class MembersApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ApiError',
+                        '\DillerAPI\Model\ApiError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3181,7 +3181,7 @@ class MembersApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ActionResponse',
+                        '\DillerAPI\Model\ActionResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3196,16 +3196,16 @@ class MembersApi
      *
      * Finishes the process of resetting or changing the member's phone number.
      *
-     * @param  string $store_id The store Id (required)
-     * @param  string $member_id The member Id (required)
-     * @param  \Swagger\Client\Model\ResetPhoneVerificationRequest $body The new phone number using the international format (optional)
+     * @param  string $storeId The store Id (required)
+     * @param  string $memberId The member Id (required)
+     * @param  \DillerAPI\Model\ResetPhoneVerificationRequest $body The new phone number using the international format (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function resetPhoneVerificationAsync($store_id, $member_id, $body = null)
+    public function resetPhoneVerificationAsync($storeId, $memberId, $body = null)
     {
-        return $this->resetPhoneVerificationAsyncWithHttpInfo($store_id, $member_id, $body)
+        return $this->resetPhoneVerificationAsyncWithHttpInfo($storeId, $memberId, $body)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3218,17 +3218,17 @@ class MembersApi
      *
      * Finishes the process of resetting or changing the member's phone number.
      *
-     * @param  string $store_id The store Id (required)
-     * @param  string $member_id The member Id (required)
-     * @param  \Swagger\Client\Model\ResetPhoneVerificationRequest $body The new phone number using the international format (optional)
+     * @param  string $storeId The store Id (required)
+     * @param  string $memberId The member Id (required)
+     * @param  \DillerAPI\Model\ResetPhoneVerificationRequest $body The new phone number using the international format (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function resetPhoneVerificationAsyncWithHttpInfo($store_id, $member_id, $body = null)
+    public function resetPhoneVerificationAsyncWithHttpInfo($storeId, $memberId, $body = null)
     {
-        $returnType = '\Swagger\Client\Model\ActionResponse';
-        $request = $this->resetPhoneVerificationRequest($store_id, $member_id, $body);
+        $returnType = '\DillerAPI\Model\ActionResponse';
+        $request = $this->resetPhoneVerificationRequest($storeId, $memberId, $body);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3270,25 +3270,25 @@ class MembersApi
     /**
      * Create request for operation 'resetPhoneVerification'
      *
-     * @param  string $store_id The store Id (required)
-     * @param  string $member_id The member Id (required)
-     * @param  \Swagger\Client\Model\ResetPhoneVerificationRequest $body The new phone number using the international format (optional)
+     * @param  string $storeId The store Id (required)
+     * @param  string $memberId The member Id (required)
+     * @param  \DillerAPI\Model\ResetPhoneVerificationRequest $body The new phone number using the international format (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function resetPhoneVerificationRequest($store_id, $member_id, $body = null)
+    protected function resetPhoneVerificationRequest($storeId, $memberId, $body = null)
     {
-        // verify the required parameter 'store_id' is set
-        if ($store_id === null || (is_array($store_id) && count($store_id) === 0)) {
+        // verify the required parameter 'storeId' is set
+        if ($storeId === null || (is_array($storeId) && count($storeId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $store_id when calling resetPhoneVerification'
+                'Missing the required parameter $storeId when calling resetPhoneVerification'
             );
         }
-        // verify the required parameter 'member_id' is set
-        if ($member_id === null || (is_array($member_id) && count($member_id) === 0)) {
+        // verify the required parameter 'memberId' is set
+        if ($memberId === null || (is_array($memberId) && count($memberId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $member_id when calling resetPhoneVerification'
+                'Missing the required parameter $memberId when calling resetPhoneVerification'
             );
         }
 
@@ -3301,18 +3301,18 @@ class MembersApi
 
 
         // path params
-        if ($store_id !== null) {
+        if ($storeId !== null) {
             $resourcePath = str_replace(
                 '{' . 'storeId' . '}',
-                ObjectSerializer::toPathValue($store_id),
+                ObjectSerializer::toPathValue($storeId),
                 $resourcePath
             );
         }
         // path params
-        if ($member_id !== null) {
+        if ($memberId !== null) {
             $resourcePath = str_replace(
                 '{' . 'memberId' . '}',
-                ObjectSerializer::toPathValue($member_id),
+                ObjectSerializer::toPathValue($memberId),
                 $resourcePath
             );
         }
@@ -3400,17 +3400,17 @@ class MembersApi
      *
      * Atomically add, update, or delete dependent objects. The dependent collection should represent all members' dependents.  To add a new dependent, set the id field to 0.  To update a dependent, send the entire dependent object.  To delete a dependent, remove it from the list.
      *
-     * @param  string $store_id The Store Id (required)
-     * @param  string $member_id The Member Id (required)
-     * @param  \Swagger\Client\Model\Dependent[] $body A collection of dependents (optional)
+     * @param  string $storeId The Store Id (required)
+     * @param  string $memberId The Member Id (required)
+     * @param  \DillerAPI\Model\Dependent[] $body A collection of dependents (optional)
      *
      * @throws {{invokerPackage}}\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function updateDependents($store_id, $member_id, $body = null)
+    public function updateDependents($storeId, $memberId, $body = null)
     {
-        $this->updateDependentsWithHttpInfo($store_id, $member_id, $body);
+        $this->updateDependentsWithHttpInfo($storeId, $memberId, $body);
     }
 
     /**
@@ -3418,18 +3418,18 @@ class MembersApi
      *
      * Atomically add, update, or delete dependent objects. The dependent collection should represent all members' dependents.  To add a new dependent, set the id field to 0.  To update a dependent, send the entire dependent object.  To delete a dependent, remove it from the list.
      *
-     * @param  string $store_id The Store Id (required)
-     * @param  string $member_id The Member Id (required)
-     * @param  \Swagger\Client\Model\Dependent[] $body A collection of dependents (optional)
+     * @param  string $storeId The Store Id (required)
+     * @param  string $memberId The Member Id (required)
+     * @param  \DillerAPI\Model\Dependent[] $body A collection of dependents (optional)
      *
      * @throws {{invokerPackage}}\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateDependentsWithHttpInfo($store_id, $member_id, $body = null)
+    public function updateDependentsWithHttpInfo($storeId, $memberId, $body = null)
     {
         $returnType = '';
-        $request = $this->updateDependentsRequest($store_id, $member_id, $body);
+        $request = $this->updateDependentsRequest($storeId, $memberId, $body);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3466,7 +3466,7 @@ class MembersApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ApiError',
+                        '\DillerAPI\Model\ApiError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3481,16 +3481,16 @@ class MembersApi
      *
      * Atomically add, update, or delete dependent objects. The dependent collection should represent all members' dependents.  To add a new dependent, set the id field to 0.  To update a dependent, send the entire dependent object.  To delete a dependent, remove it from the list.
      *
-     * @param  string $store_id The Store Id (required)
-     * @param  string $member_id The Member Id (required)
-     * @param  \Swagger\Client\Model\Dependent[] $body A collection of dependents (optional)
+     * @param  string $storeId The Store Id (required)
+     * @param  string $memberId The Member Id (required)
+     * @param  \DillerAPI\Model\Dependent[] $body A collection of dependents (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateDependentsAsync($store_id, $member_id, $body = null)
+    public function updateDependentsAsync($storeId, $memberId, $body = null)
     {
-        return $this->updateDependentsAsyncWithHttpInfo($store_id, $member_id, $body)
+        return $this->updateDependentsAsyncWithHttpInfo($storeId, $memberId, $body)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3503,17 +3503,17 @@ class MembersApi
      *
      * Atomically add, update, or delete dependent objects. The dependent collection should represent all members' dependents.  To add a new dependent, set the id field to 0.  To update a dependent, send the entire dependent object.  To delete a dependent, remove it from the list.
      *
-     * @param  string $store_id The Store Id (required)
-     * @param  string $member_id The Member Id (required)
-     * @param  \Swagger\Client\Model\Dependent[] $body A collection of dependents (optional)
+     * @param  string $storeId The Store Id (required)
+     * @param  string $memberId The Member Id (required)
+     * @param  \DillerAPI\Model\Dependent[] $body A collection of dependents (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateDependentsAsyncWithHttpInfo($store_id, $member_id, $body = null)
+    public function updateDependentsAsyncWithHttpInfo($storeId, $memberId, $body = null)
     {
         $returnType = '';
-        $request = $this->updateDependentsRequest($store_id, $member_id, $body);
+        $request = $this->updateDependentsRequest($storeId, $memberId, $body);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3541,25 +3541,25 @@ class MembersApi
     /**
      * Create request for operation 'updateDependents'
      *
-     * @param  string $store_id The Store Id (required)
-     * @param  string $member_id The Member Id (required)
-     * @param  \Swagger\Client\Model\Dependent[] $body A collection of dependents (optional)
+     * @param  string $storeId The Store Id (required)
+     * @param  string $memberId The Member Id (required)
+     * @param  \DillerAPI\Model\Dependent[] $body A collection of dependents (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function updateDependentsRequest($store_id, $member_id, $body = null)
+    protected function updateDependentsRequest($storeId, $memberId, $body = null)
     {
-        // verify the required parameter 'store_id' is set
-        if ($store_id === null || (is_array($store_id) && count($store_id) === 0)) {
+        // verify the required parameter 'storeId' is set
+        if ($storeId === null || (is_array($storeId) && count($storeId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $store_id when calling updateDependents'
+                'Missing the required parameter $storeId when calling updateDependents'
             );
         }
-        // verify the required parameter 'member_id' is set
-        if ($member_id === null || (is_array($member_id) && count($member_id) === 0)) {
+        // verify the required parameter 'memberId' is set
+        if ($memberId === null || (is_array($memberId) && count($memberId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $member_id when calling updateDependents'
+                'Missing the required parameter $memberId when calling updateDependents'
             );
         }
 
@@ -3572,18 +3572,18 @@ class MembersApi
 
 
         // path params
-        if ($store_id !== null) {
+        if ($storeId !== null) {
             $resourcePath = str_replace(
                 '{' . 'storeId' . '}',
-                ObjectSerializer::toPathValue($store_id),
+                ObjectSerializer::toPathValue($storeId),
                 $resourcePath
             );
         }
         // path params
-        if ($member_id !== null) {
+        if ($memberId !== null) {
             $resourcePath = str_replace(
                 '{' . 'memberId' . '}',
-                ObjectSerializer::toPathValue($member_id),
+                ObjectSerializer::toPathValue($memberId),
                 $resourcePath
             );
         }
@@ -3671,17 +3671,17 @@ class MembersApi
      *
      * Updates the member's data that is on the payload.
      *
-     * @param  string $store_id The store id (required)
-     * @param  string $member_id The member id (required)
-     * @param  \Swagger\Client\Model\UpdateMemberRequest $body body (optional)
+     * @param  string $storeId The store id (required)
+     * @param  string $memberId The member id (required)
+     * @param  \DillerAPI\Model\UpdateMemberRequest $body body (optional)
      *
      * @throws {{invokerPackage}}\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\MemberResponse
+     * @return \DillerAPI\Model\MemberResponse
      */
-    public function updateMember($store_id, $member_id, $body = null)
+    public function updateMember($storeId, $memberId, $body = null)
     {
-        list($response) = $this->updateMemberWithHttpInfo($store_id, $member_id, $body);
+        list($response) = $this->updateMemberWithHttpInfo($storeId, $memberId, $body);
         return $response;
     }
 
@@ -3690,18 +3690,18 @@ class MembersApi
      *
      * Updates the member's data that is on the payload.
      *
-     * @param  string $store_id The store id (required)
-     * @param  string $member_id The member id (required)
-     * @param  \Swagger\Client\Model\UpdateMemberRequest $body (optional)
+     * @param  string $storeId The store id (required)
+     * @param  string $memberId The member id (required)
+     * @param  \DillerAPI\Model\UpdateMemberRequest $body (optional)
      *
      * @throws {{invokerPackage}}\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\MemberResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \DillerAPI\Model\MemberResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateMemberWithHttpInfo($store_id, $member_id, $body = null)
+    public function updateMemberWithHttpInfo($storeId, $memberId, $body = null)
     {
-        $returnType = '\Swagger\Client\Model\MemberResponse';
-        $request = $this->updateMemberRequest($store_id, $member_id, $body);
+        $returnType = '\DillerAPI\Model\MemberResponse';
+        $request = $this->updateMemberRequest($storeId, $memberId, $body);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3752,7 +3752,7 @@ class MembersApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ApiError',
+                        '\DillerAPI\Model\ApiError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3760,7 +3760,7 @@ class MembersApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\MemberResponse',
+                        '\DillerAPI\Model\MemberResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3775,16 +3775,16 @@ class MembersApi
      *
      * Updates the member's data that is on the payload.
      *
-     * @param  string $store_id The store id (required)
-     * @param  string $member_id The member id (required)
-     * @param  \Swagger\Client\Model\UpdateMemberRequest $body (optional)
+     * @param  string $storeId The store id (required)
+     * @param  string $memberId The member id (required)
+     * @param  \DillerAPI\Model\UpdateMemberRequest $body (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateMemberAsync($store_id, $member_id, $body = null)
+    public function updateMemberAsync($storeId, $memberId, $body = null)
     {
-        return $this->updateMemberAsyncWithHttpInfo($store_id, $member_id, $body)
+        return $this->updateMemberAsyncWithHttpInfo($storeId, $memberId, $body)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3797,17 +3797,17 @@ class MembersApi
      *
      * Updates the member's data that is on the payload.
      *
-     * @param  string $store_id The store id (required)
-     * @param  string $member_id The member id (required)
-     * @param  \Swagger\Client\Model\UpdateMemberRequest $body (optional)
+     * @param  string $storeId The store id (required)
+     * @param  string $memberId The member id (required)
+     * @param  \DillerAPI\Model\UpdateMemberRequest $body (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateMemberAsyncWithHttpInfo($store_id, $member_id, $body = null)
+    public function updateMemberAsyncWithHttpInfo($storeId, $memberId, $body = null)
     {
-        $returnType = '\Swagger\Client\Model\MemberResponse';
-        $request = $this->updateMemberRequest($store_id, $member_id, $body);
+        $returnType = '\DillerAPI\Model\MemberResponse';
+        $request = $this->updateMemberRequest($storeId, $memberId, $body);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3849,25 +3849,25 @@ class MembersApi
     /**
      * Create request for operation 'updateMember'
      *
-     * @param  string $store_id The store id (required)
-     * @param  string $member_id The member id (required)
-     * @param  \Swagger\Client\Model\UpdateMemberRequest $body (optional)
+     * @param  string $storeId The store id (required)
+     * @param  string $memberId The member id (required)
+     * @param  \DillerAPI\Model\UpdateMemberRequest $body (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function updateMemberRequest($store_id, $member_id, $body = null)
+    protected function updateMemberRequest($storeId, $memberId, $body = null)
     {
-        // verify the required parameter 'store_id' is set
-        if ($store_id === null || (is_array($store_id) && count($store_id) === 0)) {
+        // verify the required parameter 'storeId' is set
+        if ($storeId === null || (is_array($storeId) && count($storeId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $store_id when calling updateMember'
+                'Missing the required parameter $storeId when calling updateMember'
             );
         }
-        // verify the required parameter 'member_id' is set
-        if ($member_id === null || (is_array($member_id) && count($member_id) === 0)) {
+        // verify the required parameter 'memberId' is set
+        if ($memberId === null || (is_array($memberId) && count($memberId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $member_id when calling updateMember'
+                'Missing the required parameter $memberId when calling updateMember'
             );
         }
 
@@ -3880,18 +3880,18 @@ class MembersApi
 
 
         // path params
-        if ($store_id !== null) {
+        if ($storeId !== null) {
             $resourcePath = str_replace(
                 '{' . 'storeId' . '}',
-                ObjectSerializer::toPathValue($store_id),
+                ObjectSerializer::toPathValue($storeId),
                 $resourcePath
             );
         }
         // path params
-        if ($member_id !== null) {
+        if ($memberId !== null) {
             $resourcePath = str_replace(
                 '{' . 'memberId' . '}',
-                ObjectSerializer::toPathValue($member_id),
+                ObjectSerializer::toPathValue($memberId),
                 $resourcePath
             );
         }

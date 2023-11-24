@@ -16,7 +16,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace DillerAPI\Model;
 
 use \ArrayAccess;
 use \DillerAPI\ObjectSerializer;
@@ -25,7 +25,7 @@ use \DillerAPI\ObjectSerializer;
  * ProductDetail Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  DillerAPI
  * @author   DILLER AS
  * @link     https://diller.io
  */
@@ -46,12 +46,12 @@ class ProductDetail implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'external_id' => 'string',
+        'externalId' => 'string',
 'sku' => 'string',
 'name' => 'string',
 'brand' => 'string',
-'category' => '\Swagger\Client\Model\ProductCategory',
-'gtin' => '\Swagger\Client\Model\GlobalProductIdentifier'    ];
+'category' => '\DillerAPI\Model\ProductCategory',
+'gtin' => '\DillerAPI\Model\GlobalProductIdentifier'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -59,7 +59,7 @@ class ProductDetail implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'external_id' => null,
+        'externalId' => null,
 'sku' => null,
 'name' => null,
 'brand' => null,
@@ -93,7 +93,7 @@ class ProductDetail implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'external_id' => 'external_id',
+        'externalId' => 'external_id',
 'sku' => 'sku',
 'name' => 'name',
 'brand' => 'brand',
@@ -106,7 +106,7 @@ class ProductDetail implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'external_id' => 'setExternalId',
+        'externalId' => 'setExternalId',
 'sku' => 'setSku',
 'name' => 'setName',
 'brand' => 'setBrand',
@@ -119,7 +119,7 @@ class ProductDetail implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'external_id' => 'getExternalId',
+        'externalId' => 'getExternalId',
 'sku' => 'getSku',
 'name' => 'getName',
 'brand' => 'getBrand',
@@ -184,7 +184,7 @@ class ProductDetail implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['external_id'] = isset($data['external_id']) ? $data['external_id'] : null;
+        $this->container['externalId'] = isset($data['externalId']) ? $data['externalId'] : null;
         $this->container['sku'] = isset($data['sku']) ? $data['sku'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['brand'] = isset($data['brand']) ? $data['brand'] : null;
@@ -217,25 +217,25 @@ class ProductDetail implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets external_id
+     * Gets externalId
      *
      * @return string
      */
     public function getExternalId()
     {
-        return $this->container['external_id'];
+        return $this->container['externalId'];
     }
 
     /**
-     * Sets external_id
+     * Sets externalId
      *
-     * @param string $external_id Store's Product Id
+     * @param string $externalId Store's Product Id
      *
      * @return $this
      */
-    public function setExternalId($external_id)
+    public function setExternalId($externalId)
     {
-        $this->container['external_id'] = $external_id;
+        $this->container['externalId'] = $externalId;
 
         return $this;
     }
@@ -315,7 +315,7 @@ class ProductDetail implements ModelInterface, ArrayAccess
     /**
      * Gets category
      *
-     * @return \Swagger\Client\Model\ProductCategory
+     * @return \DillerAPI\Model\ProductCategory
      */
     public function getCategory()
     {
@@ -325,7 +325,7 @@ class ProductDetail implements ModelInterface, ArrayAccess
     /**
      * Sets category
      *
-     * @param \Swagger\Client\Model\ProductCategory $category category
+     * @param \DillerAPI\Model\ProductCategory $category category
      *
      * @return $this
      */
@@ -339,7 +339,7 @@ class ProductDetail implements ModelInterface, ArrayAccess
     /**
      * Gets gtin
      *
-     * @return \Swagger\Client\Model\GlobalProductIdentifier
+     * @return \DillerAPI\Model\GlobalProductIdentifier
      */
     public function getGtin()
     {
@@ -349,7 +349,7 @@ class ProductDetail implements ModelInterface, ArrayAccess
     /**
      * Sets gtin
      *
-     * @param \Swagger\Client\Model\GlobalProductIdentifier $gtin gtin
+     * @param \DillerAPI\Model\GlobalProductIdentifier $gtin gtin
      *
      * @return $this
      */
@@ -376,8 +376,9 @@ class ProductDetail implements ModelInterface, ArrayAccess
      *
      * @param integer $offset Offset
      *
+     * @return mixed
      */
-    public function offsetGet($offset)
+    public function offsetGet($offset): mixed
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }

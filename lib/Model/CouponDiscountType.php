@@ -16,14 +16,14 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace DillerAPI\Model;
 use \DillerAPI\ObjectSerializer;
 
 /**
  * CouponDiscountType Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  DillerAPI
  * @author   DILLER AS
  * @link     https://diller.io
  */
@@ -43,10 +43,10 @@ class CouponDiscountType
     public static function getAllowableEnumValues()
     {
         return [
-            self::NOT_DEFINED, 
-            self::PERCENTAGE, 
-            self::FIXED, 
-            self::FREE_SHIPPING, 
+            self::NOT_DEFINED
+            self::PERCENTAGE
+            self::FIXED
+            self::FREE_SHIPPING
         ];
     }
 }

@@ -16,7 +16,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace DillerAPI\Model;
 
 use \ArrayAccess;
 use \DillerAPI\ObjectSerializer;
@@ -25,7 +25,7 @@ use \DillerAPI\ObjectSerializer;
  * Dependent Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  DillerAPI
  * @author   DILLER AS
  * @link     https://diller.io
  */
@@ -49,7 +49,7 @@ class Dependent implements ModelInterface, ArrayAccess
         'id' => 'int',
 'name' => 'string',
 'birthdate' => 'string',
-'gender' => '\Swagger\Client\Model\Gender'    ];
+'gender' => '\DillerAPI\Model\Gender'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -279,7 +279,7 @@ class Dependent implements ModelInterface, ArrayAccess
     /**
      * Gets gender
      *
-     * @return \Swagger\Client\Model\Gender
+     * @return \DillerAPI\Model\Gender
      */
     public function getGender()
     {
@@ -289,7 +289,7 @@ class Dependent implements ModelInterface, ArrayAccess
     /**
      * Sets gender
      *
-     * @param \Swagger\Client\Model\Gender $gender gender
+     * @param \DillerAPI\Model\Gender $gender gender
      *
      * @return $this
      */
@@ -316,8 +316,9 @@ class Dependent implements ModelInterface, ArrayAccess
      *
      * @param integer $offset Offset
      *
+     * @return mixed
      */
-    public function offsetGet($offset)
+    public function offsetGet($offset): mixed
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }

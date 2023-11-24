@@ -1,6 +1,6 @@
 {
-    "name": "diller-loyalty/sdk-php",
-    "version": "v0.1.9",
+    "name": "diller-loyalty/php-sdk",
+    "version": "v0.1.10",
     "description": "PHP SDK for Diller API",
     "keywords": [
         "diller",
@@ -32,7 +32,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Swagger\\Client\\" : "lib/"
+            "DillerAPI\\" : "lib/"
         }
     }
 }
