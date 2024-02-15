@@ -30,18 +30,13 @@ use \DillerAPI\ObjectSerializer;
 class SegmentType
 {
     /**
-     * Possible values of this enum
+     * Possible values for this enum
      */
     public const NUMBER_TEXT = 'Text';
-
     public const NUMBER_DATE_TIME = 'DateTime';
-
     public const NUMBER_RADIO = 'Radio';
-
     public const NUMBER_CHECKBOX = 'Checkbox';
-
     public const NUMBER_DROPDOWN = 'Dropdown';
-
     /**
      * Gets allowable values of the enum
      * @return string[]
@@ -54,7 +49,6 @@ class SegmentType
             self::NUMBER_RADIO
             self::NUMBER_CHECKBOX
             self::NUMBER_DROPDOWN
-
         ];
     }
 }

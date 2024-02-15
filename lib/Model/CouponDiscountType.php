@@ -30,16 +30,12 @@ use \DillerAPI\ObjectSerializer;
 class CouponDiscountType
 {
     /**
-     * Possible values of this enum
+     * Possible values for this enum
      */
     public const NUMBER_NOT_DEFINED = 'NotDefined';
-
     public const NUMBER_PERCENTAGE = 'Percentage';
-
     public const NUMBER_FIXED = 'Fixed';
-
     public const NUMBER_FREE_SHIPPING = 'FreeShipping';
-
     /**
      * Gets allowable values of the enum
      * @return string[]
@@ -51,7 +47,6 @@ class CouponDiscountType
             self::NUMBER_PERCENTAGE
             self::NUMBER_FIXED
             self::NUMBER_FREE_SHIPPING
-
         ];
     }
 }

@@ -30,24 +30,16 @@ use \DillerAPI\ObjectSerializer;
 class CouponType
 {
     /**
-     * Possible values of this enum
+     * Possible values for this enum
      */
     public const NUMBER_STANDARD = 'Standard';
-
     public const NUMBER_WELCOME = 'Welcome';
-
     public const NUMBER_CAMPAIGN = 'Campaign';
-
     public const NUMBER__PUBLIC = 'Public';
-
     public const NUMBER_RECURRING = 'Recurring';
-
     public const NUMBER_BIRTHDAY = 'Birthday';
-
     public const NUMBER_CHILD_BIRTHDAY = 'ChildBirthday';
-
     public const NUMBER_AUTOMATION = 'Automation';
-
     /**
      * Gets allowable values of the enum
      * @return string[]
@@ -63,7 +55,6 @@ class CouponType
             self::NUMBER_BIRTHDAY
             self::NUMBER_CHILD_BIRTHDAY
             self::NUMBER_AUTOMATION
-
         ];
     }
 }
