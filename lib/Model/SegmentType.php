@@ -32,11 +32,16 @@ class SegmentType
     /**
      * Possible values of this enum
      */
-    const TEXT = 'Text';
-    const DATE_TIME = 'DateTime';
-    const RADIO = 'Radio';
-    const CHECKBOX = 'Checkbox';
-    const DROPDOWN = 'Dropdown';
+    public const NUMBER_TEXT = 'Text';
+
+    public const NUMBER_DATE_TIME = 'DateTime';
+
+    public const NUMBER_RADIO = 'Radio';
+
+    public const NUMBER_CHECKBOX = 'Checkbox';
+
+    public const NUMBER_DROPDOWN = 'Dropdown';
+
     /**
      * Gets allowable values of the enum
      * @return string[]
@@ -44,11 +49,12 @@ class SegmentType
     public static function getAllowableEnumValues()
     {
         return [
-            self::TEXT
-            self::DATE_TIME
-            self::RADIO
-            self::CHECKBOX
-            self::DROPDOWN
+            self::NUMBER_TEXT
+            self::NUMBER_DATE_TIME
+            self::NUMBER_RADIO
+            self::NUMBER_CHECKBOX
+            self::NUMBER_DROPDOWN
+
         ];
     }
 }

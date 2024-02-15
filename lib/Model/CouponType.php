@@ -32,14 +32,22 @@ class CouponType
     /**
      * Possible values of this enum
      */
-    const STANDARD = 'Standard';
-    const WELCOME = 'Welcome';
-    const CAMPAIGN = 'Campaign';
-    const _PUBLIC = 'Public';
-    const RECURRING = 'Recurring';
-    const BIRTHDAY = 'Birthday';
-    const CHILD_BIRTHDAY = 'ChildBirthday';
-    const AUTOMATION = 'Automation';
+    public const NUMBER_STANDARD = 'Standard';
+
+    public const NUMBER_WELCOME = 'Welcome';
+
+    public const NUMBER_CAMPAIGN = 'Campaign';
+
+    public const NUMBER__PUBLIC = 'Public';
+
+    public const NUMBER_RECURRING = 'Recurring';
+
+    public const NUMBER_BIRTHDAY = 'Birthday';
+
+    public const NUMBER_CHILD_BIRTHDAY = 'ChildBirthday';
+
+    public const NUMBER_AUTOMATION = 'Automation';
+
     /**
      * Gets allowable values of the enum
      * @return string[]
@@ -47,14 +55,15 @@ class CouponType
     public static function getAllowableEnumValues()
     {
         return [
-            self::STANDARD
-            self::WELCOME
-            self::CAMPAIGN
-            self::_PUBLIC
-            self::RECURRING
-            self::BIRTHDAY
-            self::CHILD_BIRTHDAY
-            self::AUTOMATION
+            self::NUMBER_STANDARD
+            self::NUMBER_WELCOME
+            self::NUMBER_CAMPAIGN
+            self::NUMBER__PUBLIC
+            self::NUMBER_RECURRING
+            self::NUMBER_BIRTHDAY
+            self::NUMBER_CHILD_BIRTHDAY
+            self::NUMBER_AUTOMATION
+
         ];
     }
 }

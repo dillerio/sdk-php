@@ -32,10 +32,14 @@ class CouponDiscountType
     /**
      * Possible values of this enum
      */
-    const NOT_DEFINED = 'NotDefined';
-    const PERCENTAGE = 'Percentage';
-    const FIXED = 'Fixed';
-    const FREE_SHIPPING = 'FreeShipping';
+    public const NUMBER_NOT_DEFINED = 'NotDefined';
+
+    public const NUMBER_PERCENTAGE = 'Percentage';
+
+    public const NUMBER_FIXED = 'Fixed';
+
+    public const NUMBER_FREE_SHIPPING = 'FreeShipping';
+
     /**
      * Gets allowable values of the enum
      * @return string[]
@@ -43,10 +47,11 @@ class CouponDiscountType
     public static function getAllowableEnumValues()
     {
         return [
-            self::NOT_DEFINED
-            self::PERCENTAGE
-            self::FIXED
-            self::FREE_SHIPPING
+            self::NUMBER_NOT_DEFINED
+            self::NUMBER_PERCENTAGE
+            self::NUMBER_FIXED
+            self::NUMBER_FREE_SHIPPING
+
         ];
     }
 }
