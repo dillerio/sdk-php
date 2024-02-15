@@ -39,6 +39,7 @@ class CouponType
     const RECURRING = 'Recurring';
     const BIRTHDAY = 'Birthday';
     const CHILD_BIRTHDAY = 'ChildBirthday';
+    const AUTOMATION = 'Automation';
     /**
      * Gets allowable values of the enum
      * @return string[]
@@ -46,13 +47,14 @@ class CouponType
     public static function getAllowableEnumValues()
     {
         return [
-            self::STANDARD, 
-            self::WELCOME, 
-            self::CAMPAIGN, 
-            self::_PUBLIC, 
-            self::RECURRING, 
-            self::BIRTHDAY, 
-            self::CHILD_BIRTHDAY, 
+            self::STANDARD
+            self::WELCOME
+            self::CAMPAIGN
+            self::_PUBLIC
+            self::RECURRING
+            self::BIRTHDAY
+            self::CHILD_BIRTHDAY
+            self::AUTOMATION
         ];
     }
 }

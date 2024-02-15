@@ -1,6 +1,6 @@
 <?php
 /**
- * MemberIdentifier
+ * UpdateNonEligibleProductRequest
  *
  * PHP version 7.4
  *
@@ -22,14 +22,14 @@ use \ArrayAccess;
 use \DillerAPI\ObjectSerializer;
 
 /**
- * MemberIdentifier Class Doc Comment
+ * UpdateNonEligibleProductRequest Class Doc Comment
  *
  * @category Class
  * @package  DillerAPI
  * @author   DILLER AS
  * @link     https://diller.io
  */
-class MemberIdentifier implements ModelInterface, ArrayAccess
+class UpdateNonEligibleProductRequest implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -38,7 +38,7 @@ class MemberIdentifier implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'MemberIdentifier';
+    protected static $swaggerModelName = 'UpdateNonEligibleProductRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -46,8 +46,12 @@ class MemberIdentifier implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'type' => 'string',
-'isUniquePerCountry' => 'bool'    ];
+        'id' => 'int',
+'productId' => 'string',
+'productIdPrefix' => 'string',
+'description' => 'string',
+'subsystem' => 'string',
+'expiresAt' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -55,8 +59,12 @@ class MemberIdentifier implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'type' => null,
-'isUniquePerCountry' => null    ];
+        'id' => 'int32',
+'productId' => null,
+'productIdPrefix' => null,
+'description' => null,
+'subsystem' => null,
+'expiresAt' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -85,8 +93,12 @@ class MemberIdentifier implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'type' => 'type',
-'isUniquePerCountry' => 'is_unique_per_country'    ];
+        'id' => 'id',
+'productId' => 'product_id',
+'productIdPrefix' => 'product_id_prefix',
+'description' => 'description',
+'subsystem' => 'subsystem',
+'expiresAt' => 'expires_at'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -94,8 +106,12 @@ class MemberIdentifier implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'type' => 'setType',
-'isUniquePerCountry' => 'setIsUniquePerCountry'    ];
+        'id' => 'setId',
+'productId' => 'setProductId',
+'productIdPrefix' => 'setProductIdPrefix',
+'description' => 'setDescription',
+'subsystem' => 'setSubsystem',
+'expiresAt' => 'setExpiresAt'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -103,8 +119,12 @@ class MemberIdentifier implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'type' => 'getType',
-'isUniquePerCountry' => 'getIsUniquePerCountry'    ];
+        'id' => 'getId',
+'productId' => 'getProductId',
+'productIdPrefix' => 'getProductIdPrefix',
+'description' => 'getDescription',
+'subsystem' => 'getSubsystem',
+'expiresAt' => 'getExpiresAt'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -164,8 +184,12 @@ class MemberIdentifier implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
-        $this->container['isUniquePerCountry'] = isset($data['isUniquePerCountry']) ? $data['isUniquePerCountry'] : null;
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
+        $this->container['productId'] = isset($data['productId']) ? $data['productId'] : null;
+        $this->container['productIdPrefix'] = isset($data['productIdPrefix']) ? $data['productIdPrefix'] : null;
+        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
+        $this->container['subsystem'] = isset($data['subsystem']) ? $data['subsystem'] : null;
+        $this->container['expiresAt'] = isset($data['expiresAt']) ? $data['expiresAt'] : null;
     }
 
     /**
@@ -193,49 +217,145 @@ class MemberIdentifier implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets type
+     * Gets id
      *
-     * @return string
+     * @return int
      */
-    public function getType()
+    public function getId()
     {
-        return $this->container['type'];
+        return $this->container['id'];
     }
 
     /**
-     * Sets type
+     * Sets id
      *
-     * @param string $type Defines an additional property by which a member can be searched.   For example: plate Id, National Id, etc.
+     * @param int $id id
      *
      * @return $this
      */
-    public function setType($type)
+    public function setId($id)
     {
-        $this->container['type'] = $type;
+        $this->container['id'] = $id;
 
         return $this;
     }
 
     /**
-     * Gets isUniquePerCountry
+     * Gets productId
      *
-     * @return bool
+     * @return string
      */
-    public function getIsUniquePerCountry()
+    public function getProductId()
     {
-        return $this->container['isUniquePerCountry'];
+        return $this->container['productId'];
     }
 
     /**
-     * Sets isUniquePerCountry
+     * Sets productId
      *
-     * @param bool $isUniquePerCountry Defines whether the member identifier value should be unique per country
+     * @param string $productId The external product id of the non eligible product
      *
      * @return $this
      */
-    public function setIsUniquePerCountry($isUniquePerCountry)
+    public function setProductId($productId)
     {
-        $this->container['isUniquePerCountry'] = $isUniquePerCountry;
+        $this->container['productId'] = $productId;
+
+        return $this;
+    }
+
+    /**
+     * Gets productIdPrefix
+     *
+     * @return string
+     */
+    public function getProductIdPrefix()
+    {
+        return $this->container['productIdPrefix'];
+    }
+
+    /**
+     * Sets productIdPrefix
+     *
+     * @param string $productIdPrefix Prefix for filtering products with matching product IDs prefix.
+     *
+     * @return $this
+     */
+    public function setProductIdPrefix($productIdPrefix)
+    {
+        $this->container['productIdPrefix'] = $productIdPrefix;
+
+        return $this;
+    }
+
+    /**
+     * Gets description
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->container['description'];
+    }
+
+    /**
+     * Sets description
+     *
+     * @param string $description description
+     *
+     * @return $this
+     */
+    public function setDescription($description)
+    {
+        $this->container['description'] = $description;
+
+        return $this;
+    }
+
+    /**
+     * Gets subsystem
+     *
+     * @return string
+     */
+    public function getSubsystem()
+    {
+        return $this->container['subsystem'];
+    }
+
+    /**
+     * Sets subsystem
+     *
+     * @param string $subsystem Options availabe are 'All' - It matchs all subsystems, 'Loyalty' - Regarding loyalty points subsystem,  'Lipscore'
+     *
+     * @return $this
+     */
+    public function setSubsystem($subsystem)
+    {
+        $this->container['subsystem'] = $subsystem;
+
+        return $this;
+    }
+
+    /**
+     * Gets expiresAt
+     *
+     * @return string
+     */
+    public function getExpiresAt()
+    {
+        return $this->container['expiresAt'];
+    }
+
+    /**
+     * Sets expiresAt
+     *
+     * @param string $expiresAt The date when the non-eligible product expires. It should use the format yyyy-MM-dd and be greater than today.
+     *
+     * @return $this
+     */
+    public function setExpiresAt($expiresAt)
+    {
+        $this->container['expiresAt'] = $expiresAt;
 
         return $this;
     }

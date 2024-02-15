@@ -1,6 +1,6 @@
 <?php
 /**
- * MemberIdentifier
+ * UpdateBatchStatus
  *
  * PHP version 7.4
  *
@@ -22,14 +22,14 @@ use \ArrayAccess;
 use \DillerAPI\ObjectSerializer;
 
 /**
- * MemberIdentifier Class Doc Comment
+ * UpdateBatchStatus Class Doc Comment
  *
  * @category Class
  * @package  DillerAPI
  * @author   DILLER AS
  * @link     https://diller.io
  */
-class MemberIdentifier implements ModelInterface, ArrayAccess
+class UpdateBatchStatus implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -38,7 +38,7 @@ class MemberIdentifier implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'MemberIdentifier';
+    protected static $swaggerModelName = 'UpdateBatchStatus';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -46,8 +46,9 @@ class MemberIdentifier implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'type' => 'string',
-'isUniquePerCountry' => 'bool'    ];
+        'id' => 'int',
+'status' => 'bool',
+'errors' => 'string[]'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -55,8 +56,9 @@ class MemberIdentifier implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'type' => null,
-'isUniquePerCountry' => null    ];
+        'id' => 'int32',
+'status' => null,
+'errors' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -85,8 +87,9 @@ class MemberIdentifier implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'type' => 'type',
-'isUniquePerCountry' => 'is_unique_per_country'    ];
+        'id' => 'id',
+'status' => 'status',
+'errors' => 'errors'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -94,8 +97,9 @@ class MemberIdentifier implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'type' => 'setType',
-'isUniquePerCountry' => 'setIsUniquePerCountry'    ];
+        'id' => 'setId',
+'status' => 'setStatus',
+'errors' => 'setErrors'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -103,8 +107,9 @@ class MemberIdentifier implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'type' => 'getType',
-'isUniquePerCountry' => 'getIsUniquePerCountry'    ];
+        'id' => 'getId',
+'status' => 'getStatus',
+'errors' => 'getErrors'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -164,8 +169,9 @@ class MemberIdentifier implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
-        $this->container['isUniquePerCountry'] = isset($data['isUniquePerCountry']) ? $data['isUniquePerCountry'] : null;
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
+        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
+        $this->container['errors'] = isset($data['errors']) ? $data['errors'] : null;
     }
 
     /**
@@ -193,49 +199,73 @@ class MemberIdentifier implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets type
+     * Gets id
      *
-     * @return string
+     * @return int
      */
-    public function getType()
+    public function getId()
     {
-        return $this->container['type'];
+        return $this->container['id'];
     }
 
     /**
-     * Sets type
+     * Sets id
      *
-     * @param string $type Defines an additional property by which a member can be searched.   For example: plate Id, National Id, etc.
+     * @param int $id id
      *
      * @return $this
      */
-    public function setType($type)
+    public function setId($id)
     {
-        $this->container['type'] = $type;
+        $this->container['id'] = $id;
 
         return $this;
     }
 
     /**
-     * Gets isUniquePerCountry
+     * Gets status
      *
      * @return bool
      */
-    public function getIsUniquePerCountry()
+    public function getStatus()
     {
-        return $this->container['isUniquePerCountry'];
+        return $this->container['status'];
     }
 
     /**
-     * Sets isUniquePerCountry
+     * Sets status
      *
-     * @param bool $isUniquePerCountry Defines whether the member identifier value should be unique per country
+     * @param bool $status status
      *
      * @return $this
      */
-    public function setIsUniquePerCountry($isUniquePerCountry)
+    public function setStatus($status)
     {
-        $this->container['isUniquePerCountry'] = $isUniquePerCountry;
+        $this->container['status'] = $status;
+
+        return $this;
+    }
+
+    /**
+     * Gets errors
+     *
+     * @return string[]
+     */
+    public function getErrors()
+    {
+        return $this->container['errors'];
+    }
+
+    /**
+     * Sets errors
+     *
+     * @param string[] $errors errors
+     *
+     * @return $this
+     */
+    public function setErrors($errors)
+    {
+        $this->container['errors'] = $errors;
 
         return $this;
     }
