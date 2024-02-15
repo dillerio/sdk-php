@@ -1,6 +1,6 @@
 <?php
 /**
- * ExternalCouponIdentifier
+ * NonEligibleProductResponsePaginatedDataResponse
  *
  * PHP version 7.4
  *
@@ -22,14 +22,14 @@ use \ArrayAccess;
 use \DillerAPI\ObjectSerializer;
 
 /**
- * ExternalCouponIdentifier Class Doc Comment
+ * NonEligibleProductResponsePaginatedDataResponse Class Doc Comment
  *
  * @category Class
  * @package  DillerAPI
  * @author   DILLER AS
  * @link     https://diller.io
  */
-class ExternalCouponIdentifier implements ModelInterface, ArrayAccess
+class NonEligibleProductResponsePaginatedDataResponse implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -38,7 +38,7 @@ class ExternalCouponIdentifier implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ExternalCouponIdentifier';
+    protected static $swaggerModelName = 'NonEligibleProductResponsePaginatedDataResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -46,8 +46,10 @@ class ExternalCouponIdentifier implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'platform' => 'string',
-'externalId' => 'string'    ];
+        'data' => '\DillerAPI\Model\NonEligibleProductResponse[]',
+'totalRecords' => 'int',
+'offset' => 'int',
+'limit' => 'int'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -55,8 +57,10 @@ class ExternalCouponIdentifier implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'platform' => null,
-'externalId' => null    ];
+        'data' => null,
+'totalRecords' => 'int32',
+'offset' => 'int32',
+'limit' => 'int32'    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -85,8 +89,10 @@ class ExternalCouponIdentifier implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'platform' => 'platform',
-'externalId' => 'external_id'    ];
+        'data' => 'data',
+'totalRecords' => 'total_records',
+'offset' => 'offset',
+'limit' => 'limit'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -94,8 +100,10 @@ class ExternalCouponIdentifier implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'platform' => 'setPlatform',
-'externalId' => 'setExternalId'    ];
+        'data' => 'setData',
+'totalRecords' => 'setTotalRecords',
+'offset' => 'setOffset',
+'limit' => 'setLimit'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -103,8 +111,10 @@ class ExternalCouponIdentifier implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'platform' => 'getPlatform',
-'externalId' => 'getExternalId'    ];
+        'data' => 'getData',
+'totalRecords' => 'getTotalRecords',
+'offset' => 'getOffset',
+'limit' => 'getLimit'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -164,8 +174,10 @@ class ExternalCouponIdentifier implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['platform'] = isset($data['platform']) ? $data['platform'] : null;
-        $this->container['externalId'] = isset($data['externalId']) ? $data['externalId'] : null;
+        $this->container['data'] = isset($data['data']) ? $data['data'] : null;
+        $this->container['totalRecords'] = isset($data['totalRecords']) ? $data['totalRecords'] : null;
+        $this->container['offset'] = isset($data['offset']) ? $data['offset'] : null;
+        $this->container['limit'] = isset($data['limit']) ? $data['limit'] : null;
     }
 
     /**
@@ -193,49 +205,97 @@ class ExternalCouponIdentifier implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets platform
+     * Gets data
      *
-     * @return string
+     * @return \DillerAPI\Model\NonEligibleProductResponse[]
      */
-    public function getPlatform()
+    public function getData()
     {
-        return $this->container['platform'];
+        return $this->container['data'];
     }
 
     /**
-     * Sets platform
+     * Sets data
      *
-     * @param string $platform platform
+     * @param \DillerAPI\Model\NonEligibleProductResponse[] $data data
      *
      * @return $this
      */
-    public function setPlatform($platform)
+    public function setData($data)
     {
-        $this->container['platform'] = $platform;
+        $this->container['data'] = $data;
 
         return $this;
     }
 
     /**
-     * Gets externalId
+     * Gets totalRecords
      *
-     * @return string
+     * @return int
      */
-    public function getExternalId()
+    public function getTotalRecords()
     {
-        return $this->container['externalId'];
+        return $this->container['totalRecords'];
     }
 
     /**
-     * Sets externalId
+     * Sets totalRecords
      *
-     * @param string $externalId This is the ID the cupon has in the external system / platform.
+     * @param int $totalRecords totalRecords
      *
      * @return $this
      */
-    public function setExternalId($externalId)
+    public function setTotalRecords($totalRecords)
     {
-        $this->container['externalId'] = $externalId;
+        $this->container['totalRecords'] = $totalRecords;
+
+        return $this;
+    }
+
+    /**
+     * Gets offset
+     *
+     * @return int
+     */
+    public function getOffset()
+    {
+        return $this->container['offset'];
+    }
+
+    /**
+     * Sets offset
+     *
+     * @param int $offset offset
+     *
+     * @return $this
+     */
+    public function setOffset($offset)
+    {
+        $this->container['offset'] = $offset;
+
+        return $this;
+    }
+
+    /**
+     * Gets limit
+     *
+     * @return int
+     */
+    public function getLimit()
+    {
+        return $this->container['limit'];
+    }
+
+    /**
+     * Sets limit
+     *
+     * @param int $limit limit
+     *
+     * @return $this
+     */
+    public function setLimit($limit)
+    {
+        $this->container['limit'] = $limit;
 
         return $this;
     }

@@ -1,6 +1,6 @@
 <?php
 /**
- * ExternalCouponIdentifier
+ * AddNonEligibleProductRequest
  *
  * PHP version 7.4
  *
@@ -22,14 +22,14 @@ use \ArrayAccess;
 use \DillerAPI\ObjectSerializer;
 
 /**
- * ExternalCouponIdentifier Class Doc Comment
+ * AddNonEligibleProductRequest Class Doc Comment
  *
  * @category Class
  * @package  DillerAPI
  * @author   DILLER AS
  * @link     https://diller.io
  */
-class ExternalCouponIdentifier implements ModelInterface, ArrayAccess
+class AddNonEligibleProductRequest implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -38,7 +38,7 @@ class ExternalCouponIdentifier implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ExternalCouponIdentifier';
+    protected static $swaggerModelName = 'AddNonEligibleProductRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -46,8 +46,11 @@ class ExternalCouponIdentifier implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'platform' => 'string',
-'externalId' => 'string'    ];
+        'productId' => 'string',
+'productIdPrefix' => 'string',
+'description' => 'string',
+'subsystem' => 'string',
+'expiresAt' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -55,8 +58,11 @@ class ExternalCouponIdentifier implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'platform' => null,
-'externalId' => null    ];
+        'productId' => null,
+'productIdPrefix' => null,
+'description' => null,
+'subsystem' => null,
+'expiresAt' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -85,8 +91,11 @@ class ExternalCouponIdentifier implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'platform' => 'platform',
-'externalId' => 'external_id'    ];
+        'productId' => 'product_id',
+'productIdPrefix' => 'product_id_prefix',
+'description' => 'description',
+'subsystem' => 'subsystem',
+'expiresAt' => 'expires_at'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -94,8 +103,11 @@ class ExternalCouponIdentifier implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'platform' => 'setPlatform',
-'externalId' => 'setExternalId'    ];
+        'productId' => 'setProductId',
+'productIdPrefix' => 'setProductIdPrefix',
+'description' => 'setDescription',
+'subsystem' => 'setSubsystem',
+'expiresAt' => 'setExpiresAt'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -103,8 +115,11 @@ class ExternalCouponIdentifier implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'platform' => 'getPlatform',
-'externalId' => 'getExternalId'    ];
+        'productId' => 'getProductId',
+'productIdPrefix' => 'getProductIdPrefix',
+'description' => 'getDescription',
+'subsystem' => 'getSubsystem',
+'expiresAt' => 'getExpiresAt'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -164,8 +179,11 @@ class ExternalCouponIdentifier implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['platform'] = isset($data['platform']) ? $data['platform'] : null;
-        $this->container['externalId'] = isset($data['externalId']) ? $data['externalId'] : null;
+        $this->container['productId'] = isset($data['productId']) ? $data['productId'] : null;
+        $this->container['productIdPrefix'] = isset($data['productIdPrefix']) ? $data['productIdPrefix'] : null;
+        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
+        $this->container['subsystem'] = isset($data['subsystem']) ? $data['subsystem'] : null;
+        $this->container['expiresAt'] = isset($data['expiresAt']) ? $data['expiresAt'] : null;
     }
 
     /**
@@ -193,49 +211,121 @@ class ExternalCouponIdentifier implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets platform
+     * Gets productId
      *
      * @return string
      */
-    public function getPlatform()
+    public function getProductId()
     {
-        return $this->container['platform'];
+        return $this->container['productId'];
     }
 
     /**
-     * Sets platform
+     * Sets productId
      *
-     * @param string $platform platform
+     * @param string $productId The external product id of the non eligible product
      *
      * @return $this
      */
-    public function setPlatform($platform)
+    public function setProductId($productId)
     {
-        $this->container['platform'] = $platform;
+        $this->container['productId'] = $productId;
 
         return $this;
     }
 
     /**
-     * Gets externalId
+     * Gets productIdPrefix
      *
      * @return string
      */
-    public function getExternalId()
+    public function getProductIdPrefix()
     {
-        return $this->container['externalId'];
+        return $this->container['productIdPrefix'];
     }
 
     /**
-     * Sets externalId
+     * Sets productIdPrefix
      *
-     * @param string $externalId This is the ID the cupon has in the external system / platform.
+     * @param string $productIdPrefix Prefix for filtering products with matching product IDs prefix.
      *
      * @return $this
      */
-    public function setExternalId($externalId)
+    public function setProductIdPrefix($productIdPrefix)
     {
-        $this->container['externalId'] = $externalId;
+        $this->container['productIdPrefix'] = $productIdPrefix;
+
+        return $this;
+    }
+
+    /**
+     * Gets description
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->container['description'];
+    }
+
+    /**
+     * Sets description
+     *
+     * @param string $description description
+     *
+     * @return $this
+     */
+    public function setDescription($description)
+    {
+        $this->container['description'] = $description;
+
+        return $this;
+    }
+
+    /**
+     * Gets subsystem
+     *
+     * @return string
+     */
+    public function getSubsystem()
+    {
+        return $this->container['subsystem'];
+    }
+
+    /**
+     * Sets subsystem
+     *
+     * @param string $subsystem Options availabe are 'All' - It matchs all subsystems, 'Loyalty' - Regarding loyalty points subsystem,  'Lipscore'
+     *
+     * @return $this
+     */
+    public function setSubsystem($subsystem)
+    {
+        $this->container['subsystem'] = $subsystem;
+
+        return $this;
+    }
+
+    /**
+     * Gets expiresAt
+     *
+     * @return string
+     */
+    public function getExpiresAt()
+    {
+        return $this->container['expiresAt'];
+    }
+
+    /**
+     * Sets expiresAt
+     *
+     * @param string $expiresAt The date when the non-eligible product expires. It should use the format yyyy-MM-dd and be greater than today.
+     *
+     * @return $this
+     */
+    public function setExpiresAt($expiresAt)
+    {
+        $this->container['expiresAt'] = $expiresAt;
 
         return $this;
     }

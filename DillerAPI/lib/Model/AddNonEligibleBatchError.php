@@ -1,6 +1,6 @@
 <?php
 /**
- * ExternalCouponIdentifier
+ * AddNonEligibleBatchError
  *
  * PHP version 7.4
  *
@@ -22,14 +22,14 @@ use \ArrayAccess;
 use \DillerAPI\ObjectSerializer;
 
 /**
- * ExternalCouponIdentifier Class Doc Comment
+ * AddNonEligibleBatchError Class Doc Comment
  *
  * @category Class
  * @package  DillerAPI
  * @author   DILLER AS
  * @link     https://diller.io
  */
-class ExternalCouponIdentifier implements ModelInterface, ArrayAccess
+class AddNonEligibleBatchError implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -38,7 +38,7 @@ class ExternalCouponIdentifier implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ExternalCouponIdentifier';
+    protected static $swaggerModelName = 'AddNonEligibleBatchError';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -46,8 +46,9 @@ class ExternalCouponIdentifier implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'platform' => 'string',
-'externalId' => 'string'    ];
+        'productId' => 'string',
+'productIdPrefix' => 'string',
+'errors' => 'string[]'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -55,8 +56,9 @@ class ExternalCouponIdentifier implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'platform' => null,
-'externalId' => null    ];
+        'productId' => null,
+'productIdPrefix' => null,
+'errors' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -85,8 +87,9 @@ class ExternalCouponIdentifier implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'platform' => 'platform',
-'externalId' => 'external_id'    ];
+        'productId' => 'product_id',
+'productIdPrefix' => 'product_id_prefix',
+'errors' => 'errors'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -94,8 +97,9 @@ class ExternalCouponIdentifier implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'platform' => 'setPlatform',
-'externalId' => 'setExternalId'    ];
+        'productId' => 'setProductId',
+'productIdPrefix' => 'setProductIdPrefix',
+'errors' => 'setErrors'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -103,8 +107,9 @@ class ExternalCouponIdentifier implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'platform' => 'getPlatform',
-'externalId' => 'getExternalId'    ];
+        'productId' => 'getProductId',
+'productIdPrefix' => 'getProductIdPrefix',
+'errors' => 'getErrors'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -164,8 +169,9 @@ class ExternalCouponIdentifier implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['platform'] = isset($data['platform']) ? $data['platform'] : null;
-        $this->container['externalId'] = isset($data['externalId']) ? $data['externalId'] : null;
+        $this->container['productId'] = isset($data['productId']) ? $data['productId'] : null;
+        $this->container['productIdPrefix'] = isset($data['productIdPrefix']) ? $data['productIdPrefix'] : null;
+        $this->container['errors'] = isset($data['errors']) ? $data['errors'] : null;
     }
 
     /**
@@ -193,49 +199,73 @@ class ExternalCouponIdentifier implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets platform
+     * Gets productId
      *
      * @return string
      */
-    public function getPlatform()
+    public function getProductId()
     {
-        return $this->container['platform'];
+        return $this->container['productId'];
     }
 
     /**
-     * Sets platform
+     * Sets productId
      *
-     * @param string $platform platform
+     * @param string $productId productId
      *
      * @return $this
      */
-    public function setPlatform($platform)
+    public function setProductId($productId)
     {
-        $this->container['platform'] = $platform;
+        $this->container['productId'] = $productId;
 
         return $this;
     }
 
     /**
-     * Gets externalId
+     * Gets productIdPrefix
      *
      * @return string
      */
-    public function getExternalId()
+    public function getProductIdPrefix()
     {
-        return $this->container['externalId'];
+        return $this->container['productIdPrefix'];
     }
 
     /**
-     * Sets externalId
+     * Sets productIdPrefix
      *
-     * @param string $externalId This is the ID the cupon has in the external system / platform.
+     * @param string $productIdPrefix productIdPrefix
      *
      * @return $this
      */
-    public function setExternalId($externalId)
+    public function setProductIdPrefix($productIdPrefix)
     {
-        $this->container['externalId'] = $externalId;
+        $this->container['productIdPrefix'] = $productIdPrefix;
+
+        return $this;
+    }
+
+    /**
+     * Gets errors
+     *
+     * @return string[]
+     */
+    public function getErrors()
+    {
+        return $this->container['errors'];
+    }
+
+    /**
+     * Sets errors
+     *
+     * @param string[] $errors errors
+     *
+     * @return $this
+     */
+    public function setErrors($errors)
+    {
+        $this->container['errors'] = $errors;
 
         return $this;
     }
