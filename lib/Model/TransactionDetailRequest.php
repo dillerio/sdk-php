@@ -54,6 +54,7 @@ class TransactionDetailRequest implements ModelInterface, ArrayAccess
 'discount' => 'double',
 'totalPrice' => 'double',
 'stampCardIds' => 'int[]',
+'deductedStampCardIds' => 'int[]',
 'couponCodes' => 'string[]'    ];
 
     /**
@@ -70,6 +71,7 @@ class TransactionDetailRequest implements ModelInterface, ArrayAccess
 'discount' => 'double',
 'totalPrice' => 'double',
 'stampCardIds' => 'int32',
+'deductedStampCardIds' => 'int32',
 'couponCodes' => null    ];
 
     /**
@@ -107,6 +109,7 @@ class TransactionDetailRequest implements ModelInterface, ArrayAccess
 'discount' => 'discount',
 'totalPrice' => 'total_price',
 'stampCardIds' => 'stamp_card_ids',
+'deductedStampCardIds' => 'deducted_stamp_card_ids',
 'couponCodes' => 'coupon_codes'    ];
 
     /**
@@ -123,6 +126,7 @@ class TransactionDetailRequest implements ModelInterface, ArrayAccess
 'discount' => 'setDiscount',
 'totalPrice' => 'setTotalPrice',
 'stampCardIds' => 'setStampCardIds',
+'deductedStampCardIds' => 'setDeductedStampCardIds',
 'couponCodes' => 'setCouponCodes'    ];
 
     /**
@@ -139,6 +143,7 @@ class TransactionDetailRequest implements ModelInterface, ArrayAccess
 'discount' => 'getDiscount',
 'totalPrice' => 'getTotalPrice',
 'stampCardIds' => 'getStampCardIds',
+'deductedStampCardIds' => 'getDeductedStampCardIds',
 'couponCodes' => 'getCouponCodes'    ];
 
     /**
@@ -207,6 +212,7 @@ class TransactionDetailRequest implements ModelInterface, ArrayAccess
         $this->container['discount'] = isset($data['discount']) ? $data['discount'] : null;
         $this->container['totalPrice'] = isset($data['totalPrice']) ? $data['totalPrice'] : null;
         $this->container['stampCardIds'] = isset($data['stampCardIds']) ? $data['stampCardIds'] : null;
+        $this->container['deductedStampCardIds'] = isset($data['deductedStampCardIds']) ? $data['deductedStampCardIds'] : null;
         $this->container['couponCodes'] = isset($data['couponCodes']) ? $data['couponCodes'] : null;
     }
 
@@ -427,6 +433,30 @@ class TransactionDetailRequest implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets deductedStampCardIds
+     *
+     * @return int[]
+     */
+    public function getDeductedStampCardIds()
+    {
+        return $this->container['deductedStampCardIds'];
+    }
+
+    /**
+     * Sets deductedStampCardIds
+     *
+     * @param int[] $deductedStampCardIds deductedStampCardIds
+     *
+     * @return $this
+     */
+    public function setDeductedStampCardIds($deductedStampCardIds)
+    {
+        $this->container['deductedStampCardIds'] = $deductedStampCardIds;
+
+        return $this;
+    }
+
+    /**
      * Gets couponCodes
      *
      * @return string[]
@@ -466,8 +496,9 @@ class TransactionDetailRequest implements ModelInterface, ArrayAccess
      *
      * @param integer $offset Offset
      *
+     * @return mixed
      */
-    public function offsetGet($offset)
+    public function offsetGet($offset): mixed
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }

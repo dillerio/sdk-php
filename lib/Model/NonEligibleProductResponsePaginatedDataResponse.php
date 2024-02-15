@@ -1,6 +1,6 @@
 <?php
 /**
- * MemberIdentifier
+ * NonEligibleProductResponsePaginatedDataResponse
  *
  * PHP version 7.4
  *
@@ -22,14 +22,14 @@ use \ArrayAccess;
 use \DillerAPI\ObjectSerializer;
 
 /**
- * MemberIdentifier Class Doc Comment
+ * NonEligibleProductResponsePaginatedDataResponse Class Doc Comment
  *
  * @category Class
  * @package  DillerAPI
  * @author   DILLER AS
  * @link     https://diller.io
  */
-class MemberIdentifier implements ModelInterface, ArrayAccess
+class NonEligibleProductResponsePaginatedDataResponse implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -38,7 +38,7 @@ class MemberIdentifier implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'MemberIdentifier';
+    protected static $swaggerModelName = 'NonEligibleProductResponsePaginatedDataResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -46,8 +46,10 @@ class MemberIdentifier implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'type' => 'string',
-'isUniquePerCountry' => 'bool'    ];
+        'data' => '\DillerAPI\Model\NonEligibleProductResponse[]',
+'totalRecords' => 'int',
+'offset' => 'int',
+'limit' => 'int'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -55,8 +57,10 @@ class MemberIdentifier implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'type' => null,
-'isUniquePerCountry' => null    ];
+        'data' => null,
+'totalRecords' => 'int32',
+'offset' => 'int32',
+'limit' => 'int32'    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -85,8 +89,10 @@ class MemberIdentifier implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'type' => 'type',
-'isUniquePerCountry' => 'is_unique_per_country'    ];
+        'data' => 'data',
+'totalRecords' => 'total_records',
+'offset' => 'offset',
+'limit' => 'limit'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -94,8 +100,10 @@ class MemberIdentifier implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'type' => 'setType',
-'isUniquePerCountry' => 'setIsUniquePerCountry'    ];
+        'data' => 'setData',
+'totalRecords' => 'setTotalRecords',
+'offset' => 'setOffset',
+'limit' => 'setLimit'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -103,8 +111,10 @@ class MemberIdentifier implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'type' => 'getType',
-'isUniquePerCountry' => 'getIsUniquePerCountry'    ];
+        'data' => 'getData',
+'totalRecords' => 'getTotalRecords',
+'offset' => 'getOffset',
+'limit' => 'getLimit'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -164,8 +174,10 @@ class MemberIdentifier implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
-        $this->container['isUniquePerCountry'] = isset($data['isUniquePerCountry']) ? $data['isUniquePerCountry'] : null;
+        $this->container['data'] = isset($data['data']) ? $data['data'] : null;
+        $this->container['totalRecords'] = isset($data['totalRecords']) ? $data['totalRecords'] : null;
+        $this->container['offset'] = isset($data['offset']) ? $data['offset'] : null;
+        $this->container['limit'] = isset($data['limit']) ? $data['limit'] : null;
     }
 
     /**
@@ -193,49 +205,97 @@ class MemberIdentifier implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets type
+     * Gets data
      *
-     * @return string
+     * @return \DillerAPI\Model\NonEligibleProductResponse[]
      */
-    public function getType()
+    public function getData()
     {
-        return $this->container['type'];
+        return $this->container['data'];
     }
 
     /**
-     * Sets type
+     * Sets data
      *
-     * @param string $type Defines an additional property by which a member can be searched.   For example: plate Id, National Id, etc.
+     * @param \DillerAPI\Model\NonEligibleProductResponse[] $data data
      *
      * @return $this
      */
-    public function setType($type)
+    public function setData($data)
     {
-        $this->container['type'] = $type;
+        $this->container['data'] = $data;
 
         return $this;
     }
 
     /**
-     * Gets isUniquePerCountry
+     * Gets totalRecords
      *
-     * @return bool
+     * @return int
      */
-    public function getIsUniquePerCountry()
+    public function getTotalRecords()
     {
-        return $this->container['isUniquePerCountry'];
+        return $this->container['totalRecords'];
     }
 
     /**
-     * Sets isUniquePerCountry
+     * Sets totalRecords
      *
-     * @param bool $isUniquePerCountry Defines whether the member identifier value should be unique per country
+     * @param int $totalRecords totalRecords
      *
      * @return $this
      */
-    public function setIsUniquePerCountry($isUniquePerCountry)
+    public function setTotalRecords($totalRecords)
     {
-        $this->container['isUniquePerCountry'] = $isUniquePerCountry;
+        $this->container['totalRecords'] = $totalRecords;
+
+        return $this;
+    }
+
+    /**
+     * Gets offset
+     *
+     * @return int
+     */
+    public function getOffset()
+    {
+        return $this->container['offset'];
+    }
+
+    /**
+     * Sets offset
+     *
+     * @param int $offset offset
+     *
+     * @return $this
+     */
+    public function setOffset($offset)
+    {
+        $this->container['offset'] = $offset;
+
+        return $this;
+    }
+
+    /**
+     * Gets limit
+     *
+     * @return int
+     */
+    public function getLimit()
+    {
+        return $this->container['limit'];
+    }
+
+    /**
+     * Sets limit
+     *
+     * @param int $limit limit
+     *
+     * @return $this
+     */
+    public function setLimit($limit)
+    {
+        $this->container['limit'] = $limit;
 
         return $this;
     }

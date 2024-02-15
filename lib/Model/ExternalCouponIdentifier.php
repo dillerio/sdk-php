@@ -46,7 +46,7 @@ class ExternalCouponIdentifier implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'platform' => '\DillerAPI\Model\PlatformType',
+        'platform' => 'string',
 'externalId' => 'string'    ];
 
     /**
@@ -195,7 +195,7 @@ class ExternalCouponIdentifier implements ModelInterface, ArrayAccess
     /**
      * Gets platform
      *
-     * @return \DillerAPI\Model\PlatformType
+     * @return string
      */
     public function getPlatform()
     {
@@ -205,7 +205,7 @@ class ExternalCouponIdentifier implements ModelInterface, ArrayAccess
     /**
      * Sets platform
      *
-     * @param \DillerAPI\Model\PlatformType $platform platform
+     * @param string $platform platform
      *
      * @return $this
      */
@@ -256,8 +256,9 @@ class ExternalCouponIdentifier implements ModelInterface, ArrayAccess
      *
      * @param integer $offset Offset
      *
+     * @return mixed
      */
-    public function offsetGet($offset)
+    public function offsetGet($offset): mixed
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }

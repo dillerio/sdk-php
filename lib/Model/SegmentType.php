@@ -44,11 +44,11 @@ class SegmentType
     public static function getAllowableEnumValues()
     {
         return [
-            self::TEXT, 
-            self::DATE_TIME, 
-            self::RADIO, 
-            self::CHECKBOX, 
-            self::DROPDOWN, 
+            self::TEXT
+            self::DATE_TIME
+            self::RADIO
+            self::CHECKBOX
+            self::DROPDOWN
         ];
     }
 }

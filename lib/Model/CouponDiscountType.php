@@ -43,10 +43,10 @@ class CouponDiscountType
     public static function getAllowableEnumValues()
     {
         return [
-            self::NOT_DEFINED, 
-            self::PERCENTAGE, 
-            self::FIXED, 
-            self::FREE_SHIPPING, 
+            self::NOT_DEFINED
+            self::PERCENTAGE
+            self::FIXED
+            self::FREE_SHIPPING
         ];
     }
 }
