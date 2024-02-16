@@ -30,11 +30,11 @@ use \DillerAPI\ObjectSerializer;
 class GtinType
 {
     /**
-     * Possible values for this enum
+     * Possible values of this enum
      */
-    public const NUMBER_ISBN = 'Isbn';
-    public const NUMBER_UPC_GTIN12 = 'UpcGtin12';
-    public const NUMBER_EAN_GTIN13 = 'EanGtin13';
+    const ISBN = 'Isbn';
+    const UPC_GTIN12 = 'UpcGtin12';
+    const EAN_GTIN13 = 'EanGtin13';
     /**
      * Gets allowable values of the enum
      * @return string[]
@@ -42,9 +42,9 @@ class GtinType
     public static function getAllowableEnumValues()
     {
         return [
-            self::NUMBER_ISBN
-            self::NUMBER_UPC_GTIN12
-            self::NUMBER_EAN_GTIN13
+                self::ISBN,
+                self::UPC_GTIN12,
+                self::EAN_GTIN13
         ];
     }
 }

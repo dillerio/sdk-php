@@ -30,12 +30,12 @@ use \DillerAPI\ObjectSerializer;
 class Gender
 {
     /**
-     * Possible values for this enum
+     * Possible values of this enum
      */
-    public const NUMBER_MALE = 'Male';
-    public const NUMBER_FEMALE = 'Female';
-    public const NUMBER_NOT_SHARED = 'NotShared';
-    public const NUMBER_NON_BINARY = 'NonBinary';
+    const MALE = 'Male';
+    const FEMALE = 'Female';
+    const NOT_SHARED = 'NotShared';
+    const NON_BINARY = 'NonBinary';
     /**
      * Gets allowable values of the enum
      * @return string[]
@@ -43,10 +43,10 @@ class Gender
     public static function getAllowableEnumValues()
     {
         return [
-            self::NUMBER_MALE
-            self::NUMBER_FEMALE
-            self::NUMBER_NOT_SHARED
-            self::NUMBER_NON_BINARY
+                self::MALE,
+                self::FEMALE,
+                self::NOT_SHARED,
+                self::NON_BINARY
         ];
     }
 }
