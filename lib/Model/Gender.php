@@ -43,10 +43,10 @@ class Gender
     public static function getAllowableEnumValues()
     {
         return [
-            self::MALE
-            self::FEMALE
-            self::NOT_SHARED
-            self::NON_BINARY
+                self::MALE,
+                self::FEMALE,
+                self::NOT_SHARED,
+                self::NON_BINARY
         ];
     }
 }

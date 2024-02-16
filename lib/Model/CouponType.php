@@ -47,14 +47,14 @@ class CouponType
     public static function getAllowableEnumValues()
     {
         return [
-            self::STANDARD
-            self::WELCOME
-            self::CAMPAIGN
-            self::_PUBLIC
-            self::RECURRING
-            self::BIRTHDAY
-            self::CHILD_BIRTHDAY
-            self::AUTOMATION
+                self::STANDARD,
+                self::WELCOME,
+                self::CAMPAIGN,
+                self::_PUBLIC,
+                self::RECURRING,
+                self::BIRTHDAY,
+                self::CHILD_BIRTHDAY,
+                self::AUTOMATION
         ];
     }
 }

@@ -42,9 +42,9 @@ class GtinType
     public static function getAllowableEnumValues()
     {
         return [
-            self::ISBN
-            self::UPC_GTIN12
-            self::EAN_GTIN13
+                self::ISBN,
+                self::UPC_GTIN12,
+                self::EAN_GTIN13
         ];
     }
 }
