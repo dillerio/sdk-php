@@ -1,6 +1,6 @@
 {
     "name": "diller-loyalty/php-sdk",
-    "version": "v0.1.16",
+    "version": "v.1.17",
     "description": "PHP SDK for Diller API",
     "keywords": [
         "diller",
@@ -18,11 +18,11 @@
         }
     ],
     "require": {
-        "php": ">=7.4",
+        "php": ">=8.0",
         "ext-curl": "*",
         "ext-json": "*",
         "ext-mbstring": "*",
-        "guzzlehttp/guzzle": ">=6.5.0"
+        "guzzlehttp/guzzle": ">=7.5.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^9.6.3",
